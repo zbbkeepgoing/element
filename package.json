@@ -1,7 +1,7 @@
 {
   "name": "element-ui",
   "version": "2.2.2",
-  "description": "A Component Library for Vue.js.",
+  "description": "element-ui for kap",
   "main": "lib/element-ui.common.js",
   "files": [
     "lib",
