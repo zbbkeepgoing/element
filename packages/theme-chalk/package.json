@@ -1,7 +1,7 @@
 {
-  "name": "element-theme-chalk",
-  "version": "2.2.2",
-  "description": "Element component chalk theme.",
+  "name": "kyligence-element-theme-chalk",
+  "version": "1.0.0",
+  "description": "powered by element component chalk theme.",
   "main": "lib/index.css",
   "style": "lib/index.css",
   "files": [

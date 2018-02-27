@@ -1,7 +1,7 @@
 {
-  "name": "element-ui",
-  "version": "2.2.0",
-  "description": "element-ui for kap",
+  "name": "kyligence-ui",
+  "version": "1.0.0",
+  "description": "powered by element-ui",
   "main": "lib/element-ui.common.js",
   "files": [
     "lib",
