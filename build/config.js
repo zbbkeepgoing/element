@@ -10,21 +10,21 @@ var transitionList = fs.readdirSync(path.resolve(__dirname, '../src/transitions'
 var externals = {};
 
 Object.keys(Components).forEach(function(key) {
-  externals[`element-ui/packages/${key}`] = `element-ui/lib/${key}`;
+  externals[`kyligence-ui/packages/${key}`] = `element-ui/lib/${key}`;
 });
 
-externals['element-ui/src/locale'] = 'element-ui/lib/locale';
+externals['element-ui/src/locale'] = 'kyligence-ui/lib/locale';
 utilsList.forEach(function(file) {
   file = path.basename(file, '.js');
-  externals[`element-ui/src/utils/${file}`] = `element-ui/lib/utils/${file}`;
+  externals[`kyligence-ui/src/utils/${file}`] = `kyligence-ui/lib/utils/${file}`;
 });
 mixinsList.forEach(function(file) {
   file = path.basename(file, '.js');
-  externals[`element-ui/src/mixins/${file}`] = `element-ui/lib/mixins/${file}`;
+  externals[`kyligence-ui/src/mixins/${file}`] = `kyligence-ui/lib/mixins/${file}`;
 });
 transitionList.forEach(function(file) {
   file = path.basename(file, '.js');
-  externals[`element-ui/src/transitions/${file}`] = `element-ui/lib/transitions/${file}`;
+  externals[`kyligence-ui/src/transitions/${file}`] = `kyligence-ui/lib/transitions/${file}`;
 });
 
 externals = [Object.assign({
@@ -37,7 +37,8 @@ exports.alias = {
   main: path.resolve(__dirname, '../src'),
   packages: path.resolve(__dirname, '../packages'),
   examples: path.resolve(__dirname, '../examples'),
-  'element-ui': path.resolve(__dirname, '../')
+  'element-ui': path.resolve(__dirname, '../'),
+  'kyligence-ui': path.resolve(__dirname, '../')
 };
 
 exports.vue = {
