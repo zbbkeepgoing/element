@@ -5,8 +5,8 @@
 @include b(popover) {
   position: absolute;
   background: $--popover-fill;
-  min-width: 150px;
-  border-radius: 4px;
+  min-width: 160px;
+  border-radius: 2px;
   border: 1px solid $--popover-border-color;
   padding: $--popover-padding;
   z-index: $--index-popper;
@@ -17,14 +17,14 @@
   box-shadow: $--box-shadow-light;
 
   @include m(plain) {
-    padding: $--popover-padding-large;
+    padding: $--popover-padding;
   }
 
   @include e(title) {
     color: $--popover-title-color;
     font-size: $--popover-title-font-size;
     line-height: 1;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
   @include e(reference) {
