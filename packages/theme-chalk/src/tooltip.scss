@@ -33,7 +33,7 @@
     }
 
     &[x-placement^="top"] {
-      margin-bottom: #{$--tooltip-arrow-size + 6px};
+      margin-bottom: #{$--tooltip-arrow-size + 4px};
     }
 
     &[x-placement^="top"] .popper__arrow {
@@ -50,7 +50,7 @@
     }
 
     &[x-placement^="bottom"] {
-      margin-top: #{$--tooltip-arrow-size + 6px};
+      margin-top: #{$--tooltip-arrow-size + 4px};
     }
 
     &[x-placement^="bottom"] .popper__arrow {
@@ -67,7 +67,7 @@
     }
 
     &[x-placement^="right"] {
-      margin-left: #{$--tooltip-arrow-size + 6px};
+      margin-left: #{$--tooltip-arrow-size + 4px};
     }
 
     &[x-placement^="right"] .popper__arrow {
@@ -84,7 +84,7 @@
     }
 
     &[x-placement^="left"] {
-      margin-right: #{$--tooltip-arrow-size + 6px};
+      margin-right: #{$--tooltip-arrow-size + 4px};
     }
 
     &[x-placement^="left"] .popper__arrow {
