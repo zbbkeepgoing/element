@@ -13,6 +13,7 @@
     <div class="el-transfer__buttons">
       <el-button
         type="primary"
+        plain
         :class="['el-transfer__button', hasButtonTexts ? 'is-with-texts' : '']"
         @click.native="addToLeft"
         :disabled="rightChecked.length === 0">
@@ -21,6 +22,7 @@
       </el-button>
       <el-button
         type="primary"
+        plain
         :class="['el-transfer__button', hasButtonTexts ? 'is-with-texts' : '']"
         @click.native="addToRight"
         :disabled="leftChecked.length === 0">

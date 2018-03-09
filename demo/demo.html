@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>table</title>
+	<link href="../lib/theme-chalk/index.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="app" style="width:800px">
+		<el-tabs v-model="activeName" @tab-click="handleClick">
+		    <el-tab-pane label="User" name="first">
+		    	<el-table
+			      :data="tableData1"
+			      style="width: 100%">
+			      <el-table-column
+			        prop="date"
+			        label="Date"
+			        width="180">
+			      </el-table-column>
+			      <el-table-column
+			        prop="name"
+			        label="Name"
+			        width="180">
+			      </el-table-column>
+			      <el-table-column
+			        prop="address"
+			        label="address">
+			      </el-table-column>
+			    </el-table>
+		    </el-tab-pane>
+		    <el-tab-pane label="Config" name="second">
+		    	<div style="border:1px solid #ccc;">
+			    	<el-table
+				      :data="tableData"
+				      style="width: 100%">
+				      <el-table-column
+				        prop="date"
+				        :label="labelObj['date']">
+				      </el-table-column>
+				      <el-table-column
+				        prop="name"
+				        :label="labelObj['name']" show-overflow-tooltip>
+				      </el-table-column>
+				      <el-table-column
+				        prop="province"
+				        :label="labelObj['province']">
+				      </el-table-column>
+
+				      <el-table-column
+				        prop="city"
+				        :label="labelObj['city']">
+				      </el-table-column>
+				      <el-table-column
+				        prop="address"
+				        :label="labelObj['address']"
+				        width="180" show-overflow-tooltip>
+				      </el-table-column>
+				      <el-table-column
+				        prop="detailAddress"
+				        :label="labelObj['detailAddress']" width="100" show-overflow-tooltip>
+				      </el-table-column>
+				      <el-table-column
+				        prop="zip"
+				        :label="labelObj['zip']">
+				      </el-table-column>
+				    </el-table>
+			    </div>
+		    </el-tab-pane>
+		  </el-tabs>
+		
+	</div>
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	<script type="text/javascript" src="../lib/index.js"></script>
+	<script>
+		var app = new Vue({
+		  el: '#app',
+		  data: {
+		  	activeName: 'first',
+		  	tableData1:[{
+	            date: '2016-05-03',
+	            name: 'Tom',
+	            address: 'No. 189, Grove St, Los Angeles'
+	          }, {
+	            date: '2016-05-02',
+	            name: 'Tom',
+	            address: 'No. 189, Grove St, Los Angeles'
+	          }, {
+	            date: '2016-05-04',
+	            name: 'Tom',
+	            address: 'No. 189, Grove St, Los Angeles'
+	          }, {
+	            date: '2016-05-01',
+	            name: 'Tom',
+	            address: 'No. 189, Grove St, Los Angeles'
+	          }],
+		    tableData: [],
+		    labelObj: {
+		    	date: 'Date',
+	            name: 'Name',
+	            province: 'Province',
+	            city: 'City',
+	            address: 'Address',
+	            detailAddress: 'Detail Address',
+	            zip: 'Zip'
+		    }
+		  },
+		  methods: {
+		  	handleClick (tab) {
+		  		if (tab.name === 'second') {
+		  			this.loadTable()
+		  		}
+		  	},
+		  	loadTable () {
+		  		window.setTimeout(() => {
+		  			this.tableData = [{
+				          date: '2016-05-03',
+				          name: '王小虎王小虎王小虎',
+				          province: '上海',
+				          city: '普陀区',
+				          address: '上海市普陀区金沙江路 1518 弄',
+				          detailAddress: '金沙江路 1518 弄',
+				          zip: 200333
+				        }, {
+				          date: '2016-05-02',
+				          name: '王小虎',
+				          province: '上海',
+				          city: '普陀区',
+				          address: '上海市普陀区金沙江路 1518 弄',
+				          detailAddress: '金沙江路 1518 弄',
+				          zip: 200333
+				        }, {
+				          date: '2016-05-04',
+				          name: '王小虎',
+				          province: '上海',
+				          city: '普陀区',
+				          address: '上海市普陀区金沙江路 1518 弄',
+				          detailAddress: '金沙江路 1518 弄',
+				          zip: 200333
+				        }, {
+				          date: '2016-05-01',
+				          name: '王小虎',
+				          province: '上海',
+				          city: '普陀区',
+				          address: '上海市普陀区金沙江路 1518 弄',
+				          detailAddress: '金沙江路 1518 弄',
+				          zip: 200333
+				        }, {
+				          date: '2016-05-08',
+				          name: '王小虎',
+				          province: '上海',
+				          city: '普陀区',
+				          address: '上海市普陀区金沙江路 1518 弄',
+				          detailAddress: '金沙江路 1518 弄',
+				          zip: 200333
+				        }, {
+				          date: '2016-05-06',
+				          name: '王小虎',
+				          province: '上海',
+				          city: '普陀区',
+				          address: '上海市普陀区金沙江路 1518 弄',
+				          detailAddress: '金沙江路 1518 弄',
+				          zip: 200333
+				        }, {
+				          date: '2016-05-07',
+				          name: '王小虎',
+				          province: '上海',
+				          city: '普陀区',
+				          address: '上海市普陀区金沙江路 1518 弄',
+				          detailAddress: '金沙江路 1518 弄',
+				          zip: 200333
+				        }]
+		  		},1000)
+		  	}
+		  }
+		})
+
+	</script>
+</body>
+</html>

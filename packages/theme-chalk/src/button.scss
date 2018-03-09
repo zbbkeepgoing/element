@@ -115,7 +115,7 @@
   }
   @include when(round) {
     border-radius: 20px;
-    padding: 12px 23px;
+    padding: 10px 12px;
   }
   @include when(circle) {
     border-radius: 50%;

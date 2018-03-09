@@ -60,6 +60,7 @@
             {{ cancelButtonText || t('el.messagebox.cancel') }}
           </el-button>
           <el-button
+            plain
             :loading="confirmButtonLoading"
             ref="confirm"
             :class="[ confirmButtonClasses ]"
