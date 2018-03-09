@@ -24,7 +24,7 @@
 <script>
   import { version } from 'main/index.js';
 
-  const ORIGINAL_THEME = '#409EFF';
+  const ORIGINAL_THEME = '#00BCD6F';
   export default {
     data() {
       return {

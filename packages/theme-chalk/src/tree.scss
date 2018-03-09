@@ -45,6 +45,17 @@
     }
     &:hover {
       background-color: $--tree-node-hover-color;
+      color: $--color-primary;
+      & > .el-checkbox .el-checkbox__inner {
+        border-color: $--color-primary;
+      }
+      & > .el-tree-node__expand-icon {
+        color: $--color-primary;
+        &.is-leaf {
+          color: transparent;
+          cursor: default;
+        }
+      }
     }
   }
 

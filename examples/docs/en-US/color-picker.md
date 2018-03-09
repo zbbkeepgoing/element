@@ -2,10 +2,10 @@
   export default {
     data() {
       return {
-        color1: '#409EFF',
+        color1: '#00bcd6',
         color2: null,
-        color3: 'rgba(19, 206, 102, 0.8)',
-        color4: '#409EFF'
+        color3: 'rgba(0, 188, 214, 0.8)',
+        color4: '#00bcd6'
       };
     },
     mounted() {

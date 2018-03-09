@@ -85,9 +85,9 @@
   class="el-menu-demo"
   mode="horizontal"
   @select="handleSelect"
-  background-color="#545c64"
+  background-color="#263238"
   text-color="#fff"
-  active-text-color="#ffd04b">
+  active-text-color="#00bcd6">
   <el-menu-item index="1">处理中心</el-menu-item>
   <el-submenu index="2">
     <template slot="title">我的工作台</template>
@@ -176,9 +176,9 @@
       class="el-menu-vertical-demo"
       @open="handleOpen"
       @close="handleClose"
-      background-color="#545c64"
+      background-color="#263238"
       text-color="#fff"
-      active-text-color="#ffd04b">
+      active-text-color="#00bcd6">
       <el-submenu index="1">
         <template slot="title">
           <i class="el-icon-location"></i>

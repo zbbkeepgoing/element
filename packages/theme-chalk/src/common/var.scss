@@ -15,19 +15,19 @@ $--color-white: #fff !default;
 $--color-black: #000 !default;
 
 $--color-primary: #00BCD6 !default; 
-$--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default; /* 53a8ff */
-$--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default; /* 66b1ff */
-$--color-primary-light-3: mix($--color-white, $--color-primary, 30%) !default; /* 79bbff */
-$--color-primary-light-4: mix($--color-white, $--color-primary, 40%) !default; /* 8cc5ff */
-$--color-primary-light-5: mix($--color-white, $--color-primary, 50%) !default; /* a0cfff */
-$--color-primary-light-6: mix($--color-white, $--color-primary, 60%) !default; /* b3d8ff */
-$--color-primary-light-7: mix($--color-white, $--color-primary, 70%) !default; /* c6e2ff */
-$--color-primary-light-8: mix($--color-white, $--color-primary, 80%) !default; /* d9ecff */
-$--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default; /* ecf5ff */
+$--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default; /* 1ac3da */
+$--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default; /* 33c9de */
+$--color-primary-light-3: mix($--color-white, $--color-primary, 30%) !default; /* 4dd0e2 */
+$--color-primary-light-4: mix($--color-white, $--color-primary, 40%) !default; /* 66d7e6 */
+$--color-primary-light-5: mix($--color-white, $--color-primary, 50%) !default; /* 80deeb */
+$--color-primary-light-6: mix($--color-white, $--color-primary, 60%) !default; /* 99e4ef */
+$--color-primary-light-7: mix($--color-white, $--color-primary, 70%) !default; /* b3ebf3 */
+$--color-primary-light-8: mix($--color-white, $--color-primary, 80%) !default; /* ccf2f7 */
+$--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default; /* e6f8fb */
 
-$--color-success: #67c23a !default;
-$--color-warning: #e6a23c !default;
-$--color-danger: #f56c6c !default;
+$--color-success: #4cb050 !default;
+$--color-warning: #F7BA2A !default;
+$--color-danger: #ff4159 !default;
 $--color-info: #909399 !default;
 
 $--color-success-light: mix($--color-white, $--color-success, 80%) !default;
@@ -64,7 +64,7 @@ $--border-color-lighter: #ebeef5 !default;
 $--border-color-extra-light: #f2f6fc !default;
 $--border-color-hover: $--color-text-placeholder !default;
 $--border-base: $--border-width-base $--border-style-base $--border-color-base !default;
-$--border-radius-base: 4px !default;
+$--border-radius-base: 2px !default;
 $--border-radius-small: 2px !default;
 $--border-radius-circle: 100% !default;
 
@@ -224,7 +224,7 @@ $--select-option-color: $--color-text-regular !default;
 $--select-option-disabled-color: $--color-text-placeholder !default;
 $--select-option-disabled-background: $--color-white !default;
 $--select-option-height: 34px !default;
-$--select-option-hover-background: $--background-color-base !default;
+$--select-option-hover-background: $--color-primary-light-9 !default;
 $--select-option-selected: $--color-primary !default;
 $--select-option-selected-hover: $--background-color-base !default;
 
@@ -292,7 +292,7 @@ $--message-danger-color: $--color-danger !default;
 -------------------------- */
 $--notification-width: 330px !default;
 $--notification-padding: 14px 26px 14px 13px !default;
-$--notification-radius: 8px !default;
+$--notification-radius: 4px !default;
 $--notification-shadow: $--box-shadow-light !default;
 $--notification-border-color: $--border-color-lighter !default;
 $--notification-icon-size: 24px !default;
@@ -396,23 +396,23 @@ $--tab-vertical-header-count-fill: $--color-text-secondary !default;
 $--button-font-size: 14px !default;
 $--button-font-weight: $--font-weight-primary !default;
 $--button-border-radius: $--border-radius-base !default;
-$--button-padding-vertical: 12px !default;
-$--button-padding-horizontal: 20px !default;
+$--button-padding-vertical: 10px !default;
+$--button-padding-horizontal: 12px !default;
 
 $--button-medium-font-size: 14px !default;
 $--button-medium-border-radius: $--border-radius-base !default;
-$--button-medium-padding-vertical: 10px !default;
-$--button-medium-padding-horizontal: 20px !default;
+$--button-medium-padding-vertical: 8px !default;
+$--button-medium-padding-horizontal: 10px !default;
 
 $--button-small-font-size: 12px !default;
 $--button-small-border-radius: #{$--border-radius-base - 1} !default;
-$--button-small-padding-vertical: 9px !default;
-$--button-small-padding-horizontal: 15px !default;
+$--button-small-padding-vertical: 7px !default;
+$--button-small-padding-horizontal: 8px !default;
 
 $--button-mini-font-size: 12px !default;
 $--button-mini-border-radius: #{$--border-radius-base - 1} !default;
-$--button-mini-padding-vertical: 7px !default;
-$--button-mini-padding-horizontal: 15px !default;
+$--button-mini-padding-vertical: 6px !default;
+$--button-mini-padding-horizontal: 8px !default;
 
 $--button-default-color: $--color-text-regular !default;
 $--button-default-fill: $--color-white !default;
@@ -477,10 +477,10 @@ $--dialog-padding-primary: 20px !default;
 -------------------------- */
 $--table-border:  1px solid $--border-color-lighter !default;
 $--table-text-color: $--color-text-regular !default;
-$--table-header-color: $--color-text-secondary !default;
-$--table-row-hover-background: $--background-color-base !default;
+$--table-header-color: $--color-text-regular !default;
+$--table-row-hover-background: $--color-primary-light-9 !default;
 $--table-current-row-background: $--color-primary-light-9 !default;
-$--table-header-background: $--color-white !default;
+$--table-header-background: $--background-color-base !default;
 $--table-footer-background: $--color-text-placeholder !default;
 $--table-fixed-box-shadow: 0 0 10px rgba(0, 0, 0, .12) !default;
 
@@ -525,7 +525,7 @@ $--tag-fill: rgba($--color-primary, 0.10) !default;
 $--tag-color: $--color-primary !default;
 $--tag-border: rgba($--color-primary, 0.20) !default;
 $--tag-font-size: 12px !default;
-$--tag-border-radius: 4px !default;
+$--tag-border-radius: 2px !default;
 
 $--tag-info-fill: rgba($--color-info, 0.10) !default;
 $--tag-info-border: rgba($--color-info, 0.20) !default;
@@ -549,7 +549,7 @@ $--tag-danger-color: $--color-danger !default;
 
 /* Tree
 -------------------------- */
-$--tree-node-hover-color: $--background-color-base !default;
+$--tree-node-hover-color: $--color-primary-light-9 !default;
 $--tree-text-color: $--color-text-regular !default;
 $--tree-expand-icon-color: $--color-text-placeholder !default;
 
@@ -664,10 +664,10 @@ $--transfer-panel-width: 200px !default;
 $--transfer-panel-header-height: 40px !default;
 $--transfer-panel-header-background: $--background-color-base !default;
 $--transfer-panel-footer-height: 40px !default;
-$--transfer-panel-body-height: 246px !default;
+$--transfer-panel-body-height: 256px !default;
 $--transfer-item-height: 30px !default;
 $--transfer-item-hover-background: $--color-text-secondary !default;
-$--transfer-filter-height: 32px !default;
+$--transfer-filter-height: 24px !default;
 
 /* Header
   --------------------------*/
