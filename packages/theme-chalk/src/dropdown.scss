@@ -67,13 +67,13 @@
   margin: 5px 0;
   background-color: $--color-white;
   border: 1px solid $--border-color-lighter;
-  border-radius: $--border-radius-base;
+  border-radius: $--border-radius-small;
   box-shadow: $--dropdown-menu-box-shadow;
 
   @include e(item) {
     list-style: none;
     line-height: 36px;
-    padding: 0 20px;
+    padding: 0 10px;
     margin: 0;
     font-size: $--font-size-base;
     color: $--color-text-regular;
@@ -95,7 +95,7 @@
         content: '';
         height: $divided-offset;
         display: block;
-        margin: 0 -20px;
+        margin: 0 -10px;
         background-color: $--color-white;
       }
     }
@@ -112,7 +112,7 @@
 
     @include e(item) {
       line-height: 30px;
-      padding: 0 17px;
+      padding: 0 8px;
       font-size: 14px;
 
       &.el-dropdown-menu__item--divided {
@@ -121,7 +121,7 @@
 
         &:before {
           height: $divided-offset;
-          margin: 0 -17px;
+          margin: 0 -8px;
         }
       }
     }
@@ -132,7 +132,7 @@
 
     @include e(item) {
       line-height: 27px;
-      padding: 0 15px;
+      padding: 0 7px;
       font-size: 13px;
 
       &.el-dropdown-menu__item--divided {
@@ -141,7 +141,7 @@
 
         &:before {
           height: $divided-offset;
-          margin: 0 -15px;
+          margin: 0 -7px;
         }
       }
     }
@@ -152,7 +152,7 @@
 
     @include e(item) {
       line-height: 24px;
-      padding: 0 10px;
+      padding: 0 5px;
       font-size: 12px;
 
       &.el-dropdown-menu__item--divided {
@@ -161,7 +161,7 @@
 
         &:before {
           height: $divided-offset;
-          margin: 0 -10px;
+          margin: 0 -5px;
         }
       }
     }
