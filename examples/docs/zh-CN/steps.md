@@ -2,13 +2,41 @@
   export default {
     data() {
       return {
-        active: 0
+        active: 0,
+        active1: 1,
+        active2: 1,
+        active3: 0,
+        active4: 0,
+        active5: 0,
+        active6: 0,
+        active7: 0
       };
     },
 
     methods: {
       next() {
         if (this.active++ > 2) this.active = 0;
+      },
+      next1() {
+        if (this.active1++ > 2) this.active1 = 0;
+      },
+      next2() {
+        if (this.active2++ > 2) this.active2 = 0;
+      },
+      next3() {
+        if (this.active3++ > 3) this.active3 = 0;
+      },
+      next4() {
+        if (this.active4++ > 2) this.active4 = 0;
+      },
+      next5() {
+        if (this.active5++ > 2) this.active5 = 0;
+      },
+      next6() {
+        if (this.active6++ > 2) this.active6 = 0;
+      },
+      next7() {
+        if (this.active7++ > 2) this.active7 = 0;
       }
     }
   }
@@ -55,11 +83,12 @@
 
 :::demo 也可以使用`title`具名分发，可以用`slot`的方式来取代属性的设置，在本文档最后的列表中有所有的 slot name 可供参考。
 ```html
-<el-steps :space="200" :active="1" finish-status="success">
+<el-steps :space="200" :active="active1" finish-status="success" process-status="error">
   <el-step title="已完成"></el-step>
   <el-step title="进行中"></el-step>
   <el-step title="步骤 3"></el-step>
 </el-steps>
+<el-button style="margin-top: 12px;" @click="next1">下一步</el-button>
 ```
 :::
 
@@ -69,11 +98,12 @@
 
 :::demo
 ```html
-<el-steps :active="1">
+<el-steps :active="active2" process-status="error">
   <el-step title="步骤 1" description="这是一段很长很长很长的描述性文字"></el-step>
   <el-step title="步骤 2" description="这是一段很长很长很长的描述性文字"></el-step>
   <el-step title="步骤 3" description="这段就没那么长了"></el-step>
 </el-steps>
+<el-button style="margin-top: 12px;" @click="next2">下一步</el-button>
 ```
 :::
 
@@ -83,12 +113,13 @@
 
 :::demo
 ```html
-<el-steps :active="2" align-center>
+<el-steps :active="active3" align-center>
   <el-step title="步骤1" description="这是一段很长很长很长的描述性文字"></el-step>
   <el-step title="步骤2" description="这是一段很长很长很长的描述性文字"></el-step>
   <el-step title="步骤3" description="这是一段很长很长很长的描述性文字"></el-step>
   <el-step title="步骤4" description="这是一段很长很长很长的描述性文字"></el-step>
 </el-steps>
+<el-button style="margin-top: 12px;" @click="next3">下一步</el-button>
 ```
 :::
 
@@ -98,11 +129,12 @@
 :::demo 通过`icon`属性来设置图标，图标的类型可以参考 Icon 组件的文档，除此以外，还能通过具名`slot`来使用自定义的图标。
 ```html
 
-<el-steps :active="1">
+<el-steps :active="active4">
   <el-step title="步骤 1" icon="el-icon-edit"></el-step>
   <el-step title="步骤 2" icon="el-icon-upload"></el-step>
   <el-step title="步骤 3" icon="el-icon-picture"></el-step>
 </el-steps>
+<el-button style="margin-top: 12px;" @click="next4">下一步</el-button>
 ```
 :::
 
@@ -113,12 +145,13 @@
 :::demo 只需要在`el-steps`元素中设置`direction`属性为`vertical`即可。
 ```html
 <div style="height: 300px;">
-  <el-steps direction="vertical" :active="1">
+  <el-steps direction="vertical" :active="active5">
     <el-step title="步骤 1"></el-step>
     <el-step title="步骤 2"></el-step>
     <el-step title="步骤 3" description="这是一段很长很长很长的描述性文字"></el-step>
   </el-steps>
 </div>
+<el-button style="margin-top: 12px;" @click="next5">下一步</el-button>
 ```
 :::
 
@@ -128,17 +161,19 @@
 :::demo
 ```html
 
-<el-steps :active="1" simple>
+<el-steps :active="active6" simple>
   <el-step title="步骤 1" icon="el-icon-edit"></el-step>
   <el-step title="步骤 2" icon="el-icon-upload"></el-step>
   <el-step title="步骤 3" icon="el-icon-picture"></el-step>
 </el-steps>
+<el-button style="margin-top: 12px;" @click="next6">下一步</el-button>
 
-<el-steps :active="1" finish-status="success" simple style="margin-top: 20px">
+<el-steps :active="active7" finish-status="success" simple style="margin-top: 20px">
   <el-step title="步骤 1" ></el-step>
   <el-step title="步骤 2" ></el-step>
   <el-step title="步骤 3" ></el-step>
 </el-steps>
+<el-button style="margin-top: 12px;" @click="next7">下一步</el-button>
 ```
 :::
 
