@@ -9,7 +9,7 @@
     }
     .el-dropdown-link {
       cursor: pointer;
-      color: #409EFF;
+      color: #00bcd6;
     }
     .el-icon-arrow-down {
       font-size: 12px;
@@ -102,8 +102,8 @@
     <el-dropdown-item>黄金糕</el-dropdown-item>
     <el-dropdown-item>狮子头</el-dropdown-item>
     <el-dropdown-item>螺蛳粉</el-dropdown-item>
-    <el-dropdown-item>双皮奶</el-dropdown-item>
-    <el-dropdown-item>蚵仔煎</el-dropdown-item>
+    <el-dropdown-item disabled>双皮奶</el-dropdown-item>
+    <el-dropdown-item divided>蚵仔煎</el-dropdown-item>
   </el-dropdown-menu>
 </el-dropdown>
 <el-dropdown split-button type="primary" @click="handleClick">
@@ -112,8 +112,8 @@
     <el-dropdown-item>黄金糕</el-dropdown-item>
     <el-dropdown-item>狮子头</el-dropdown-item>
     <el-dropdown-item>螺蛳粉</el-dropdown-item>
-    <el-dropdown-item>双皮奶</el-dropdown-item>
-    <el-dropdown-item>蚵仔煎</el-dropdown-item>
+    <el-dropdown-item disabled>双皮奶</el-dropdown-item>
+    <el-dropdown-item divided>蚵仔煎</el-dropdown-item>
   </el-dropdown-menu>
 </el-dropdown>
 
@@ -159,8 +159,8 @@
         <el-dropdown-item>黄金糕</el-dropdown-item>
         <el-dropdown-item>狮子头</el-dropdown-item>
         <el-dropdown-item>螺蛳粉</el-dropdown-item>
-        <el-dropdown-item>双皮奶</el-dropdown-item>
-        <el-dropdown-item>蚵仔煎</el-dropdown-item>
+        <el-dropdown-item disabled>双皮奶</el-dropdown-item>
+        <el-dropdown-item divided>蚵仔煎</el-dropdown-item>
       </el-dropdown-menu>
     </el-dropdown>
   </el-col>
@@ -174,8 +174,8 @@
         <el-dropdown-item>黄金糕</el-dropdown-item>
         <el-dropdown-item>狮子头</el-dropdown-item>
         <el-dropdown-item>螺蛳粉</el-dropdown-item>
-        <el-dropdown-item>双皮奶</el-dropdown-item>
-        <el-dropdown-item>蚵仔煎</el-dropdown-item>
+        <el-dropdown-item disabled>双皮奶</el-dropdown-item>
+        <el-dropdown-item divided>蚵仔煎</el-dropdown-item>
       </el-dropdown-menu>
     </el-dropdown>
   </el-col>
@@ -285,8 +285,8 @@ Dropdown 组件提供除了默认值以外的三种尺寸，可以在不同场�
     <el-dropdown-item>黄金糕</el-dropdown-item>
     <el-dropdown-item>狮子头</el-dropdown-item>
     <el-dropdown-item>螺蛳粉</el-dropdown-item>
-    <el-dropdown-item>双皮奶</el-dropdown-item>
-    <el-dropdown-item>蚵仔煎</el-dropdown-item>
+    <el-dropdown-item disabled>双皮奶</el-dropdown-item>
+    <el-dropdown-item divided>蚵仔煎</el-dropdown-item>
   </el-dropdown-menu>
 </el-dropdown>
 
@@ -296,8 +296,8 @@ Dropdown 组件提供除了默认值以外的三种尺寸，可以在不同场�
     <el-dropdown-item>黄金糕</el-dropdown-item>
     <el-dropdown-item>狮子头</el-dropdown-item>
     <el-dropdown-item>螺蛳粉</el-dropdown-item>
-    <el-dropdown-item>双皮奶</el-dropdown-item>
-    <el-dropdown-item>蚵仔煎</el-dropdown-item>
+    <el-dropdown-item disabled>双皮奶</el-dropdown-item>
+    <el-dropdown-item divided>蚵仔煎</el-dropdown-item>
   </el-dropdown-menu>
 </el-dropdown>
 
@@ -307,8 +307,8 @@ Dropdown 组件提供除了默认值以外的三种尺寸，可以在不同场�
     <el-dropdown-item>黄金糕</el-dropdown-item>
     <el-dropdown-item>狮子头</el-dropdown-item>
     <el-dropdown-item>螺蛳粉</el-dropdown-item>
-    <el-dropdown-item>双皮奶</el-dropdown-item>
-    <el-dropdown-item>蚵仔煎</el-dropdown-item>
+    <el-dropdown-item disabled>双皮奶</el-dropdown-item>
+    <el-dropdown-item divided>蚵仔煎</el-dropdown-item>
   </el-dropdown-menu>
 </el-dropdown>
 
@@ -318,8 +318,8 @@ Dropdown 组件提供除了默认值以外的三种尺寸，可以在不同场�
     <el-dropdown-item>黄金糕</el-dropdown-item>
     <el-dropdown-item>狮子头</el-dropdown-item>
     <el-dropdown-item>螺蛳粉</el-dropdown-item>
-    <el-dropdown-item>双皮奶</el-dropdown-item>
-    <el-dropdown-item>蚵仔煎</el-dropdown-item>
+    <el-dropdown-item disabled>双皮奶</el-dropdown-item>
+    <el-dropdown-item divided>蚵仔煎</el-dropdown-item>
   </el-dropdown-menu>
 </el-dropdown>
 ```
