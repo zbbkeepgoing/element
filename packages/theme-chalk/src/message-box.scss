@@ -39,6 +39,7 @@
     position: relative;
     padding: $--msgbox-padding-primary;
     padding-bottom: 10px;
+    border-bottom: 1px solid $--border-color-lighter;
   }
 
   @include e(title) {
