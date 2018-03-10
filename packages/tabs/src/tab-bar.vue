@@ -41,15 +41,17 @@
               return false;
             }
           });
-
+          // console.log(sizeName);
           /* if (sizeName === 'width' && offset !== 0) {
             offset += 20;
           } */
+          console.log(123);
           const transform = `translate${firstUpperCase(sizeDir)}(${offset}px)`;
           style[sizeName] = tabSize + 'px';
           style.transform = transform;
           style.msTransform = transform;
           style.webkitTransform = transform;
+          // console.log(style);
           return style;
         }
       }
