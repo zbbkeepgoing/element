@@ -45,7 +45,6 @@
           /* if (sizeName === 'width' && offset !== 0) {
             offset += 20;
           } */
-          console.log(123);
           const transform = `translate${firstUpperCase(sizeDir)}(${offset}px)`;
           style[sizeName] = tabSize + 'px';
           style.transform = transform;
