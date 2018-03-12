@@ -10,10 +10,10 @@ var transitionList = fs.readdirSync(path.resolve(__dirname, '../src/transitions'
 var externals = {};
 
 Object.keys(Components).forEach(function(key) {
-  externals[`kyligence-ui/packages/${key}`] = `element-ui/lib/${key}`;
+  externals[`kyligence-ui/packages/${key}`] = `kyligence-ui/lib/${key}`;
 });
 
-externals['element-ui/src/locale'] = 'kyligence-ui/lib/locale';
+externals['kyligence-ui/src/locale'] = 'kyligence-ui/lib/locale';
 utilsList.forEach(function(file) {
   file = path.basename(file, '.js');
   externals[`kyligence-ui/src/utils/${file}`] = `kyligence-ui/lib/utils/${file}`;
