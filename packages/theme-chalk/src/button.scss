@@ -115,7 +115,7 @@
   }
   @include when(round) {
     border-radius: 20px;
-    padding: 10px 12px;
+    padding: 10px 15px;
   }
   @include m(primary) {
     @include button-variant($--button-primary-color, $--button-primary-fill, $--button-primary-border);
@@ -210,7 +210,21 @@
     @include when(active) {
       z-index: 1;
     }
+
+    &.el-button--default.is-round {
+      &:hover {
+        color: $--color-text-regular;
+        background-color: $--color-white;
+        border-color: $--border-color-base;
+      }
+      &.active {
+        background: $--color-primary;
+        color: $--color-white;
+        box-shadow: inset 1px 1px 2px 0 #007d8e;
+      }
+    }
   }
+
 
   @each $type in (primary, success, warning, danger, info) {
     .el-button--#{$type} {

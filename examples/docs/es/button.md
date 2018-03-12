@@ -1,3 +1,17 @@
+<script>
+  module.exports = {
+    data() {
+      return {
+        lang: 'zh'
+      }
+    },
+    methods: {
+      changeLang (lang) {
+        this.lang = lang
+      }
+    }
+  }
+</script>
 <style>
   .demo-box.demo-button {
     .el-row {
@@ -119,6 +133,10 @@ Mostrar un grupo de botones puede ser usado para mostrar un grupo de operaciones
 
 ```html
 <el-button-group>
+  <el-button round @click="changeLang('en')" :class="{'active':lang=='en'}">EN</el-button>
+  <el-button round @click="changeLang('zh')" :class="{'active':lang=='zh'}">中文</el-button>
+</el-button-group>
+<el-button-group>
   <el-button type="primary" icon="el-icon-arrow-left">Previous Page</el-button>
   <el-button type="primary">Next Page<i class="el-icon-arrow-right el-icon-right"></i></el-button>
 </el-button-group>
@@ -127,6 +145,20 @@ Mostrar un grupo de botones puede ser usado para mostrar un grupo de operaciones
   <el-button type="primary" icon="el-icon-share"></el-button>
   <el-button type="primary" icon="el-icon-delete"></el-button>
 </el-button-group>
+<script>
+  export default {
+    data () {
+      return {
+        lang: 'zh'
+      };
+    },
+    methods: {
+      changeLang (lang) {
+        this.lang = lang
+      }
+    }
+  }
+</script>
 ```
 :::
 
