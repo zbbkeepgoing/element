@@ -228,6 +228,11 @@
   > .el-input__inner {
     vertical-align: middle;
     display: table-cell;
+    &:focus + {
+      @include e(append) {
+        border-color: $--color-primary;
+      }
+    }
   }
 
   @include e((append, prepend)) {
@@ -278,6 +283,9 @@
     border-left: 0;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+    .el-icon-search:hover {
+      color: $--color-primary;
+    }
   }
 
   @include m(prepend) {
