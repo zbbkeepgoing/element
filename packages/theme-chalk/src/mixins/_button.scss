@@ -65,6 +65,28 @@
   &.is-plain {
     @include button-plain($background-color);
   }
+  &.is-text {
+    border-color: transparent;
+    color: $background-color;
+    background: transparent;
+    padding-left: 0;
+    padding-right: 0;
+    &:hover{
+      color: mix($--color-white, $background-color, $--button-hover-tint-percent);
+      border-color: transparent;
+      background-color: transparent;
+    }
+    &:active {
+      color: mix($--color-black, $background-color, $--button-active-shade-percent);
+      border-color: transparent;
+      background-color: transparent;
+    }
+    &.is-disabled,
+    &.is-disabled:hover{
+      color: mix($--color-white, $background-color, 40%);
+      border-color: transparent;
+    }
+  }
 }
 
 @mixin button-size($padding-vertical, $padding-horizontal, $font-size, $border-radius) {

@@ -165,7 +165,7 @@
       <div class="el-picker-panel__footer" v-if="showTime">
         <el-button
           size="mini"
-          type="text"
+          type="primary" text
           class="el-picker-panel__link-btn"
           @click="handleClear">
           {{ t('el.datepicker.clear') }}

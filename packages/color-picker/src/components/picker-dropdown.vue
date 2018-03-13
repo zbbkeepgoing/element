@@ -19,7 +19,7 @@
         </span>
         <el-button
           size="mini"
-          type="text"
+          type="primary" text
           class="el-color-dropdown__link-btn"
           @click="$emit('clear')">
           {{ t('el.colorpicker.clear') }}

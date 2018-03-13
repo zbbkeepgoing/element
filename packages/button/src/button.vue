@@ -12,7 +12,8 @@
         'is-disabled': disabled,
         'is-loading': loading,
         'is-plain': plain,
-        'is-round': round
+        'is-round': round,
+        'is-text': text
       }
     ]"
   >
@@ -49,7 +50,8 @@
       disabled: Boolean,
       plain: Boolean,
       autofocus: Boolean,
-      round: Boolean
+      round: Boolean,
+      text: Boolean
     },
 
     computed: {
