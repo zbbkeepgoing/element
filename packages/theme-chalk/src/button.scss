@@ -141,7 +141,7 @@
   @include m(mini) {
     @include button-size($--button-mini-padding-vertical, $--button-mini-padding-horizontal, $--button-mini-font-size, $--button-mini-border-radius);
   }
-  @include m(text) {
+  /* @include m(text) {
     border-color: transparent;
     color: $--color-primary;
     background: transparent;
@@ -165,7 +165,7 @@
     &.is-disabled:focus {
       border-color: transparent;
     }
-  }
+  } */
 }
 
 @include b(button-group) {

@@ -13,7 +13,8 @@
         'is-loading': loading,
         'is-plain': plain,
         'is-round': round,
-        'is-circle': circle
+        'is-circle': circle,
+        'is-text': text
       }
     ]"
   >
@@ -54,7 +55,8 @@
       plain: Boolean,
       autofocus: Boolean,
       round: Boolean,
-      circle: Boolean
+      circle: Boolean,
+      text: Boolean
     },
 
     computed: {

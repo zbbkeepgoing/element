@@ -27,7 +27,7 @@
           <el-button
             v-show="hovering || isExpanded"
             size="small"
-            type="text"
+            type="primary" text
             class="control-button"
             @click.stop="goJsfiddle">
             {{ langConfig['button-text'] }}
