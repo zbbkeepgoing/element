@@ -11,7 +11,7 @@
     </p>
     
     <div :class="['el-transfer-panel__body', hasFooter ? 'is-with-footer' : '']">
-      <el-input
+      <el-input 
         class="el-transfer-panel__filter"
         v-model="query"
         size="small"
@@ -19,10 +19,7 @@
         @mouseenter.native="inputHover = true"
         @mouseleave.native="inputHover = false"
         v-if="filterable">
-        <i slot="suffix"
-          :class="['el-input__icon', 'el-icon-' + inputIcon]"
-          @click="clearQuery"
-        ></i>
+        <el-button slot="append" size="small" :class="['el-input__icon', 'el-icon-' + inputIcon]" @click="clearQuery"></el-button>
       </el-input>
       <el-checkbox-group
         v-model="checked"
