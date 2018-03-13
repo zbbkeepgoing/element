@@ -14,6 +14,10 @@
   border: 1px solid $--tag-border;
   white-space: nowrap;
 
+  &.closeable:hover {
+    border-color: $--tag-color;
+  }
+
   .el-icon-close {
     border-radius: 50%;
     text-align: center;
@@ -43,6 +47,10 @@
     border-color: $--tag-info-border;
     color: $--tag-info-color;
 
+    &.closeable:hover {
+      border-color: $--tag-info-color;
+    }
+
     @include when(hit) {
       border-color: $--tag-info-color;
     }
@@ -61,6 +69,10 @@
     background-color: $--tag-success-fill;
     border-color: $--tag-success-border;
     color: $--tag-success-color;
+
+    &.closeable:hover {
+      border-color: $--tag-success-color;
+    }
 
     @include when(hit) {
       border-color: $--tag-success-color;
@@ -81,6 +93,10 @@
     border-color: $--tag-warning-border;
     color: $--tag-warning-color;
 
+    &.closeable:hover {
+      border-color: $--tag-warning-color;
+    }
+
     @include when(hit) {
       border-color: $--tag-warning-color;
     }
@@ -99,6 +115,10 @@
     background-color: $--tag-danger-fill;
     border-color: $--tag-danger-border;
     color: $--tag-danger-color;
+
+    &.closeable:hover {
+      border-color: $--tag-danger-color;
+    }
 
     @include when(hit) {
       border-color: $--tag-danger-color;

@@ -5,7 +5,8 @@
       :class="[
         type ? 'el-tag--' + type : '',
         tagSize && `el-tag--${tagSize}`,
-        {'is-hit': hit}
+        {'is-hit': hit},
+        {'closeable': closable}
       ]"
       :style="{backgroundColor: color}">
       <slot></slot>

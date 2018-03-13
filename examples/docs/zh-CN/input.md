@@ -380,6 +380,11 @@ export default {
     <el-button slot="append" icon="el-icon-search"></el-button>
   </el-input>
 </div>
+<div style="margin-top: 15px;">
+  <el-input placeholder="请输入内容" v-model="input5" class="input-with-select">
+    <el-button slot="append" icon="el-icon-search"></el-button>
+  </el-input>
+</div>
 <style>
   .el-select .el-input {
     width: 130px;
