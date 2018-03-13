@@ -117,8 +117,14 @@ Buttons without border and background.
 
 :::demo
 ```html
-<el-button type="text">Text Button</el-button>
-<el-button type="text" disabled>Text Button</el-button>
+<div style="margin: 20px 0">
+  <el-button type="primary" text>Primary</el-button>
+  <el-button type="success" text>Success</el-button>
+  <el-button type="info" text>Info</el-button>
+  <el-button type="warning" text>Warning</el-button>
+  <el-button type="danger" text>Danger</el-button>
+  <el-button type="info" text disabled>Disabled</el-button>
+</div>
 ```
 :::
 
@@ -211,8 +217,9 @@ Besides default size, Button component provides three additional sizes for you t
 | Attribute      | Description    | Type      | Accepted values       | Default   |
 |---------- |-------- |---------- |-------------  |-------- |
 | size     | button size   | string  |   medium / small / mini            |    —     |
-| type     | button type   | string    |   primary / success / warning / danger / info / text |     —    |
+| type     | button type   | string    |   primary / success / warning / danger / info |     —    |
 | plain     | determine whether it's a plain button   | boolean    | — | false   |
+| text     | determine whether it's a text button   | boolean    | — | false   |
 | round     | determine whether it's a round button   | boolean    | — | false   |
 | circle     | determine whether it's a circle button   | boolean    | — | false   |
 | loading   | determine whether it's loading   | boolean    | — | false   |
