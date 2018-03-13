@@ -121,7 +121,7 @@
     <span class="demonstration">显示间断点</span>
     <el-slider
       v-model="value7"
-      :step="10"
+      :step="25"
       show-stops>
     </el-slider>
   </div>

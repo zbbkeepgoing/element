@@ -51,7 +51,7 @@
       </div>
       <div
         class="el-slider__label"
-        v-for="item in [0, 20, 40, 60, 80, 100]"
+        v-for="item in labels"
         :style="vertical ? { 'bottom': item + '%' } : { 'left': item + '%' }"
         :class="{'active': (item <= 100 * (firstValue - min) / (max - min) && !range) || (item >= 100 * (firstValue - min) / (max - min) && item <= 100 * (secondValue - min) / (max - min) && range)}"
         v-if="showStops">{{item}}%
@@ -304,6 +304,24 @@
         } else {
           return result.filter(step => step > 100 * (this.firstValue - this.min) / (this.max - this.min));
         }
+      },
+
+      labels() {
+        if (!this.showStops) return [];
+        if (this.step === 0) {
+          process.env.NODE_ENV !== 'production' &&
+          console.warn('[Element Warn][Slider]step should not be 0.');
+          return [];
+        }
+        const stopCount = (this.max - this.min) / this.step;
+        const stepWidth = 100 * this.step / (this.max - this.min);
+        const result = [];
+        for (let i = 1; i < stopCount; i++) {
+          result.push(i * stepWidth);
+        }
+        result.unshift(0);
+        result.push(100);
+        return result;
       },
 
       minValue() {
