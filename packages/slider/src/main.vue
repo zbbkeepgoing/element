@@ -49,6 +49,13 @@
         :style="vertical ? { 'bottom': item + '%' } : { 'left': item + '%' }"
         v-if="showStops">
       </div>
+      <div
+        class="el-slider__label"
+        v-for="item in [0, 20, 40, 60, 80, 100]"
+        :style="vertical ? { 'bottom': item + '%' } : { 'left': item + '%' }"
+        :class="{'active': (item <= 100 * (firstValue - min) / (max - min) && !range) || (item >= 100 * (firstValue - min) / (max - min) && item <= 100 * (secondValue - min) / (max - min) && range)}"
+        v-if="showStops">{{item}}%
+      </div>
     </div>
   </div>
 </template>
