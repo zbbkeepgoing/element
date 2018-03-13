@@ -281,8 +281,8 @@
           <span class="custom-tree-node">
             <span>{node.label}</span>
             <span>
-              <el-button size="mini" type="text" on-click={ () => this.append(data) }>Append</el-button>
-              <el-button size="mini" type="text" on-click={ () => this.remove(node, data) }>Delete</el-button>
+              <el-button size="mini" type="primary" text on-click={ () => this.append(data) }>Append</el-button>
+              <el-button size="mini" type="primary" text on-click={ () => this.remove(node, data) }>Delete</el-button>
             </span>
           </span>);
       },
@@ -739,13 +739,13 @@ The content of tree nodes can be customized, so you can add icons or buttons as 
         <span>{{ node.label }}</span>
         <span>
           <el-button
-            type="text"
+            type="primary" text
             size="mini"
             @click="() => append(data)">
             Append
           </el-button>
           <el-button
-            type="text"
+            type="primary" text
             size="mini"
             @click="() => remove(node, data)">
             Delete
@@ -823,8 +823,8 @@ The content of tree nodes can be customized, so you can add icons or buttons as 
           <span class="custom-tree-node">
             <span>{node.label}</span>
             <span>
-              <el-button size="mini" type="text" on-click={ () => this.append(data) }>Append</el-button>
-              <el-button size="mini" type="text" on-click={ () => this.remove(node, data) }>Delete</el-button>
+              <el-button size="mini" type="primary" text on-click={ () => this.append(data) }>Append</el-button>
+              <el-button size="mini" type="primary" text on-click={ () => this.remove(node, data) }>Delete</el-button>
             </span>
           </span>);
       }

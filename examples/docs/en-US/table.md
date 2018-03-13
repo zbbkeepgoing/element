@@ -703,8 +703,8 @@ When there are too many columns, you can fix some of them.
       label="Operations"
       width="120">
       <template slot-scope="scope">
-        <el-button @click="handleClick" type="text" size="small">Detail</el-button>
-        <el-button type="text" size="small">Edit</el-button>
+        <el-button @click="handleClick" type="primary" text size="small">Detail</el-button>
+        <el-button type="primary" text size="small">Edit</el-button>
       </template>
     </el-table-column>
   </el-table>
@@ -914,7 +914,7 @@ When the the data is dynamically changed, you might want the table to have a max
       <template slot-scope="scope">
         <el-button
           @click.native.prevent="deleteRow(scope.$index, tableData4)"
-          type="text"
+          type="primary" text
           size="small">
           Remove
         </el-button>
