@@ -212,6 +212,7 @@
     }
 
     &.el-button--default.is-round {
+      border: none;
       &:hover {
         color: $--color-text-regular;
         background-color: $--color-white;

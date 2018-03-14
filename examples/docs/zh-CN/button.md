@@ -139,6 +139,7 @@
 :::demo 使用`<el-button-group>`标签来嵌套你的按钮。
 
 ```html
+<div style="background-color: #eee;">
 <el-button-group>
   <el-button round @click="changeLang('en')" :class="{'active':lang=='en'}">EN</el-button>
   <el-button round @click="changeLang('zh')" :class="{'active':lang=='zh'}">中文</el-button>
@@ -152,6 +153,7 @@
   <el-button type="primary" icon="el-icon-share"></el-button>
   <el-button type="primary" icon="el-icon-delete"></el-button>
 </el-button-group>
+</div>
 <script>
   export default {
     data () {
