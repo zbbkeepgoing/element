@@ -212,16 +212,15 @@
     }
 
     &.el-button--default.is-round {
-      border: none;
+      border: 1px solid #CFD8DC;
       &:hover {
         color: $--color-text-regular;
         background-color: $--color-white;
-        border-color: $--border-color-base;
+        // border-color: #CFD8DC;
       }
       &.active {
-        background: $--color-primary;
-        color: $--color-white;
-        box-shadow: inset 1px 1px 2px 0 #007d8e;
+        background: #E2ECF1;
+        box-shadow: inset 1px 1px 4px 0 #455A64;
       }
     }
   }
