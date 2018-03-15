@@ -87,7 +87,7 @@
   @select="handleSelect"
   background-color="#263238"
   text-color="#fff"
-  active-text-color="#00bcd6">
+  active-text-color="#0988DE">
   <el-menu-item index="1">处理中心</el-menu-item>
   <el-submenu index="2">
     <template slot="title">我的工作台</template>
@@ -178,7 +178,7 @@
       @close="handleClose"
       background-color="#263238"
       text-color="#fff"
-      active-text-color="#00bcd6">
+      active-text-color="#0988DE">
       <el-submenu index="1">
         <template slot="title">
           <i class="el-icon-location"></i>
