@@ -34,6 +34,7 @@
     padding: $--dialog-padding-primary;
     padding-bottom: 12px;
     border-bottom: 1px solid $--border-color-light;
+    min-height: 18px;
   }
 
   @include e(headerbtn) {
