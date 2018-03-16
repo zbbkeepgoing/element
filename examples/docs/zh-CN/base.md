@@ -8,43 +8,43 @@
 }
 
 .txt-primary {
-  color: #00BCD6
+  color: #0988DE
 }
 
 .txt-primary-light1 {
-  color: #1ac3da
+  color: #2294e1
 }
 
 .txt-primary-light2 {
-  color: #33c9de
+  color: #3aa0e5
 }
 
 .txt-primary-light3 {
-  color: #4dd0e2
+  color: #53ace8
 }
 
 .txt-primary-light4 {
-  color: #66d7e6
+  color: #6bb8eb
 }
 
 .txt-primary-light5 {
-  color: #80deeb
+  color: #84c4ef
 }
 
 .txt-primary-light6 {
-  color: #99e4ef
+  color: #9dcff2
 }
 
 .txt-primary-light7 {
-  color: #b3ebf3
+  color: #b5dbf5
 }
 
 .txt-primary-light8 {
-  color: #ccf2f7
+  color: #cee7f8
 }
 
 .txt-primary-light9 {
-  color: #e6f8fb
+  color: #e6f3fc
 }
 
 .txt-success {
@@ -112,11 +112,11 @@
 }
 
 .txt-link {
-  color: #33c9de
+  color: #3aa0e5
 }
 
 .txt-link-hover {
-  color: #00BCD6
+  color: #0988DE
 }
 
 .bg-base {
@@ -132,43 +132,43 @@
 }
 
 .bg-primary {
-  background-color: #00BCD6
+  background-color: #0988DE
 }
 
 .bg-primary-light1 {
-  background-color: #1ac3da
+  background-color: #2294e1
 }
 
 .bg-primary-light2 {
-  background-color: #33c9de
+  background-color: #3aa0e5
 }
 
 .bg-primary-light3 {
-  background-color: #4dd0e2
+  background-color: #53ace8
 }
 
 .bg-primary-light4 {
-  background-color: #66d7e6
+  background-color: #6bb8eb
 }
 
 .bg-primary-light5 {
-  background-color: #80deeb
+  background-color: #84c4ef
 }
 
 .bg-primary-light6 {
-  background-color: #99e4ef
+  background-color: #9dcff2
 }
 
 .bg-primary-light7 {
-  background-color: #b3ebf3
+  background-color: #b5dbf5
 }
 
 .bg-primary-light8 {
-  background-color: #ccf2f7
+  background-color: #cee7f8
 }
 
 .bg-primary-light9 {
-  background-color: #e6f8fb
+  background-color: #e6f3fc
 }
 
 .bg-success {
@@ -406,31 +406,31 @@
 $--color-white: #fff !default;
 $--color-black: #000 !default;
 
-$--color-primary: #00BCD6 !default; 
-$--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default; /* 1ac3da */
-$--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default; /* 33c9de */
-$--color-primary-light-3: mix($--color-white, $--color-primary, 30%) !default; /* 4dd0e2 */
-$--color-primary-light-4: mix($--color-white, $--color-primary, 40%) !default; /* 66d7e6 */
-$--color-primary-light-5: mix($--color-white, $--color-primary, 50%) !default; /* 80deeb */
-$--color-primary-light-6: mix($--color-white, $--color-primary, 60%) !default; /* 99e4ef */
-$--color-primary-light-7: mix($--color-white, $--color-primary, 70%) !default; /* b3ebf3 */
-$--color-primary-light-8: mix($--color-white, $--color-primary, 80%) !default; /* ccf2f7 */
-$--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default; /* e6f8fb */
+$--color-primary: #0988DE !default; 
+$--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default; /* #2294e1 */
+$--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default; /* #3aa0e5 */
+$--color-primary-light-3: mix($--color-white, $--color-primary, 30%) !default; /* #53ace8 */
+$--color-primary-light-4: mix($--color-white, $--color-primary, 40%) !default; /* #6bb8eb */
+$--color-primary-light-5: mix($--color-white, $--color-primary, 50%) !default; /* #84c4ef */
+$--color-primary-light-6: mix($--color-white, $--color-primary, 60%) !default; /* #9dcff2 */
+$--color-primary-light-7: mix($--color-white, $--color-primary, 70%) !default; /* #b5dbf5 */
+$--color-primary-light-8: mix($--color-white, $--color-primary, 80%) !default; /* #cee7f8 */
+$--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default; /* #e6f3fc */
 
 $--color-success: #4cb050 !default;
 $--color-warning: #F7BA2A !default;
 $--color-danger: #ff4159 !default;
 $--color-info: #909399 !default;
 
-$--color-success-light: mix($--color-white, $--color-success, 80%) !default; /* dbefdc */
-$--color-warning-light: mix($--color-white, $--color-warning, 80%) !default; /* fdf1d4 */
-$--color-danger-light: mix($--color-white, $--color-danger, 80%) !default; /* ffd9de */
-$--color-info-light: mix($--color-white, $--color-info, 80%) !default; /* e9e9eb */
+$--color-success-light: mix($--color-white, $--color-success, 80%) !default; /* #dbefdc */
+$--color-warning-light: mix($--color-white, $--color-warning, 80%) !default; /* #fdf1d4 */
+$--color-danger-light: mix($--color-white, $--color-danger, 80%) !default; /* #ffd9de */
+$--color-info-light: mix($--color-white, $--color-info, 80%) !default; /* #e9e9eb */
 
-$--color-success-lighter: mix($--color-white, $--color-success, 90%) !default; /* edf7ee */
-$--color-warning-lighter: mix($--color-white, $--color-warning, 90%) !default; /* fef8ea */
-$--color-danger-lighter: mix($--color-white, $--color-danger, 90%) !default; /* ffecee */
-$--color-info-lighter: mix($--color-white, $--color-info, 90%) !default; /* f4f4f5 */
+$--color-success-lighter: mix($--color-white, $--color-success, 90%) !default; /* #edf7ee */
+$--color-warning-lighter: mix($--color-white, $--color-warning, 90%) !default; /* #fef8ea */
+$--color-danger-lighter: mix($--color-white, $--color-danger, 90%) !default; /* #ffecee */
+$--color-info-lighter: mix($--color-white, $--color-info, 90%) !default; /* #f4f4f5 */
 
 $--color-text-primary: #263238 !default;
 $--color-text-regular: #455a64 !default;
@@ -439,8 +439,8 @@ $--color-text-placeholder: #cfd8dc !default;
 
 /* Link
 -------------------------- */
-$--link-color: $--color-primary-light-2 !default;
-$--link-hover-color: $--color-primary !default;
+$--link-color: $--color-primary-light-2 !default; /* #3aa0e5 */
+$--link-hover-color: $--color-primary !default; /* #0988DE */
 
 /* Background
 -------------------------- */
@@ -475,18 +475,17 @@ $--box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1) !default;
   <div class="bg-primary txt-white">白色 #ffffff</div>
   <div class="txt-black">黑色 #000000</div>
   <br>
-  <div class="txt-primary">主色 #00BCD6</div>
+  <div class="txt-primary">主色 #0988DE</div>
   <br>
-  <div >主色基础上混色，一般用于button的hover，active等状态时的颜色变化时</div>
-  <div class="txt-primary-light1">主色 混白色 10% #1ac3da</div>
-  <div class="txt-primary-light2">主色 混白色 20% #33c9de</div>
-  <div class="txt-primary-light3">主色 混白色 30% #4dd0e2</div>
-  <div class="txt-primary-light4">主色 混白色 40% #66d7e6</div>
-  <div class="txt-primary-light5">主色 混白色 50% #80deeb</div>
-  <div class="txt-primary-light6">主色 混白色 60% #99e4ef</div>
-  <div class="txt-primary-light7">主色 混白色 70% #b3ebf3</div>
-  <div class="txt-primary-light8">主色 混白色 80% #ccf2f7</div>
-  <div class="txt-primary-light9">主色 混白色 90% #e6f8fb</div>
+  <div class="txt-primary-light1">主色 混白色 10% #2294e1</div>
+  <div class="txt-primary-light2">主色 混白色 20% #3aa0e5</div>
+  <div class="txt-primary-light3">主色 混白色 30% #53ace8</div>
+  <div class="txt-primary-light4">主色 混白色 40% #6bb8eb</div>
+  <div class="txt-primary-light5">主色 混白色 50% #84c4ef</div>
+  <div class="txt-primary-light6">主色 混白色 60% #9dcff2</div>
+  <div class="txt-primary-light7">主色 混白色 70% #b5dbf5</div>
+  <div class="txt-primary-light8">主色 混白色 80% #cee7f8</div>
+  <div class="txt-primary-light9">主色 混白色 90% #e6f3fc</div>
   <br>
   <div class="txt-success">success #4cb050</div>
   <div class="txt-warning">warning #F7BA2A</div>
@@ -508,8 +507,8 @@ $--box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1) !default;
   <div class="txt-grey-secondary">灰色secondary #b0bec5</div>
   <div class="txt-grey-placeholder">灰色placeholder #cfd8dc</div>
   <br>
-  <div><a href="javascript:;" class="txt-link">链接 #33c9de</a></div>
-  <div><a href="javascript:;" class="txt-link-hover">链接hover时 #00BCD6</a></div>
+  <div><a href="javascript:;" class="txt-link">链接 #3aa0e5</a></div>
+  <div><a href="javascript:;" class="txt-link-hover">链接hover时 #0988DE</a></div>
 </div>
 
 
@@ -519,16 +518,16 @@ $--box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1) !default;
   <div class="bg-base" style="color:#00BCD6">基础背景色 #f5f7fa</div>
   <div class="bg-white" style="border:1px solid #00BCD6;color:#00BCD6">白色 #ffffff</div>
   <div class="bg-black">黑色 #000000</div>
-  <div class="bg-primary">主色 #00BCD6</div>
-  <div class="bg-primary-light1">主色 混白色 10% #1ac3da</div>
-  <div class="bg-primary-light2">主色 混白色 20% #33c9de</div>
-  <div class="bg-primary-light3">主色 混白色 30% #4dd0e2</div>
-  <div class="bg-primary-light4">主色 混白色 40% #66d7e6</div>
-  <div class="bg-primary-light5">主色 混白色 50% #80deeb</div>
-  <div class="bg-primary-light6">主色 混白色 60% #99e4ef</div>
-  <div class="bg-primary-light7">主色 混白色 70% #b3ebf3</div>
-  <div class="bg-primary-light8">主色 混白色 80% #ccf2f7</div>
-  <div class="bg-primary-light9">主色 混白色 90% #e6f8fb</div>
+  <div class="bg-primary">主色 #0988DE</div>
+  <div class="bg-primary-light1">主色 混白色 10% #2294e1</div>
+  <div class="bg-primary-light2">主色 混白色 20% #3aa0e5</div>
+  <div class="bg-primary-light3">主色 混白色 30% #53ace8</div>
+  <div class="bg-primary-light4">主色 混白色 40% #6bb8eb</div>
+  <div class="bg-primary-light5">主色 混白色 50% #84c4ef</div>
+  <div class="bg-primary-light6">主色 混白色 60% #9dcff2</div>
+  <div class="bg-primary-light7">主色 混白色 70% #b5dbf5</div>
+  <div class="bg-primary-light8">主色 混白色 80% #cee7f8</div>
+  <div class="bg-primary-light9">主色 混白色 90% #e6f3fc</div>
   <div class="bg-success">success #4cb050</div>
   <div class="bg-warning">warning #F7BA2A</div>
   <div class="bg-danger">danger #ff4159</div>
