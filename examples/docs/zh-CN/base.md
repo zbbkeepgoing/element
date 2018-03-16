@@ -377,6 +377,8 @@
 为了各项目线统一使用css变量，所以可以再项目中直接引用kyligence-ui的变量文件var.scss；
 因为var.scss在node_modules文件夹中，如果使用的地方都要引用一次，写的路径就特别长，而且每次都要检查路径是否正确，为了方便起见，所以在项目的webpack.base.conf.js文件中配置别名
 
+### 使用scss的项目中的配置
+
 #### webpack 配置如下
 
 ```js
@@ -391,7 +393,7 @@
 ```
 （1）默认生成的conf文件的extensions这个属性是没有scss这一项的，现在针对scss文件也要用别名引入，所以需要在这里加入
 
-（2）alias下的themescss，就是针对样式scss源文件的文件路径的别名配置
+（2）alias下的themescss，就是针对样式源文件的文件路径的别名配置
 
 #### 实际业务代码中配置如下
 ```scss
@@ -399,7 +401,7 @@
 ```
 针对这一配置，参考的相关教程：https://www.jianshu.com/p/901c7eaed40f，因为css的别名配置和js部分不太一样。
 
-### 常用的变量：如颜色，字号，边框色
+#### 具体变量
 ```scss
 /* Colors
 -------------------------- */
@@ -465,7 +467,137 @@ $--border-radius-circle: 100% !default;
 $--box-shadow-base: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04) !default;
 $--box-shadow-dark: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .12) !default;
 $--box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1) !default;
+
+/* Font
+-------------------------- */
+$--font-path: 'fonts' !default;
+$--font-size-base: 14px !default;
+$--font-size-small: 13px !default;
+$--font-size-large: 18px !default;
+$--font-color-disabled-base: #bbb !default;
+$--font-weight-primary: 500 !default;
+$--font-line-height-primary: 24px !default;
+
+/* Size
+-------------------------- */
+$--size-base: 14px !default;
+
+/* z-index
+-------------------------- */
+$--index-normal: 1 !default;
+$--index-top: 1000 !default;
+$--index-popper: 2000 !default;
 ```
+
+### 使用less的项目中的配置
+#### webpack 配置如下
+
+```js
+  resolve: {
+    extensions: ['.js', '.vue', '.less', '.json'],
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js',
+      '@': resolve('src'),
+      'themescss': resolve('node_modules/kyligence-ui/packages/theme-chalk/src')
+    }
+  }
+```
+（1）默认生成的conf文件的extensions这个属性是没有less这一项的，现在针对less文件也要用别名引入，所以需要在这里加入
+
+（2）alias下的themescss，就是针对样式源文件的文件路径的别名配置
+
+#### 实际业务代码中配置如下
+```less
+@import '~themescss/common/varless.less';
+```
+#### 具体变量
+```less
+/* Colors
+-------------------------- */
+@color-white: #fff;
+@color-black: #000;
+
+@color-primary: #0988DE; 
+@color-primary-light-1: mix(@color-white, @color-primary, 10%); /* #2294e1 */
+@color-primary-light-2: mix(@color-white, @color-primary, 20%); /* #3aa0e5 */
+@color-primary-light-3: mix(@color-white, @color-primary, 30%); /* #53ace8 */
+@color-primary-light-4: mix(@color-white, @color-primary, 40%); /* #6bb8eb */
+@color-primary-light-5: mix(@color-white, @color-primary, 50%); /* #84c4ef */
+@color-primary-light-6: mix(@color-white, @color-primary, 60%); /* #9dcff2 */
+@color-primary-light-7: mix(@color-white, @color-primary, 70%); /* #b5dbf5 */
+@color-primary-light-8: mix(@color-white, @color-primary, 80%); /* #cee7f8 */
+@color-primary-light-9: mix(@color-white, @color-primary, 90%); /* #e6f3fc */
+
+@color-success: #4cb050;
+@color-warning: #F7BA2A;
+@color-danger: #ff4159;
+@color-info: #909399;
+
+@color-success-light: mix(@color-white, @color-success, 80%); /* #dbefdc */
+@color-warning-light: mix(@color-white, @color-warning, 80%); /* #fdf1d4 */
+@color-danger-light: mix(@color-white, @color-danger, 80%); /* #ffd9de */
+@color-info-light: mix(@color-white, @color-info, 80%); /* #e9e9eb */
+
+@color-success-lighter: mix(@color-white, @color-success, 90%); /* #edf7ee */
+@color-warning-lighter: mix(@color-white, @color-warning, 90%); /* #fef8ea */
+@color-danger-lighter: mix(@color-white, @color-danger, 90%); /* #ffecee */
+@color-info-lighter: mix(@color-white, @color-info, 90%); /* #f4f4f5 */
+
+@color-text-primary: #263238;
+@color-text-regular: #455a64;
+@color-text-secondary: #b0bec5;
+@color-text-placeholder: #cfd8dc;
+
+/* Link
+-------------------------- */
+@link-color: @color-primary-light-2; /* #3aa0e5 */
+@link-hover-color: @color-primary; /* #0988DE */
+
+/* Background
+-------------------------- */
+@background-color-base: #f5f7fa;
+
+/* Border
+-------------------------- */
+@border-width-base: 1px;
+@border-style-base: solid;
+@border-color-base: #dcdfe6;
+@border-color-light: #e4e7ed;
+@border-color-lighter: #ebeef5;
+@border-color-extra-light: #f2f6fc;
+@border-color-hover: @color-text-placeholder;
+@border-base: @border-width-base @border-style-base @border-color-base;
+@border-radius-base: 2px;
+@border-radius-small: 2px;
+@border-radius-circle: 100%;
+
+/* Box-shadow
+-------------------------- */
+@box-shadow-base: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+@box-shadow-dark: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .12);
+@box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+
+/* Font
+-------------------------- */
+@font-path: 'fonts';
+@font-size-base: 14px;
+@font-size-small: 13px;
+@font-size-large: 18px;
+@font-color-disabled-base: #bbb;
+@font-weight-primary: 500;
+@font-line-height-primary: 24px;
+
+/* Size
+-------------------------- */
+@size-base: 14px;
+
+/* z-index
+-------------------------- */
+@index-normal: 1;
+@index-top: 1000;
+@index-popper: 2000;
+```
+与scss版本中变量的区别就是，scss中是以$--为开头，less中是以@开头。
 
 ### 基于变量使用后的效果，方便开发时，快速定位变量
 
