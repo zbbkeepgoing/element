@@ -9,7 +9,7 @@
     }
     .el-dropdown-link {
       cursor: pointer;
-      color: #00bcd6;
+      color: #0988DE;
     }
     .el-icon-arrow-down {
       font-size: 12px;
