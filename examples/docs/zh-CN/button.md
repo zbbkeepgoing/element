@@ -145,6 +145,18 @@
   <el-button round @click="changeLang('zh')" :class="{'active':lang=='zh'}">中文</el-button>
 </el-button-group>
 <el-button-group>
+  <el-button size="medium" round @click="changeLang('en')" :class="{'active':lang=='en'}">EN</el-button>
+  <el-button size="medium" round @click="changeLang('zh')" :class="{'active':lang=='zh'}">中文</el-button>
+</el-button-group>
+<el-button-group>
+  <el-button size="small" round @click="changeLang('en')" :class="{'active':lang=='en'}">EN</el-button>
+  <el-button size="small" round @click="changeLang('zh')" :class="{'active':lang=='zh'}">中文</el-button>
+</el-button-group>
+<el-button-group>
+  <el-button size="mini" round @click="changeLang('en')" :class="{'active':lang=='en'}">EN</el-button>
+  <el-button size="mini" round @click="changeLang('zh')" :class="{'active':lang=='zh'}">中文</el-button>
+</el-button-group>
+<el-button-group>
   <el-button type="primary" icon="el-icon-arrow-left">上一页</el-button>
   <el-button type="primary">下一页<i class="el-icon-arrow-right el-icon--right"></i></el-button>
 </el-button-group>
