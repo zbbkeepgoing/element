@@ -213,6 +213,16 @@
 
     &.el-button--default.is-round {
       border: 1px solid #CFD8DC;
+      min-width: 60px;
+      &.el-button--medium {
+        min-width: 50px;
+      }
+      &.el-button--small {
+        min-width: 42px;
+      }
+      &.el-button--mini {
+        min-width: 42px;
+      }
       &:hover {
         color: $--color-text-regular;
         background-color: $--color-white;
