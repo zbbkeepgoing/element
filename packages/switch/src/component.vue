@@ -155,7 +155,7 @@
     },
     mounted() {
       /* istanbul ignore if */
-      this.coreWidth = this.width || 40;
+      this.coreWidth = this.width || 56;
       if (this.activeColor || this.inactiveColor) {
         this.setBackgroundColor();
       }
