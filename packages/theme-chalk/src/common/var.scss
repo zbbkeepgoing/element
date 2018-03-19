@@ -457,10 +457,10 @@ $--switch-off-color: $--border-color-base !default;
 $--switch-disabled-color: $--border-color-lighter !default;
 $--switch-disabled-text-color: $--color-text-placeholder !default;
 
-$--switch-font-size: $--font-size-base !default;
-$--switch-core-border-radius: 10px !default;
-$--switch-width: 40px !default;
-$--switch-height: 20px !default;
+$--switch-font-size: 12px !default;
+$--switch-core-border-radius: 22px !default;
+$--switch-width: 56px !default;
+$--switch-height: 22px !default;
 $--switch-button-size: 16px !default;
 
 /* Dialog
@@ -476,7 +476,7 @@ $--dialog-padding-primary: 20px !default;
 /* Table
 -------------------------- */
 $--table-border:  1px solid $--border-color-lighter !default;
-$--table-text-color: $--color-text-regular !default;
+$--table-text-color: $--color-text-primary !default;
 $--table-header-color: $--color-text-regular !default;
 $--table-row-hover-background: $--color-primary-light-9 !default;
 $--table-current-row-background: $--color-primary-light-9 !default;
