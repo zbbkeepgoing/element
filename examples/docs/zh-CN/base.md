@@ -7,6 +7,19 @@
   color: #000
 }
 
+.txt-grey-1{
+  color:#BDBDBD;
+}
+.txt-grey-2{
+  color:#EEEEEE;
+}
+.txt-grey-3{
+  color:#E2ECF1;
+}
+.txt-grey-4{
+  color:#F1F7FA;
+}
+
 .txt-primary {
   color: #0988DE
 }
@@ -129,6 +142,19 @@
 
 .bg-black {
   background-color: #000
+}
+
+.bg-grey-1{
+  background-color:#BDBDBD;
+}
+.bg-grey-2{
+  background-color:#EEEEEE;
+}
+.bg-grey-3{
+  background-color:#E2ECF1;
+}
+.bg-grey-4{
+  background-color:#F1F7FA;
 }
 
 .bg-primary {
@@ -396,6 +422,11 @@
 $--color-white: #fff !default;
 $--color-black: #000 !default;
 
+$--color-grey-1: #BDBDBD !default;
+$--color-grey-2: #EEEEEE !default;
+$--color-grey-3: #E2ECF1 !default;
+$--color-grey-4: #F1F7FA !default;
+
 $--color-primary: #0988DE !default; 
 $--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default; /* #2294e1 */
 $--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default; /* #3aa0e5 */
@@ -435,6 +466,7 @@ $--link-hover-color: $--color-primary !default; /* #0988DE */
 /* Background
 -------------------------- */
 $--background-color-base: #f5f7fa !default;
+$--background-color-light: #F9FBFC !default;
 
 /* Border
 -------------------------- */
@@ -507,6 +539,11 @@ $--index-popper: 2000 !default;
 @color-white: #fff;
 @color-black: #000;
 
+@color-grey-1: #BDBDBD;
+@color-grey-2: #EEEEEE;
+@color-grey-3: #E2ECF1;
+@color-grey-4: #F1F7FA;
+
 @color-primary: #0988DE; 
 @color-primary-light-1: mix(@color-white, @color-primary, 10%); /* #2294e1 */
 @color-primary-light-2: mix(@color-white, @color-primary, 20%); /* #3aa0e5 */
@@ -546,6 +583,7 @@ $--index-popper: 2000 !default;
 /* Background
 -------------------------- */
 @background-color-base: #f5f7fa;
+@background-color-light: #F9FBFC;
 
 /* Border
 -------------------------- */
@@ -601,6 +639,11 @@ $--index-popper: 2000 !default;
   <br>
   <div class="txt-primary">主色 #0988DE</div>
   <br>
+  <div class="txt-grey-1">灰色1 #BDBDBD</div>
+  <div class="txt-grey-2">灰色2 #EEEEEE</div>
+  <div class="txt-grey-3">灰色3 #E2ECF1</div>
+  <div class="txt-grey-4">灰色4 #F1F7FA</div>
+  <br>
   <div class="txt-primary-light1">主色 混白色 10% #2294e1</div>
   <div class="txt-primary-light2">主色 混白色 20% #3aa0e5</div>
   <div class="txt-primary-light3">主色 混白色 30% #53ace8</div>
@@ -643,6 +686,10 @@ $--index-popper: 2000 !default;
   <div class="bg-white" style="border:1px solid #00BCD6;color:#00BCD6">白色 #ffffff</div>
   <div class="bg-black">黑色 #000000</div>
   <div class="bg-primary">主色 #0988DE</div>
+  <div class="bg-grey-1">灰色1 #BDBDBD</div>
+  <div class="bg-grey-2">灰色2 #EEEEEE</div>
+  <div class="bg-grey-3">灰色3 #E2ECF1</div>
+  <div class="bg-grey-4">灰色4 #F1F7FA</div>
   <div class="bg-primary-light1">主色 混白色 10% #2294e1</div>
   <div class="bg-primary-light2">主色 混白色 20% #3aa0e5</div>
   <div class="bg-primary-light3">主色 混白色 30% #53ace8</div>

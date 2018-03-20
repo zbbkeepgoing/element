@@ -2,7 +2,7 @@
   module.exports = {
     data() {
       return {
-        lang: 'zh'
+        lang: 'zh-cn'
       }
     },
     methods: {
