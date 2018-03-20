@@ -235,18 +235,6 @@
   background-color: #cfd8dc
 }
 
-.ky-font-base {
-  font-size: 14px
-}
-
-.ky-font-small {
-  font-size: 13px
-}
-
-.ky-font-large {
-  font-size: 18px
-}
-
 .bd-base {
   border: 1px solid #dcdfe6
 }
@@ -344,7 +332,7 @@
 .demo-color-box{
   padding:0 15px;
 }
-.demo-bg-box{
+.demo-bg-box-1{
     display: flex;
     flex-wrap: wrap;
     padding:0 15px;
@@ -473,6 +461,8 @@ $--box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1) !default;
 $--font-path: 'fonts' !default;
 $--font-size-base: 14px !default;
 $--font-size-small: 13px !default;
+$--font-size-extra-small: 12px !default;
+$--font-size-medium: 16px !default;
 $--font-size-large: 18px !default;
 $--font-color-disabled-base: #bbb !default;
 $--font-weight-primary: 500 !default;
@@ -582,6 +572,8 @@ $--index-popper: 2000 !default;
 @font-path: 'fonts';
 @font-size-base: 14px;
 @font-size-small: 13px;
+@font-size-extra-small: 12px !default;
+@font-size-medium: 16px !default;
 @font-size-large: 18px;
 @font-color-disabled-base: #bbb;
 @font-weight-primary: 500;
@@ -603,7 +595,7 @@ $--index-popper: 2000 !default;
 
 #### 在字体上使用
 
-<div style="margin: 20px 0" class="demo-color-box">
+<div style="margin: 20px 0" class="demo-color-box-1">
   <div class="bg-primary txt-white">白色 #ffffff</div>
   <div class="txt-black">黑色 #000000</div>
   <br>
@@ -646,7 +638,7 @@ $--index-popper: 2000 !default;
 
 #### 在背景上使用
 
-<div style="margin: 20px 0" class="demo-bg-box">
+<div style="margin: 20px 0" class="demo-bg-box-1">
   <div class="bg-base" style="color:#00BCD6">基础背景色 #f5f7fa</div>
   <div class="bg-white" style="border:1px solid #00BCD6;color:#00BCD6">白色 #ffffff</div>
   <div class="bg-black">黑色 #000000</div>
@@ -676,14 +668,6 @@ $--index-popper: 2000 !default;
   <div class="bg-grey-regular">灰色regular #455a64</div>
   <div class="bg-grey-secondary">灰色secondary #b0bec5</div>
   <div class="bg-grey-placeholder">灰色placeholder #cfd8dc</div>
-</div>
-
-#### 字号
-
-<div style="margin: 20px 0">
-  <div class="ky-font-base">我是基础字号14px</div>
-  <div class="ky-font-small">我是small字号13px</div>
-  <div class="ky-font-large">我是large字号18px</div>
 </div>
 
 #### 边框色
