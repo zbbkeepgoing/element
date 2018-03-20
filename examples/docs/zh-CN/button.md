@@ -104,7 +104,7 @@
 
 没有边框和背景色的按钮。
 
-:::demo
+:::demo 你可以使用`text`属性来定义按钮是否是文本样式，它接受一个`Boolean`值。
 ```html
 <div style="margin: 20px 0">
   <el-button type="primary" text>主要按钮</el-button>
@@ -141,22 +141,6 @@
 ```html
 <div>
 <el-button-group>
-  <el-button round @click="changeLang('en')" :class="{'active':lang=='en'}">EN</el-button>
-  <el-button round @click="changeLang('zh')" :class="{'active':lang=='zh'}">中文</el-button>
-</el-button-group>
-<el-button-group>
-  <el-button size="medium" round @click="changeLang('en')" :class="{'active':lang=='en'}">EN</el-button>
-  <el-button size="medium" round @click="changeLang('zh')" :class="{'active':lang=='zh'}">中文</el-button>
-</el-button-group>
-<el-button-group>
-  <el-button size="small" round @click="changeLang('en')" :class="{'active':lang=='en'}">EN</el-button>
-  <el-button size="small" round @click="changeLang('zh')" :class="{'active':lang=='zh'}">中文</el-button>
-</el-button-group>
-<el-button-group>
-  <el-button size="mini" round @click="changeLang('en')" :class="{'active':lang=='en'}">EN</el-button>
-  <el-button size="mini" round @click="changeLang('zh')" :class="{'active':lang=='zh'}">中文</el-button>
-</el-button-group>
-<el-button-group>
   <el-button type="primary" icon="el-icon-arrow-left">上一页</el-button>
   <el-button type="primary">下一页<i class="el-icon-arrow-right el-icon--right"></i></el-button>
 </el-button-group>
@@ -166,11 +150,65 @@
   <el-button type="primary" icon="el-icon-delete"></el-button>
 </el-button-group>
 </div>
+```
+:::
+
+### 按钮组 - 特殊场景 - 中英文切换
+
+利用按钮组扩展出来的中英文切换按钮，因为`<el-button-group>`标签里面嵌套的也是`<el-button>`标签，所以可以利用属性size实现按钮的大小控制。
+因为在实际使用中，中英文切换时，中文的键值对的健名是zh-cn，所以这边使用时，changLang的方法中参数要设置成zh-cn，class的判断处也是取值zh-cn。
+主要是为了和语言配置这边搭配使用：
+
+```js
+// 下面是伪代码，只为说明
+// VueI18n 配置处
+import VueI18n from 'vue-i18n'
+import enLocale from 'kyligence-ui/lib/locale/lang/en'
+import zhLocale from 'kyligence-ui/lib/locale/lang/zh-CN'
+import enKyAccountLocale from './locale/en'
+import zhKyAccountLocale from './locale/zh-CN'
+Vue.use(VueI18n)
+enLocale.kyAccountLang = enKyAccountLocale.default
+zhLocale.kyAccountLang = zhKyAccountLocale.default
+Vue.locale('en', enLocale)
+Vue.locale('zh-cn', zhLocale)
+
+// 组件中的中英文配置处
+locales: {
+  'en': {
+    text: 'text'
+  },
+  'zh-cn': {
+    text: '文本'
+  }
+}
+```
+:::demo 支持的尺寸：`medium`、`small`、`mini`，通过设置`size`属性来配置它们，默认是最大号的尺寸。
+
+```html
+<div>
+<el-button-group>
+  <el-button round @click="changeLang('en')" :class="{'active':lang=='en'}">EN</el-button>
+  <el-button round @click="changeLang('zh-cn')" :class="{'active':lang=='zh-cn'}">中文</el-button>
+</el-button-group>
+<el-button-group>
+  <el-button size="medium" round @click="changeLang('en')" :class="{'active':lang=='en'}">EN</el-button>
+  <el-button size="medium" round @click="changeLang('zh-cn')" :class="{'active':lang=='zh-cn'}">中文</el-button>
+</el-button-group>
+<el-button-group>
+  <el-button size="small" round @click="changeLang('en')" :class="{'active':lang=='en'}">EN</el-button>
+  <el-button size="small" round @click="changeLang('zh-cn')" :class="{'active':lang=='zh-cn'}">中文</el-button>
+</el-button-group>
+<el-button-group>
+  <el-button size="mini" round @click="changeLang('en')" :class="{'active':lang=='en'}">EN</el-button>
+  <el-button size="mini" round @click="changeLang('zh-cn')" :class="{'active':lang=='zh-cn'}">中文</el-button>
+</el-button-group>
+</div>
 <script>
   export default {
     data () {
       return {
-        lang: 'zh'
+        lang: 'zh-cn'
       };
     },
     methods: {
