@@ -45,7 +45,7 @@
           "list": [
             {
               "path": "/base",
-              "title": "scss变量使用说明"
+              "title": "基础变量配置说明"
             },
             {
               "path": "/layout",
