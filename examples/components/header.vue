@@ -264,14 +264,18 @@
         <h1><router-link :to="`/${ lang }`">
           <!-- logo -->
           <slot>
-            <img
+            <img src="../assets/images/logo-text-blue.png" alt="element-logo"
+              class="nav-logo" style="height:2.375rem;">
+              <img src="../assets/images/kyligence.png" alt="element-logo"
+              class="nav-logo-small" style="height:1.875rem;">
+            <!-- <img
               src="../assets/images/element-logo.svg"
               alt="element-logo"
               class="nav-logo">
             <img
               src="../assets/images/element-logo-small.svg"
               alt="element-logo"
-              class="nav-logo-small">
+              class="nav-logo-small"> -->
           </slot>
 
         </router-link></h1>
@@ -281,25 +285,25 @@
           <li class="nav-item nav-algolia-search" v-show="isComponentPage">
             <algolia-search></algolia-search>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <router-link
               active-class="active"
               :to="`/${ lang }/guide`">{{ langConfig.guide }}
             </router-link>
-          </li>
+          </li> -->
           <li class="nav-item">
             <router-link
               active-class="active"
               :to="`/${ lang }/component`">{{ langConfig.components }}
             </router-link>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <router-link
               active-class="active"
               :to="`/${ lang }/resource`"
               exact>{{ langConfig.resource }}
             </router-link>
-          </li>
+          </li> -->
 
           <!-- gap -->
           <li class="nav-item" v-show="isComponentPage">
@@ -355,9 +359,9 @@
           </li>
           
           <!--theme picker-->
-          <li class="nav-item nav-theme-switch" v-show="isComponentPage">
+          <!-- <li class="nav-item nav-theme-switch" v-show="isComponentPage">
             <theme-picker></theme-picker>
-          </li>
+          </li> -->
         </ul>
       </div>
     </header>

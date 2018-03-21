@@ -1,24 +1,12 @@
 {
   "zh-CN": [
     {
-      "name": "更新日志",
-      "path": "/changelog"
-    },
-    {
-      "name": "Element React",
-      "href": "https://eleme.github.io/element-react/"
-    },
-    {
-      "name": "Element Angular",
-      "href": "https://element-angular.faas.ele.me/"
+      "name": "写给组件维护开发者",
+      "path": "/to-developers"
     },
     {
       "name": "开发指南",
       "children": [
-        {
-          "path": "/to-developers",
-          "name": "写给组件维护开发者"
-        },
         {
           "path": "/installation",
           "name": "安装"
@@ -259,16 +247,8 @@
   ],
   "en-US": [
     {
-      "name": "Changelog",
-      "path": "/changelog"
-    },
-    {
-      "name": "Element React",
-      "href": "https://eleme.github.io/element-react/"
-    },
-    {
-      "name": "Element Angular",
-      "href": "https://element-angular.faas.ele.me/"
+      "name": "To Developers",
+      "path": "/to-developers"
     },
     {
       "name": "Development",
@@ -509,16 +489,8 @@
   ],
   "es": [
     {
-      "name": "Changelog",
-      "path": "/changelog"
-    },
-    {
-      "name": "Element React",
-      "href": "https://eleme.github.io/element-react/"
-    },
-    {
-      "name": "Element Angular",
-      "href": "https://element-angular.faas.ele.me/"
+      "name": "To Developers",
+      "path": "/to-developers"
     },
     {
       "name": "Development",
