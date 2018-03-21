@@ -59,12 +59,13 @@ $--link-hover-color: $--color-primary !default;
 -------------------------- */
 $--background-color-base: #f5f7fa !default;
 $--background-color-light: #F9FBFC !default;
+$--background-color-regular: #E2ECF1 !default;
 
 /* Border
 -------------------------- */
 $--border-width-base: 1px !default;
 $--border-style-base: solid !default;
-$--border-color-base: #dcdfe6 !default;
+$--border-color-base: #cfd8dc !default;
 $--border-color-light: #e4e7ed !default;
 $--border-color-lighter: #ebeef5 !default;
 $--border-color-extra-light: #f2f6fc !default;
@@ -483,12 +484,12 @@ $--dialog-padding-primary: 20px !default;
 
 /* Table
 -------------------------- */
-$--table-border:  1px solid $--border-color-lighter !default;
+$--table-border:  1px solid $--border-color-base !default;
 $--table-text-color: $--color-text-primary !default;
 $--table-header-color: $--color-text-regular !default;
 $--table-row-hover-background: $--color-primary-light-9 !default;
 $--table-current-row-background: $--color-primary-light-9 !default;
-$--table-header-background: $--background-color-base !default;
+$--table-header-background: $--background-color-regular !default;
 $--table-footer-background: $--color-text-placeholder !default;
 $--table-fixed-box-shadow: 0 0 10px rgba(0, 0, 0, .12) !default;
 
