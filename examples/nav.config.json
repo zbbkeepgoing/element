@@ -16,6 +16,10 @@
       "name": "开发指南",
       "children": [
         {
+          "path": "/to-developers",
+          "name": "写给组件维护开发者"
+        },
+        {
           "path": "/installation",
           "name": "安装"
         },
