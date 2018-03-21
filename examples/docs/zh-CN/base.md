@@ -262,23 +262,23 @@
 }
 
 .bd-base {
-  border: 1px solid #dcdfe6
+  border: 1px solid #cfd8dc
 }
 
 .bd-base-t {
-  border-top: 1px solid #dcdfe6
+  border-top: 1px solid #cfd8dc
 }
 
 .bd-base-r {
-  border-right: 1px solid #dcdfe6
+  border-right: 1px solid #cfd8dc
 }
 
 .bd-base-b {
-  border-bottom: 1px solid #dcdfe6
+  border-bottom: 1px solid #cfd8dc
 }
 
 .bd-base-l {
-  border-left: 1px solid #dcdfe6
+  border-left: 1px solid #cfd8dc
 }
 
 .bd-light {
@@ -467,12 +467,13 @@ $--link-hover-color: $--color-primary !default; /* #0988DE */
 -------------------------- */
 $--background-color-base: #f5f7fa !default;
 $--background-color-light: #F9FBFC !default;
+$--background-color-regular: #E2ECF1 !default;
 
 /* Border
 -------------------------- */
 $--border-width-base: 1px !default;
 $--border-style-base: solid !default;
-$--border-color-base: #dcdfe6 !default;
+$--border-color-base: #cfd8dc !default;
 $--border-color-light: #e4e7ed !default;
 $--border-color-lighter: #ebeef5 !default;
 $--border-color-extra-light: #f2f6fc !default;
@@ -584,12 +585,13 @@ $--index-popper: 2000 !default;
 -------------------------- */
 @background-color-base: #f5f7fa;
 @background-color-light: #F9FBFC;
+@background-color-regular: #E2ECF1;
 
 /* Border
 -------------------------- */
 @border-width-base: 1px;
 @border-style-base: solid;
-@border-color-base: #dcdfe6;
+@border-color-base: #cfd8dc;
 @border-color-light: #e4e7ed;
 @border-color-lighter: #ebeef5;
 @border-color-extra-light: #f2f6fc;
@@ -720,7 +722,7 @@ $--index-popper: 2000 !default;
 #### 边框色
 
 <div style="margin: 20px 0" class="boder-demo">
-  <div class="bd-base">基础色边框 #dcdfe6</div>
+  <div class="bd-base">基础色边框 #cfd8dc</div>
   <br>
   <div class="bd-light">light 边框 #e4e7ed</div>
   <br>
