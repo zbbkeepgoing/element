@@ -14,6 +14,10 @@
   display: flex;
   align-items: center;
   transition: opacity .2s;
+  color: $--color-text-primary;
+  .el-alert__description {
+    color: $--color-text-primary;
+  }
 
   @include when(center) {
     justify-content: center;
@@ -21,36 +25,36 @@
 
   @include m(success) {
     background-color: $--alert-success-color;
-    color: $--color-success;
+    // color: $--color-success;
 
-    .el-alert__description {
+    .el-alert__icon {
       color: $--color-success;
     }
   }
 
   @include m(info) {
     background-color: $--alert-info-color;
-    color: $--color-info;
+    // color: $--color-info;
 
-    .el-alert__description {
+    .el-alert__icon {
       color: $--color-info;
     }
   }
 
   @include m(warning) {
     background-color: $--alert-warning-color;
-    color: $--color-warning;
+    // color: $--color-warning;
 
-    .el-alert__description {
+    .el-alert__icon {
       color: $--color-warning;
     }
   }
 
   @include m(error) {
     background-color: $--alert-danger-color;
-    color: $--color-danger;
+    // color: $--color-danger;
 
-    .el-alert__description {
+    .el-alert__icon {
       color: $--color-danger;
     }
   }
