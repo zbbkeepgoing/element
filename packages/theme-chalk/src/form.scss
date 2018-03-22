@@ -37,7 +37,7 @@
   }
 }
 @include b(form-item) {
-  margin-bottom: 22px;
+  margin-bottom: 30px;
   @include utils-clearfix;
 
   & .el-form-item {
@@ -64,7 +64,7 @@
       line-height: 32px;
     }
     &.el-form-item {
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
     .el-form-item__error {
       padding-top: 2px;
@@ -78,7 +78,7 @@
       line-height: 28px;
     }
     &.el-form-item {
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
     .el-form-item__error {
       padding-top: 1px;
