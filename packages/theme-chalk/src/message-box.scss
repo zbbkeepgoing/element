@@ -76,7 +76,7 @@
 
   @include e(content) {
     position: relative;
-    padding: 10px $--msgbox-padding-primary;
+    padding: $--msgbox-padding-primary;
     color: $--msgbox-content-color;
     font-size: $--msgbox-content-font-size;
   }
@@ -94,8 +94,8 @@
 
   @include e(status) {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 20px;
+    // transform: translateY(-50%);
     font-size: 24px !important;
 
     &::before {
@@ -142,7 +142,7 @@
   }
 
   @include e(btns) {
-    padding: 5px 15px 0;
+    padding: 30px 20px 6px;
     text-align: right;
 
     & button:nth-child(2) {
