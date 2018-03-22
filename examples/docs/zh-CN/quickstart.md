@@ -2,23 +2,6 @@
 
 本节将介绍如何在项目中使用 Element。
 
-### 使用 Starter Kit
-
-我们提供了通用的[项目模板](https://github.com/ElementUI/element-starter)，你可以直接使用。对于 Laravel 用户，我们也准备了相应的[模板](https://github.com/ElementUI/element-in-laravel-starter)，同样可以直接下载使用。
-
-如果不希望使用我们提供的模板，请继续阅读。
-
-### 使用 vue-cli
-
-我们还可以使用 [vue-cli](https://github.com/vuejs/vue-cli) 初始化项目，命令如下：
-
-```shell
-> npm i -g vue-cli
-> mkdir my-project && cd my-project
-> vue init webpack
-> npm i && npm i kyligence-ui
-```
-
 ### 引入 Element
 
 你可以引入整个 Element，或是根据需要仅引入部分组件。我们先介绍如何引入完整的 Element。
@@ -85,7 +68,7 @@ new Vue({
 })
 ```
 
-完整组件列表和引入方式（完整组件列表以 [components.json](https://github.com/ElemeFE/element/blob/master/components.json) 为准）
+完整组件列表和引入方式（完整组件列表以 [components.json](https://github.com/Kyligence/element/blob/dev/components.json) 为准）
 
 ```javascript
 import Vue from 'vue'
@@ -253,17 +236,4 @@ Vue.use(Button)
 ```
 按照以上设置，项目中所有拥有 `size` 属性的组件的默认尺寸均为 'small'。
 
-### 开始使用
-
-至此，一个基于 Vue 和 Element 的开发环境已经搭建完毕，现在就可以编写代码了。启动开发模式：
-
-```bash
-npm run dev
-```
-
-编译：
-
-```bash
-npm run build
-```
 各个组件的使用方法请参阅它们各自的文档。
