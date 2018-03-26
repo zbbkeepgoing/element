@@ -3,7 +3,7 @@
   module.exports = {
     data() {
       return {
-        checkList: ['选中且禁用','复选框 A'],
+        checkList: ['选中且禁用', 1],
         // checkList2: ['复选框 A'],
         checked: true,
         checked1: false,
@@ -96,12 +96,16 @@
 
 适用于多个勾选框绑定到同一个数组的情景，通过是否勾选来表示这一组选项中选中的项。
 
+:::tip
+和单选按钮一样，model中的对应值，和label的比对是===的比较，需要类型和值都相等才会匹配上。
+:::
+
 :::demo `checkbox-group`元素能把多个 checkbox 管理为一组，只需要在 Group 中使用`v-model`绑定`Array`类型的变量即可。 `el-checkbox` 的 `label`属性是该 checkbox 对应的值，若该标签中无内容，则该属性也充当 checkbox 按钮后的介绍。`label`与数组中的元素值相对应，如果存在指定的值则为选中状态，否则为不选中。
 
 ```html
 <template>
   <el-checkbox-group v-model="checkList">
-    <el-checkbox label="复选框 A"></el-checkbox>
+    <el-checkbox :label="1"></el-checkbox><!-- 这里是为了用来说明是===比对，所以将label设置成prop传值方式 -->
     <el-checkbox label="复选框 B"></el-checkbox>
     <el-checkbox label="复选框 C"></el-checkbox>
     <el-checkbox label="禁用" disabled></el-checkbox>
@@ -113,7 +117,7 @@
   export default {
     data () {
       return {
-        checkList: ['选中且禁用','复选框 A']
+        checkList: ['选中且禁用',1]
       };
     }
   };
