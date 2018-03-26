@@ -3,6 +3,7 @@
     data() {
       return {
         radio: '1',
+        radioProp: 1,
         radio1: '选中且禁用',
         radio2: 3,
         radio3: '上海',
@@ -12,8 +13,19 @@
         radio7: '1',
         radio8: '1',
         radio9: '1',
-        radio10: '1'
+        radio10: '1',
+        radioLiandong: 3,
+        otherDate: {
+          3: {value: '我是根据选项一遍历出来的值'},
+          6: {value: '我是根据选项二遍历出来的值'},
+          9: {value: '我是根据选项三遍历出来的值'}
+        }
       };
+    },
+    methods: {
+      checkLable (value) {
+        alert(this.otherDate[value].value);
+      }
     }
   };
 </script>
@@ -39,6 +51,32 @@
     data () {
       return {
         radio: '1'
+      };
+    }
+  }
+</script>
+```
+:::
+
+注意点：
+
+(1)单选框中v-model中变量的值的类型，要和label中的值的类型保持一致，比如上面的例子，label中的值是字符串类型，在js代码中data中定义model里的radio的值，如果设置为数字类型，那就会导致单选按钮选不中的情况。
+
+(2)如果label是以prop的形式传值，这时候值就是对应的类型，如下面的例子：
+
+:::demo label以prop的方式传值，这时候，等号右边的1，是数字类型，而不再是字符串类型。
+
+```html
+<template>
+  <el-radio v-model="radioProp" :label="1">备选项</el-radio>
+  <el-radio v-model="radioProp" :label="2">备选项</el-radio>
+</template>
+
+<script>
+  export default {
+    data () {
+      return {
+        radioProp: 1
       };
     }
   }
@@ -95,6 +133,42 @@
 </script>
 ```
 :::
+
+对于单选按钮提供的change事件，我能想到的一个场景是，变化当前这个radio组的值，要去解析另一个数据，得出另一个值，供实时验证:
+:::demo 
+
+```html
+<template>
+  <el-radio-group v-model="radioLiandong" @change="checkLable">
+    <el-radio :label="3">选项一</el-radio>
+    <el-radio :label="6">选项二</el-radio>
+    <el-radio :label="9">选项三</el-radio>
+  </el-radio-group>
+</template>
+
+<script>
+  export default {
+    data () {
+      return {
+        radioLiandong: 3,
+        otherDate: {
+          3: {value: '我是根据选项一遍历出来的值'},
+          6: {value: '我是根据选项二遍历出来的值'},
+          9: {value: '我是根据选项三遍历出来的值'}
+        }
+      };
+    },
+    methods: {
+      checkLable (value) {
+        alert(this.otherDate[value].value);
+      }
+    }
+  }
+</script>
+```
+:::
+
+实际应用场景可能有更复杂的情况，可以根据实际情况进行处理，提供的demo是为了说明有提供change这个事件。
 
 ### 按钮样式
 

@@ -73,6 +73,23 @@
 ```
 :::
 
+公司实际项目中用的比较多的几种按钮
+<div>
+<el-button>默认按钮</el-button>
+<el-button type="primary">主要按钮</el-button>
+<el-button plain>朴素按钮</el-button>
+<el-button type="primary" plain>主要按钮</el-button>
+<el-button round>圆形按钮</el-button>
+<el-button type="primary" round>主要按钮</el-button>
+</div>
+
+删除等操作，在实际项目中用红色版本的按钮，好像不多，但我建议，类似删除这种操作，需要用红色危险按钮。
+<div>
+  <el-button type="danger">危险按钮</el-button>
+  <el-button type="danger" plain>危险按钮</el-button>
+  <el-button type="danger" round>危险按钮</el-button>
+</div>
+
 ### 禁用状态
 
 按钮不可用状态。
@@ -229,6 +246,14 @@ locales: {
 
 ```html
 <el-button type="primary" :loading="true">加载中</el-button>
+```
+:::
+
+加载中按钮样式，多数会和disable结合使用，常用场景是submit一个表单时，为防止重复提交，但点击一次后，请求还未返回前，按钮是处理加载中，且不可点状态，效果如下：
+:::demo
+
+```html
+<el-button type="primary" :loading="true" disabled>提交中</el-button>
 ```
 :::
 
