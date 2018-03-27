@@ -253,7 +253,7 @@
     @include share-rule(border-pseudo) {
       content: '';
       position: absolute;
-      background-color: $--border-color-lighter;
+      background-color: $--border-color-base;
       z-index: 1;
     }
 
@@ -322,7 +322,7 @@
       bottom: 0;
       width: 100%;
       height: 1px;
-      background-color: $--border-color-lighter;
+      background-color: $--border-color-base;
       z-index: 4;
     }
   }
