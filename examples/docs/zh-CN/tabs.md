@@ -229,6 +229,11 @@
 
 增减标签页按钮只能在选项卡样式的标签页下使用
 
+:::tip
+vue版本升级后，要求v-for使用时要规定key属性，不然会报警告，key属性的作用是唯一标识，所以开发时，很容易想到用index作为唯一标识。
+正常使用这样没问题，当涉及到增删时，就会出现奇怪bug了，如下方的示例中，如果将:key="index"，再去执行从前往后删除的操作，就会出现数据异常，感兴趣的童鞋，可以试试效果~
+:::
+
 :::demo
 ```html
 <el-tabs v-model="editableTabsValue" type="card" editable @edit="handleTabsEdit">
