@@ -14,12 +14,12 @@
       <el-input 
         class="el-transfer-panel__filter"
         v-model="query"
-        size="small"
+        size="mini"
         :placeholder="placeholder"
         @mouseenter.native="inputHover = true"
         @mouseleave.native="inputHover = false"
         v-if="filterable">
-        <el-button slot="append" size="small" :class="['el-input__icon', 'el-icon-' + inputIcon]" @click="clearQuery"></el-button>
+        <el-button slot="append" size="mini" :class="['el-input__icon', 'el-icon-' + inputIcon]" @click="clearQuery"></el-button>
       </el-input>
       <el-checkbox-group
         v-model="checked"
