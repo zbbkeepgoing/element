@@ -35,7 +35,7 @@
 
   @include m(info) {
     .el-message__content {
-      color: $--message-info-color;
+      color: $--color-text-primary;
     }
   }
 
@@ -44,7 +44,7 @@
     border-color: $--color-success-light;
 
     .el-message__content {
-      color: $--message-success-color;
+      // color: $--message-success-color;
     }
   }
 
@@ -53,7 +53,7 @@
     border-color: $--color-warning-light;
 
     .el-message__content {
-      color: $--message-warning-color;
+      // color: $--message-warning-color;
     }
   }
 
@@ -62,7 +62,7 @@
     border-color: $--color-danger-light;
 
     .el-message__content {
-      color: $--message-danger-color;
+      // color: $--message-danger-color;
     }
   }
 
