@@ -16,10 +16,11 @@
         v-model="query"
         size="mini"
         :placeholder="placeholder"
+        prefix-icon="el-icon-search"
         @mouseenter.native="inputHover = true"
         @mouseleave.native="inputHover = false"
         v-if="filterable">
-        <el-button slot="append" size="mini" :class="['el-input__icon', 'el-icon-' + inputIcon]" @click="clearQuery"></el-button>
+        <!-- <el-button slot="append" size="mini" :class="['el-input__icon', 'el-icon-' + inputIcon]" @click="clearQuery"></el-button> -->
       </el-input>
       <el-checkbox-group
         v-model="checked"
