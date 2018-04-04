@@ -4,6 +4,7 @@
       return {
         restaurants: [],
         input: '',
+        inputHasVal: 'kyligence',
         input1: '',
         input2: '',
         input21: '',
@@ -195,6 +196,24 @@ export default {
   data() {
     return {
       input: ''
+    }
+  }
+}
+</script>
+```
+:::
+
+### 有默认值用法
+
+:::demo
+```html
+<el-input v-model="inputHasVal" placeholder="请输入内容"></el-input>
+
+<script>
+export default {
+  data() {
+    return {
+      inputHasVal: 'kyligence'
     }
   }
 }

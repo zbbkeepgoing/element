@@ -92,6 +92,7 @@
           label: '广州'
         }],
         value: '',
+        hasValue: '选项3',
         value2: '',
         value3: '',
         value4: '',
@@ -178,6 +179,49 @@ select和radio、checkbox一样，选中值和下拉选项中的值是===比较�
           label: '北京烤鸭'
         }],
         value: ''
+      }
+    }
+  }
+</script>
+```
+:::
+
+### 有选中值的用法
+
+:::demo
+```html
+<template>
+  <el-select v-model="hasValue" placeholder="请选择">
+    <el-option
+      v-for="item in options"
+      :key="item.value"
+      :label="item.label"
+      :value="item.value">
+    </el-option>
+  </el-select>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+        options: [{
+          value: '选项1',
+          label: '黄金糕'
+        }, {
+          value: '选项2',
+          label: '双皮奶'
+        }, {
+          value: '选项3',
+          label: '蚵仔煎'
+        }, {
+          value: '选项4',
+          label: '龙须面'
+        }, {
+          value: '选项5',
+          label: '北京烤鸭'
+        }],
+        hasValue: ''
       }
     }
   }
