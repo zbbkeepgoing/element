@@ -57,7 +57,7 @@ $--link-hover-color: $--color-primary !default;
 
 /* Background
 -------------------------- */
-$--background-color-base: #f5f7fa !default;
+$--background-color-base: #f1f7fa !default;
 $--background-color-light: #F9FBFC !default;
 $--background-color-regular: #E2ECF1 !default;
 
@@ -344,7 +344,7 @@ $--input-focus-border: $--color-primary !default;
 $--input-focus-fill: $--color-white !default;
 
 $--input-disabled-fill: $--disabled-fill-base !default;
-$--input-disabled-border: $--disabled-border-base !default;
+$--input-disabled-border: $--border-color-base !default;
 $--input-disabled-color: $--disabled-color-base !default;
 $--input-disabled-placeholder-color: $--color-text-placeholder !default;
 

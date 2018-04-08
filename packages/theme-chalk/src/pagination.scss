@@ -174,14 +174,28 @@
     .btn-prev,
     .btn-next,
     .el-pager li {
-      margin: 0 5px;
-      background-color: $--color-info-lighter;
+      // margin: 0 5px;
+      background-color: $--color-white;
+      border: 1px solid $--border-color-base;
+      border-left-width: 0;
       color: $--color-text-regular;
       min-width: 30px;
-      border-radius: 2px;
+      border-radius: 0;
+
+      &:first-child {
+        border-left-width: 1px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+      }
+
+      &:last-child {
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+      }
 
       &.disabled {
         color: $--color-text-placeholder;
+        background-color: $--background-color-base;
       }
     }
 
@@ -200,6 +214,7 @@
 
       &.active {
         background-color: $--color-primary;
+        border: 1px solid $--color-primary;
         color: $--color-white;
       }
     }
