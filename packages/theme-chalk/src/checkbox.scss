@@ -157,7 +157,7 @@
       }
 
       & + .el-checkbox__label {
-        color: $--checkbox-checked-text-color;
+        // color: $--checkbox-checked-text-color;
       }
     }
     @include when(focus) { /*focus时 视觉上区分*/
