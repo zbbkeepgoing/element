@@ -387,6 +387,9 @@
 
       options() {
         if (this.$isServer) return;
+        this.$nextTick(() => {
+          this.broadcast('ElSelectDropdown', 'updatePopper');
+        })
         if (this.multiple) {
           this.resetInputHeight();
         }

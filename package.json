@@ -1,6 +1,6 @@
 {
   "name": "kyligence-ui",
-  "version": "1.0.7",
+  "version": "1.0.16",
   "description": "powered by element-ui",
   "main": "lib/element-ui.common.js",
   "files": [
