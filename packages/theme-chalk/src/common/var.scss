@@ -578,7 +578,7 @@ $--badge-size: 18px !default;
 
 /* Card
 --------------------------*/
-$--card-border-color: $--border-color-lighter !default;
+$--card-border-color: $--border-color-base !default;
 $--card-border-radius: 4px !default;
 $--card-padding: 20px !default;
 
@@ -667,7 +667,7 @@ $--collapse-content-color: $--color-text-primary !default;
 
 /* Transfer
 --------------------------*/
-$--transfer-border-color: $--border-color-lighter !default;
+$--transfer-border-color: $--border-color-base !default;
 $--transfer-border-radius: $--border-radius-base !default;
 $--transfer-panel-width: 200px !default;
 $--transfer-panel-header-height: 40px !default;
