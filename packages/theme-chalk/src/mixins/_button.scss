@@ -2,7 +2,7 @@
 @mixin button-plain($color) {
   color: $color;
   background: mix($--color-white, $color, 100%);
-  border-color: $color, 60%;
+  border-color: $color;
 
   &:hover {
     background: $color;
