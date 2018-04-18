@@ -61,14 +61,14 @@
 <script>
 import Vue from 'vue';
 import ElCascaderMenu from './menu';
-import ElInput from 'element-ui/packages/input';
-import Popper from 'element-ui/src/utils/vue-popper';
-import Clickoutside from 'element-ui/src/utils/clickoutside';
-import emitter from 'element-ui/src/mixins/emitter';
-import Locale from 'element-ui/src/mixins/locale';
-import { t } from 'element-ui/src/locale';
+import ElInput from 'kyligence-ui/packages/input';
+import Popper from 'kyligence-ui/src/utils/vue-popper';
+import Clickoutside from 'kyligence-ui/src/utils/clickoutside';
+import emitter from 'kyligence-ui/src/mixins/emitter';
+import Locale from 'kyligence-ui/src/mixins/locale';
+import { t } from 'kyligence-ui/src/locale';
 import debounce from 'throttle-debounce/debounce';
-import { generateId } from 'element-ui/src/utils/util';
+import { generateId } from 'kyligence-ui/src/utils/util';
 
 const popperMixin = {
   props: {

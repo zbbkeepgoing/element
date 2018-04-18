@@ -1,7 +1,7 @@
-import ElCheckbox from 'element-ui/packages/checkbox';
-import ElTag from 'element-ui/packages/tag';
-import objectAssign from 'element-ui/src/utils/merge';
-import { getPropByPath } from 'element-ui/src/utils/util';
+import ElCheckbox from 'kyligence-ui/packages/checkbox';
+import ElTag from 'kyligence-ui/packages/tag';
+import objectAssign from 'kyligence-ui/src/utils/merge';
+import { getPropByPath } from 'kyligence-ui/src/utils/util';
 
 let columnIdSeed = 1;
 

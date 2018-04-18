@@ -195,12 +195,12 @@
     prevMonth,
     nextMonth
   } from '../util';
-  import Clickoutside from 'element-ui/src/utils/clickoutside';
-  import Locale from 'element-ui/src/mixins/locale';
+  import Clickoutside from 'kyligence-ui/src/utils/clickoutside';
+  import Locale from 'kyligence-ui/src/mixins/locale';
   import TimePicker from './time';
   import DateTable from '../basic/date-table';
-  import ElInput from 'element-ui/packages/input';
-  import ElButton from 'element-ui/packages/button';
+  import ElInput from 'kyligence-ui/packages/input';
+  import ElButton from 'kyligence-ui/packages/button';
 
   const advanceDate = (date, amount) => {
     return new Date(new Date(date).getTime() + amount);

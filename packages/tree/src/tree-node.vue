@@ -61,9 +61,9 @@
 </template>
 
 <script type="text/jsx">
-  import ElCollapseTransition from 'element-ui/src/transitions/collapse-transition';
-  import ElCheckbox from 'element-ui/packages/checkbox';
-  import emitter from 'element-ui/src/mixins/emitter';
+  import ElCollapseTransition from 'kyligence-ui/src/transitions/collapse-transition';
+  import ElCheckbox from 'kyligence-ui/packages/checkbox';
+  import emitter from 'kyligence-ui/src/mixins/emitter';
   import { getNodeKey } from './model/util';
 
   export default {
