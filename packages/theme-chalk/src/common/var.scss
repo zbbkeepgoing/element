@@ -121,7 +121,7 @@ $--icon-color-base: $--color-info !default;
 /* Checkbox
 -------------------------- */
 $--checkbox-font-size: 14px !default;
-$--checkbox-font-weight: $--font-weight-primary !default;
+$--checkbox-font-weight: 400 !default;
 $--checkbox-color: $--color-text-regular !default;
 $--checkbox-input-height: 14px !default;
 $--checkbox-input-width: 14px !default;
@@ -171,7 +171,7 @@ $--checkbox-button-checked-border-color: $--color-primary !default;
 /* Radio
 -------------------------- */
 $--radio-font-size: 14px !default;
-$--radio-font-weight: $--font-weight-primary !default;
+$--radio-font-weight: 400 !default;
 $--radio-color: $--color-text-regular !default;
 $--radio-input-height: 14px !default;
 $--radio-input-width: 14px !default;
