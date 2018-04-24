@@ -131,6 +131,7 @@
     "uppercamelcase": "^1.1.0",
     "url-loader": "^0.6.2",
     "vue": "^2.5.2",
+    "vue-i18n": "^5.0.2",
     "vue-loader": "^13.3.0",
     "vue-markdown-loader": "1",
     "vue-router": "2.7.0",

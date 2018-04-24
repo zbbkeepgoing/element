@@ -38,6 +38,10 @@
       disabled: Boolean,
       validateOnRuleChange: {
         type: Boolean,
+        default: false
+      },
+      validateErrorFieldOnRuleChange: {
+        type: Boolean,
         default: true
       }
     },
@@ -45,6 +49,13 @@
       rules() {
         if (this.validateOnRuleChange) {
           this.validate(() => {});
+        }
+        if (this.validateErrorFieldOnRuleChange) {
+          this.fields.forEach((field, index) => {
+            if (field.validateState === 'error') {
+              field.validate('');
+            }
+          });
         }
       }
     },
