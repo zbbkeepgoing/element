@@ -12,7 +12,7 @@
   overflow: hidden;
   opacity: 1;
   display: flex;
-  align-items: center;
+  align-items: top;
   transition: opacity .2s;
   color: $--color-text-primary;
   .el-alert__description {
