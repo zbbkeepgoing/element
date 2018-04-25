@@ -1,6 +1,10 @@
 {
   "zh-CN": [
     {
+      "name": "更新日志",
+      "path": "/changelog"
+    },
+    {
       "name": "写给组件维护开发者",
       "path": "/to-developers"
     },
@@ -243,6 +247,10 @@
   ],
   "en-US": [
     {
+      "name": "Changelog",
+      "path": "/changelog"
+    },
+    {
       "name": "To Developers",
       "path": "/to-developers"
     },
@@ -480,6 +488,10 @@
     }
   ],
   "es": [
+    {
+      "name": "Changelog",
+      "path": "/changelog"
+    },
     {
       "name": "To Developers",
       "path": "/to-developers"
