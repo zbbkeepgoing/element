@@ -3,7 +3,9 @@
 ### 1.1.4
 *2018-5-03*
 
-- 更新表单验证中英文处理的文档演示
+- 更新表单验证中英文处理的文档演示 (by 夏倩）
+- 去掉dialog body的line-height (by 夏倩）
+- 更新form label-position 是top时，lable的padding-bottom为6px (by 夏倩）
 
 ### 1.1.3
 *2018-4-27*
