@@ -99,7 +99,9 @@ const PopupManager = {
     } else {
       document.body.appendChild(modalDom);
     }
-
+    if (Vue.prototype.__KY_DIALOG_OPEN_EVENT__) {
+      Vue.prototype.__KY_DIALOG_OPEN_EVENT__();
+    }
     if (zIndex) {
       modalDom.style.zIndex = zIndex;
     }
@@ -147,6 +149,9 @@ const PopupManager = {
         }
         removeClass(modalDom, 'v-modal-leave');
       }, 200);
+      if (Vue.prototype.__KY_DIALOG_CLOSE_EVENT__) {
+        Vue.prototype.__KY_DIALOG_CLOSE_EVENT__();
+      }
     }
   }
 };
