@@ -12,7 +12,10 @@
     z-index: $--index-popper;
     font-size: $--tooltip-font-size;
     line-height: 1.5;
-
+    div {
+      max-height: 300px;
+      overflow-y: hidden;
+    }
     .popper__arrow,
     .popper__arrow::after {
       position: absolute;

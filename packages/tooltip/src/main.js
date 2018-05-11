@@ -93,7 +93,9 @@ export default {
             class={
               ['el-tooltip__popper', 'is-' + this.effect, this.popperClass]
             }>
-            { this.$slots.content || this.content }
+            <div>
+              { this.$slots.content || this.content }
+            </div>
           </div>
         </transition>);
     }
