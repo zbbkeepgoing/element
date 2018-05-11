@@ -2,7 +2,7 @@
 
 ### 1.1.4
 *2018-5-03*
-
+- 添加dialog遮罩层的打开和关闭的全局函数 "__KY_DIALOG_OPEN_EVENT__" AND "__KY_DIALOG_CLOSE_EVENT__"(by 大圣）
 - 更新表单验证中英文处理的文档演示 (by 夏倩）
 - 去掉dialog body的line-height (by 夏倩）
 - 更新form label-position 是top时，lable的padding-bottom为6px (by 夏倩）
