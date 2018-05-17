@@ -62,7 +62,7 @@
   }
 
   @include e(expanded-cell) {
-    background-color: $--color-white;
+    background-color: $--background-color-light;
 
     // 纯属为了增加权重
     &[class*=cell] {
@@ -70,7 +70,7 @@
     }
 
     &:hover {
-      background-color: transparent !important;
+      background-color: $--background-color-light !important;
     }
   }
 

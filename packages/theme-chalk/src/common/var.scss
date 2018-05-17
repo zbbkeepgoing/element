@@ -49,6 +49,7 @@ $--color-text-primary: #263238 !default;
 $--color-text-regular: #455a64 !default;
 $--color-text-secondary: #b0bec5 !default;
 $--color-text-placeholder: #B0BEC5 !default;
+$--color-text-disabled: #8E9FA8 !default;
 
 /* Link
 -------------------------- */
@@ -110,7 +111,7 @@ $--index-popper: 2000 !default;
 /* Disable base
 -------------------------- */
 $--disabled-fill-base: $--background-color-base !default;
-$--disabled-color-base: $--color-text-placeholder !default;
+$--disabled-color-base: $--color-text-disabled !default;
 $--disabled-border-base: $--border-color-light !default;
 
 /* Icon
@@ -427,7 +428,7 @@ $--button-default-color: $--color-text-regular !default;
 $--button-default-fill: $--color-white !default;
 $--button-default-border: $--border-color-base !default;
 
-$--button-disabled-color: $--color-text-placeholder !default;
+$--button-disabled-color: $--color-text-disabled !default;
 $--button-disabled-fill: $--color-white !default;
 $--button-disabled-border: $--border-color-lighter !default;
 

@@ -48,6 +48,13 @@
       },
       enter () {
         console.log('aaa');
+        console.log(this.$refs['myDialog']);
+      },
+      openOuter () {
+        this.outerVisible = true;
+        setTimeout(() => {
+          this.$refs['mybtn'].$el.focus();
+        }, 0);
       }
     }
   };
@@ -91,11 +98,16 @@ Dialog 弹出一个对话框，适合需要定制性更大的场景。
   title="提示"
   :visible.sync="dialogVisible"
   width="30%"
-  :before-close="handleClose">
-  <span>这是一段信息</span>
+  :before-close="handleClose"
+  ref="myDialog">
+  <el-alert
+    title="成功提示的文案成功提示的文案成功提示的文案成功提示的文案成功提成功提示的文案"
+    type="success"
+    show-icon>
+  </el-alert>
   <span slot="footer" class="dialog-footer">
     <el-button @click="dialogVisible = false">取 消</el-button>
-    <el-button type="primary" plain @click="dialogVisible = false" @keyup.enter.native="enter" :autofocus="true">确 定</el-button>
+    <el-button type="primary" plain @click="dialogVisible = false" @keyup.enter.native="enter" :autofocus="true" id="mybtn">确 定</el-button>
   </span>
 </el-dialog>
 
@@ -208,6 +220,7 @@ Dialog 组件的内容可以是任意的，甚至可以是表格或表单，下�
 :::demo 正常情况下，我们不建议使用嵌套的 Dialog，如果需要在页面上同时显示多个 Dialog，可以将它们平级放置。对于确实需要嵌套 Dialog 的场景，我们提供了`append-to-body`属性。将内层 Dialog 的该属性设置为 true，它就会插入至 body 元素上，从而保证内外层 Dialog 和遮罩层级关系的正确。
 ```html
 <template>
+  <el-input @keyup.enter.native="openOuter" ref="myInput"></el-input>
   <el-button type="primary" text @click="outerVisible = true">点击打开外层 Dialog</el-button>
   
   <el-dialog title="外层 Dialog" :visible.sync="outerVisible">
@@ -219,7 +232,7 @@ Dialog 组件的内容可以是任意的，甚至可以是表格或表单，下�
     </el-dialog>
     <div slot="footer" class="dialog-footer">
       <el-button @click="outerVisible = false">取 消</el-button>
-      <el-button type="primary" plain @click="innerVisible = true" @keyup.enter.native="innerVisible = true" :autofocus="true">打开内层 Dialog</el-button>
+      <el-button type="primary" plain @click="innerVisible = true" @keyup.enter.native="innerVisible = true" :autofocus="true" ref="mybtn">打开内层 Dialog</el-button>
     </div>
   </el-dialog>
 </template>

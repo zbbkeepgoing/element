@@ -6,6 +6,12 @@
 - 更新文字提示的最大高度，超过部分隐藏 (by 陈志雄）
 
 ### 1.1.4
+*2018-5-17*
+- 修改tabel展开行的背景颜色 (by 夏倩）
+- 修改button和input disabled状态时字体颜色 (by 夏倩）
+
+
+### 1.1.4
 *2018-5-03*
 - 添加dialog遮罩层的打开和关闭的全局函数 "__KY_DIALOG_OPEN_EVENT__" AND "__KY_DIALOG_CLOSE_EVENT__"(by 大圣）
 - 更新表单验证中英文处理的文档演示 (by 夏倩）
