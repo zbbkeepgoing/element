@@ -9,7 +9,8 @@
         num5: 1,
         num6: 1,
         num7: 1,
-        num8: 1
+        num8: 1,
+        num9: 1
       }
     },
     methods: {
@@ -131,12 +132,14 @@
 ```html
 <template>
   <el-input-number v-model="num8" controls-position="right" @change="handleChange" :min="1" :max="10"></el-input-number>
+  <el-input-number size="mini" v-model="num9" controls-position="right" @change="handleChange" :min="1" :max="10"></el-input-number>
 </template>
 <script>
   export default {
     data() {
       return {
-        num8: 1
+        num8: 1,
+        num9: 1
       };
     },
     methods: {

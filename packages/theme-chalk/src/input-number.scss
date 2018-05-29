@@ -112,7 +112,9 @@
       font-size: $--input-mini-font-size;
 
       [class*=el-icon] {
-        transform: scale(.8);
+        transform: scale(.7);
+        position: relative;
+        top: 2px;
       }
     }
 
