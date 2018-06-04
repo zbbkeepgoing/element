@@ -246,6 +246,10 @@
         default: 'off'
       },
       size: String,
+      inputClickSelected: {
+        type: Boolean,
+        default: true
+      },
       disabled: Boolean,
       clearable: Boolean,
       filterable: Boolean,
@@ -378,7 +382,10 @@
                 this.broadcast('ElOption', 'queryChange', '');
                 this.broadcast('ElOptionGroup', 'queryChange');
               }
-              this.broadcast('ElInput', 'inputSelect');
+              // 点击文本框是否选中文本框文字
+              if (this.inputClickSelected) {
+                this.broadcast('ElInput', 'inputSelect');
+              }
             }
           }
         }
