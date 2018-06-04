@@ -3,8 +3,6 @@
 ### 1.1.6
 *2018-6-4*
 - select 文本框点击全选or focus状态控制，添加参数inputClickSelected，默认值为true (by 大圣）
-
-*2018-5-17*
 - 修改tabel展开行的背景颜色 (by 夏倩）
 - 修改button和input disabled状态时字体颜色 (by 夏倩）
 
