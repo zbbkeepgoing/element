@@ -1,28 +1,28 @@
 ## 快速上手
 
-本节将介绍如何在项目中使用 Element。
+本节将介绍如何在项目中使用 kyligence-ui
 
-### 引入 Element
+### 引入 kyligence-ui
 
-你可以引入整个 Element，或是根据需要仅引入部分组件。我们先介绍如何引入完整的 Element。
+你可以引入整个 kyligence-ui，或是根据需要仅引入部分组件。我们先介绍如何引入完整的 kyligence-ui。
 
 #### 完整引入
 
 在 main.js 中写入以下内容：
 ```javascript
 import Vue from 'vue'
-import ElementUI from 'kyligence-ui'
+import KyligenceUI from 'kyligence-ui'
 import 'kyligence-ui/lib/theme-chalk/index.css'
 import App from './App.vue'
 
-Vue.use(ElementUI)
+Vue.use(KyligenceUI)
 
 new Vue({
   el: '#app',
   render: h => h(App)
 })
 ```
-以上代码便完成了 Element 的引入。需要注意的是，样式文件需要单独引入。
+以上代码便完成了 kyligence-ui 的引入。需要注意的是，样式文件需要单独引入。
 
 #### 按需引入
 
@@ -217,16 +217,16 @@ Vue.prototype.$message = Message
 ```
 
 ### 全局配置
-在引入 Element 时，可以传入一个全局配置对象。该对象目前仅支持 `size` 字段，用于改变组件的默认尺寸。按照引入 Element 的方式，具体操作如下：
+在引入 kyligence-ui 时，可以传入一个全局配置对象。该对象目前仅支持 `size` 字段，用于改变组件的默认尺寸。按照引入 kyligence-ui 的方式，具体操作如下：
 
-完整引入 Element：
+完整引入 kyligence-ui：
 ```JS
 import Vue from 'vue'
-import Element from 'kyligence-ui'
-Vue.use(Element, { size: 'small' })
+import KyligenceUI from 'kyligence-ui'
+Vue.use(KyligenceUI, { size: 'small' })
 ```
 
-按需引入 Element：
+按需引入 kyligence-ui：
 ```JS
 import Vue from 'vue'
 import { Button } from 'kyligence-ui'
