@@ -221,7 +221,7 @@ select和radio、checkbox一样，选中值和下拉选项中的值是===比较�
           value: '选项5',
           label: '北京烤鸭'
         }],
-        hasValue: ''
+        hasValue: '选项3'
       }
     }
   }

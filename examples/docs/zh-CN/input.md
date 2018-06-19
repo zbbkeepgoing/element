@@ -185,11 +185,16 @@
 
 通过鼠标或键盘输入字符
 
+:::tip
+<p>1、在实际业务场景中，大部分情况都要去掉首尾的空格，保证数据的准确性，所以文档上的demo，绑定数据时，都是以v-model.trim的形式。</p>
+<p>2、如果业务特殊需求，需要保留首尾空格，那就将.trim 去掉即可。</p>
+:::
+
 ### 基础用法
 
 :::demo
 ```html
-<el-input v-model="input" placeholder="请输入内容"></el-input>
+<el-input v-model.trim="input" placeholder="请输入内容"></el-input>
 
 <script>
 export default {
@@ -207,7 +212,7 @@ export default {
 
 :::demo
 ```html
-<el-input v-model="inputHasVal" placeholder="请输入内容"></el-input>
+<el-input v-model.trim="inputHasVal" placeholder="请输入内容"></el-input>
 
 <script>
 export default {
@@ -228,7 +233,7 @@ export default {
 ```html
 <el-input
   placeholder="请输入内容"
-  v-model="input1"
+  v-model.trim="input1"
   :disabled="true">
 </el-input>
 
@@ -251,7 +256,7 @@ export default {
 ```html
 <el-input
   placeholder="请输入内容"
-  v-model="input10"
+  v-model.trim="input10"
   clearable>
 </el-input>
 
@@ -278,24 +283,24 @@ export default {
   <el-input
     placeholder="请选择日期"
     suffix-icon="el-icon-date"
-    v-model="input2">
+    v-model.trim="input2">
   </el-input>
   <el-input
     placeholder="请输入内容"
     prefix-icon="el-icon-search"
-    v-model="input21">
+    v-model.trim="input21">
   </el-input>
 </div>
 <div class="demo-input-suffix">
   slot 方式：
   <el-input
     placeholder="请选择日期"
-    v-model="input22">
+    v-model.trim="input22">
     <i slot="suffix" class="el-input__icon el-icon-date"></i>
   </el-input>
   <el-input
     placeholder="请输入内容"
-    v-model="input23">
+    v-model.trim="input23">
     <i slot="prefix" class="el-input__icon el-icon-search"></i>
   </el-input>
 </div>
@@ -325,7 +330,7 @@ export default {
   type="textarea"
   :rows="2"
   placeholder="请输入内容"
-  v-model="textarea">
+  v-model.trim="textarea">
 </el-input>
 
 <script>
@@ -350,14 +355,14 @@ export default {
   type="textarea"
   autosize
   placeholder="请输入内容"
-  v-model="textarea2">
+  v-model.trim="textarea2">
 </el-input>
 <div style="margin: 20px 0;"></div>
 <el-input
   type="textarea"
   :autosize="{ minRows: 2, maxRows: 4}"
   placeholder="请输入内容"
-  v-model="textarea3">
+  v-model.trim="textarea3">
 </el-input>
 
 <script>
@@ -380,17 +385,17 @@ export default {
 :::demo 可通过 slot 来指定在 input 中前置或者后置内容。
 ```html
 <div>
-  <el-input placeholder="请输入内容" v-model="input3">
+  <el-input placeholder="请输入内容" v-model.trim="input3">
     <template slot="prepend">Http://</template>
   </el-input>
 </div>
 <div style="margin-top: 15px;">
-  <el-input placeholder="请输入内容" v-model="input4">
+  <el-input placeholder="请输入内容" v-model.trim="input4">
     <template slot="append">.com</template>
   </el-input>
 </div>
 <div style="margin-top: 15px;">
-  <el-input placeholder="请输入内容" v-model="input5" class="input-with-select">
+  <el-input placeholder="请输入内容" v-model.trim="input5" class="input-with-select">
     <el-select v-model="select" slot="prepend" placeholder="请选择">
       <el-option label="餐厅名" value="1"></el-option>
       <el-option label="订单号" value="2"></el-option>
@@ -400,7 +405,7 @@ export default {
   </el-input>
 </div>
 <div style="margin-top: 15px;">
-  <el-input placeholder="请输入内容" v-model="input5" class="input-with-select">
+  <el-input placeholder="请输入内容" v-model.trim="input5" class="input-with-select">
     <el-button slot="append" icon="el-icon-search"></el-button>
   </el-input>
 </div>
@@ -435,25 +440,25 @@ export default {
   <el-input
     placeholder="请输入内容"
     suffix-icon="el-icon-date"
-    v-model="input6">
+    v-model.trim="input6">
   </el-input>
   <el-input
     size="medium"
     placeholder="请输入内容"
     suffix-icon="el-icon-date"
-    v-model="input7">
+    v-model.trim="input7">
   </el-input>
   <el-input
     size="small"
     placeholder="请输入内容"
     suffix-icon="el-icon-date"
-    v-model="input8">
+    v-model.trim="input8">
   </el-input>
   <el-input
     size="mini"
     placeholder="请输入内容"
     suffix-icon="el-icon-date"
-    v-model="input9">
+    v-model.trim="input9">
   </el-input>
 </div>
 
@@ -483,7 +488,7 @@ export default {
     <div class="sub-title">激活即列出输入建议</div>
     <el-autocomplete
       class="inline-input"
-      v-model="state1"
+      v-model.trim="state1"
       :fetch-suggestions="querySearch"
       placeholder="请输入内容"
       @select="handleSelect"
@@ -493,7 +498,7 @@ export default {
     <div class="sub-title">输入后匹配输入建议</div>
     <el-autocomplete
       class="inline-input"
-      v-model="state2"
+      v-model.trim="state2"
       :fetch-suggestions="querySearch"
       placeholder="请输入内容"
       :trigger-on-focus="false"
@@ -594,7 +599,7 @@ export default {
 ```html
 <el-autocomplete
   popper-class="my-autocomplete"
-  v-model="state3"
+  v-model.trim="state3"
   :fetch-suggestions="querySearch"
   placeholder="请输入内容"
   @select="handleSelect">
@@ -725,7 +730,7 @@ export default {
 :::demo
 ```html
 <el-autocomplete
-  v-model="state4"
+  v-model.trim="state4"
   :fetch-suggestions="querySearchAsync"
   placeholder="请输入内容"
   @select="handleSelect"

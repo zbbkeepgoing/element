@@ -2,19 +2,15 @@
   import Vue from 'vue'
   export default {
     data() {
-      var checkAge = (rule, value, callback) => {
+      var checkEmail = (rule, value, callback) => {
         if (!value) {
-          return callback(new Error('年龄不能为空'));
+          return callback(new Error('邮箱不能为空'));
         }
         setTimeout(() => {
-          if (!Number.isInteger(value)) {
-            callback(new Error('请输入数字值'));
+          if (value !== 'demo@kyligence.io') {
+            callback(new Error('重置密码的目标邮箱不正确'));
           } else {
-            if (value < 18) {
-              callback(new Error('必须年满18岁'));
-            } else {
-              callback();
-            }
+            callback();
           }
         }, 1000);
       };
@@ -49,6 +45,7 @@
           resource: '',
           desc: ''
         },
+        formSize: 'medium',
         sizeForm: {
           name: '',
           region: '',
@@ -60,10 +57,11 @@
           desc: ''
         },
         formInline: {
-          user: '',
-          region: ''
+          clusterName: '',
+          startDate: '',
+          endDate: ''
         },
-        labelPosition: 'right',
+        labelPosition: 'top',
         formLabelAlign: {
           name: '',
           region: '',
@@ -82,7 +80,7 @@
         ruleForm2: {
           pass: '',
           checkPass: '',
-          age: ''
+          email: ''
         },
         formLabelWidth: '80px',
         // rules: {
@@ -116,8 +114,8 @@
           checkPass: [
             { validator: validatePass2, trigger: 'blur' }
           ],
-          age: [
-            { validator: checkAge, trigger: 'blur' }
+          email: [
+            { validator: checkEmail, trigger: 'blur' }
           ]
         },
         dynamicValidateForm: {
@@ -222,7 +220,7 @@
     }
 
     .el-checkbox-group {
-      width: 320px;
+      width: 100%;
       margin: 0;
       padding: 0;
       list-style: none;
@@ -255,6 +253,7 @@
     }
     .demo-form-inline {
       width: auto;
+      text-align: right;
 
       .el-input {
         width: 150px;
@@ -265,6 +264,7 @@
     }
     .demo-ruleForm {
       width: 460px;
+      margin-top:15px;
 
       .el-select .el-input {
         width: 360px;
@@ -287,15 +287,20 @@
 
 由输入框、选择器、单选框、多选框等控件组成，用以收集、校验、提交数据
 
+:::tip
+在el-form上设置size，el-button用el-form-item包起来，就会继承el-form上设置的size的值，实际使用中，记得el-button用el-form-item包起来，这样就不用单独设置button的size了，除非特殊需求，button和表单元素的大小不统一，那就在包着el-button的el-form-item上单独加size属性配置。
+:::
+
+
 ### 典型表单
 
 包括各种表单项，比如输入框、选择器、开关、单选框、多选框等。
 
 :::demo 在 Form 组件中，每一个表单域由一个 Form-Item 组件构成，表单域中可以放置各种类型的表单控件，包括 Input、Select、Checkbox、Radio、Switch、DatePicker、TimePicker
 ```html
-<el-form ref="form" :model="form" label-width="80px">
+<el-form ref="form" :model="form" size="medium" label-width="80px">
   <el-form-item label="活动名称">
-    <el-input v-model="form.name"></el-input>
+    <el-input v-model.trim="form.name"></el-input>
   </el-form-item>
   <el-form-item label="活动区域">
     <el-select v-model="form.region" placeholder="请选择活动区域" :disabled="form.delivery">
@@ -330,7 +335,7 @@
     </el-radio-group>
   </el-form-item>
   <el-form-item label="活动形式">
-    <el-input type="textarea" v-model="form.desc"></el-input>
+    <el-input type="textarea" v-model.trim="form.desc"></el-input>
   </el-form-item>
   <el-form-item>
     <el-button type="primary" @click="onSubmit">立即创建</el-button>
@@ -373,21 +378,31 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 ### 行内表单
 
 当垂直方向空间受限且表单较简单时，可以在一行内放置表单。
+一般列表页表头上方查询选项的地方，基本是单行的，可以采用这种排布。查询按钮省略，搜索框，默认enter键查询，并且加trim处理，下拉或者日期控件类，change时便查询。
 
-:::demo 设置 `inline` 属性可以让表单域变为行内的表单域
+:::demo 设置 `inline` 属性可以让表单域变为行内的表单域.
 ```html
-<el-form :inline="true" :model="formInline" class="demo-form-inline">
-  <el-form-item label="审批人">
-    <el-input v-model="formInline.user" placeholder="审批人"></el-input>
-  </el-form-item>
-  <el-form-item label="活动区域">
-    <el-select v-model="formInline.region" placeholder="活动区域">
-      <el-option label="区域一" value="shanghai"></el-option>
-      <el-option label="区域二" value="beijing"></el-option>
-    </el-select>
+<el-form :inline="true" :model="formInline" size="medium" class="demo-form-inline">
+  <el-form-item>
+    <el-input v-model.trim="formInline.clusterName" 
+              prefix-icon="el-icon-search" 
+              placeholder="搜索集群名称" 
+              @keyup.enter.native="onSubmit()"></el-input>
   </el-form-item>
   <el-form-item>
-    <el-button type="primary" @click="onSubmit">查询</el-button>
+    <el-date-picker
+      v-model="formInline.startDate"
+      type="date"
+      placeholder="选择日期"
+      @change="onSubmit()">
+    </el-date-picker>
+    -
+    <el-date-picker
+      v-model="formInline.endDate"
+      type="date"
+      placeholder="选择日期"
+      @change="onSubmit()">
+    </el-date-picker>
   </el-form-item>
 </el-form>
 <script>
@@ -395,8 +410,9 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
     data() {
       return {
         formInline: {
-          user: '',
-          region: ''
+          clusterName: '',
+          startDate: '',
+          endDate: ''
         }
       }
     },
@@ -412,32 +428,32 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 
 ### 对齐方式
 
-根据具体目标和制约因素，选择最佳的标签对齐方式。
+根据具体目标和制约因素，选择最佳的标签对齐方式，现在account和cloud这边，基本是底部对齐居多，其次是右对齐，最后是左对齐。
 
 :::demo 通过设置 `label-position` 属性可以改变表单域标签的位置，可选值为 `top`、`left`，当设为 `top` 时标签会置于表单域的顶部
 ```html
-<el-radio-group v-model="labelPosition" size="small">
-  <el-radio-button label="left">左对齐</el-radio-button>
-  <el-radio-button label="right">右对齐</el-radio-button>
+<el-radio-group v-model="labelPosition">
   <el-radio-button label="top">顶部对齐</el-radio-button>
+  <el-radio-button label="right">右对齐</el-radio-button>
+  <el-radio-button label="left">左对齐</el-radio-button>
 </el-radio-group>
 <div style="margin: 20px;"></div>
-<el-form :label-position="labelPosition" label-width="80px" :model="formLabelAlign">
-  <el-form-item label="名称" size="medium">
-    <el-input v-model="formLabelAlign.name"></el-input>
+<el-form :label-position="labelPosition" size="medium" label-width="80px" :model="formLabelAlign">
+  <el-form-item label="名称">
+    <el-input v-model.trim="formLabelAlign.name"></el-input>
   </el-form-item>
-  <el-form-item label="活动区域" size="medium">
-    <el-input v-model="formLabelAlign.region"></el-input>
+  <el-form-item label="活动区域">
+    <el-input v-model.trim="formLabelAlign.region"></el-input>
   </el-form-item>
-  <el-form-item label="活动形式" size="medium">
-    <el-input v-model="formLabelAlign.type"></el-input>
+  <el-form-item label="活动形式">
+    <el-input v-model.trim="formLabelAlign.type"></el-input>
   </el-form-item>
 </el-form>
 <script>
   export default {
     data() {
       return {
-        labelPosition: 'right',
+        labelPosition: 'top',
         formLabelAlign: {
           name: '',
           region: '',
@@ -460,9 +476,10 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
   <el-button size="medium" round @click="changeLang('en')" :class="{'active':lang=='en'}">EN</el-button>
   <el-button size="medium" round @click="changeLang('zh-cn')" :class="{'active':lang=='zh-cn'}">中文</el-button>
 </el-button-group>
-<el-form :model="ruleForm" :rules="rules" ref="ruleForm" size="small" label-width="100px" class="demo-ruleForm">
+
+<el-form :model="ruleForm" :rules="rules" ref="ruleForm" size="medium" label-width="100px" class="demo-ruleForm">
   <el-form-item label="活动名称" prop="name">
-    <el-input v-model="ruleForm.name"></el-input>
+    <el-input v-model.trim="ruleForm.name"></el-input>
   </el-form-item>
   <el-form-item label="活动区域" prop="region">
     <el-select v-model="ruleForm.region" placeholder="请选择活动区域">
@@ -501,7 +518,7 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
     </el-radio-group>
   </el-form-item>
   <el-form-item label="活动形式" prop="desc">
-    <el-input type="textarea" v-model="ruleForm.desc"></el-input>
+    <el-input type="textarea" v-model.trim="ruleForm.desc"></el-input>
   </el-form-item>
   <el-form-item>
     <el-button type="primary" @click="submitForm('ruleForm')">立即创建</el-button>
@@ -677,19 +694,23 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 
 ### 自定义校验规则
 
-这个例子中展示了如何使用自定义验证规则来完成密码的二次验证。
+这个例子中展示了:
+
+(1)异步验证邮箱是否存在（目标邮箱以：demo@kyligence.io）
+
+(2)如何使用自定义验证规则来完成密码的二次验证
 
 :::demo 本例还使用`status-icon`属性为输入框添加了表示校验结果的反馈图标。
 ```html
-<el-form :model="ruleForm2" status-icon :rules="rules2" ref="ruleForm2" label-width="100px" class="demo-ruleForm">
+<el-form :model="ruleForm2" status-icon :rules="rules2" size="medium" ref="ruleForm2" label-width="100px" class="demo-ruleForm">
+  <el-form-item label="邮箱" prop="email">
+    <el-input v-model.trim="ruleForm2.email"></el-input>
+  </el-form-item>
   <el-form-item label="密码" prop="pass">
-    <el-input type="password" v-model="ruleForm2.pass" auto-complete="off"></el-input>
+    <el-input type="password" v-model.trim="ruleForm2.pass" auto-complete="off"></el-input>
   </el-form-item>
   <el-form-item label="确认密码" prop="checkPass">
-    <el-input type="password" v-model="ruleForm2.checkPass" auto-complete="off"></el-input>
-  </el-form-item>
-  <el-form-item label="年龄" prop="age">
-    <el-input v-model.number="ruleForm2.age"></el-input>
+    <el-input type="password" v-model.trim="ruleForm2.checkPass" auto-complete="off"></el-input>
   </el-form-item>
   <el-form-item>
     <el-button type="primary" @click="submitForm('ruleForm2')">提交</el-button>
@@ -699,19 +720,15 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 <script>
   export default {
     data() {
-      var checkAge = (rule, value, callback) => {
+      var checkEmail = (rule, value, callback) => {
         if (!value) {
-          return callback(new Error('年龄不能为空'));
+          return callback(new Error('邮箱不能为空'));
         }
-        setTimeout(() => {
-          if (!Number.isInteger(value)) {
-            callback(new Error('请输入数字值'));
+        setTimeout(() => { // 模拟异步请求
+          if (value !== 'demo@kyligence.io') {
+            callback(new Error('重置密码的目标邮箱不正确'));
           } else {
-            if (value < 18) {
-              callback(new Error('必须年满18岁'));
-            } else {
-              callback();
-            }
+            callback();
           }
         }, 1000);
       };
@@ -738,7 +755,7 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
         ruleForm2: {
           pass: '',
           checkPass: '',
-          age: ''
+          email: ''
         },
         rules2: {
           pass: [
@@ -748,7 +765,7 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
             { validator: validatePass2, trigger: 'blur' }
           ],
           age: [
-            { validator: checkAge, trigger: 'blur' }
+            { validator: checkEmail, trigger: 'blur' }
           ]
         }
       };
@@ -777,7 +794,7 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 
 :::demo 除了在 Form 组件上一次性传递所有的验证规则外还可以在单个的表单域上传递属性的验证规则
 ```html
-<el-form :model="dynamicValidateForm" ref="dynamicValidateForm" label-width="100px" class="demo-dynamic">
+<el-form :model="dynamicValidateForm" size="medium" ref="dynamicValidateForm" label-width="100px" class="demo-dynamic">
   <el-form-item
     prop="email"
     label="邮箱"
@@ -786,7 +803,7 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
       { type: 'email', message: '请输入正确的邮箱地址', trigger: 'blur,change' }
     ]"
   >
-    <el-input v-model="dynamicValidateForm.email"></el-input>
+    <el-input v-model.trim="dynamicValidateForm.email"></el-input>
   </el-form-item>
   <el-form-item
     v-for="(domain, index) in dynamicValidateForm.domains"
@@ -797,7 +814,7 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
       required: true, message: '域名不能为空', trigger: 'blur'
     }"
   >
-    <el-input v-model="domain.value"></el-input><el-button @click.prevent="removeDomain(domain)">删除</el-button>
+    <el-input v-model.trim="domain.value"></el-input><el-button @click.prevent="removeDomain(domain)">删除</el-button>
   </el-form-item>
   <el-form-item>
     <el-button type="primary" @click="submitForm('dynamicValidateForm')">提交</el-button>
@@ -853,7 +870,7 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 
 :::demo 数字类型的验证需要在 `v-model` 处加上 `.number` 的修饰符，这是 `Vue` 自身提供的用于将绑定值转化为 `number` 类型的修饰符。
 ```html
-<el-form :model="numberValidateForm" ref="numberValidateForm" label-width="100px" class="demo-ruleForm">
+<el-form :model="numberValidateForm" size="medium" ref="numberValidateForm" label-width="100px" class="demo-ruleForm">
   <el-form-item
     label="年龄"
     prop="age"
@@ -906,9 +923,17 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 
 通过设置 Form 上的 `size` 属性可以使该表单内所有可调节大小的组件继承该尺寸。Form-Item 也具有该属性。
 
-:::demo 如果希望某个表单项或某个表单组件的尺寸不同于 Form 上的`size`属性，直接为这个表单项或表单组件设置自己的`size`即可。
+:::demo 如果希望某个表单项或某个表单组件的尺寸不同于 Form 上的`size`属性，直接为这个表单项或表单组件设置自己的`size`即可。比如下面例子上的按钮，不同于el-form上设置的size，固定设置成large。
 ```html
-<el-form ref="form" :model="sizeForm" label-width="80px" size="mini">
+
+<el-radio-group v-model="formSize">
+  <el-radio-button label="">default</el-radio-button>
+  <el-radio-button label="medium">medium</el-radio-button>
+  <el-radio-button label="small">small</el-radio-button>
+  <el-radio-button label="mini">mini</el-radio-button>
+</el-radio-group>
+
+<el-form ref="form" :model="sizeForm" label-width="80px" :size="formSize" style="margin-top:15px">
   <el-form-item label="活动名称">
     <el-input v-model="sizeForm.name"></el-input>
   </el-form-item>
@@ -935,7 +960,7 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
     </el-checkbox-group>
   </el-form-item>
   <el-form-item label="特殊资源">
-    <el-radio-group v-model="sizeForm.resource" size="medium">
+    <el-radio-group v-model="sizeForm.resource">
       <el-radio border label="线上品牌商赞助"></el-radio>
       <el-radio border label="线下场地免费"></el-radio>
     </el-radio-group>
