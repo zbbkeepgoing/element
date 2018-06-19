@@ -423,13 +423,13 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 </el-radio-group>
 <div style="margin: 20px;"></div>
 <el-form :label-position="labelPosition" label-width="80px" :model="formLabelAlign">
-  <el-form-item label="名称">
+  <el-form-item label="名称" size="medium">
     <el-input v-model="formLabelAlign.name"></el-input>
   </el-form-item>
-  <el-form-item label="活动区域">
+  <el-form-item label="活动区域" size="medium">
     <el-input v-model="formLabelAlign.region"></el-input>
   </el-form-item>
-  <el-form-item label="活动形式">
+  <el-form-item label="活动形式" size="medium">
     <el-input v-model="formLabelAlign.type"></el-input>
   </el-form-item>
 </el-form>
