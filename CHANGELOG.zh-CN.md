@@ -1,5 +1,9 @@
 ## 更新日志
 
+### 1.1.7
+*2018-6-19*
+- form top position light-height unify for any size (by 夏倩)
+
 ### 1.1.6
 *2018-6-4*
 - select 文本框点击全选or focus状态控制，添加参数inputClickSelected，默认值为true (by 大圣）
