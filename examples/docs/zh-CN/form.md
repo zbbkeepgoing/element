@@ -280,6 +280,9 @@
     .fr {
       float: right;
     }
+    .txt-center{
+      text-align: center;
+    }
   }
 </style>
 
@@ -288,7 +291,8 @@
 由输入框、选择器、单选框、多选框等控件组成，用以收集、校验、提交数据
 
 :::tip
-在el-form上设置size，el-button用el-form-item包起来，就会继承el-form上设置的size的值，实际使用中，记得el-button用el-form-item包起来，这样就不用单独设置button的size了，除非特殊需求，button和表单元素的大小不统一，那就在包着el-button的el-form-item上单独加size属性配置。
+在el-form上设置size，el-button用el-form-item包起来，就会继承el-form上设置的size的值，这样就不用再单独对button设置size。
+但和设计师之间约定好的规范，是页面级的表单，按钮是居中显示，所以还是不要包在el-form-item中。
 :::
 
 
@@ -337,10 +341,10 @@
   <el-form-item label="活动形式">
     <el-input type="textarea" v-model.trim="form.desc"></el-input>
   </el-form-item>
-  <el-form-item>
-    <el-button type="primary" @click="onSubmit">立即创建</el-button>
-    <el-button>取消</el-button>
-  </el-form-item>
+  <p class="txt-center">
+    <el-button size="medium">取消</el-button>
+    <el-button size="medium" type="primary" @click="onSubmit">立即创建</el-button>
+  </p>
 </el-form>
 <script>
   export default {
@@ -428,7 +432,7 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 
 ### 对齐方式
 
-根据具体目标和制约因素，选择最佳的标签对齐方式，现在account和cloud这边，基本是底部对齐居多，其次是右对齐，最后是左对齐。
+根据具体目标和制约因素，选择最佳的标签对齐方式，暂时项目中比较普遍的基本是底部对齐居多，其次是右对齐，最后是左对齐。
 
 :::demo 通过设置 `label-position` 属性可以改变表单域标签的位置，可选值为 `top`、`left`，当设为 `top` 时标签会置于表单域的顶部
 ```html
@@ -448,6 +452,10 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
   <el-form-item label="活动形式">
     <el-input v-model.trim="formLabelAlign.type"></el-input>
   </el-form-item>
+  <p class="txt-center">
+    <el-button size="medium">取消</el-button>
+    <el-button size="medium" type="primary" @click="onSubmit">立即创建</el-button>
+  </p>
 </el-form>
 <script>
   export default {
@@ -520,10 +528,10 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
   <el-form-item label="活动形式" prop="desc">
     <el-input type="textarea" v-model.trim="ruleForm.desc"></el-input>
   </el-form-item>
-  <el-form-item>
-    <el-button type="primary" @click="submitForm('ruleForm')">立即创建</el-button>
-    <el-button @click="resetForm('ruleForm')">重置</el-button>
-  </el-form-item>
+  <p class="txt-center">
+    <el-button size="medium" @click="resetForm('ruleForm')">重置</el-button>
+    <el-button size="medium" type="primary" @click="submitForm('ruleForm')">立即创建</el-button>
+  </p>
 </el-form>
 <script>
   export default {
@@ -712,10 +720,10 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
   <el-form-item label="确认密码" prop="checkPass">
     <el-input type="password" v-model.trim="ruleForm2.checkPass" auto-complete="off"></el-input>
   </el-form-item>
-  <el-form-item>
-    <el-button type="primary" @click="submitForm('ruleForm2')">提交</el-button>
-    <el-button @click="resetForm('ruleForm2')">重置</el-button>
-  </el-form-item>
+  <p class="txt-center">
+    <el-button size="medium" @click="resetForm('ruleForm2')">重置</el-button>
+    <el-button size="medium" type="primary" @click="submitForm('ruleForm2')">提交</el-button>
+  </p>
 </el-form>
 <script>
   export default {
@@ -816,11 +824,11 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
   >
     <el-input v-model.trim="domain.value"></el-input><el-button @click.prevent="removeDomain(domain)">删除</el-button>
   </el-form-item>
-  <el-form-item>
-    <el-button type="primary" @click="submitForm('dynamicValidateForm')">提交</el-button>
-    <el-button @click="addDomain">新增域名</el-button>
-    <el-button @click="resetForm('dynamicValidateForm')">重置</el-button>
-  </el-form-item>
+  <p class="txt-center">
+    <el-button size="medium" @click="resetForm('dynamicValidateForm')">重置</el-button>
+    <el-button size="medium" @click="addDomain">新增域名</el-button>
+    <el-button size="medium" type="primary" @click="submitForm('dynamicValidateForm')">提交</el-button>
+  </p>
 </el-form>
 <script>
   export default {
@@ -881,10 +889,10 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
   >
     <el-input type="age" v-model.number="numberValidateForm.age" auto-complete="off"></el-input>
   </el-form-item>
-  <el-form-item>
-    <el-button type="primary" @click="submitForm('numberValidateForm')">提交</el-button>
-    <el-button @click="resetForm('numberValidateForm')">重置</el-button>
-  </el-form-item>
+  <p class="txt-center">
+    <el-button size="medium" @click="resetForm('numberValidateForm')">重置</el-button>
+    <el-button size="medium" type="primary" @click="submitForm('numberValidateForm')">提交</el-button>
+  </p>
 </el-form>
 <script>
   export default {
@@ -935,7 +943,7 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 
 <el-form ref="form" :model="sizeForm" label-width="80px" :size="formSize" style="margin-top:15px">
   <el-form-item label="活动名称">
-    <el-input v-model="sizeForm.name"></el-input>
+    <el-input v-model.trim="sizeForm.name"></el-input>
   </el-form-item>
   <el-form-item label="活动区域">
     <el-select v-model="sizeForm.region" placeholder="请选择活动区域">
@@ -959,16 +967,16 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
       <el-checkbox-button label="线下主题活动" name="type"></el-checkbox-button>
     </el-checkbox-group>
   </el-form-item>
-  <el-form-item label="特殊资源">
+  <el-form-item label="特殊资源" size="large">
     <el-radio-group v-model="sizeForm.resource">
       <el-radio border label="线上品牌商赞助"></el-radio>
       <el-radio border label="线下场地免费"></el-radio>
     </el-radio-group>
   </el-form-item>
-  <el-form-item size="large">
-    <el-button type="primary" @click="onSubmit">立即创建</el-button>
-    <el-button>取消</el-button>
-  </el-form-item>
+  <p class="txt-center">
+    <el-button size="medium">取消</el-button>
+    <el-button size="medium" type="primary" @click="onSubmit">立即创建</el-button>
+  </p>
 </el-form>
 
 <script>

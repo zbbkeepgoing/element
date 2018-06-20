@@ -226,11 +226,15 @@
           amount3: 15
         }],
         currentRow: null,
-        multipleSelection: []
+        multipleSelection: [],
+        expandRows: ['12987125']
       };
     },
 
     methods: {
+      rowKey (row) {
+        return row.id
+      },
       getSummaries(param) {
         const { columns, data } = param;
         const sums = [];
@@ -1541,11 +1545,17 @@
 ### 展开行
 
 当行内容过多并且不想显示横向滚动条时，可以使用 Table 展开行功能。
+
+这个例子里还有load时默认配置某一行打开，如果某几行打开，expandRows 这个是数组格式，将需要打开的rowKey的值放到这个集合里就可以了。
+
 :::demo 通过设置 type="expand" 和 `Scoped slot` 可以开启展开行功能，`el-table-column` 的模板会被渲染成为展开行的内容，展开行可访问的属性与使用自定义列模板时的 `Scoped slot` 相同。
 ```html
 <template>
   <el-table
     :data="tableData5"
+    border
+    :expand-row-keys="expandRows"
+    :row-key="rowKey"
     style="width: 100%">
     <el-table-column type="expand">
       <template slot-scope="props">
@@ -1608,6 +1618,7 @@
   export default {
     data() {
       return {
+        expandRows: ['12987125'],
         tableData5: [{
           id: '12987122',
           name: '好滋好味鸡蛋仔',
@@ -1641,6 +1652,11 @@
           shop: '王小虎夫妻店',
           shopId: '10333'
         }]
+      }
+    },
+    methods: {
+      rowKey (row) {
+        return row.id
       }
     }
   }
