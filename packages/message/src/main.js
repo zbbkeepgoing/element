@@ -16,8 +16,8 @@ const Message = function(options) {
       message: options
     };
   }
-  // 如果有个关闭其他的标志，就先关闭所有，然后打开本身
-  if (options.closeOtherMessages) {
+  // 1、全局设置了关闭，组件没设，则统一会关闭 2、组件直接设置关闭，当前的会关闭 3、全局设置关闭，组件设置为false的话，就不关闭
+  if (options.closeOtherMessages || ((Vue.prototype.$ELEMENT || {}).closeOtherMessages && options.closeOtherMessages === undefined)) {
     Message.closeAll();
   }
   let userOnClose = options.onClose;

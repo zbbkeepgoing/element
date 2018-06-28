@@ -217,13 +217,13 @@ Vue.prototype.$message = Message
 ```
 
 ### 全局配置
-在引入 kyligence-ui 时，可以传入一个全局配置对象。该对象目前仅支持 `size` 字段，用于改变组件的默认尺寸。按照引入 kyligence-ui 的方式，具体操作如下：
+在引入 kyligence-ui 时，可以传入一个全局配置对象。该对象目前仅支持 `size` 和 `closeOtherMessages` 字段，size用于改变组件的默认尺寸，closeOtherMessages用于控制是否关闭其他message，按照引入 kyligence-ui 的方式，具体操作如下：
 
 完整引入 kyligence-ui：
 ```JS
 import Vue from 'vue'
 import KyligenceUI from 'kyligence-ui'
-Vue.use(KyligenceUI, { size: 'small' })
+Vue.use(KyligenceUI, { size: 'small', closeOtherMessages: true })
 ```
 
 按需引入 kyligence-ui：
@@ -231,7 +231,7 @@ Vue.use(KyligenceUI, { size: 'small' })
 import Vue from 'vue'
 import { Button } from 'kyligence-ui'
 
-Vue.prototype.$ELEMENT = { size: 'small' }
+Vue.prototype.$ELEMENT = { size: 'small', closeOtherMessages: true }
 Vue.use(Button)
 ```
 按照以上设置，项目中所有拥有 `size` 属性的组件的默认尺寸均为 'small'。

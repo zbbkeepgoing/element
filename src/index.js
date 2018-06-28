@@ -153,6 +153,7 @@ const install = function(Vue, opts = {}) {
 
   const ELEMENT = {};
   ELEMENT.size = opts.size || '';
+  ELEMENT.closeOtherMessages = opts.closeOtherMessages || false;
 
   Vue.prototype.$loading = Loading.service;
   Vue.prototype.$msgbox = MessageBox;

@@ -38,7 +38,7 @@
           showClose: true,
           message: '这是一条消息提示',
           duration: 0,
-          closeOtherMessages: true
+          closeOtherMessages: false
         });
       },
 
@@ -168,9 +168,11 @@
 
 ### 可关闭
 
-可以添加关闭按钮，错误信息需要手动关闭，不会自动消失，duration设置为0。页面上出现较多message时，就需要每打开一个，关闭其他所有，这时可以配置closeOtherMessages为true，默认不会关闭其他。
+可以添加关闭按钮
+1、错误信息需要手动关闭，不会自动消失，duration设置为0。
+2、页面上出现较多message时，就需要每打开一个，关闭其他所有，这时可以配置closeOtherMessages为true，默认不会关闭其他。
+3、示例中，是全局设置了统一关闭的，消息message，设置了不关闭。
 
-从错误message开始点，点出层叠后，点消息message，会关闭之前点出的所有层叠的。
 
 :::demo 默认的 Message 是不可以被人工关闭的，如果需要可手动关闭的 Message，可以使用`showClose`字段。此外，和 Notification 一样，Message 拥有可控的`duration`，设置`0`为不会被自动关闭，默认为 3000 毫秒。
 ```html
@@ -189,7 +191,7 @@
           showClose: true,
           message: '这是一条消息提示',
           duration: 0,
-          closeOtherMessages: true
+          closeOtherMessages: false
         });
       },
 

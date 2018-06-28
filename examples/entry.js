@@ -17,7 +17,7 @@ Vue.use(VueI18n);
 Vue.locale('zh-cn', zhLocale);
 Vue.locale('en', enLocale);
 
-Vue.use(Element);
+Vue.use(Element, {closeOtherMessages: true});
 Vue.use(VueRouter);
 Vue.component('demo-block', demoBlock);
 Vue.component('main-footer', MainFooter);
