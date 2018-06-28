@@ -1,5 +1,9 @@
 ## 更新日志
 
+### 1.1.8
+*2018-06-28*
+- message 添加 closeOtherMessages 参数，控制打开message时，是否关闭其他的message（by 黄春燕）
+
 ### 1.1.7
 *2018-6-19*
 - form top position light-height unify for any size (by 夏倩)

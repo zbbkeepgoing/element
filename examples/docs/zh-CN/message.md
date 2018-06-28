@@ -36,31 +36,36 @@
       open5() {
         this.$message({
           showClose: true,
-          message: '这是一条消息提示'
+          message: '这是一条消息提示',
+          duration: 0,
+          closeOtherMessages: true
         });
       },
 
       open6() {
         this.$message({
           showClose: true,
-          message: '恭喜你，这是一条成功消息',
-          type: 'success'
+          message: '恭喜你，这是一条成功消息，为了看出层叠，文案多写一点，文案多写一点，文案多',
+          type: 'success',
+          duration: 0
         });
       },
 
       open7() {
         this.$message({
           showClose: true,
-          message: '警告哦，这是一条警告消息',
-          type: 'warning'
+          message: '警告哦，这是一条警告消息，为了看出层叠，文案多写一点，文案多写一点，文案多写一点',
+          type: 'warning',
+          duration: 0
         });
       },
 
       open8() {
         this.$message({
           showClose: true,
-          message: '错了哦，这是一条错误消息',
-          type: 'error'
+          message: '错了哦，这是一条错误消息，为了看出层叠，文案多写一点，文案多写一点，文案多写一点，为了看出层叠，文案多写一点，文案多写一点，文案多写一点',
+          type: 'error',
+          duration: 0
         });
       },
 
@@ -163,7 +168,9 @@
 
 ### 可关闭
 
-可以添加关闭按钮。
+可以添加关闭按钮，错误信息需要手动关闭，不会自动消失，duration设置为0。页面上出现较多message时，就需要每打开一个，关闭其他所有，这时可以配置closeOtherMessages为true，默认不会关闭其他。
+
+从错误message开始点，点出层叠后，点消息message，会关闭之前点出的所有层叠的。
 
 :::demo 默认的 Message 是不可以被人工关闭的，如果需要可手动关闭的 Message，可以使用`showClose`字段。此外，和 Notification 一样，Message 拥有可控的`duration`，设置`0`为不会被自动关闭，默认为 3000 毫秒。
 ```html
@@ -180,31 +187,36 @@
       open5() {
         this.$message({
           showClose: true,
-          message: '这是一条消息提示'
+          message: '这是一条消息提示',
+          duration: 0,
+          closeOtherMessages: true
         });
       },
 
       open6() {
         this.$message({
           showClose: true,
-          message: '恭喜你，这是一条成功消息',
-          type: 'success'
+          message: '恭喜你，这是一条成功消息，为了看出层叠，文案多写一点，文案多写一点，文案多',
+          type: 'success',
+          duration: 0
         });
       },
 
       open7() {
         this.$message({
           showClose: true,
-          message: '警告哦，这是一条警告消息',
-          type: 'warning'
+          message: '警告哦，这是一条警告消息，为了看出层叠，文案多写一点，文案多写一点，文案多写一点',
+          type: 'warning',
+          duration: 0
         });
       },
 
       open8() {
         this.$message({
           showClose: true,
-          message: '错了哦，这是一条错误消息',
-          type: 'error'
+          message: '错了哦，这是一条错误消息，为了看出层叠，文案多写一点，文案多写一点，文案多写一点，为了看出层叠，文案多写一点，文案多写一点，文案多写一点',
+          type: 'error',
+          duration: 0
         });
       }
     }
@@ -290,6 +302,7 @@ import { Message } from 'kyligence-ui';
 | dangerouslyUseHTMLString | 是否将 message 属性作为 HTML 片段处理 | boolean | — | false |
 | customClass | 自定义类名 | string | — | — |
 | duration | 显示时间, 毫秒。设为 0 则不会自动关闭 | number | — | 3000 |
+| closeOtherMessages | 是否关闭其他message, 设置为true则关闭其他所有message | boolean | — | false |
 | showClose | 是否显示关闭按钮 | boolean | — | false |
 | center | 文字是否居中 | boolean | — | false |
 | onClose | 关闭时的回调函数, 参数为被关闭的 message 实例 | function | — | — |

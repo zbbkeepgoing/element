@@ -16,6 +16,10 @@ const Message = function(options) {
       message: options
     };
   }
+  // 如果有个关闭其他的标志，就先关闭所有，然后打开本身
+  if (options.closeOtherMessages) {
+    Message.closeAll();
+  }
   let userOnClose = options.onClose;
   let id = 'message_' + seed++;
 
