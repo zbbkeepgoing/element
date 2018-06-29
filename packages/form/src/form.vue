@@ -57,6 +57,13 @@
             }
           });
         }
+      },
+      '$lang': function(val) {
+        this.fields.forEach((field, index) => {
+          if (field.validateState === 'error') {
+            field.validate('');
+          }
+        });
       }
     },
     data() {

@@ -4,7 +4,7 @@
     data() {
       var checkEmail = (rule, value, callback) => {
         if (!value) {
-          return callback(new Error('邮箱不能为空'));
+          return callback(new Error(this.$t('name')));
         }
         setTimeout(() => {
           if (value !== 'demo@kyligence.io') {
@@ -191,13 +191,63 @@
           ]
         }
       }
+      // rules2 () {
+      //   var validatePass = (rule, value, callback) => {
+      //     if (value === '') {
+      //       callback(new Error('请输入密码'));
+      //     } else {
+      //       if (this.ruleForm2.checkPass !== '') {
+      //         this.$refs.ruleForm2.validateField('checkPass');
+      //       }
+      //       callback();
+      //     }
+      //   };
+      //   var validatePass2 = (rule, value, callback) => {
+      //     if (value === '') {
+      //       callback(new Error('请再次输入密码'));
+      //     } else if (value !== this.ruleForm2.pass) {
+      //       callback(new Error('两次输入密码不一致!'));
+      //     } else {
+      //       callback();
+      //     }
+      //   };
+      //   var checkAge = (rule, value, callback) => {
+      //     if (!value) {
+      //       return callback(new Error(this.$t('name')));
+      //     }
+      //     setTimeout(() => {
+      //       if (!Number.isInteger(value)) {
+      //         callback(new Error('请输入数字值'));
+      //       } else {
+      //         if (value < 18) {
+      //           callback(new Error('必须年满18岁'));
+      //         } else {
+      //           callback();
+      //         }
+      //       }
+      //     }, 1000);
+      //   };
+      //   return {
+      //     pass: [
+      //       { validator: validatePass, trigger: 'blur' }
+      //     ],
+      //     checkPass: [
+      //       { validator: validatePass2, trigger: 'blur' }
+      //     ],
+      //     age: [
+      //       { validator: checkAge, trigger: 'blur, change' }
+      //     ]
+      //   }
+      // }
     },
     locales: {
       'en': {
-        name: 'Please input the name of activity'
+        name: 'Please input the name of activity',
+        blur: 'blur'
       },
       'zh-cn': {
-        name: '请输入活动名称'
+        name: '请输入活动名称',
+        blur: 'blur'
       }
     },
     created () {
@@ -710,7 +760,11 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 
 :::demo 本例还使用`status-icon`属性为输入框添加了表示校验结果的反馈图标。
 ```html
-<el-form :model="ruleForm2" status-icon :rules="rules2" size="medium" ref="ruleForm2" label-width="100px" class="demo-ruleForm">
+<el-button-group>
+  <el-button size="medium" round @click="changeLang('en')" :class="{'active':lang=='en'}">EN</el-button>
+  <el-button size="medium" round @click="changeLang('zh-cn')" :class="{'active':lang=='zh-cn'}">中文</el-button>
+</el-button-group>
+<el-form :model="ruleForm2" status-icon :rules="rules2" ref="ruleForm2" label-width="100px" class="demo-ruleForm">
   <el-form-item label="邮箱" prop="email">
     <el-input v-model.trim="ruleForm2.email"></el-input>
   </el-form-item>
