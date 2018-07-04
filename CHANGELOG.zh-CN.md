@@ -3,8 +3,6 @@
 ### 1.1.8
 *2018-06-28*
 - message 添加 closeOtherMessages 参数，控制打开message时，是否关闭其他的message（by 黄春燕）
-
-*2018-6-29*
 - 在form的vue文件里直接watch lang，验证表单错误信息，以解决所有由于中英文切换带来的验证信息lang不匹配问题 (by 夏倩)
 
 ### 1.1.7
