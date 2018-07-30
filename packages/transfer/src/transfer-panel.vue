@@ -13,7 +13,7 @@
     <div :class="['el-transfer-panel__body', hasFooter ? 'is-with-footer' : '']">
       <el-input 
         class="el-transfer-panel__filter"
-        v-model="query"
+        v-model="queryStr"
         size="mini"
         :placeholder="placeholder"
         prefix-icon="el-icon-search"
@@ -23,6 +23,7 @@
         <!-- <el-button slot="append" size="mini" :class="['el-input__icon', 'el-icon-' + inputIcon]" @click="clearQuery"></el-button> -->
       </el-input>
       <el-checkbox-group
+        v-loading="isLoading"
         v-model="checked"
         v-show="!hasNoMatch && data.length > 0"
         :class="{ 'is-filterable': filterable }"
@@ -102,20 +103,49 @@
       format: Object,
       filterMethod: Function,
       defaultChecked: Array,
-      props: Object
+      props: Object,
+      beforeQuery: {
+        type: Function,
+        default() {
+          return () => {};
+        }
+      }
     },
 
     data() {
       return {
         checked: [],
         allChecked: false,
+        isLoading: false,
         query: '',
+        queryStr: '',
         inputHover: false,
         checkChangeByUser: true
       };
     },
 
     watch: {
+      queryStr(val, oldVal) {
+        const Promise = window.Promise;
+        const result = this.beforeQuery(this.title, val);
+
+        if (result instanceof Promise) {
+
+          this.isLoading = true;
+
+          result.then(() => {
+            this.query = val;
+            this.isLoading = false;
+          }).catch(() => {
+            this.query = val;
+            this.isLoading = false;
+          });
+
+        } else {
+          this.query = val;
+        }
+      },
+
       checked(val, oldVal) {
         this.updateAllChecked();
         if (this.checkChangeByUser) {

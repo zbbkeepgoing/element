@@ -7,6 +7,7 @@
       :title="titles[0] || t('el.transfer.titles.0')"
       :default-checked="leftDefaultChecked"
       :placeholder="filterPlaceholder || t('el.transfer.filterPlaceholder')"
+      :before-query="beforeQuery"
       @checked-change="onSourceCheckedChange">
       <slot name="left-footer"></slot>
     </transfer-panel>
@@ -37,6 +38,7 @@
       :title="titles[1] || t('el.transfer.titles.1')"
       :default-checked="rightDefaultChecked"
       :placeholder="filterPlaceholder || t('el.transfer.filterPlaceholder')"
+      :before-query="beforeQuery"
       @checked-change="onTargetCheckedChange">
       <slot name="right-footer"></slot>
     </transfer-panel>
@@ -123,6 +125,12 @@
       targetOrder: {
         type: String,
         default: 'original'
+      },
+      beforeQuery: {
+        type: Function,
+        default() {
+          return () => {};
+        }
       }
     },
 
