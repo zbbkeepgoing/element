@@ -341,6 +341,7 @@
 | props | 数据源的字段别名 | object{key, label, disabled} | — | — |
 | left-default-checked | 初始状态下左侧列表的已勾选项的 key 数组 | array | — | [ ] |
 | right-default-checked | 初始状态下右侧列表的已勾选项的 key 数组 | array | — | [ ] |
+| before-query | 搜索框异步搜索前，触发的函数 | function(title, query) | — | [ ] |
 
 ### Slot
 | name | 说明 |
