@@ -457,6 +457,7 @@ $--color-text-primary: #263238 !default;
 $--color-text-regular: #455a64 !default;
 $--color-text-secondary: #b0bec5 !default;
 $--color-text-placeholder: #cfd8dc !default;
+$--color-text-disabled: #8E9FA8 !default;
 
 /* Link
 -------------------------- */
@@ -575,6 +576,7 @@ $--index-popper: 2000 !default;
 @color-text-regular: #455a64;
 @color-text-secondary: #b0bec5;
 @color-text-placeholder: #cfd8dc;
+@color-text-disabled: #8E9FA8;
 
 /* Link
 -------------------------- */
