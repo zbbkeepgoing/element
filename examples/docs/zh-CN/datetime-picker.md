@@ -174,11 +174,10 @@ DateTimePicker 由 DatePicker 和 TimePicker 派生，`Picker Options` 或者其
     <el-date-picker
       v-model="value4"
       type="datetimerange"
+      :is-only-icon="true"
       :picker-options="pickerOptions2"
-      range-separator="至"
-      start-placeholder="开始日期"
-      end-placeholder="结束日期"
-      align="right">
+      align="center"
+      style="width: 50px;text-align:right;">
     </el-date-picker>
   </div>
 </template>

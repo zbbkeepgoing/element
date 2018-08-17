@@ -32,8 +32,9 @@
     </i>
   </el-input>
   <div
-    class="el-date-editor el-range-editor el-input__inner"
+    class="el-date-editor el-range-editor"
     :class="[
+      isOnlyIcon ? '' : 'el-input__inner',
       'el-date-editor--' + type,
       pickerSize ? `el-range-editor--${ pickerSize }` : '',
       pickerDisabled ? 'is-disabled' : '',
@@ -46,36 +47,39 @@
     ref="reference"
     v-clickoutside="handleClose"
     v-else>
-    <i :class="['el-input__icon', 'el-range__icon', triggerClass]"></i>
-    <input
-      :placeholder="startPlaceholder"
-      :value="displayValue && displayValue[0]"
-      :disabled="pickerDisabled"
-      :id="id && id[0]"
-      :readonly="!editable || readonly"
-      :name="name && name[0]"
-      @input="handleStartInput"
-      @change="handleStartChange"
-      @focus="handleFocus"
-      class="el-range-input">
-    <span class="el-range-separator">{{ rangeSeparator }}</span>
-    <input
-      :placeholder="endPlaceholder"
-      :value="displayValue && displayValue[1]"
-      :disabled="pickerDisabled"
-      :id="id && id[1]"
-      :readonly="!editable || readonly"
-      :name="name && name[1]"
-      @input="handleEndInput"
-      @change="handleEndChange"
-      @focus="handleFocus"
-      class="el-range-input">
-    <i
-      @click="handleClickIcon"
-      v-if="haveTrigger"
-      :class="[showClose ? '' + clearIcon : '']"
-      class="el-input__icon el-range__close-icon">
-    </i>
+    <div v-if="!isOnlyIcon" class="el-flex-box">
+      <i :class="['el-input__icon', 'el-range__icon', triggerClass]"></i>
+      <input
+        :placeholder="startPlaceholder"
+        :value="displayValue && displayValue[0]"
+        :disabled="pickerDisabled"
+        :id="id && id[0]"
+        :readonly="!editable || readonly"
+        :name="name && name[0]"
+        @input="handleStartInput"
+        @change="handleStartChange"
+        @focus="handleFocus"
+        class="el-range-input">
+      <span class="el-range-separator">{{ rangeSeparator }}</span>
+      <input
+        :placeholder="endPlaceholder"
+        :value="displayValue && displayValue[1]"
+        :disabled="pickerDisabled"
+        :id="id && id[1]"
+        :readonly="!editable || readonly"
+        :name="name && name[1]"
+        @input="handleEndInput"
+        @change="handleEndChange"
+        @focus="handleFocus"
+        class="el-range-input">
+      <i
+        @click="handleClickIcon"
+        v-if="haveTrigger"
+        :class="[showClose ? '' + clearIcon : '']"
+        class="el-input__icon el-range__close-icon">
+      </i>
+    </div>
+    <i v-else :class="toggleIcon"></i>
   </div>
 </template>
 
@@ -352,7 +356,15 @@ export default {
       default: '-'
     },
     pickerOptions: {},
-    unlinkPanels: Boolean
+    unlinkPanels: Boolean,
+    toggleIcon: {
+      type: String,
+      default: 'el-icon-date'
+    },
+    isOnlyIcon: {
+      type: Boolean,
+      default: false
+    }
   },
 
   components: { ElInput },
