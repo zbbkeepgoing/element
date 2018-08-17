@@ -6,8 +6,6 @@
   isOnlyIcon(Boolean)，当isOnlyIcon为true时，datetimepicker组件render成icon形式，点击icon触发datetimepicker面板显示
   toggleIcon(String)，可以传入icon的className来替换默认的icon (by 夏倩)
 
-
-
 *2018-08-15*
 - 添加新的变量@color-text-disabled (by 夏倩)
 
