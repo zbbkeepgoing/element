@@ -1,6 +1,6 @@
 ## 更新日志
 
-### 1.1.9
+### 1.1.10
 *2018-08-17*
 -datetimepicker添加两个属性：
   isOnlyIcon(Boolean)，当isOnlyIcon为true时，datetimepicker组件render成icon形式，点击icon触发datetimepicker面板显示
@@ -9,6 +9,7 @@
 *2018-08-15*
 - 添加新的变量@color-text-disabled (by 夏倩)
 
+### 1.1.9
 *2018-07-30*
 - 穿梭框加入异步数据查询功能（by 罗杰）
 
