@@ -1,6 +1,6 @@
 ## 更新日志
 
-### 1.1.10
+### 2.0.0
 *2018-08-17*
 -datetimepicker添加两个属性：
   isOnlyIcon(Boolean)，当isOnlyIcon为true时，datetimepicker组件render成icon形式，点击icon触发datetimepicker面板显示
