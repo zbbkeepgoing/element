@@ -9,6 +9,9 @@
       <i class="el-alert__icon" :class="[ iconClass, isBigIcon ]" v-if="showIcon"></i>
       <div class="el-alert__content">
         <span class="el-alert__title" :class="[ isBoldTitle ]" v-if="title">{{ title }}</span>
+        <span v-else class="el-alert__title">
+          <slot name="title"></slot>
+        </span>
         <slot>
           <p class="el-alert__description" v-if="description">{{ description }}</p>
         </slot>

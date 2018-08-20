@@ -44,6 +44,17 @@
     title="错误提示的文案"
     type="error">
   </el-alert>
+  <el-alert
+    type="warning"
+    @close="hello">
+    <span slot="title">设置了回调的 alert <a>点我</a></span>
+  </el-alert>
+   <el-alert
+    type="warning"
+    title="警告提示的文案"
+    @close="hello">
+    <p>I am description <a>点我</a></p>
+  </el-alert>
 </template>
 ```
 :::
@@ -215,3 +226,9 @@
 | 事件名称 | 说明 | 回调参数 |
 |---------- |-------- |---------- |
 | close | 关闭alert时触发的事件 | — |
+
+### Slots
+| 名称 | 说明 | 
+|---------- |-------- |
+| title | alert 标题 |
+| default | description |
