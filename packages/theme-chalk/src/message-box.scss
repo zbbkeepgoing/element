@@ -41,6 +41,7 @@
     padding-bottom: 10px;
     border-bottom: 1px solid $--border-color-lighter;
     min-height: 18px;
+    box-sizing: content-box;
   }
 
   @include e(title) {
