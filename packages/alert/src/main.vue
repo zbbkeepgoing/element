@@ -34,7 +34,7 @@
       title: {
         type: String,
         default: '',
-        required: true
+        required: false
       },
       description: {
         type: String,

@@ -1,10 +1,9 @@
 ## 更新日志
 
-### 2.0.1
+### 2.0.2
 *2018-08-20*
-- el-alert添加title slot：
-   (by 大圣)
-
+- el-alert添加title slot：(by 大圣)
+- 修复全局的box-sizing导致message box的header设置的min-height 失效：(by 春燕)
 
 ### 2.0.0
 *2018-08-17*
