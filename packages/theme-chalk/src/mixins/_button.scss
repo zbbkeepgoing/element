@@ -96,4 +96,7 @@
   &.is-round {
     padding: $padding-vertical $padding-horizontal;
   }
+  &.is-circle {
+    padding: $padding-vertical;
+  }
 }

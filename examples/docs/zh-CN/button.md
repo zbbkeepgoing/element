@@ -73,6 +73,7 @@
   <el-button type="warning" icon="el-icon-delete" circle size="medium"></el-button>
   <el-button type="info" icon="el-icon-delete" circle size="small"></el-button>
   <el-button icon="el-icon-search" circle size="mini"></el-button>
+  <el-button type="primary" icon="el-icon-search" plain circle size="mini"></el-button>
 </div>
 ```
 :::
