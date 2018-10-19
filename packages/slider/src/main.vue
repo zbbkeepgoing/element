@@ -32,33 +32,32 @@
       </div>
       <slider-button
         :vertical="vertical"
-        :show-simple-values="showSimpleValues && firstValue !== min"
+        :show-dynamic-values="showDynamicValues && firstValue !== min"
         v-model="firstValue"
-        :class="{'tip-btn': showValues || showSimpleValues}"
+        :class="{'tip-btn': buttonType === 'sharp'}"
         :tooltip-class="tooltipClass"
         ref="button1">
       </slider-button>
       <slider-button
         :vertical="vertical"
         v-model="secondValue"
-        :show-simple-values="showSimpleValues && secondValue !== max"
-        :class="{'tip-btn': showValues || showSimpleValues}"
+        :show-dynamic-values="showDynamicValues && secondValue !== max"
+        :class="{'tip-btn': buttonType === 'sharp'}"
         :tooltip-class="tooltipClass"
         ref="button2"
         v-if="range">
       </slider-button>
       <div
-        class="el-slider__stop"
+        :class="{'el-slider__stop': buttonType === 'default', 'el-slider__valueStop': buttonType === 'sharp'}"
         v-for="item in stops"
         :style="vertical ? { 'bottom': item + '%' } : { 'left': item + '%' }"
         v-if="showStops">
       </div>
       <div
-        class="el-slider__valueStop"
         v-for="(item, index) in stopValues"
-        :class="{'active': (item <= firstValue && !range) || item >= firstValue && item <= secondValue && range}"
+        :class="{'el-slider__stop': buttonType === 'default', 'el-slider__valueStop': buttonType === 'sharp', 'active': (item <= firstValue && !range) || item >= firstValue && item <= secondValue && range}"
         :style="vertical ? { 'bottom': index * 100 / (stopValues.length - 1) + '%' } : { 'left': index * 100 / (stopValues.length - 1) + '%' }"
-        v-if="showValues || showSimpleValues">
+        v-if="showValues || showDynamicValues">
       </div>
       <div>
         <div
@@ -72,7 +71,7 @@
           class="el-slider__label el-slider__values"
           v-for="(item, index) in stopValues"
           :style="vertical ? { 'bottom': index * 100 / (stopValues.length - 1) + '%' } : { 'left': index * 100 / (stopValues.length - 1) + '%' }"
-          v-if="showValues || showSimpleValues">{{item}}
+          v-if="showValues || showDynamicValues">{{item}}
         </div>
       </div>
     </div>
@@ -132,9 +131,13 @@
         type: Boolean,
         default: false
       },
-      showSimpleValues: {
+      showDynamicValues: {
         type: Boolean,
         default: false
+      },
+      buttonType: {
+        type: String,
+        default: 'default'
       },
       showTooltip: {
         type: Boolean,
@@ -354,7 +357,7 @@
       },
 
       stopValues() {
-        if (!(this.showValues || this.showSimpleValues)) return [];
+        if (!(this.showValues || this.showDynamicValues)) return [];
         if (this.step === 0) {
           process.env.NODE_ENV !== 'production' &&
           console.warn('[Element Warn][Slider]step should not be 0.');
@@ -362,7 +365,7 @@
         }
         const stopCount = (this.max - this.min) / this.step;
         const result = [];
-        if (this.showSimpleValues) {
+        if (this.showDynamicValues) {
           result.push(this.min);
         } else {
           for (let i = 1; i <= stopCount; i++) {

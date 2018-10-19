@@ -133,6 +133,7 @@
       v-model="value11"
       :step="25"
       range
+      button-type="sharp"
       :min="25"
       :max="100"
       show-values>
@@ -144,9 +145,10 @@
       v-model="value12"
       :step="1"
       range
+      button-type="sharp"
       :min="0"
       :max="180"
-      show-simple-values>
+      show-dynamic-values>
     </el-slider>
   </div>
 </template>
@@ -258,7 +260,8 @@
 | input-size | 输入框的尺寸 | string | large / medium / small / mini | small |
 | show-stops | 是否显示间断点 | boolean | — | false |
 | show-values | 是否显示Value值和自定义箭头断点样式 | boolean | - | false |
-| show-simple-values | slider-btn下是否value值和首尾自定义断点样式 | boolean | - | false |
+| show-dynamic-values | slider-btn下是否value值和首尾自定义断点样式 | boolean | - | false |
+| button-type | 拖动按钮和断点的样式 | string | default / sharp | default |
 | show-tooltip | 是否显示 tooltip | boolean | — | true |
 | format-tooltip | 格式化 tooltip message | function(value) | — | — |
 | range | 是否为范围选择 | boolean | — | false |
