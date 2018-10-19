@@ -586,9 +586,9 @@ $--card-padding: 20px !default;
 /* Slider
 --------------------------*/
 $--slider-main-background-color: $--color-primary !default;
-$--slider-runway-background-color: $--background-color-regular !default;
+$--slider-runway-background-color: $--border-color-base !default;
 $--slider-button-hover-color: mix($--color-primary, black, 97%) !default;
-$--slider-stop-background-color: $--background-color-regular  !default;
+$--slider-stop-background-color: $--border-color-base  !default;
 $--slider-disable-color: $--color-text-placeholder !default;
 
 $--slider-margin: 16px 0 !default;

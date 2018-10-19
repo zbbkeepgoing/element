@@ -11,7 +11,9 @@
         value7: 0,
         value8: 0,
         value9: [4, 8],
-        value10: 0
+        value10: 0,
+        value11: [25, 50],
+        value12: [50, 75]
       };
     },
     methods: {
@@ -125,6 +127,28 @@
       show-stops>
     </el-slider>
   </div>
+  <div class="block">
+    <span class="demonstration">箭头断点和value</span>
+    <el-slider
+      v-model="value11"
+      :step="25"
+      range
+      :min="25"
+      :max="100"
+      show-values>
+    </el-slider>
+  </div>
+  <div class="block">
+    <span class="demonstration">箭头slider button下显示value</span>
+    <el-slider
+      v-model="value12"
+      :step="1"
+      range
+      :min="0"
+      :max="180"
+      show-simple-values>
+    </el-slider>
+  </div>
 </template>
 
 <script>
@@ -233,6 +257,8 @@
 | show-input-controls | 在显示输入框的情况下，是否显示输入框的控制按钮 | boolean | — | true |
 | input-size | 输入框的尺寸 | string | large / medium / small / mini | small |
 | show-stops | 是否显示间断点 | boolean | — | false |
+| show-values | 是否显示Value值和自定义箭头断点样式 | boolean | - | false |
+| show-simple-values | slider-btn下是否value值和首尾自定义断点样式 | boolean | - | false |
 | show-tooltip | 是否显示 tooltip | boolean | — | true |
 | format-tooltip | 格式化 tooltip message | function(value) | — | — |
 | range | 是否为范围选择 | boolean | — | false |

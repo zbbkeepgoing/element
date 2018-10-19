@@ -32,13 +32,17 @@
       </div>
       <slider-button
         :vertical="vertical"
+        :show-simple-values="showSimpleValues && firstValue !== min"
         v-model="firstValue"
+        :class="{'tip-btn': showValues || showSimpleValues}"
         :tooltip-class="tooltipClass"
         ref="button1">
       </slider-button>
       <slider-button
         :vertical="vertical"
         v-model="secondValue"
+        :show-simple-values="showSimpleValues && secondValue !== max"
+        :class="{'tip-btn': showValues || showSimpleValues}"
         :tooltip-class="tooltipClass"
         ref="button2"
         v-if="range">
@@ -49,6 +53,13 @@
         :style="vertical ? { 'bottom': item + '%' } : { 'left': item + '%' }"
         v-if="showStops">
       </div>
+      <div
+        class="el-slider__valueStop"
+        v-for="(item, index) in stopValues"
+        :class="{'active': (item <= firstValue && !range) || item >= firstValue && item <= secondValue && range}"
+        :style="vertical ? { 'bottom': index * 100 / (stopValues.length - 1) + '%' } : { 'left': index * 100 / (stopValues.length - 1) + '%' }"
+        v-if="showValues || showSimpleValues">
+      </div>
       <div>
         <div
           class="el-slider__label"
@@ -56,6 +67,12 @@
           :style="vertical ? { 'bottom': item + '%' } : { 'left': item + '%' }"
           :class="{'active': (item <= 100 * (firstValue - min) / (max - min) && !range) || (item >= 100 * (firstValue - min) / (max - min) && item <= 100 * (secondValue - min) / (max - min) && range)}"
           v-if="showStops">{{item}}%
+        </div>
+        <div
+          class="el-slider__label el-slider__values"
+          v-for="(item, index) in stopValues"
+          :style="vertical ? { 'bottom': index * 100 / (stopValues.length - 1) + '%' } : { 'left': index * 100 / (stopValues.length - 1) + '%' }"
+          v-if="showValues || showSimpleValues">{{item}}
         </div>
       </div>
     </div>
@@ -108,6 +125,14 @@
         default: 'small'
       },
       showStops: {
+        type: Boolean,
+        default: false
+      },
+      showValues: {
+        type: Boolean,
+        default: false
+      },
+      showSimpleValues: {
         type: Boolean,
         default: false
       },
@@ -325,6 +350,29 @@
         }
         result.unshift(0);
         result.push(100);
+        return result;
+      },
+
+      stopValues() {
+        if (!(this.showValues || this.showSimpleValues)) return [];
+        if (this.step === 0) {
+          process.env.NODE_ENV !== 'production' &&
+          console.warn('[Element Warn][Slider]step should not be 0.');
+          return [];
+        }
+        const stopCount = (this.max - this.min) / this.step;
+        const result = [];
+        if (this.showSimpleValues) {
+          result.push(this.min);
+        } else {
+          for (let i = 1; i <= stopCount; i++) {
+            result.push(i * this.step);
+          }
+        }
+        if (this.min === 0 && this.showValues) {
+          result.unshift(0);
+        }
+        result.push(this.max);
         return result;
       },
 

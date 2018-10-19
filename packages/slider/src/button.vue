@@ -24,6 +24,7 @@
       <span slot="content">{{ formatValue }}</span>
       <div class="el-slider__button" :class="{ 'hover': hovering, 'dragging': dragging }"></div>
     </el-tooltip>
+    <div v-if="showSimpleValues" class="el-slider__value">{{ formatValue }}</div>
   </div>
 </template>
 
@@ -46,7 +47,11 @@
         type: Boolean,
         default: false
       },
-      tooltipClass: String
+      tooltipClass: String,
+      showSimpleValues: {
+        type: Boolean,
+        default: false
+      }
     },
 
     data() {
