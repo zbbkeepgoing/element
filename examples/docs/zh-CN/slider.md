@@ -259,8 +259,8 @@
 | show-input-controls | 在显示输入框的情况下，是否显示输入框的控制按钮 | boolean | — | true |
 | input-size | 输入框的尺寸 | string | large / medium / small / mini | small |
 | show-stops | 是否显示间断点 | boolean | — | false |
-| show-values | 是否显示Value值和自定义箭头断点样式 | boolean | - | false |
-| show-dynamic-values | slider-btn下是否value值和首尾自定义断点样式 | boolean | - | false |
+| show-values | 是否显示Value值和断点 | boolean | - | false |
+| show-dynamic-values | slider-btn下是否value值和首尾断点 | boolean | - | false |
 | button-type | 拖动按钮和断点的样式 | string | default / sharp | default |
 | show-tooltip | 是否显示 tooltip | boolean | — | true |
 | format-tooltip | 格式化 tooltip message | function(value) | — | — |
