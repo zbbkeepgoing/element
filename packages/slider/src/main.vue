@@ -71,7 +71,7 @@
           class="el-slider__label el-slider__values"
           v-for="(item, index) in stopValues"
           :style="vertical ? { 'bottom': index * 100 / (stopValues.length - 1) + '%' } : { 'left': index * 100 / (stopValues.length - 1) + '%' }"
-          v-if="showValues || showDynamicValues">{{item}}
+          v-if="showValues || showDynamicValues">{{formatValue(item)}}
         </div>
       </div>
     </div>
@@ -232,6 +232,10 @@
         } else {
           return this.value !== this.oldValue;
         }
+      },
+
+      formatValue(value) {
+        return this.formatTooltip instanceof Function ? this.formatTooltip(value) : value;
       },
       setValues() {
         if (this.min > this.max) {

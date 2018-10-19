@@ -18,7 +18,7 @@
     },
     methods: {
       formatTooltip(val) {
-        return val / 100;
+        return val + '%';
       }
     }
   }
@@ -134,6 +134,7 @@
       :step="25"
       range
       button-type="sharp"
+      :format-tooltip="formatTooltip"
       :min="25"
       :max="100"
       show-values>
