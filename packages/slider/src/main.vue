@@ -32,7 +32,7 @@
       </div>
       <slider-button
         :vertical="vertical"
-        :show-dynamic-values="showDynamicValues && firstValue !== min"
+        :show-dynamic-values="showDynamicValues && (firstValue !== min && range || firstValue !== min && firstValue !== max && !range)"
         v-model="firstValue"
         :class="{'tip-btn': buttonType === 'sharp'}"
         :tooltip-class="tooltipClass"
