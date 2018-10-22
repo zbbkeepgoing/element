@@ -1,4 +1,8 @@
 ## 更新日志
+### 2.0.7
+*2018-10-22*
+- 修改dialog border color
+- 修改slider show-dynamic-values 样式
 
 ### 2.0.5
 *2018-10-19*

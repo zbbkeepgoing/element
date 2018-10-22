@@ -33,7 +33,7 @@
   @include e(header) {
     padding: $--dialog-padding-primary;
     padding-bottom: 12px;
-    border-bottom: 1px solid $--border-color-light;
+    border-bottom: 1px solid $--border-color-base;
     min-height: 18px;
   }
 
@@ -76,7 +76,7 @@
     padding: 16px 20px;
     text-align: right;
     box-sizing: border-box;
-    border-top: 1px solid $--border-color-light;
+    border-top: 1px solid $--border-color-base;
   }
 
   // 内容居中布局
