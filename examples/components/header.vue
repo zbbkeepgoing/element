@@ -261,7 +261,7 @@
   <div class="headerWrapper">
     <header class="header" ref="header">
       <div class="container">
-        <h1><router-link :to="`/${ lang }`">
+        <h1><router-link :to="`/${ lang }/component/to-developers`">
           <!-- logo -->
           <slot>
             <img src="../assets/images/logo-text-blue.png" alt="element-logo"
@@ -291,12 +291,12 @@
               :to="`/${ lang }/guide`">{{ langConfig.guide }}
             </router-link>
           </li> -->
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <router-link
               active-class="active"
               :to="`/${ lang }/component`">{{ langConfig.components }}
             </router-link>
-          </li>
+          </li> -->
           <!-- <li class="nav-item">
             <router-link
               active-class="active"
@@ -306,12 +306,12 @@
           </li> -->
 
           <!-- gap -->
-          <li class="nav-item" v-show="isComponentPage">
+          <!-- <li class="nav-item" v-show="isComponentPage">
             <div class="nav-gap"></div>
-          </li>
+          </li> -->
 
           <!-- 版本选择器 -->
-          <li class="nav-item nav-versions" v-show="isComponentPage">
+          <!-- <li class="nav-item nav-versions" v-show="isComponentPage">
             <el-dropdown
               trigger="click"
               class="nav-dropdown"
@@ -333,9 +333,10 @@
               </el-dropdown-menu>
             </el-dropdown>
           </li>
+          -->
 
           <!-- 语言选择器 -->
-          <li class="nav-item lang-item">
+          <!-- <li class="nav-item lang-item">
             <el-dropdown
               trigger="click"
               class="nav-dropdown nav-lang"
@@ -356,7 +357,7 @@
                 </el-dropdown-item>
               </el-dropdown-menu>
             </el-dropdown>
-          </li>
+          </li> -->
           
           <!--theme picker-->
           <!-- <li class="nav-item nav-theme-switch" v-show="isComponentPage">
@@ -382,10 +383,12 @@
         verDropdownVisible: true,
         langDropdownVisible: true,
         langs: {
-          'zh-CN': '中文',
+          'zh-CN': '中文'
+          /* ,
           'en-US': 'English',
-          'es': 'Español'
-        }
+          'es': 'Español' */
+        },
+        lang: 'zh-CN'
       };
     },
 
@@ -395,9 +398,9 @@
     },
 
     computed: {
-      lang() {
+      /* lang() {
         return this.$route.path.split('/')[1] || 'zh-CN';
-      },
+      }, */
       displayedLang() {
         return this.langs[this.lang] || '中文';
       },

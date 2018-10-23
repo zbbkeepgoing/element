@@ -186,7 +186,8 @@
         hovering: false,
         isExpanded: false,
         fixedControl: false,
-        scrollParent: null
+        scrollParent: null,
+        lang: 'zh-CN'
       };
     },
 
@@ -248,9 +249,9 @@
     },
 
     computed: {
-      lang() {
+      /* lang() {
         return this.$route.path.split('/')[1];
-      },
+      }, */
 
       langConfig() {
         return compoLang.filter(config => config.lang === this.lang)[0]['demo-block'];

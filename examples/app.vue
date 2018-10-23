@@ -207,11 +207,15 @@
 
   export default {
     name: 'app',
-
+    data() {
+      return {
+        lang: 'zh-CN'
+      };
+    },
     computed: {
-      lang() {
+      /* lang() {
         return this.$route.path.split('/')[1] || 'zh-CN';
-      },
+      }, */
       isComponent() {
         return /^component-/.test(this.$route.name || '');
       }
@@ -219,9 +223,9 @@
 
     watch: {
       lang(val) {
-        if (val === 'zh-CN') {
+        /* if (val === 'zh-CN') {
           this.suggestJump();
-        }
+        } */
         localize(val);
       }
     },
@@ -246,9 +250,9 @@
 
     mounted() {
       localize(this.lang);
-      if (this.lang === 'zh-CN') {
+      /* if (this.lang === 'zh-CN') {
         this.suggestJump();
-      }
+      } */
       // setTimeout(() => {
       //   const notified = localStorage.getItem('ES_NOTIFIED_2');
       //   if (!notified && this.lang !== 'es') {

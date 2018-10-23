@@ -182,7 +182,8 @@
         highlights: [],
         navState: [],
         isSmallScreen: false,
-        isFade: false
+        isFade: false,
+        lang: 'zh-CN'
       };
     },
     watch: {
@@ -202,9 +203,9 @@
         style.opacity = this.isFade ? '0.5' : '1';
         return style;
       },
-      lang() {
+      /* lang() {
         return this.$route.meta.lang;
-      },
+      }, */
       langConfig() {
         return compoLang.filter(config => config.lang === this.lang)[0]['nav'];
       }

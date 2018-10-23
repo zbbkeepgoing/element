@@ -1,5 +1,5 @@
 import navConfig from './nav.config.json';
-import langs from './i18n/route.json';
+// import langs from './i18n/route.json';
 
 const LOAD_MAP = {
   'zh-CN': name => {
@@ -95,7 +95,7 @@ const registerRoute = (navConfig) => {
 
 let route = registerRoute(navConfig);
 
-const generateMiscRoutes = function(lang) {
+/* const generateMiscRoutes = function(lang) {
   let guideRoute = {
     path: `/${ lang }/guide`, // 指南
     redirect: `/${ lang }/guide/design`,
@@ -132,7 +132,7 @@ const generateMiscRoutes = function(lang) {
 
 langs.forEach(lang => {
   route = route.concat(generateMiscRoutes(lang.lang));
-});
+}); */
 
 route.push({
   path: '/play',
@@ -140,13 +140,15 @@ route.push({
   component: require('./play/index.vue')
 });
 
-let userLanguage = localStorage.getItem('ELEMENT_LANGUAGE') || window.navigator.language || 'en-US';
+/* let userLanguage = localStorage.getItem('ELEMENT_LANGUAGE') || window.navigator.language || 'en-US';
 let defaultPath = '/en-US';
 if (userLanguage.indexOf('zh-') !== -1) {
   defaultPath = '/zh-CN';
 } else if (userLanguage.indexOf('es') !== -1) {
   defaultPath = '/es';
-}
+} */
+// let userLanguage = '/zh-CN';
+let defaultPath = '/zh-CN/component/to-developers';
 
 route = route.concat([{
   path: '/',

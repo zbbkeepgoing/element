@@ -70,14 +70,15 @@
         nav: [],
         currentIndex: -1,
         leftNav: null,
-        rightNav: null
+        rightNav: null,
+        lang: 'zh-CN'
       };
     },
 
     computed: {
-      lang() {
+      /* lang() {
         return this.$route.meta.lang;
-      }
+      } */
     },
 
     watch: {

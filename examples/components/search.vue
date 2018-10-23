@@ -137,14 +137,15 @@
             empty: 'No hay datos que coincidan',
             index: 'es'
           }
-        }
+        },
+        lang: 'zh-CN'
       };
     },
 
     computed: {
-      lang() {
+      /* lang() {
         return this.$route.meta.lang;
-      },
+      }, */
 
       placeholder() {
         return this.lang ? this.langs[this.lang].search : '';

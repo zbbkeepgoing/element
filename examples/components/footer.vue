@@ -167,14 +167,15 @@
   export default {
     data() {
       return {
-        version
+        version,
+        lang: 'zh-CN'
       };
     },
 
     computed: {
-      lang() {
+      /* lang() {
         return this.$route.path.split('/')[1] || 'zh-CN';
-      },
+      }, */
 
       langConfig() {
         return compoLang.filter(config => config.lang === this.lang)[0]['footer'];
