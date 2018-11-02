@@ -1,4 +1,11 @@
 ## 更新日志
+### 2.0.8
+*2018-11-2*
+- 修改size为small的button font-size为14px
+- 修改dialog title默认500的加粗
+- 修改date-range的btn group 的type
+- 修改slider的show-value样式
+
 ### 2.0.7
 *2018-10-22*
 - 修改dialog border color
