@@ -98,6 +98,7 @@ Dialog 弹出一个对话框，适合需要定制性更大的场景。
   title="提示"
   :visible.sync="dialogVisible"
   width="30%"
+  :close-on-click-modal="false"
   :before-close="handleClose"
   ref="myDialog">
   <el-alert

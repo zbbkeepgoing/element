@@ -50,11 +50,13 @@
       <div
         :class="{'el-slider__stop': buttonType === 'default', 'el-slider__valueStop': buttonType === 'sharp'}"
         v-for="item in stops"
+        :key="item"
         :style="vertical ? { 'bottom': item + '%' } : { 'left': item + '%' }"
         v-if="showStops">
       </div>
       <div
         v-for="(item, index) in stopValues"
+        :key="index"
         :class="{'el-slider__stop': buttonType === 'default', 'el-slider__valueStop': buttonType === 'sharp', 'active': (item <= firstValue && !range) || item >= firstValue && item <= secondValue && range}"
         :style="vertical ? { 'bottom': index * 100 / (stopValues.length - 1) + '%' } : { 'left': index * 100 / (stopValues.length - 1) + '%' }"
         v-if="showValues || showDynamicValues">
@@ -63,6 +65,7 @@
         <div
           class="el-slider__label"
           v-for="item in labels"
+          :key="item"
           :style="vertical ? { 'bottom': item + '%' } : { 'left': item + '%' }"
           :class="{'active': (item <= 100 * (firstValue - min) / (max - min) && !range) || (item >= 100 * (firstValue - min) / (max - min) && item <= 100 * (secondValue - min) / (max - min) && range)}"
           v-if="showStops">{{item}}%
@@ -70,6 +73,7 @@
         <div
           class="el-slider__label el-slider__values"
           v-for="(item, index) in stopValues"
+          :key="index"
           :style="vertical ? { 'bottom': index * 100 / (stopValues.length - 1) + '%' } : { 'left': index * 100 / (stopValues.length - 1) + '%' }"
           v-if="showValues || showDynamicValues">{{formatValue(item)}}
         </div>
