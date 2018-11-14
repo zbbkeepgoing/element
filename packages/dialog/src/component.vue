@@ -15,7 +15,7 @@
             class="el-dialog__headerbtn"
             aria-label="Close"
             v-if="showClose"
-            @click="handleClose">
+            @click.stop="handleClose">
             <i class="el-dialog__close el-icon el-icon-close"></i>
           </button>
         </div>
@@ -55,6 +55,11 @@
       },
 
       appendToBody: {
+        type: Boolean,
+        default: false
+      },
+
+      isDragable: {
         type: Boolean,
         default: false
       },
@@ -102,7 +107,8 @@
     data() {
       return {
         closed: false,
-        mousePoint: { x: 0, y: 0 }
+        mousePoint: { x: 0, y: 0 },
+        offset: { left: 0, top: 0 }
       };
     },
 
@@ -112,7 +118,9 @@
           this.closed = false;
           this.$emit('open');
           this.$el.addEventListener('scroll', this.updatePopper);
-          this.dragable();
+          if (this.isDragable) {
+            this.dragable();
+          }
           this.$nextTick(() => {
             this.$refs.dialog.scrollTop = 0;
             this.$el.focus();
@@ -174,32 +182,49 @@
       dragable() {
         const targetid = this.$el.querySelector('.el-dialog__header');
         const moveTarget = this.$el.querySelector('.el-dialog');
-        targetid.onmousedown = function (event) {
+        let leftLimit;
+        let topLimit;
+        let topMaxLimit;
+        targetid.onmousedown = (event) => {
           const e = event;
-          const offsetLeft = targetid.offsetLeft;
-          const offsetTop = targetid.offsetTop;
+          const offsetLeft = this.offset.left;
+          const offsetTop = this.offset.top;
+          leftLimit = (window.innerWidth - moveTarget.offsetWidth) / 2;
+          topLimit = window.innerHeight * moveTarget.style['margin-top'].split('vh')[0] / 100;
+          topMaxLimit = window.innerHeight * (100 - moveTarget.style['margin-top'].split('vh')[0]) / 100 - moveTarget.offsetHeight;
           this.mousePoint.x = e.clientX - offsetLeft;
           this.mousePoint.y = e.clientY - offsetTop;
-          document.onmousemove = move.bind(this);
-          document.onmouseup = end;
-          e.stopPropagation();
-        });
-        function move(event) {
-          const e = event;
-          const Left = e.clientX - this.mousePoint.x;
-          const Top = e.clientY - this.mousePoint.y;
-          moveTarget.style.left = Left + 'px';
-          moveTarget.style.top = Top + 'px';
+          document.onmousemove = move;
           e.stopPropagation();
         };
-        function end(event) {
+        const move = (event) => {
+          const e = event;
+          let l = e.clientX - this.mousePoint.x;
+          let t = e.clientY - this.mousePoint.y;
+          if (l < 0 - leftLimit) {
+            l = 0 - leftLimit;
+          } else if (l > leftLimit) {
+            l = leftLimit;
+          }
+          if (t < 0 - topLimit) {
+            t = 0 - topLimit;
+          } else if (t > topMaxLimit) {
+            t = topMaxLimit;
+          }
+          this.offset.left = l;
+          this.offset.top = t;
+          moveTarget.style.left = this.offset.left + 'px';
+          moveTarget.style.top = this.offset.top + 'px';
+          document.onmouseup = end;
+          targetid.onmouseup = end;
+          e.stopPropagation();
+        };
+        const end = (event) => {
           const e = event;
           document.onmousemove = null;
           document.onmouseup = null;
-          // document.removeEventListener('mousemove', move);
-          // document.removeEventListener('mouseup', end);
           e.stopPropagation();
-        }
+        };
       }
     },
 
