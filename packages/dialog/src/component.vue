@@ -1,5 +1,8 @@
 <template>
-  <transition name="dialog-fade">
+  <transition
+    name="dialog-fade"
+    @after-enter="afterEnter"
+    @after-leave="afterLeave">
     <div class="el-dialog__wrapper" v-show="visible" @click.self="handleWrapperClick">
       <div
         class="el-dialog"
@@ -225,6 +228,12 @@
           document.onmouseup = null;
           e.stopPropagation();
         };
+      },
+      afterEnter() {
+        this.$emit('opened');
+      },
+      afterLeave() {
+        this.$emit('closed');
       }
     },
 

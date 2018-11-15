@@ -323,5 +323,7 @@ Dialog 组件的内容可以是任意的，甚至可以是表格或表单，下�
 ### Events
 | 事件名称      | 说明    | 回调参数      |
 |---------- |-------- |---------- |
-| close  | Dialog 关闭的回调 | — |
 | open  | Dialog 打开的回调 | — |
+| opened  | Dialog 打开动画结束时的回调 | — |
+| close  | Dialog 关闭的回调 | — |
+| closed | Dialog 关闭动画结束时的回调 | — |
