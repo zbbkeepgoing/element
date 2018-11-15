@@ -1,4 +1,8 @@
 ## 更新日志
+### 2.0.10
+*2018-07-30*
+- Dialog对话框加入opened和closed事件（by 罗杰）
+
 ### 2.0.9
 *2018-11-14*
 - 给dialog添加isDragable属性，当属性为true时，可以通过拖拽dialog的title移动dialog，但不会超出可视窗口 (by 夏倩)
