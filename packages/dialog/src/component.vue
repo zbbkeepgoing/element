@@ -9,7 +9,7 @@
         :class="[{ 'is-fullscreen': fullscreen, 'el-dialog--center': center }, customClass]"
         ref="dialog"
         :style="style">
-        <div class="el-dialog__header">
+        <div class="el-dialog__header" :class="{'dragable': isDragable}">
           <slot name="title">
             <span class="el-dialog__title">{{ title }}</span>
           </slot>
