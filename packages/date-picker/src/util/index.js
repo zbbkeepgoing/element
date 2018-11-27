@@ -215,3 +215,80 @@ export const nextYear = function(date, amount = 1) {
   const month = date.getMonth();
   return changeYearMonthAndClampDate(date, year + amount, month);
 };
+
+export const setDate = function(date = new Date(), type, value) {
+  date = new Date(date.getTime());
+  switch (type) {
+    case 'year':
+      date.setFullYear(value);
+      return date;
+    case 'month':
+      date.setMonth(value - 1);
+      return date;
+    case 'date':
+      date.setDate(value);
+      return date;
+    case 'hours':
+      date.setHours(value);
+      return date;
+    case 'minutes':
+      date.setMinutes(value);
+      return date;
+    case 'seconds':
+      date.setSeconds(value);
+      return date;
+  };
+};
+
+export const parseDateInput = function(value = '') {
+  return {
+    year: value.slice(0, 4).length === 4 && +value.slice(0, 4),
+    month: value.slice(5, 7).length === 2 && +value.slice(5, 7),
+    date: value.slice(8, 10).length === 2 && +value.slice(8, 10),
+    hours: value.slice(11, 13).length === 2 && +value.slice(11, 13),
+    minutes: value.slice(14, 16).length === 2 && +value.slice(14, 16),
+    seconds: value.slice(17, 19).length === 2 && +value.slice(17, 19)
+  };
+};
+
+export const autoCompleteDateSplit = function(type, value = '') {
+  const dateSplitIdxs = [4, 7];
+  const timeSplitIdxs = [13, 16];
+  const dateTimeSplitIdxs = [10];
+  const splitChars = ['-', ' ', ':'];
+  const autoCompleteIdxs = [
+    ...(['date', 'datetime'].includes(type) ? dateSplitIdxs : []),
+    ...(type === 'datetime' ? dateTimeSplitIdxs : []),
+    ...(type === 'datetime' ? timeSplitIdxs : [])
+  ];
+  const isEndWithSplit = splitChars.includes(value[value.length - 1]);
+
+  // 用户输入是否以分隔符结束
+  if (isEndWithSplit) {
+    const valueWithoutEndSplit = value.slice(0, value.length - 1);
+    const valueItems = valueWithoutEndSplit.split(/\-|\:|\s/g);
+    const lastValueItem = +valueItems[valueItems.length - 1];
+    if (lastValueItem < 10) {
+      let lastSplitCharIdx = -1;
+
+      splitChars.forEach(splitChar => {
+        const lastIdx = valueWithoutEndSplit.lastIndexOf(splitChar);
+        lastIdx > lastSplitCharIdx && (lastSplitCharIdx = lastIdx);
+      });
+      // 分隔符结束的个位数自动补0
+      value = `${value.slice(0, lastSplitCharIdx + 1)}0${lastValueItem}`;
+    }
+  }
+
+  // 自动补齐分隔符
+  const currentIdx = autoCompleteIdxs.indexOf(value.length);
+  if (!~currentIdx) {
+    return value;
+  } else if (currentIdx < 2) {
+    return `${value}-`;
+  } else if (currentIdx === 2) {
+    return `${value} `;
+  } else if (currentIdx > 2) {
+    return `${value}:`;
+  }
+};
