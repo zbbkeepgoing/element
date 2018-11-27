@@ -12,6 +12,7 @@
     :placeholder="placeholder"
     @focus="handleFocus"
     @keydown.native="handleKeydown"
+    @keyup.native="handleKeyup"
     :value="displayValue"
     @input="value => userInput = value"
     @change="handleChange"
@@ -86,7 +87,7 @@
 <script>
 import Vue from 'vue';
 import Clickoutside from 'kyligence-ui/src/utils/clickoutside';
-import { formatDate, parseDate, isDateObject, getWeekNumber } from './util';
+import { formatDate, parseDate, isDateObject, getWeekNumber, setDate, parseDateInput, autoCompleteDateSplit } from './util';
 import Popper from 'kyligence-ui/src/utils/vue-popper';
 import Emitter from 'kyligence-ui/src/mixins/emitter';
 import ElInput from 'kyligence-ui/packages/input';
@@ -315,6 +316,7 @@ export default {
   },
 
   props: {
+    isAutoComplete: Boolean,
     size: String,
     format: String,
     valueFormat: String,
@@ -563,6 +565,23 @@ export default {
       if (this.readonly || this.pickerDisabled) return;
       if (!this.valueIsEmpty && this.clearable) {
         this.showClose = true;
+      }
+    },
+
+    handleKeyup(event) {
+      const deleteCodes = [8, 46];
+      const isDateType = ['datetime', 'date'].includes(this.type);
+      const isDelete = deleteCodes.includes(event.keyCode);
+
+      if (isDateType && !isDelete && this.isAutoComplete) {
+        this.userInput = autoCompleteDateSplit(this.type, this.userInput || '');
+
+        const valueMaps = parseDateInput(this.userInput);
+        const dateMaps = Object.entries(valueMaps);
+
+        dateMaps.forEach(([dateType, dateValue]) => {
+          dateValue && (this.picker.date = setDate(this.picker.date, dateType, dateValue));
+        });
       }
     },
 
