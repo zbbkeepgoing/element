@@ -7,6 +7,8 @@
   </form>
 </template>
 <script>
+  import { getScrollableAncestor, animationScroll, isErrorElInView } from './util';
+
   export default {
     name: 'ElForm',
 
@@ -118,6 +120,7 @@
 
         let valid = true;
         let count = 0;
+        let errorField = null;
         // 如果需要验证的fields为空，调用验证时立刻返回callback
         if (this.fields.length === 0 && callback) {
           callback(true);
@@ -126,12 +129,30 @@
           field.validate('', errors => {
             if (errors) {
               valid = false;
+              !errorField && (errorField = field);
             }
             if (typeof callback === 'function' && ++count === this.fields.length) {
               callback(valid);
             }
           });
         });
+
+        if (errorField) {
+          const errorEl = errorField.$el;
+          const scrollableAncestor = getScrollableAncestor(this.$el);
+          const errorElClientSize = errorEl.getBoundingClientRect();
+          const scrollOffset = errorElClientSize.top;
+          const currentScrollOffset = scrollableAncestor.scrollTop;
+          const scrollTo = currentScrollOffset + scrollOffset;
+
+          if (!isErrorElInView(errorElClientSize)) {
+            if (typeof scrollableAncestor.scrollTo === 'function') {
+              scrollableAncestor.scrollTo({ top: scrollTo, behavior: 'smooth' });
+            } else {
+              animationScroll(scrollableAncestor, scrollTo, 150, 5);
+            }
+          }
+        }
 
         if (promise) {
           return promise;
