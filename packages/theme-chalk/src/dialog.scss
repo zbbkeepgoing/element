@@ -32,8 +32,8 @@
 
   @include e(header) {
     padding: $--dialog-padding-primary;
-    padding-bottom: 12px;
-    border-bottom: 1px solid $--border-color-base;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $--border-color-line;
     min-height: 18px;
     font-weight: 500;
     &.dragable {
@@ -77,17 +77,16 @@
   }
 
   @include e(body) {
-    padding: 20px 20px 20px 20px;
+    padding: 20px 15px;
     color: $--color-text-regular;
-    // line-height: $--dialog-line-height;
     font-size: $--dialog-font-size;
   }
 
   @include e(footer) {
-    padding: 16px 20px;
+    padding: $--dialog-padding-primary;
     text-align: right;
     box-sizing: border-box;
-    border-top: 1px solid $--border-color-base;
+    border-top: 1px solid $--border-color-line;
   }
 
   // 内容居中布局

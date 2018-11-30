@@ -62,9 +62,9 @@
 
 <style>
   .demo-box.demo-dialog {
-    .dialog-footer button:first-child {
+    /* .dialog-footer button:first-child {
       margin-right: 10px;
-    }
+    } */
     .full-image {
       width: 100%;
     }
@@ -108,8 +108,8 @@ Dialog 弹出一个对话框，适合需要定制性更大的场景。
     show-icon>
   </el-alert>
   <span slot="footer" class="dialog-footer">
-    <el-button @click="dialogVisible = false">取 消</el-button>
-    <el-button type="primary" plain @click="dialogVisible = false" @keyup.enter.native="enter" :autofocus="true" id="mybtn">确 定</el-button>
+    <el-button @click="dialogVisible = false" size="medium">取 消</el-button>
+    <el-button type="primary" plain size="medium" @click="dialogVisible = false" @keyup.enter.native="enter" :autofocus="true" id="mybtn">确 定</el-button>
   </span>
 </el-dialog>
 
@@ -159,7 +159,7 @@ Dialog 组件的内容可以是任意的，甚至可以是表格或表单，下�
 <el-button type="primary" text @click="dialogFormVisible = true">打开嵌套表单的 Dialog</el-button>
 
 <el-dialog title="收货地址" :visible.sync="dialogFormVisible">
-  <el-form :model="form">
+  <el-form :model="form" size="medium" label-position="top">
     <el-form-item label="活动名称" :label-width="formLabelWidth">
       <el-input v-model="form.name" auto-complete="off"></el-input>
     </el-form-item>
@@ -171,8 +171,8 @@ Dialog 组件的内容可以是任意的，甚至可以是表格或表单，下�
     </el-form-item>
   </el-form>
   <div slot="footer" class="dialog-footer">
-    <el-button @click="dialogFormVisible = false">取 消</el-button>
-    <el-button type="primary" plain @click="dialogFormVisible = false">确 定</el-button>
+    <el-button @click="dialogFormVisible = false" size="medium">取 消</el-button>
+    <el-button type="primary" plain size="medium" @click="dialogFormVisible = false">确 定</el-button>
   </div>
 </el-dialog>
 
@@ -233,8 +233,8 @@ Dialog 组件的内容可以是任意的，甚至可以是表格或表单，下�
       append-to-body>
     </el-dialog>
     <div slot="footer" class="dialog-footer">
-      <el-button @click="outerVisible = false">取 消</el-button>
-      <el-button type="primary" plain @click="innerVisible = true" @keyup.enter.native="innerVisible = true" :autofocus="true" ref="mybtn">打开内层 Dialog</el-button>
+      <el-button @click="outerVisible = false" size="medium">取 消</el-button>
+      <el-button type="primary" plain size="medium" @click="innerVisible = true" @keyup.enter.native="innerVisible = true" :autofocus="true" ref="mybtn">打开内层 Dialog</el-button>
     </div>
   </el-dialog>
 </template>
@@ -268,8 +268,8 @@ Dialog 组件的内容可以是任意的，甚至可以是表格或表单，下�
   center>
   <span>需要注意的是内容是默认不居中的</span>
   <span slot="footer" class="dialog-footer">
-    <el-button @click="centerDialogVisible = false">取 消</el-button>
-    <el-button type="primary" plain @click="centerDialogVisible = false">确 定</el-button>
+    <el-button @click="centerDialogVisible = false" size="medium">取 消</el-button>
+    <el-button type="primary" plain size="medium" @click="centerDialogVisible = false">确 定</el-button>
   </span>
 </el-dialog>
 

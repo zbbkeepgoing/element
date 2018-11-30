@@ -82,7 +82,7 @@
     height: $--input-height;
     line-height: $--input-height;
     outline: none;
-    padding: 0 10px;
+    padding: 0 12px;
     transition: $--border-transition-base;
     width: 100%;
 
@@ -91,7 +91,7 @@
     }
 
     &:hover {
-      border-color: $--input-hover-border;
+      border-color: $--input-focus-border;
     }
 
     &:focus {
@@ -160,7 +160,7 @@
       cursor: not-allowed;
 
       &::placeholder {
-        color: $--input-disabled-placeholder-color;
+        color: $--input-placeholder-color;;
       }
     }
 
@@ -177,7 +177,7 @@
 
   @include m(prefix) {
     .el-input__inner {
-      padding-left: 30px;
+      padding-left: 30px !important;
     }
   }
 
@@ -187,6 +187,7 @@
     @include e(inner) {
       height: $--input-medium-height;
       line-height: $--input-medium-height;
+      padding: 0 10px;
     }
 
     .el-input__icon {
@@ -199,6 +200,7 @@
     @include e(inner) {
       height: $--input-small-height;
       line-height: $--input-small-height;
+      padding: 0 8px;
     }
 
     .el-input__icon {
@@ -211,6 +213,7 @@
     @include e(inner) {
       height: $--input-mini-height;
       line-height: $--input-mini-height;
+      padding: 0 5px;
     }
 
     .el-input__icon {

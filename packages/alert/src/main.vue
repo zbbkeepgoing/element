@@ -2,7 +2,7 @@
   <transition name="el-alert-fade">
     <div
       class="el-alert"
-      :class="[typeClass, center ? 'is-center' : '']"
+      :class="[typeClass, center ? 'is-center' : '', isBigIcon]"
       v-show="visible"
       role="alert"
     >

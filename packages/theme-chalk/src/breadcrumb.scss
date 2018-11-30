@@ -3,17 +3,17 @@
 @import "common/var";
 
 @include b(breadcrumb) {
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1;
   @include utils-clearfix;
 
   @include e(separator) {
-    margin: 0 9px;
+    margin: 0 7px;
     font-weight: bold;
     color: $--color-text-secondary;
 
     &[class*=icon] {
-      margin: 0 6px;
+      margin: 0;
       font-weight: normal;
     }
   }
@@ -45,7 +45,7 @@
       .el-breadcrumb__inner a {
         &, &:hover, &:active {
           font-weight: normal;
-          color: $--color-text-secondary;
+          color: $--color-text-disabled;
           cursor: text;
           text-decoration: none;
         }

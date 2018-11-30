@@ -180,7 +180,7 @@
       border: 1px solid $--border-color-base;
       border-left-width: 0;
       color: $--color-text-regular;
-      min-width: 30px;
+      min-width: 24px;
       border-radius: 0;
       &.disabled {
         color: $--color-text-placeholder;
@@ -192,6 +192,9 @@
       padding: 0;
       &.disabled {
         color: $--color-text-placeholder;
+      }
+      &:not(.disabled):hover {
+        color: $--pagination-hover-fill;
       }
     }
 

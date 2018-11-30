@@ -42,14 +42,14 @@
   @include e(content) {
     display: flex;
     align-items: center;
-    height: 36px;
+    height: 28px;
     cursor: pointer;
 
     & > .el-tree-node__expand-icon {
-      padding: 6px;
+      padding: 6px 5px;
     }
     & > .el-checkbox {
-      margin-right: 8px;
+      margin-right: 5px;
     }
     &:hover {
       background-color: $--tree-node-hover-color;

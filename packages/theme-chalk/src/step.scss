@@ -149,7 +149,7 @@
 
   @include e(title) {
     font-size: 14px;
-    line-height: 38px;
+    padding-top: 10px;
 
     @include when(process) {
       font-weight: bold;
@@ -178,7 +178,7 @@
     padding-right: 10%;
     margin-top: -5px;
     font-size: 12px;
-    line-height: 20px;
+    padding-top: 5px;
     font-weight: normal;
 
     @include when(process) {
@@ -227,8 +227,12 @@
     }
 
     @include e(title) {
-      line-height: 24px;
-      padding-bottom: 8px;
+      line-height: 30px;
+      padding: 0px;
+    }
+
+    @include e(description) {
+      padding: 0px;
     }
 
     @include e(line) {
@@ -274,6 +278,10 @@
       width: auto;
       font-size: 0;
       padding-right: 10px;
+    }
+
+    @include e(title) {
+      padding-top: 0px;
     }
 
     @include e(icon) {

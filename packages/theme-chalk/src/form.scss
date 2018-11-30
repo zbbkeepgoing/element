@@ -37,7 +37,7 @@
   }
 }
 @include b(form-item) {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   @include utils-clearfix;
 
   & .el-form-item {
@@ -50,21 +50,21 @@
 
   @include m(medium) {
     .el-form-item__label {
-      line-height: 36px;
+      line-height: 28px;
     }
     .el-form-item__content {
-      line-height: 36px;
+      line-height: 28px;
     }
   }
   @include m(small) {
     .el-form-item__label {
-      line-height: 32px;
+      line-height: 26px;
     }
     .el-form-item__content {
-      line-height: 32px;
+      line-height: 26px;
     }
     &.el-form-item {
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
     .el-form-item__error {
       padding-top: 2px;
@@ -72,13 +72,13 @@
   }
   @include m(mini) {
     .el-form-item__label {
-      line-height: 28px;
+      line-height: 24px;
     }
     .el-form-item__content {
-      line-height: 28px;
+      line-height: 24px;
     }
     &.el-form-item {
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
     .el-form-item__error {
       padding-top: 1px;
@@ -91,12 +91,12 @@
     float: left;
     font-size: 14px;
     color: $--color-text-regular;
-    line-height: 40px;
+    line-height: 32px;
     padding: 0 12px 0 0;
     box-sizing: border-box;
   }
   @include e(content) {
-    line-height: 40px;
+    line-height: 32px;
     position: relative;
     font-size: 14px;
     @include utils-clearfix;
@@ -105,7 +105,7 @@
     color: $--color-danger;
     font-size: 12px;
     line-height: 1;
-    padding-top: 4px;
+    padding-top: 5px;
     position: relative;
     top: 100%;
     left: 0;
@@ -145,21 +145,21 @@
     }
   }
   @include when(success) {
-    & .el-input__inner,
-    & .el-textarea__inner {
-      &, &:focus {
-        // border-color: $--color-success;
-      }
-    }
+    // & .el-input__inner,
+    // & .el-textarea__inner {
+    //   &, &:focus {
+    //     border-color: $--color-success;
+    //   }
+    // }
     & .el-input-group__append,
     & .el-input-group__prepend {
       & .el-input__inner {
         border-color: transparent;
       }
     }
-    .el-input__validateIcon {
+    // .el-input__validateIcon {
       // color: $--color-success;
-    }
+    // }
   }
   @include m(feedback) {
     .el-input__validateIcon {

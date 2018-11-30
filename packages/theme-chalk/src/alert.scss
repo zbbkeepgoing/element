@@ -12,11 +12,31 @@
   overflow: hidden;
   opacity: 1;
   display: flex;
-  align-items: top;
+  align-items: center;
   transition: opacity .2s;
   color: $--color-text-primary;
   .el-alert__description {
     color: $--color-text-primary;
+  }
+
+  &.is-big {
+    align-items: flex-start;
+  }
+
+  @include e(closebtn) {
+    font-size: $--alert-close-font-size;
+    color: $--color-text-placeholder;
+    opacity: 1;
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    cursor: pointer;
+
+    @include when(customed) {
+      font-style: normal;
+      font-size: $--alert-close-customed-font-size;
+      top: 9px;
+    }
   }
 
   @include when(center) {
@@ -27,7 +47,8 @@
     background-color: $--alert-success-color;
     // color: $--color-success;
 
-    .el-alert__icon {
+    .el-alert__icon,
+    .el-alert__closebtn {
       color: $--color-success;
     }
   }
@@ -36,8 +57,9 @@
     background-color: $--alert-info-color;
     // color: $--color-info;
 
-    .el-alert__icon {
-      color: $--color-info;
+    .el-alert__icon,
+    .el-alert__closebtn {
+      color: $--color-primary;
     }
   }
 
@@ -45,7 +67,8 @@
     background-color: $--alert-warning-color;
     // color: $--color-warning;
 
-    .el-alert__icon {
+    .el-alert__icon,
+    .el-alert__closebtn {
       color: $--color-warning;
     }
   }
@@ -54,19 +77,21 @@
     background-color: $--alert-danger-color;
     // color: $--color-danger;
 
-    .el-alert__icon {
+    .el-alert__icon,
+    .el-alert__closebtn {
       color: $--color-danger;
     }
   }
 
   @include e(content) {
     display: table-cell;
-    padding: 0 8px;
+    // padding: 0 8px;
   }
 
   @include e(icon) {
     font-size: $--alert-icon-size;
     width: $--alert-icon-size;
+    margin-right: 5px;
     @include when(big) {
       font-size: $--alert-icon-large-size;
       width: $--alert-icon-large-size;
@@ -84,22 +109,6 @@
   & .el-alert__description {
     font-size: $--alert-description-font-size;
     margin: 5px 0 0 0;
-  }
-
-  @include e(closebtn) {
-    font-size: $--alert-close-font-size;
-    color: $--color-text-placeholder;
-    opacity: 1;
-    position: absolute;
-    top: 12px;
-    right: 15px;
-    cursor: pointer;
-
-    @include when(customed) {
-      font-style: normal;
-      font-size: $--alert-close-customed-font-size;
-      top: 9px;
-    }
   }
 }
 

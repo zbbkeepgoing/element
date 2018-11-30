@@ -34,7 +34,7 @@
         }
       };
       return {
-        lang: 'zh-cn',
+        lang: 'zh-CN',
         form: {
           name: '',
           region: '',
@@ -245,7 +245,7 @@
         name: 'Please input the name of activity',
         blur: 'blur'
       },
-      'zh-cn': {
+      'zh-CN': {
         name: '请输入活动名称',
         blur: 'blur'
       }
@@ -530,9 +530,9 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 
 :::demo Form 组件提供了表单验证的功能，只需要通过 `rules` 属性传入约定的验证规则，并 Form-Item 的 `prop` 属性设置为需校验的字段名即可。校验规则参见 [async-validator](https://github.com/yiminghe/async-validator)
 ```html
-<el-button-group>
-  <el-button size="medium" round @click="changeLang('en')" :class="{'active':lang=='en'}">EN</el-button>
-  <el-button size="medium" round @click="changeLang('zh-cn')" :class="{'active':lang=='zh-cn'}">中文</el-button>
+<el-button-group class="lang-btns">
+  <el-button size="medium" @click="changeLang('en')" :class="{'active':lang=='en'}">En</el-button>
+  <el-button size="medium" @click="changeLang('zh-CN')" :class="{'active':lang=='zh-CN'}">中</el-button>
 </el-button-group>
 
 <el-form :model="ruleForm" :rules="rules" ref="ruleForm" size="medium" label-width="100px" class="demo-ruleForm">
@@ -587,7 +587,7 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
   export default {
     data() {
       return {
-        lang: 'zh-cn',
+        lang: 'zh-CN',
         ruleForm: {
           name: '',
           region: '',
@@ -676,7 +676,7 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
       'en': {
         name: 'Please input the name of activity'
       },
-      'zh-cn': {
+      'zh-CN': {
         name: '请输入活动名称'
       }
     }
@@ -760,9 +760,9 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 
 :::demo 本例还使用`status-icon`属性为输入框添加了表示校验结果的反馈图标。
 ```html
-<el-button-group>
-  <el-button size="medium" round @click="changeLang('en')" :class="{'active':lang=='en'}">EN</el-button>
-  <el-button size="medium" round @click="changeLang('zh-cn')" :class="{'active':lang=='zh-cn'}">中文</el-button>
+<el-button-group class="lang-btns">
+  <el-button size="medium" @click="changeLang('en')" :class="{'active':lang=='en'}">En</el-button>
+  <el-button size="medium" @click="changeLang('zh-CN')" :class="{'active':lang=='zh-CN'}">中</el-button>
 </el-button-group>
 <el-form :model="ruleForm2" status-icon :rules="rules2" ref="ruleForm2" label-width="100px" class="demo-ruleForm">
   <el-form-item label="邮箱" prop="email">

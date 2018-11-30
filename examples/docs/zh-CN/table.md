@@ -398,19 +398,23 @@
   <template>
     <el-table
       :data="tableData"
+      border
       style="width: 100%">
       <el-table-column
         prop="date"
         label="日期"
+        header-align="center"
         width="180">
       </el-table-column>
       <el-table-column
         prop="name"
         label="姓名"
+        header-align="center"
         width="180">
       </el-table-column>
       <el-table-column
         prop="address"
+        header-align="center"
         label="地址">
       </el-table-column>
     </el-table>
@@ -454,20 +458,19 @@
   <el-table
     :data="tableData"
     stripe
-    style="width: 100%">
+    border
+    :show-header="false"
+    style="width:440px">
     <el-table-column
       prop="date"
       label="日期"
-      width="180">
+      align="right"
+      width="105">
     </el-table-column>
     <el-table-column
       prop="name"
       label="姓名"
-      width="180">
-    </el-table-column>
-    <el-table-column
-      prop="address"
-      label="地址">
+      width="335">
     </el-table-column>
   </el-table>
 </template>
@@ -1412,6 +1415,7 @@
       <template slot-scope="scope">
         <el-tag
           :type="scope.row.tag === '家' ? 'primary' : 'success'"
+          size="mini"
           close-transition>{{scope.row.tag}}</el-tag>
       </template>
     </el-table-column>
@@ -1487,7 +1491,7 @@
           <p>姓名: {{ scope.row.name }}</p>
           <p>住址: {{ scope.row.address }}</p>
           <div slot="reference" class="name-wrapper">
-            <el-tag size="medium">{{ scope.row.name }}</el-tag>
+            <el-tag size="mini">{{ scope.row.name }}</el-tag>
           </div>
         </el-popover>
       </template>
@@ -1559,7 +1563,26 @@
     style="width: 100%">
     <el-table-column type="expand">
       <template slot-scope="props">
-        <el-form label-position="left" inline class="demo-table-expand">
+        <el-table
+          :data="tableData5"
+          border
+          :row-key="rowKey"
+          size="medium"
+          style="width: 100%">
+        </table>
+        <el-table-column
+          label="商品 ID"
+          prop="id">
+        </el-table-column>
+        <el-table-column
+          label="商品名称"
+          prop="name">
+        </el-table-column>
+        <el-table-column
+          label="描述"
+          prop="desc">
+        </el-table-column>
+        <!-- <el-form label-position="left" inline class="demo-table-expand">
           <el-form-item label="商品名称">
             <span>{{ props.row.name }}</span>
           </el-form-item>
@@ -1581,7 +1604,7 @@
           <el-form-item label="商品描述">
             <span>{{ props.row.desc }}</span>
           </el-form-item>
-        </el-form>
+        </el-form> -->
       </template>
     </el-table-column>
     <el-table-column

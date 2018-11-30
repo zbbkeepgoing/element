@@ -143,9 +143,9 @@
   import NavigationMixin from './navigation-mixin';
 
   const sizeMap = {
-    'medium': 32,
-    'small': 28,
-    'mini': 26
+    'medium': 28,
+    'small': 26,
+    'mini': 24
   };
 
   export default {
@@ -219,9 +219,7 @@
       },
 
       collapseTagSize() {
-        return ['small', 'mini'].indexOf(this.selectSize) > -1
-          ? 'mini'
-          : 'small';
+        return 'small';
       }
     },
 
@@ -601,7 +599,7 @@
           let inputChildNodes = this.$refs.reference.$el.childNodes;
           let input = [].filter.call(inputChildNodes, item => item.tagName === 'INPUT')[0];
           const tags = this.$refs.tags;
-          const sizeInMap = sizeMap[this.selectSize] || 36;
+          const sizeInMap = sizeMap[this.selectSize] || 32;
           input.style.height = this.selected.length === 0
             ? sizeInMap + 'px'
             : Math.max(

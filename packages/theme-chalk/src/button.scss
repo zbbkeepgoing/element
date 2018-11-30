@@ -10,8 +10,8 @@
   white-space: nowrap;
   cursor: pointer;
   background: $--button-default-fill;
-  border: $--border-base;
-  border-color: $--button-default-border;
+  border: 1px solid $--color-text-disabled;
+  border-color: $--color-text-disabled;
   color: $--button-default-color;
   -webkit-appearance: none;
   text-align: center;
@@ -45,7 +45,7 @@
 
   & [class*="el-icon-"] {
     & + span {
-      margin-left: 5px;
+      margin-left: 6px;
     }
   }
 
@@ -72,25 +72,25 @@
   @include when(disabled) {
     &,
     &:hover {
-      color: $--button-disabled-color;
       cursor: not-allowed;
       background-image: none;
-      background-color: $--button-disabled-fill;
-      border-color: $--button-disabled-border;
+      color: $--color-text-disabled;
+      background-color: $--background-color-base;
+      border-color: $--border-color-light;
     }
 
     &.el-button--text {
       background-color: transparent;
     }
 
-    &.is-plain {
-      &,
-      &:hover {
-        background-color: $--color-white;
-        border-color: $--button-disabled-border;
-        color: $--button-disabled-color;
-      }
-    }
+    // &.is-plain {
+    //   &,
+    //   &:hover {
+    //     background-color: $--color-white;
+    //     border-color: $--button-disabled-border;
+    //     color: $--button-disabled-color;
+    //   }
+    // }
   }
 
   @include when(loading) {
@@ -111,7 +111,7 @@
   }
   @include when(round) {
     border-radius: 20px;
-    padding: 10px 15px;
+    padding: 8px 15px;
   }
   @include when(circle) {
     border-radius: 50%;
@@ -134,12 +134,27 @@
   }
   @include m(medium) {
     @include button-size($--button-medium-padding-vertical, $--button-medium-padding-horizontal, $--button-medium-font-size, $--button-medium-border-radius);
+    & [class*="el-icon-"] {
+      & + span {
+        margin-left: 5px;
+      }
+    }
   }
   @include m(small) {
     @include button-size($--button-small-padding-vertical, $--button-small-padding-horizontal, $--button-small-font-size, $--button-small-border-radius);
+    & [class*="el-icon-"] {
+      & + span {
+        margin-left: 4px;
+      }
+    }
   }
   @include m(mini) {
     @include button-size($--button-mini-padding-vertical, $--button-mini-padding-horizontal, $--button-mini-font-size, $--button-mini-border-radius);
+    & [class*="el-icon-"] {
+      & + span {
+        margin-left: 3px;
+      }
+    }
   }
   /* @include m(text) {
     border-color: transparent;
@@ -211,26 +226,33 @@
       z-index: 1;
     }
 
-    &.el-button--default.is-round {
-      border: 1px solid #CFD8DC;
-      min-width: 60px;
-      &.el-button--medium {
-        min-width: 50px;
-      }
+
+  }
+
+  &.lang-btns {
+    .el-button--default {
+      border: 1px solid $--color-text-disabled;
+      min-width: 40px;
+      color: $--color-text-primary;
+      font-weight: normal;
+      &.el-button--medium,
       &.el-button--small {
-        min-width: 42px;
+        min-width: 36px;
       }
       &.el-button--mini {
-        min-width: 42px;
+        min-width: 28px;
+        height: 22px;
       }
       &:hover {
-        color: $--color-text-regular;
-        background-color: $--color-white;
-        // border-color: #CFD8DC;
+        color: $--color-primary;
+        border: 1px solid $--color-primary;
       }
-      &.active {
-        background: #E2ECF1;
-        box-shadow: inset 1px 1px 4px 0 #455A64;
+      &.active,
+      &.active &:hover {
+        background: $--background-color-base;
+        color: $--color-text-disabled;
+        border: 1px solid $--color-text-disabled;
+        cursor: not-allowed;
       }
     }
   }

@@ -269,7 +269,7 @@ export default {
     getRowClass(row, rowIndex) {
       const classes = ['el-table__row'];
 
-      if (this.stripe && rowIndex % 2 === 1) {
+      if (this.stripe && rowIndex % 2 === 0) {
         classes.push('el-table__row--striped');
       }
       const rowClassName = this.table.rowClassName;

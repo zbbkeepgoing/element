@@ -52,6 +52,7 @@
   @include e(bottom) {
     border-top: 1px solid $--border-color-base;
     padding: 8px;
+    overflow: hidden;
 
     button {
       background: transparent;
@@ -61,8 +62,12 @@
       font-size: $--font-size-small;
       padding: 0 3px;
 
-      &:hover {
+      &:first-child {
+        float: left;
+      }
+      &:last-child {
         color: $--color-primary;
+        float: right;
       }
 
       &:focus {

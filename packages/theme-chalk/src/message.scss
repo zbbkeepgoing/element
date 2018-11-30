@@ -32,6 +32,22 @@
   p {
     margin: 0;
   }
+  @include e(closeBtn) {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: $--message-info-color;
+    font-size: $--message-close-size;
+
+    &:focus {
+      outline-width: 0;
+    }
+    // &:hover {
+    //   color: $--message-close-hover-color;
+    // }
+  }
 
   @include m(info) {
     .el-message__content {
@@ -43,8 +59,8 @@
     background-color: $--color-success-lighter;
     border-color: $--color-success-light;
 
-    .el-message__content {
-      // color: $--message-success-color;
+    .el-message__closeBtn {
+      color: $--message-success-color;
     }
   }
 
@@ -52,8 +68,8 @@
     background-color: $--color-warning-lighter;
     border-color: $--color-warning-light;
 
-    .el-message__content {
-      // color: $--message-warning-color;
+    .el-message__closeBtn {
+      color: $--message-warning-color;
     }
   }
 
@@ -61,8 +77,8 @@
     background-color: $--color-danger-lighter;
     border-color: $--color-danger-light;
 
-    .el-message__content {
-      // color: $--message-danger-color;
+    .el-message__closeBtn {
+      color: $--message-danger-color;
     }
   }
 
@@ -73,26 +89,9 @@
   @include e(content) {
     padding: 0;
     font-size: 14px;
-    line-height: 1;
+    line-height: 18px;
     &:focus {
       outline-width: 0;
-    }
-  }
-
-  @include e(closeBtn) {
-    position: absolute;
-    top: 50%;
-    right: 15px;
-    transform: translateY(-50%);
-    cursor: pointer;
-    color: $--message-close-color;
-    font-size: $--message-close-size;
-
-    &:focus {
-      outline-width: 0;
-    }
-    &:hover {
-      color: $--message-close-hover-color;
     }
   }
 

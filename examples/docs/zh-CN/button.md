@@ -80,12 +80,9 @@
 
 公司实际项目中用的比较多的几种按钮
 <div>
-<el-button>默认按钮</el-button>
 <el-button type="primary">主要按钮</el-button>
-<el-button plain>朴素按钮</el-button>
-<el-button type="primary" plain>主要按钮</el-button>
-<el-button round>圆形按钮</el-button>
-<el-button type="primary" round>主要按钮</el-button>
+<el-button type="primary" plain>次要按钮</el-button>
+<el-button plain>次次要按钮</el-button>
 </div>
 
 删除等操作，在实际项目中用红色版本的按钮，好像不多，但我建议，类似删除这种操作，需要用红色危险按钮。
@@ -209,21 +206,21 @@ locales: {
 
 ```html
 <div>
-<el-button-group>
-  <el-button round @click="changeLang('en')" :class="{'active':lang=='en'}">EN</el-button>
-  <el-button round @click="changeLang('zh-cn')" :class="{'active':lang=='zh-cn'}">中文</el-button>
+<el-button-group class="lang-btns">
+  <el-button @click="changeLang('en')" :class="{'active':lang=='en'}">En</el-button>
+  <el-button @click="changeLang('zh-cn')" :class="{'active':lang=='zh-cn'}">中</el-button>
 </el-button-group>
-<el-button-group>
-  <el-button size="medium" round @click="changeLang('en')" :class="{'active':lang=='en'}">EN</el-button>
-  <el-button size="medium" round @click="changeLang('zh-cn')" :class="{'active':lang=='zh-cn'}">中文</el-button>
+<el-button-group class="lang-btns">
+  <el-button size="medium" @click="changeLang('en')" :class="{'active':lang=='en'}">En</el-button>
+  <el-button size="medium" @click="changeLang('zh-cn')" :class="{'active':lang=='zh-cn'}">中</el-button>
 </el-button-group>
-<el-button-group>
-  <el-button size="small" round @click="changeLang('en')" :class="{'active':lang=='en'}">EN</el-button>
-  <el-button size="small" round @click="changeLang('zh-cn')" :class="{'active':lang=='zh-cn'}">中文</el-button>
+<el-button-group class="lang-btns">
+  <el-button size="small" @click="changeLang('en')" :class="{'active':lang=='en'}">En</el-button>
+  <el-button size="small" @click="changeLang('zh-cn')" :class="{'active':lang=='zh-cn'}">中</el-button>
 </el-button-group>
-<el-button-group>
-  <el-button size="mini" round @click="changeLang('en')" :class="{'active':lang=='en'}">EN</el-button>
-  <el-button size="mini" round @click="changeLang('zh-cn')" :class="{'active':lang=='zh-cn'}">中文</el-button>
+<el-button-group class="lang-btns">
+  <el-button size="mini" @click="changeLang('en')" :class="{'active':lang=='en'}">En</el-button>
+  <el-button size="mini" @click="changeLang('zh-cn')" :class="{'active':lang=='zh-cn'}">中</el-button>
 </el-button-group>
 </div>
 <script>
@@ -269,11 +266,18 @@ Button 组件提供除了默认值以外的三种尺寸，可以在不同场景�
 :::demo 额外的尺寸：`medium`、`small`、`mini`，通过设置`size`属性来配置它们。
 
 ```html
-<div>
+<div>项目中默认button size为medium</div>
+<div style="margin-top: 20px">
   <el-button>默认按钮</el-button>
   <el-button size="medium">中等按钮</el-button>
   <el-button size="small">小型按钮</el-button>
   <el-button size="mini">超小按钮</el-button>
+</div>
+<div style="margin-top: 20px">
+  <el-button icon="el-icon-plus">默认按钮</el-button>
+  <el-button size="medium" icon="el-icon-plus">中等按钮</el-button>
+  <el-button size="small" icon="el-icon-plus">小型按钮</el-button>
+  <el-button size="mini" icon="el-icon-plus">超小按钮</el-button>
 </div>
 <div style="margin-top: 20px">
   <el-button round>默认按钮</el-button>

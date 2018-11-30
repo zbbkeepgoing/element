@@ -21,9 +21,12 @@
     &,
     &:hover,
     &:active {
-      color: mix($--color-white, $color, 40%);
-      background-color: mix($--color-white, $color, 90%);
-      border-color: mix($--color-white, $color, 80%);
+      color: $--color-text-disabled;
+      background-color: $--background-color-base;
+      border-color: $--border-color-light;
+      // color: mix($--color-white, $color, 40%);
+      // background-color: mix($--color-white, $color, 90%);
+      // border-color: mix($--color-white, $color, 80%);
     }
   }
 }
@@ -56,9 +59,12 @@
     &,
     &:hover,
     &:active {
-      color: $--color-white;
-      background-color: mix($background-color, $--color-white);
-      border-color: mix($border-color, $--color-white);
+      color: $--color-text-disabled;
+      background-color: $--background-color-base;
+      border-color: $--border-color-light;
+      // color: $--color-white;
+      // background-color: mix($background-color, $--color-white);
+      // border-color: mix($border-color, $--color-white);
     }
   }
 
