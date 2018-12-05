@@ -245,6 +245,8 @@ export default {
             } else {
               this.reassignMaxValue(value);
             }
+          } else {
+            this.$refs.input.$el.querySelector('input').value = 1;
           }
         },
         reassignMaxValue(value) {
@@ -311,7 +313,6 @@ export default {
 
     getValidCurrentPage(value) {
       value = parseInt(value, 10);
-
       const havePageCount = typeof this.internalPageCount === 'number';
 
       let resetValue;

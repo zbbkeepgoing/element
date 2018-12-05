@@ -161,7 +161,7 @@
 
     &.el-input .el-input__inner {
       height: $--pagination-button-height;
-      line-height: $--pagination-button-height;
+      line-height: normal;
     }
 
     .el-input__inner::-webkit-inner-spin-button,

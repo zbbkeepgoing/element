@@ -33,7 +33,7 @@ export function animationScroll(scrollEl, scrollTo = 0, duration = 1000, speed =
   }, speed);
 }
 
-export function isErrorElInView (errorElClientSize) {
+export function isErrorElInView(errorElClientSize) {
   const clientTop = errorElClientSize.top;
   const clientBottom = clientTop + errorElClientSize.height;
   return clientTop > 0 && clientBottom < window.innerHeight;
