@@ -169,6 +169,27 @@ Dialog 组件的内容可以是任意的，甚至可以是表格或表单，下�
         <el-option label="区域二" value="beijing"></el-option>
       </el-select>
     </el-form-item>
+    <el-form-item label="放假时间" :label-width="formLabelWidth">
+      <el-date-picker
+        size="medium"
+        type="datetime"
+        range-separator="-"
+        v-model="form.datetime"
+        placeholder="具体日期"
+        :is-auto-complete="true">
+      </el-date-picker>
+    </el-form-item>
+    <el-form-item label="营业时间" :label-width="formLabelWidth">
+      <el-date-picker
+        size="medium"
+        type="datetimerange"
+        range-separator="-"
+        v-model="form.dateRange"
+        start-placeholder="开始时间"
+        end-placeholder="结束时间"
+        :is-auto-complete="true">
+      </el-date-picker>
+    </el-form-item>
   </el-form>
   <div slot="footer" class="dialog-footer">
     <el-button @click="dialogFormVisible = false">取 消</el-button>
@@ -207,7 +228,9 @@ Dialog 组件的内容可以是任意的，甚至可以是表格或表单，下�
           delivery: false,
           type: [],
           resource: '',
-          desc: ''
+          desc: '',
+          datetime: null,
+          dateRange: []
         },
         formLabelWidth: '120px'
       };
