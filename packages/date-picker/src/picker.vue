@@ -89,7 +89,7 @@
 <script>
 import Vue from 'vue';
 import Clickoutside from 'kyligence-ui/src/utils/clickoutside';
-import { formatDate, parseDate, isDateObject, getWeekNumber, setDate, parseDateInput, autoCompleteDateSplit, getParents } from './util';
+import { formatDate, parseDate, isDateObject, getWeekNumber, setDate, parseDateInput, autoCompleteDateSplit, getCurrntParentByClass } from './util';
 import Popper from 'kyligence-ui/src/utils/vue-popper';
 import Emitter from 'kyligence-ui/src/mixins/emitter';
 import ElInput from 'kyligence-ui/packages/input';
@@ -896,9 +896,12 @@ export default {
         const isPickerAtBottom = ~this.placement.indexOf('bottom');
         const isPickerOutOfWindow = refTop + refHeight + pickerHeight > window.innerHeight;
 
-        this.dialogEl.style.marginBottom = '0px';
-        if (isPickerAtBottom && isPickerOutOfWindow) {
-          this.dialogEl.style.marginBottom = `${pickerHeight}px`;
+        if (!isPickVisible) {
+          this.dialogEl.style.marginBottom = '0px';
+        } else if (isPickerAtBottom && isPickerOutOfWindow) {
+          setTimeout(() => {
+            this.dialogEl.style.marginBottom = `${pickerHeight}px`;
+          }, 300);
         }
       }
     },
@@ -916,12 +919,8 @@ export default {
     },
 
     getParentDialogs() {
-      this.dialogEl = this.getParentClassEl('el-dialog');
-      this.dialogWarpperEl = this.getParentClassEl('el-dialog__wrapper');
-    },
-
-    getParentClassEl(className) {
-      return getParents(this.reference).find(el => ~el.className.split(' ').indexOf(className));
+      this.dialogEl = getCurrntParentByClass(this.reference, 'el-dialog');
+      this.dialogWarpperEl = getCurrntParentByClass(this.reference, 'el-dialog__wrapper');
     }
   }
 };

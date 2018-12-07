@@ -293,12 +293,17 @@ export const autoCompleteDateSplit = function(type, value = '') {
   }
 };
 
-export function getParents(el) {
+export function getCurrntParentByClass(el, className) {
   let currentEl = el;
-  const parents = [];
-  while (currentEl.parentNode) {
-    parents.push(currentEl.parentNode);
-    currentEl = currentEl.parentNode;
-  }
-  return parents;
+  let result = null;
+
+  do {
+    if (~currentEl.className.split(' ').indexOf(className)) {
+      result = currentEl;
+    } else {
+      currentEl = currentEl.parentNode;
+    }
+  } while (currentEl.parentNode && currentEl.parentNode.className && !result);
+
+  return result;
 }
