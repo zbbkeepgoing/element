@@ -57,6 +57,7 @@
         :id="id && id[0]"
         :readonly="!editable || readonly"
         :name="name && name[0]"
+        @keyup="event => handleKeyup(event, 0)"
         @input="handleStartInput"
         @change="handleStartChange"
         @focus="handleFocus"
@@ -69,6 +70,7 @@
         :id="id && id[1]"
         :readonly="!editable || readonly"
         :name="name && name[1]"
+        @keyup="event => handleKeyup(event, 1)"
         @input="handleEndInput"
         @change="handleEndChange"
         @focus="handleFocus"
@@ -87,7 +89,7 @@
 <script>
 import Vue from 'vue';
 import Clickoutside from 'kyligence-ui/src/utils/clickoutside';
-import { formatDate, parseDate, isDateObject, getWeekNumber, setDate, parseDateInput, autoCompleteDateSplit } from './util';
+import { formatDate, parseDate, isDateObject, getWeekNumber, setDate, parseDateInput, autoCompleteDateSplit, getParents } from './util';
 import Popper from 'kyligence-ui/src/utils/vue-popper';
 import Emitter from 'kyligence-ui/src/mixins/emitter';
 import ElInput from 'kyligence-ui/packages/input';
@@ -379,7 +381,9 @@ export default {
       showClose: false,
       userInput: null,
       valueOnOpen: null, // value when picker opens, used to determine whether to emit change
-      unwatchPickerOptions: null
+      unwatchPickerOptions: null,
+      dialogEl: null,
+      dialogWarpperEl: null
     };
   },
 
@@ -402,6 +406,7 @@ export default {
         this.$emit('blur', this);
         this.blur();
       }
+      setTimeout(() => this.fixDialogExtendBottom(val));
     },
     parsedValue: {
       immediate: true,
@@ -516,6 +521,7 @@ export default {
       gpuAcceleration: false
     };
     this.placement = PLACEMENT_MAP[this.align] || PLACEMENT_MAP.left;
+    this.handleMouseWheel = this.handleMouseWheel.bind(this);
   },
 
   methods: {
@@ -568,20 +574,39 @@ export default {
       }
     },
 
-    handleKeyup(event) {
+    handleKeyup(event, valueIdx) {
       const deleteCodes = [8, 46];
       const isDateType = ['datetime', 'date'].includes(this.type);
+      const isDateRangeType = ['datetimerange', 'daterange'].includes(this.type);
       const isDelete = deleteCodes.includes(event.keyCode);
 
-      if (isDateType && !isDelete && this.isAutoComplete) {
-        this.userInput = autoCompleteDateSplit(this.type, this.userInput || '');
+      if (!isDelete && this.isAutoComplete) {
+        // 普通时间输入框自动format
+        if (isDateType) {
+          this.userInput = autoCompleteDateSplit(this.type, this.userInput || '');
 
-        const valueMaps = parseDateInput(this.userInput);
-        const dateMaps = Object.entries(valueMaps);
+          const valueMaps = parseDateInput(this.userInput);
+          const dateMaps = Object.entries(valueMaps);
 
-        dateMaps.forEach(([dateType, dateValue]) => {
-          dateValue && (this.picker.date = setDate(this.picker.date, dateType, dateValue));
-        });
+          dateMaps.forEach(([dateType, dateValue]) => {
+            dateValue && (this.picker.date = setDate(this.picker.date, dateType, dateValue));
+          });
+
+        // 时间区间输入框自动format
+        } else if (isDateRangeType) {
+          const type = this.type.replace('range', '');
+          const value = autoCompleteDateSplit(type, this.userInput[valueIdx] || '');
+
+          valueIdx === 0 ? this.handleStartInput({ target: { value } }) : this.handleEndInput({ target: { value } });
+
+          const valueMaps = parseDateInput(this.userInput[valueIdx]);
+          const dateMaps = Object.entries(valueMaps);
+
+          dateMaps.forEach(([dateType, dateValue]) => {
+            valueIdx === 0 && dateValue && (this.picker.leftDate = setDate(this.picker.leftDate, dateType, dateValue));
+            valueIdx === 1 && dateValue && (this.picker.rightDate = setDate(this.picker.rightDate, dateType, dateValue));
+          });
+        }
       }
     },
 
@@ -820,9 +845,13 @@ export default {
           this.refInput[1].focus();
         }
       });
+
+      this.getParentDialogs();
+      this.addMouseWheelEvent();
     },
 
     unmountPicker() {
+      this.removeMouseWheelEvent();
       if (this.picker) {
         this.picker.$destroy();
         this.picker.$off();
@@ -858,6 +887,41 @@ export default {
       } else {
         return true;
       }
+    },
+
+    fixDialogExtendBottom(isPickVisible) {
+      if (this.reference && this.picker && this.dialogEl) {
+        const { y: refTop, height: refHeight } = this.reference.getBoundingClientRect();
+        const pickerHeight = this.picker.$el.clientHeight;
+        const isPickerAtBottom = ~this.placement.indexOf('bottom');
+        const isPickerOutOfWindow = refTop + refHeight + pickerHeight > window.innerHeight;
+
+        this.dialogEl.style.marginBottom = '0px';
+        if (isPickerAtBottom && isPickerOutOfWindow) {
+          this.dialogEl.style.marginBottom = `${pickerHeight}px`;
+        }
+      }
+    },
+
+    handleMouseWheel(event) {
+      this.dialogWarpperEl.scrollTop += event.deltaY;
+    },
+
+    addMouseWheelEvent() {
+      this.dialogWarpperEl && this.picker.$el.addEventListener('mousewheel', this.handleMouseWheel);
+    },
+
+    removeMouseWheelEvent() {
+      this.dialogWarpperEl && this.picker.$el.removeEventListener('mousewheel', this.handleMouseWheel);
+    },
+
+    getParentDialogs() {
+      this.dialogEl = this.getParentClassEl('el-dialog');
+      this.dialogWarpperEl = this.getParentClassEl('el-dialog__wrapper');
+    },
+
+    getParentClassEl(className) {
+      return getParents(this.reference).find(el => ~el.className.split(' ').indexOf(className));
     }
   }
 };

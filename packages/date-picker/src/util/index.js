@@ -292,3 +292,13 @@ export const autoCompleteDateSplit = function(type, value = '') {
     return `${value}:`;
   }
 };
+
+export function getParents(el) {
+  let currentEl = el;
+  const parents = [];
+  while (currentEl.parentNode) {
+    parents.push(currentEl.parentNode);
+    currentEl = currentEl.parentNode;
+  }
+  return parents;
+}
