@@ -13,7 +13,7 @@ export function getScrollableAncestor(el) {
     return overflowRegex.test(parentStyle.overflow + parentStyle.overflowY + parentStyle.overflowX);
   });
 
-  return currentPosition === 'fixed' || !scrollParent ? (el.ownerDocument || document) : scrollParent;
+  return currentPosition === 'fixed' || !scrollParent ? window : scrollParent;
 }
 
 export function animationScroll(scrollEl, scrollTo = 0, duration = 1000, speed = 10) {
@@ -42,9 +42,11 @@ export function isErrorElInView(errorElClientSize) {
 function getParents(el) {
   let currentEl = el;
   const parents = [];
-  while (currentEl.parentNode) {
-    parents.push(currentEl.parentNode);
+  while (currentEl.parentNode && currentEl.nodeType !== 9) {
     currentEl = currentEl.parentNode;
+    if (currentEl.nodeType === 1) {
+      parents.push(currentEl);
+    }
   }
   return parents;
 }
