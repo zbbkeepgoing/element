@@ -298,12 +298,12 @@ export function getCurrntParentByClass(el, className) {
   let result = null;
 
   do {
-    if (~currentEl.className.split(' ').indexOf(className)) {
+    if (currentEl.className && ~currentEl.className.split(' ').indexOf(className)) {
       result = currentEl;
     } else {
       currentEl = currentEl.parentNode;
     }
-  } while (currentEl.parentNode && currentEl.parentNode.className && !result);
+  } while (currentEl.parentNode && !result);
 
   return result;
 }
