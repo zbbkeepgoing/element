@@ -43,10 +43,12 @@ Vue.component(Button.name, Button)
 Modern browsers and Internet Explorer 10+.
 
 ## Development
-Skip this part if you just want to use her.
+1.请将提交通过pr的方式提交到dev分支
+2.提交测试通过的问题请在更新日志文件里修改 CHANGELOG.zh-CN.md
 
-## Changelog
-Detailed changes for each release are documented in the [release notes](http://10.1.2.111:8085/#/zh-CN/component/changelog).
+## 调试和发布
+1. npm run dev
+2. npm run dist
 
 ## LICENSE
 [MIT](LICENSE)
