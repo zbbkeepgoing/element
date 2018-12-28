@@ -149,6 +149,7 @@ select和radio、checkbox一样，选中值和下拉选项中的值是===比较�
 ```html
 <template>
   <el-select v-model="value" placeholder="请选择">
+    <span slot="prefix" class="el-input__icon el-icon-loading"></span>
     <el-option
       v-for="item in options"
       :key="item.value"
@@ -738,6 +739,12 @@ select和radio、checkbox一样，选中值和下拉选项中的值是===比较�
 | clear | 可清空的单选模式下用户点击清空按钮时触发 | — |
 | blur | 当 input 失去焦点时触发 | (event: Event) |
 | focus | 当 input 获得焦点时触发 | (event: Event) |
+
+### Select Slots
+|   name  | 说明     |
+|---------|---------|
+|    —    | Option 组件列表 |
+| prefix  | Select 组件头部内容 |
 
 ### Option Group Attributes
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
