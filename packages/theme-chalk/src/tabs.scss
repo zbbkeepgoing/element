@@ -67,8 +67,12 @@
     position: absolute;
     cursor: pointer;
     line-height: 44px;
-    font-size: 12px;
+    font-size: 14px;
     color: $--color-text-secondary;
+    i:hover {
+      background-color: $--color-grey-3;
+      color: $--color-primary;
+    }
   }
   @include e(nav-next) {
     right: 0;
