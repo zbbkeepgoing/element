@@ -134,7 +134,7 @@
         return (this.elFormItem || {}).elFormItemSize;
       },
       inputNumberSize() {
-        return this.size || this._elFormItemSize || (this.$ELEMENT || {}).size;
+        return this.size || this._elFormItemSize || (this.$KY_ELEMENT['ElInputNumber'] || {}).size || (this.$ELEMENT || {}).size;
       },
       inputNumberDisabled() {
         return this.disabled || (this.elForm || {}).disabled;

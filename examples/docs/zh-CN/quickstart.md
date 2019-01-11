@@ -226,6 +226,13 @@ import KyligenceUI from 'kyligence-ui'
 Vue.use(KyligenceUI, { size: 'small', closeOtherMessages: true })
 ```
 
+同样支持组件级（目前支持所有Input输入框）的size配置，具体操作如下：
+```JS
+import Vue from 'vue'
+import KyligenceUI from 'kyligence-ui'
+Vue.use(KyligenceUI, { closeOtherMessages: true, { input: { size: 'small' } } })
+```
+
 按需引入 kyligence-ui：
 ```JS
 import Vue from 'vue'
