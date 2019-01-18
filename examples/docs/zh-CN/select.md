@@ -372,6 +372,7 @@ select和radio、checkbox一样，选中值和下拉选项中的值是===比较�
 :::demo 为`el-select`设置`multiple`属性即可启用多选，此时`v-model`的值为当前选中值所组成的数组。默认情况下选中值会以 Tag 的形式展现，你也可以设置`collapse-tags`属性将它们合并为一段文字。
 ```html
 <template>
+  <el-button type="primary" @click="value5 = []">清空</el-button><br/><br/>
   <el-select v-model="value5" multiple placeholder="请选择">
     <el-option
       v-for="item in options"

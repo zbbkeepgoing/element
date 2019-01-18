@@ -14,15 +14,13 @@
           :closable="!selectDisabled"
           :size="collapseTagSize"
           :hit="selected[0].hitState"
-          @close="deleteTag($event, selected[0])"
-          disable-transitions>
+          @close="deleteTag($event, selected[0])">
           <span class="el-select__tags-text">{{ selected[0].currentLabel }}</span>
         </el-tag>
         <el-tag
           v-if="selected.length > 1"
           :closable="false"
-          :size="collapseTagSize"
-          disable-transitions>
+          :size="collapseTagSize">
           <span class="el-select__tags-text">+ {{ selected.length - 1 }}</span>
         </el-tag>
       </span>
@@ -33,8 +31,7 @@
           :closable="!selectDisabled"
           :size="collapseTagSize"
           :hit="item.hitState"
-          @close="deleteTag($event, item)"
-          disable-transitions>
+          @close="deleteTag($event, item)">
           <span class="el-select__tags-text">{{ item.currentLabel }}</span>
         </el-tag>
       </transition-group>
