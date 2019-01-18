@@ -506,7 +506,7 @@ export default {
     },
 
     pickerSize() {
-      return this.size || this._elFormItemSize || (this.$KY_ELEMENT&&this.$KY_ELEMENT['ElPicker'] || {}).size || (this.$ELEMENT || {}).size;
+      return this.size || this._elFormItemSize || (this.$KY_ELEMENT['ElPicker'] || {}).size || (this.$ELEMENT || {}).size;
     },
 
     pickerDisabled() {

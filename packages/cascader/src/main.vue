@@ -208,7 +208,7 @@ export default {
       return (this.elFormItem || {}).elFormItemSize;
     },
     cascaderSize() {
-      return this.size || this._elFormItemSize || (this.$KY_ELEMENT&&this.$KY_ELEMENT['ElCascader'] || {}).size || (this.$ELEMENT || {}).size;
+      return this.size || this._elFormItemSize || (this.$KY_ELEMENT['ElCascader'] || {}).size || (this.$ELEMENT || {}).size;
     },
     cascaderDisabled() {
       return this.disabled || (this.elForm || {}).disabled;

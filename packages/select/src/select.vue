@@ -211,7 +211,7 @@
       },
 
       selectSize() {
-        return this.size || this._elFormItemSize || (this.$KY_ELEMENT&&this.$KY_ELEMENT['ElSelect'] || {}).size || (this.$ELEMENT || {}).size;
+        return this.size || this._elFormItemSize || (this.$KY_ELEMENT['ElSelect'] || {}).size || (this.$ELEMENT || {}).size;
       },
 
       selectDisabled() {
