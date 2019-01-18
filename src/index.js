@@ -71,7 +71,6 @@ import Main from '../packages/main/index.js';
 import Footer from '../packages/footer/index.js';
 import locale from 'kyligence-ui/src/locale';
 import CollapseTransition from 'kyligence-ui/src/transitions/collapse-transition';
-import { getKyligenceConfiguration } from './utils/global-configuration';
 
 const components = [
   Pagination,
@@ -164,7 +163,6 @@ const install = function(Vue, opts = {}) {
   Vue.prototype.$message = Message;
 
   Vue.prototype.$ELEMENT = ELEMENT;
-  Vue.prototype.$KY_ELEMENT = getKyligenceConfiguration(opts);
 };
 
 /* istanbul ignore if */
