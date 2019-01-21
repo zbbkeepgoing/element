@@ -70,12 +70,14 @@
     font-size: 14px;
     color: $--color-text-secondary;
     i:hover {
+      cursor: pointer;
       background-color: $--color-grey-3;
       color: $--color-primary;
     }
     &.is-disabled {
       cursor: not-allowed;
       i:hover {
+        cursor: not-allowed;
         background-color: inherit;
         color: inherit;
       }
