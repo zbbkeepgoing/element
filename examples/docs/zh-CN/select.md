@@ -18,6 +18,81 @@
         }, {
           value: '选项5',
           label: '北京烤鸭'
+        }, {
+          value: '选项6',
+          label: '黄金糕'
+        }, {
+          value: '选项7',
+          label: '双皮奶'
+        }, {
+          value: '选项8',
+          label: '蚵仔煎'
+        }, {
+          value: '选项9',
+          label: '龙须面'
+        }, {
+          value: '选项10',
+          label: '北京烤鸭'
+        }, {
+          value: '选项11',
+          label: '黄金糕'
+        }, {
+          value: '选项12',
+          label: '双皮奶'
+        }, {
+          value: '选项13',
+          label: '蚵仔煎'
+        }, {
+          value: '选项14',
+          label: '龙须面'
+        }, {
+          value: '选项15',
+          label: '北京烤鸭'
+        }, {
+          value: '选项16',
+          label: '黄金糕'
+        }, {
+          value: '选项17',
+          label: '双皮奶'
+        }, {
+          value: '选项18',
+          label: '蚵仔煎'
+        }, {
+          value: '选项19',
+          label: '龙须面'
+        }, {
+          value: '选项20',
+          label: '北京烤鸭'
+        }, {
+          value: '选项21',
+          label: '黄金糕'
+        }, {
+          value: '选项22',
+          label: '双皮奶'
+        }, {
+          value: '选项23',
+          label: '蚵仔煎'
+        }, {
+          value: '选项24',
+          label: '龙须面'
+        }, {
+          value: '选项25',
+          label: '北京烤鸭'
+        }, {
+          value: '选项26',
+          label: '黄金糕'
+        }, {
+          value: '选项27',
+          label: '双皮奶'
+        }, {
+          value: '选项28',
+          label: '蚵仔煎'
+        }, {
+          value: '选项29',
+          label: '龙须面'
+        }, {
+          value: '选项30',
+          label: '北京烤鸭'
         }],
         options2: [{
           value: '选项1',
@@ -372,7 +447,8 @@ select和radio、checkbox一样，选中值和下拉选项中的值是===比较�
 :::demo 为`el-select`设置`multiple`属性即可启用多选，此时`v-model`的值为当前选中值所组成的数组。默认情况下选中值会以 Tag 的形式展现，你也可以设置`collapse-tags`属性将它们合并为一段文字。
 ```html
 <template>
-  <el-button type="primary" @click="value5 = []">清空</el-button><br/><br/>
+  <el-button type="primary" @click="value5 = []">清空</el-button> <el-button type="primary" @click="value5 = ['选项1', '选项2', '选项3', '选项4', '选项5', '选项6', '选项7', '选项8', '选项9', '选项10', '选项11', '选项12', '选项13', '选项14', '选项15', '选项16', '选项17', '选项18', '选项19', '选项10', '选项21', '选项22', '选项23', '选项24', '选项25', '选项26', '选项27', '选项28', '选项29', '选项30']">全选</el-button><br/>
+  <br/>
   <el-select v-model="value5" multiple placeholder="请选择">
     <el-option
       v-for="item in options"

@@ -14,13 +14,15 @@
           :closable="!selectDisabled"
           :size="collapseTagSize"
           :hit="selected[0].hitState"
-          @close="deleteTag($event, selected[0])">
+          @close="deleteTag($event, selected[0])"
+          disable-transitions>
           <span class="el-select__tags-text">{{ selected[0].currentLabel }}</span>
         </el-tag>
         <el-tag
           v-if="selected.length > 1"
           :closable="false"
-          :size="collapseTagSize">
+          :size="collapseTagSize"
+          disable-transitions>
           <span class="el-select__tags-text">+ {{ selected.length - 1 }}</span>
         </el-tag>
       </span>
@@ -31,7 +33,8 @@
           :closable="!selectDisabled"
           :size="collapseTagSize"
           :hit="item.hitState"
-          @close="deleteTag($event, item)">
+          @close="deleteTag($event, item)"
+          disable-transitions>
           <span class="el-select__tags-text">{{ item.currentLabel }}</span>
         </el-tag>
       </transition-group>
@@ -602,12 +605,16 @@
           let input = [].filter.call(inputChildNodes, item => item.tagName === 'INPUT')[0];
           const tags = this.$refs.tags;
           const sizeInMap = sizeMap[this.selectSize] || 36;
-          input.style.height = this.selected.length === 0
-            ? sizeInMap + 'px'
-            : Math.max(
+          if (this.selected.length === 0) {
+            setTimeout(() => {
+              input.style.height = sizeInMap + 'px';
+            }, 0);
+          } else {
+            input.style.height = Math.max(
               tags ? (tags.clientHeight + (tags.clientHeight > sizeInMap ? 6 : 0)) : 0,
               sizeInMap
             ) + 'px';
+          }
           if (this.visible && this.emptyText !== false) {
             this.broadcast('ElSelectDropdown', 'updatePopper');
           }

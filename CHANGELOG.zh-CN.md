@@ -1,7 +1,9 @@
 ## 更新日志
-### 2.1.4
-*2018-01-18*
+### 2.1.7
+*2018-01-21*
 - refine select tag transition issue (by 夏倩)
+
+### 2.1.4
 *2018-01-08*
 - tab nav-next/nav-pre修改size和hover状态 (by 夏倩)
 
