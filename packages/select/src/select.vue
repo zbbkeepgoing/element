@@ -308,7 +308,8 @@
         query: '',
         previousQuery: null,
         inputHovering: false,
-        currentPlaceholder: ''
+        currentPlaceholder: '',
+        ST: null
       };
     },
 
@@ -598,6 +599,7 @@
       },
 
       resetInputHeight() {
+        clearTimeout(this.ST);
         if (this.collapseTags && !this.filterable) return;
         this.$nextTick(() => {
           if (!this.$refs.reference) return;
@@ -606,9 +608,11 @@
           const tags = this.$refs.tags;
           const sizeInMap = sizeMap[this.selectSize] || 36;
           if (this.selected.length === 0) {
-            setTimeout(() => {
-              input.style.height = sizeInMap + 'px';
-            }, 0);
+            this.ST = setTimeout(() => {
+              if (this.selected.length === 0) {
+                input.style.height = sizeInMap + 'px';
+              }
+            }, 10);
           } else {
             input.style.height = Math.max(
               tags ? (tags.clientHeight + (tags.clientHeight > sizeInMap ? 6 : 0)) : 0,
