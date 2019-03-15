@@ -52,13 +52,20 @@
     },
     computed: {
       active() {
-        return this.index === this.rootMenu.activeIndex;
+        let isActive = this.index === this.rootMenu.activeIndex;
+        if (this.$el) {
+          if (!isActive) {
+            this.$el.style.backgroundColor = this.rootMenu.subBackgroundColor;
+            this.$el.style.color = this.rootMenu.textColor;
+          }
+        }
+        return isActive;
       },
       hoverBackground() {
-        return this.rootMenu.hoverBackground;
+        return this.rootMenu.hoverBackgroundColor;
       },
       backgroundColor() {
-        return this.rootMenu.backgroundColor || '';
+        return this.rootMenu.subBackgroundColor || '';
       },
       activeTextColor() {
         return this.rootMenu.activeTextColor || '';
@@ -87,14 +94,22 @@
     methods: {
       onMouseEnter() {
         if (this.mode === 'horizontal' && !this.rootMenu.backgroundColor) return;
-        this.$el.style.backgroundColor = this.hoverBackground;
+        this.$el.style.backgroundColor = this.rootMenu.activeSubBackgroundColor;
+        if (!this.active) { 
+          this.$el.style.color = this.rootMenu.hoverTextColor;
+        }
       },
       onMouseLeave() {
         if (this.mode === 'horizontal' && !this.rootMenu.backgroundColor) return;
-        this.$el.style.backgroundColor = this.backgroundColor;
+        // this.$el.style.backgroundColor = this.backgroundColor;
+        if (!this.active) {
+          this.$el.style.backgroundColor = this.rootMenu.subBackgroundColor;
+          this.$el.style.color = this.rootMenu.textColor;
+        }
       },
       handleClick() {
         if (!this.disabled) {
+          this.$el.style.backgroundColor = this.rootMenu.activeSubBackgroundColor;
           this.dispatch('ElMenu', 'item-click', this);
           this.$emit('click', this);
         };

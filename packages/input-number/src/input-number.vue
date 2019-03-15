@@ -86,7 +86,10 @@
       },
       value: {},
       disabled: Boolean,
-      size: String,
+      size: {
+        type: String,
+        default: 'medium'
+      },
       controls: {
         type: Boolean,
         default: true

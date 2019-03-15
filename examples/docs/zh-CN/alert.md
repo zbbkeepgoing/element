@@ -19,6 +19,18 @@
 
 ## Alert 警告
 
+:::tip 
+新规范调整内容：
+* ##### 添加show-background 属性来控制是否显示背景，默认为true
+* ##### 添加tip类型，来控制更重量级的提示操作信息
+* ##### 添加icon 属性来让用户自主配置图标
+* ##### 带描述性内容的组件图标与没有描述性内容的组件保持大小位置一致
+
+注意修改事项：
+  * ##### 请注意把页面原来用mini的换成small。
+  * ##### 默认尺寸不需要额外加medium了。
+:::
+
 用于页面中展示重要的提示信息。
 
 ### 基本用法
@@ -33,8 +45,12 @@
     type="success">
   </el-alert>
   <el-alert
-    title="消息提示的文案"
+    title="普通消息显示"
     type="info">
+  </el-alert>
+  <el-alert
+    title="提示操作信息显示"
+    type="tip">
   </el-alert>
   <el-alert
     title="警告提示的文案"
@@ -54,6 +70,17 @@
     title="警告提示的文案"
     @close="hello">
     <p>I am description <a>点我</a></p>
+  </el-alert>
+  <el-alert
+    title="无背景"
+    :show-background="false"
+    type="success">
+  </el-alert>
+  <el-alert
+    title="无背景"
+    icon="el-icon-time"
+    :show-background="false"
+    type="success">
   </el-alert>
 </template>
 ```
@@ -110,6 +137,11 @@
   <el-alert
     title="消息提示的文案"
     type="info"
+    show-icon>
+  </el-alert>
+  <el-alert
+    title="操作提示的文案"
+    type="tip"
     show-icon>
   </el-alert>
   <el-alert
@@ -214,13 +246,13 @@
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
 |---------- |-------------- |---------- |--------------------------------  |-------- |
 | **title** | 标题，**必选参数** | string | — | — |
-| type | 主题 | string | success/warning/info/error | info |
+| type | 主题 | string | success/warning/info/error/tip | info |
 | description | 辅助性文字。也可通过默认 slot 传入 | string | — | — |
 | closable | 是否可关闭 | boolean | — | true |
 | center | 文字是否居中 | boolean | — | true |
 | close-text | 关闭按钮自定义文本 | string | — | — |
 | show-icon | 是否显示图标 | boolean | — | false |
-
+| show-background | 是否显示背景 | boolean | true、false | true |
 
 ### Events
 | 事件名称 | 说明 | 回调参数 |

@@ -104,13 +104,13 @@
 
 ### 尺寸
 
-额外提供了 `medium`、`small`、`mini` 三种尺寸的数字输入框
+额外提供了 `large`、`medium`、`small`、`mini` 四种尺寸的数字输入框
 
 :::demo
 
 ```html
 <template>
-  <el-input-number v-model="num4"></el-input-number>
+  <el-input-number size="large" v-model="num4"></el-input-number>
   <el-input-number size="medium" v-model="num5"></el-input-number>
   <el-input-number size="small" v-model="num6"></el-input-number>
   <el-input-number size="mini" v-model="num7"></el-input-number>
@@ -163,7 +163,7 @@
 | min      | 设置计数器允许的最小值 | number | — | -Infinity |
 | max      | 设置计数器允许的最大值 | number | — | Infinity |
 | step     | 计数器步长           | number   | — | 1 |
-| size     | 计数器尺寸           | string   | large, small | — |
+| size     | 计数器尺寸           | string   | large, medium、small | medium |
 | disabled | 是否禁用计数器        | boolean | — | false |
 | controls | 是否使用控制按钮        | boolean | — | true |
 | controls-position | 控制按钮位置 | string | right | - |

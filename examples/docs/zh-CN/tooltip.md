@@ -51,6 +51,12 @@
 
 ## Tooltip 文字提示
 
+:::tip 
+新规范调整内容：
+* ##### 按规范对padding进行了调整
+* ##### 设置了默认最大的宽度300px，超过了自动折行
+::: 
+
 常用于展示鼠标 hover 时的提示信息。
 
 ### 基础用法
@@ -62,7 +68,7 @@
 ```html
 <div class="box">
   <div class="top">
-    <el-tooltip class="item" effect="dark" content="Top Left 提示文字" placement="top-start">
+    <el-tooltip class="item" effect="dark" content="Top Left 提示文字Top Left 提示文字Top Left 提示文字Top Left 提示文字Top Left 提示文字Top Left 提示文字Top Left 提示文字" placement="top-start">
       <el-button>上左</el-button>
     </el-tooltip>
     <el-tooltip class="item" effect="dark" content="Top Center 提示文字" placement="top">

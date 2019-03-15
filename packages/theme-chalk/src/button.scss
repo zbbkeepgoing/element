@@ -132,6 +132,9 @@
   @include m(info) {
     @include button-variant($--button-info-color, $--button-info-fill, $--button-info-border);
   }
+  @include m(big) {
+    @include button-size($--button-big-padding-vertical, $--button-medium-padding-horizontal, $--button-medium-font-size, $--button-medium-border-radius);
+  }
   @include m(medium) {
     @include button-size($--button-medium-padding-vertical, $--button-medium-padding-horizontal, $--button-medium-font-size, $--button-medium-border-radius);
   }

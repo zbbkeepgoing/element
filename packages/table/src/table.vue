@@ -2,6 +2,7 @@
   <div class="el-table"
     :class="[{
       'el-table--fit': fit,
+      'el-table--nested': nested,
       'el-table--striped': stripe,
       'el-table--border': border || isGroup,
       'el-table--hidden': isHidden,
@@ -243,7 +244,7 @@
           return [];
         }
       },
-
+      nested: Boolean,
       size: String,
 
       width: [String, Number],

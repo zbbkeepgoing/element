@@ -386,14 +386,20 @@
 </style>
 
 ## Table 表格
-
+:::tip 
+新规范调整内容
+* ##### 按照新的规范，默认table行高调整为36px,字号为14px，medium的table行高调整为32px，字号为12px，表头颜色调整为新的配色。规范里没有覆盖small和mini尺寸的表格。添加了嵌套表格的控制属性nested。嵌套表格的表头采用了新的规范配色。
+注意修改事项：
+* ##### 按照规范，嵌套的表格需要添加size="medium" 以及nested属性。
+* ##### 请注意表格内容 尤其是tag标签会把行高撑开。
+:::
 用于展示多条结构类似的数据，可对数据进行排序、筛选、对比或其他自定义操作。
 
 ### 基础表格
 
 基础的表格展示用法。
 
-:::demo 当`el-table`元素中注入`data`对象数组后，在`el-table-column`中用`prop`属性来对应对象中的键名即可填入数据，用`label`属性来定义表格的列名。可以使用`width`属性来定义列宽。
+:::demo 当`el-table`元素中注入`data`对象数组后，在`el-table-column`中用`prop`属性来对应对象中的键名即可填入数据，用`label`属性来定义表格的列名。可以使用`width`属性来定义列宽。 可以通过 `size` 属性设置表格的尺寸类型（目前主要使用默认尺寸和medium内嵌table尺寸）
 ```html
   <template>
     <el-table
@@ -415,7 +421,6 @@
       </el-table-column>
     </el-table>
   </template>
-
   <script>
     export default {
       data() {
@@ -443,6 +448,60 @@
   </script>
 ```
 :::
+
+表格尺寸用法（例子：size="medium"）
+
+:::demo 可以通过 `size` 属性设置表格的尺寸类型（目前主要使用默认尺寸和medium内嵌table尺寸）
+```html
+ <template>
+    <el-table
+      :data="tableData"
+      size="medium"
+      style="width: 100%">
+      <el-table-column
+        prop="date"
+        label="日期"
+        width="180">
+      </el-table-column>
+      <el-table-column
+        prop="name"
+        label="姓名"
+        width="180">
+      </el-table-column>
+      <el-table-column
+        prop="address"
+        label="地址">
+      </el-table-column>
+    </el-table>
+  </template>
+  <script>
+    export default {
+      data() {
+        return {
+          tableData: [{
+            date: '2016-05-02',
+            name: '王小虎',
+            address: '上海市普陀区金沙江路 1518 弄'
+          }, {
+            date: '2016-05-04',
+            name: '王小虎',
+            address: '上海市普陀区金沙江路 1517 弄'
+          }, {
+            date: '2016-05-01',
+            name: '王小虎',
+            address: '上海市普陀区金沙江路 1519 弄'
+          }, {
+            date: '2016-05-03',
+            name: '王小虎',
+            address: '上海市普陀区金沙江路 1516 弄'
+          }]
+        }
+      }
+    }
+  </script>
+```
+:::
+
 
 ### 带斑马纹表格
 
@@ -1559,29 +1618,25 @@
     style="width: 100%">
     <el-table-column type="expand">
       <template slot-scope="props">
-        <el-form label-position="left" inline class="demo-table-expand">
-          <el-form-item label="商品名称">
-            <span>{{ props.row.name }}</span>
-          </el-form-item>
-          <el-form-item label="所属店铺">
-            <span>{{ props.row.shop }}</span>
-          </el-form-item>
-          <el-form-item label="商品 ID">
-            <span>{{ props.row.id }}</span>
-          </el-form-item>
-          <el-form-item label="店铺 ID">
-            <span>{{ props.row.shopId }}</span>
-          </el-form-item>
-          <el-form-item label="商品分类">
-            <span>{{ props.row.category }}</span>
-          </el-form-item>
-          <el-form-item label="店铺地址">
-            <span>{{ props.row.address }}</span>
-          </el-form-item>
-          <el-form-item label="商品描述">
-            <span>{{ props.row.desc }}</span>
-          </el-form-item>
-        </el-form>
+        <el-table
+            size="medium"
+          :data="tableData5"
+          nested
+          border
+          style="width: 100%">
+          <el-table-column
+            label="商品 ID"
+            prop="id">
+          </el-table-column>
+          <el-table-column
+            label="商品名称"
+            prop="name">
+          </el-table-column>
+          <el-table-column
+            label="描述"
+            prop="desc">
+          </el-table-column>
+        </el-table>
       </template>
     </el-table-column>
     <el-table-column
@@ -2100,6 +2155,7 @@
 | width | 对应列的宽度 | string | — | — |
 | min-width | 对应列的最小宽度，与 width 的区别是 width 是固定的，min-width 会把剩余宽度按比例分配给设置了 min-width 的列 | string | — | — |
 | fixed | 列是否固定在左侧或者右侧，true 表示固定在左侧 | string, boolean | true, left, right | — |
+| nested | 表格是否是被嵌套在其他表格内，true 表示被嵌套了 | boolean | true, false | false |
 | render-header | 列标题 Label 区域渲染使用的 Function | Function(h, { column, $index }) | — | — |
 | sortable | 对应列是否可以排序，如果设置为 'custom'，则代表用户希望远程排序，需要监听 Table 的 sort-change 事件 | boolean, string | true, false, 'custom' | false |
 | sort-method | 对数据进行排序的时候使用的方法，仅当 sortable 设置为 true 的时候有效，需返回一个数字，和 Array.sort 表现一致 | Function(a, b) | — | — |

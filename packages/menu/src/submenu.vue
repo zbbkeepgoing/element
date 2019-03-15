@@ -94,7 +94,7 @@
         return isActive;
       },
       hoverBackground() {
-        return this.rootMenu.hoverBackground;
+        return this.rootMenu.hoverBackgroundColor;
       },
       backgroundColor() {
         return this.rootMenu.backgroundColor || '';
@@ -201,12 +201,14 @@
       handleTitleMouseenter() {
         if (this.mode === 'horizontal' && !this.rootMenu.backgroundColor) return;
         const title = this.$refs['submenu-title'];
-        title && (title.style.backgroundColor = this.rootMenu.hoverBackground);
+        title && (title.style.backgroundColor = this.rootMenu.hoverBackgroundColor);
+        title && (title.style.color = this.rootMenu.hoverTextColor);
       },
       handleTitleMouseleave() {
         if (this.mode === 'horizontal' && !this.rootMenu.backgroundColor) return;
         const title = this.$refs['submenu-title'];
         title && (title.style.backgroundColor = this.rootMenu.backgroundColor || '');
+        title && (title.style.color = this.rootMenu.textColor);
       },
       updatePlacement() {
         this.currentPlacement = this.mode === 'horizontal' && this.isFirstLevel

@@ -67,6 +67,7 @@
         type: Number,
         default: 126
       },
+      color: String,
       showText: {
         type: Boolean,
         default: true
@@ -76,6 +77,9 @@
       barStyle() {
         const style = {};
         style.width = this.percentage + '%';
+        if (this.color) {
+          style.backgroundColor = this.color;
+        }
         return style;
       },
       relativeStrokeWidth() {

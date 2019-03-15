@@ -105,9 +105,9 @@
       }
     }
   }
-
+  
   th, td {
-    padding: 12px 0;
+    padding: 6px 0;
     min-width: 0;
     box-sizing: border-box;
     text-overflow: ellipsis;
@@ -142,21 +142,21 @@
 
   @include m(medium) {
     th, td {
-      padding: 10px 0;
+      padding: 4px 0;
     }
   }
 
   @include m(small) {
     font-size: 12px;
     th, td {
-      padding: 8px 0;
+      padding: 4px 0;
     }
   }
 
   @include m(mini) {
     font-size: 12px;
     th, td {
-      padding: 6px 0;
+      padding: 4px 0;
     }
   }
 
@@ -183,7 +183,6 @@
     text-align: left;
     background-color: $--table-header-background;
     font-weight: 500;
-
     div {
       display: inline-block;
       padding-left: 10px;
@@ -276,7 +275,13 @@
     width: 100%;
     height: 1px;
   }
-
+  @include m(nested) {
+    font-size:12px;
+    th {
+      background-color: $--table-header-nested-background;
+    }
+  }
+  
   // table--border
   @include m(border) {
     border-right: none;
@@ -497,7 +502,6 @@
       }
     }
   }
-
   @include e(body) {
     tr.hover-row {
       &, &.el-table__row--striped {

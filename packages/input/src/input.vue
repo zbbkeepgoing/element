@@ -124,7 +124,10 @@
     props: {
       value: [String, Number],
       placeholder: String,
-      size: String,
+      size: {
+        type: String,
+        default: 'medium'
+      },
       resize: String,
       name: String,
       form: String,
@@ -162,7 +165,7 @@
       label: String,
       clearable: {
         type: Boolean,
-        default: false
+        default: true
       },
       tabindex: String
     },

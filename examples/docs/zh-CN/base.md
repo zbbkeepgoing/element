@@ -417,6 +417,8 @@
 
 #### 具体变量
 ```scss
+/* Element Chalk Variables */
+
 /* Colors
 -------------------------- */
 $--color-white: #fff !default;
@@ -436,39 +438,41 @@ $--color-primary-light-5: mix($--color-white, $--color-primary, 50%) !default; /
 $--color-primary-light-6: mix($--color-white, $--color-primary, 60%) !default; /* #9dcff2 */
 $--color-primary-light-7: mix($--color-white, $--color-primary, 70%) !default; /* #b5dbf5 */
 $--color-primary-light-8: mix($--color-white, $--color-primary, 80%) !default; /* #cee7f8 */
-$--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default; /* #e6f3fc */
+$--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default; /* #cee7f8 */
 
 $--color-success: #4cb050 !default;
 $--color-warning: #F7BA2A !default;
-$--color-danger: #ff4159 !default;
+$--color-danger: #e73371 !default;
 $--color-info: #909399 !default;
+$--color-tip: $--color-primary !default;
 
-$--color-success-light: mix($--color-white, $--color-success, 80%) !default; /* #dbefdc */
-$--color-warning-light: mix($--color-white, $--color-warning, 80%) !default; /* #fdf1d4 */
-$--color-danger-light: mix($--color-white, $--color-danger, 80%) !default; /* #ffd9de */
-$--color-info-light: mix($--color-white, $--color-info, 80%) !default; /* #e9e9eb */
+$--color-success-light: mix($--color-white, $--color-success, 80%) !default;
+$--color-warning-light: mix($--color-white, $--color-warning, 80%) !default;
+$--color-danger-light: mix($--color-white, $--color-danger, 80%) !default;
+$--color-info-light: mix($--color-white, $--color-info, 80%) !default;
 
-$--color-success-lighter: mix($--color-white, $--color-success, 90%) !default; /* #edf7ee */
-$--color-warning-lighter: mix($--color-white, $--color-warning, 90%) !default; /* #fef8ea */
-$--color-danger-lighter: mix($--color-white, $--color-danger, 90%) !default; /* #ffecee */
-$--color-info-lighter: mix($--color-white, $--color-info, 90%) !default; /* #f4f4f5 */
+$--color-success-lighter: mix($--color-white, $--color-success, 90%) !default;
+$--color-warning-lighter: mix($--color-white, $--color-warning, 90%) !default;
+$--color-danger-lighter: mix($--color-white, $--color-danger, 90%) !default;
+$--color-info-lighter: mix($--color-white, $--color-info, 90%) !default;
+$--color-tip-lighter: #eaffea !default;
 
-$--color-text-primary: #263238 !default;
-$--color-text-regular: #455a64 !default;
+$--color-text-primary: #191919 !default;
+$--color-text-regular: #323232 !default;
 $--color-text-secondary: #b0bec5 !default;
-$--color-text-placeholder: #cfd8dc !default;
-$--color-text-disabled: #8E9FA8 !default;
+$--color-text-placeholder: #b2b2b2 !default;
+$--color-text-disabled: #7f7f7f !default;
 
 /* Link
 -------------------------- */
-$--link-color: $--color-primary-light-2 !default; /* #3aa0e5 */
-$--link-hover-color: $--color-primary !default; /* #0988DE */
+$--link-color: $--color-primary-light-2 !default;
+$--link-hover-color: $--color-primary !default;
 
 /* Background
 -------------------------- */
-$--background-color-base: #f5f7fa !default;
+$--background-color-base: #f1f7fa !default;
 $--background-color-light: #F9FBFC !default;
-$--background-color-regular: #E2ECF1 !default;
+$--background-color-regular: #CDE7F8 !default;
 
 /* Border
 -------------------------- */
@@ -486,9 +490,13 @@ $--border-radius-circle: 100% !default;
 
 /* Box-shadow
 -------------------------- */
-$--box-shadow-base: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04) !default;
+$--box-shadow-base: 0 2px 4px 0 #f4f4f4 !default;
 $--box-shadow-dark: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .12) !default;
 $--box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1) !default;
+
+/* Fill
+-------------------------- */
+$--fill-base: $--color-white !default;
 
 /* Font
 -------------------------- */
@@ -511,6 +519,7 @@ $--size-base: 14px !default;
 $--index-normal: 1 !default;
 $--index-top: 1000 !default;
 $--index-popper: 2000 !default;
+
 ```
 
 ### 使用less的项目中的配置
@@ -536,6 +545,8 @@ $--index-popper: 2000 !default;
 ```
 #### 具体变量
 ```less
+/* Element Chalk Variables */
+
 /* Colors
 -------------------------- */
 @color-white: #fff;
@@ -559,35 +570,37 @@ $--index-popper: 2000 !default;
 
 @color-success: #4cb050;
 @color-warning: #F7BA2A;
-@color-danger: #ff4159;
+@color-danger: #e73371;
 @color-info: #909399;
+@color-tip: @color-primary;
 
-@color-success-light: mix(@color-white, @color-success, 80%); /* #dbefdc */
-@color-warning-light: mix(@color-white, @color-warning, 80%); /* #fdf1d4 */
-@color-danger-light: mix(@color-white, @color-danger, 80%); /* #ffd9de */
-@color-info-light: mix(@color-white, @color-info, 80%); /* #e9e9eb */
+@color-success-light: mix(@color-white, @color-success, 80%);
+@color-warning-light: mix(@color-white, @color-warning, 80%);
+@color-danger-light: mix(@color-white, @color-danger, 80%);
+@color-info-light: mix(@color-white, @color-info, 80%);
+@color-tip-lighter: #eaffea;
 
-@color-success-lighter: mix(@color-white, @color-success, 90%); /* #edf7ee */
-@color-warning-lighter: mix(@color-white, @color-warning, 90%); /* #fef8ea */
-@color-danger-lighter: mix(@color-white, @color-danger, 90%); /* #ffecee */
-@color-info-lighter: mix(@color-white, @color-info, 90%); /* #f4f4f5 */
+@color-success-lighter: mix(@color-white, @color-success, 90%);
+@color-warning-lighter: mix(@color-white, @color-warning, 90%);
+@color-danger-lighter: mix(@color-white, @color-danger, 90%);
+@color-info-lighter: mix(@color-white, @color-info, 90%);
 
-@color-text-primary: #263238;
-@color-text-regular: #455a64;
+@color-text-primary: #191919;
+@color-text-regular: #323232;
 @color-text-secondary: #b0bec5;
-@color-text-placeholder: #cfd8dc;
-@color-text-disabled: #8E9FA8;
+@color-text-placeholder: #b2b2b2;
+@color-text-disabled: #7f7f7f;
 
 /* Link
 -------------------------- */
-@link-color: @color-primary-light-2; /* #3aa0e5 */
-@link-hover-color: @color-primary; /* #0988DE */
+@link-color: @color-primary-light-2;
+@link-hover-color: @color-primary;
 
 /* Background
 -------------------------- */
-@background-color-base: #f5f7fa;
+@background-color-base: #f1f7fa;
 @background-color-light: #F9FBFC;
-@background-color-regular: #E2ECF1;
+@background-color-regular: #CDE7F8;
 
 /* Border
 -------------------------- */
@@ -605,17 +618,21 @@ $--index-popper: 2000 !default;
 
 /* Box-shadow
 -------------------------- */
-@box-shadow-base: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+@box-shadow-base: 0 2px 4px 0 #f4f4f4;
 @box-shadow-dark: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .12);
 @box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+
+/* Fill
+-------------------------- */
+@fill-base: @color-white;
 
 /* Font
 -------------------------- */
 @font-path: 'fonts';
 @font-size-base: 14px;
 @font-size-small: 13px;
-@font-size-extra-small: 12px !default;
-@font-size-medium: 16px !default;
+@font-size-extra-small: 12px;
+@font-size-medium: 16px;
 @font-size-large: 18px;
 @font-color-disabled-base: #bbb;
 @font-weight-primary: 500;

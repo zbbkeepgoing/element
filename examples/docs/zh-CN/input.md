@@ -182,7 +182,15 @@
 </style>
 
 ## Input 输入框
+:::tip 
+新规范调整内容：
+* ##### 新规范规定理论上只会有两种尺寸，medium和small，并调整medium尺寸高度为30px，调整small尺寸高度为24px。
+* ##### 调整默认尺寸为medium
+* ##### 默认clearable 设置为true
 
+注意修改事项：
+* ##### 因为默认尺寸改为medium，不需要额外单独设置。原来用mini尺寸的地方改为small
+:::
 通过鼠标或键盘输入字符
 
 :::tip
@@ -438,6 +446,7 @@ export default {
 ```html
 <div class="demo-input-size">
   <el-input
+    size="large"
     placeholder="请输入内容"
     suffix-icon="el-icon-date"
     v-model.trim="input6">
@@ -834,7 +843,7 @@ export default {
 | placeholder   | 输入框占位文本    | string          | — | — |
 | clearable     | 是否可清空        | boolean         | — | false |
 | disabled      | 禁用            | boolean         | — | false   |
-| size          | 输入框尺寸，只在 `type!="textarea"` 时有效      | string          | medium / small / mini  | — |
+| size          | 输入框尺寸，只在 `type!="textarea"` 时有效      | string          | large / medium / small / mini  | medium |
 | prefix-icon   | 输入框头部图标    | string          | — | — |
 | suffix-icon   | 输入框尾部图标    | string          | — | — |
 | rows          | 输入框行数，只对 `type="textarea"` 有效  |  number | — |  2   |

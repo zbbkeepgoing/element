@@ -2,11 +2,11 @@
   <transition name="el-alert-fade">
     <div
       class="el-alert"
-      :class="[typeClass, center ? 'is-center' : '']"
+      :class="[typeClass, needBg, center ? 'is-center' : '']"
       v-show="visible"
       role="alert"
     >
-      <i class="el-alert__icon" :class="[ iconClass, isBigIcon ]" v-if="showIcon"></i>
+      <i class="el-alert__icon" :class="[ iconClass ]" v-if="showIcon || icon"></i>
       <div class="el-alert__content">
         <span class="el-alert__title" :class="[ isBoldTitle ]" v-if="title">{{ title }}</span>
         <span v-else class="el-alert__title">
@@ -25,7 +25,8 @@
   const TYPE_CLASSES_MAP = {
     'success': 'el-icon-success',
     'warning': 'el-icon-warning',
-    'error': 'el-icon-error'
+    'error': 'el-icon-error',
+    'tip': 'el-icon-info'
   };
   export default {
     name: 'ElAlert',
@@ -52,7 +53,15 @@
         type: String,
         default: ''
       },
+      icon: {
+        type: String,
+        default: ''
+      },
       showIcon: Boolean,
+      showBackground: {
+        type: Boolean,
+        default: true
+      },
       center: Boolean
     },
 
@@ -73,9 +82,12 @@
       typeClass() {
         return `el-alert--${ this.type }`;
       },
-
+      needBg () {
+        console.log(this.showBackground)
+        return this.showBackground ? '' : 'el-alert--nobg'
+      },
       iconClass() {
-        return TYPE_CLASSES_MAP[this.type] || 'el-icon-info';
+        return this.icon || TYPE_CLASSES_MAP[this.type] || 'el-icon-info';
       },
 
       isBigIcon() {

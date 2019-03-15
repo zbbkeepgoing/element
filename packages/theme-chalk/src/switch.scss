@@ -42,11 +42,11 @@
       position: absolute;
       z-index: 1;
       top: 1px;
-      left: $--switch-width * 0.45;
+      left: $--switch-width * 0.4;
     }
     & * {
       line-height: 1;
-      font-size: $--switch-font-size;
+      // font-size: $--switch-font-size;
       display: inline-block;
     }
   }
@@ -119,4 +119,33 @@
   & .label-fade-leave-active {
     opacity: 0;
   }
+  @include m(small) {  
+    height: $--switch-small-height;
+    line-height: $--switch-small-height;
+    @include e(label) {
+      font-size: $--switch-font-small-size;
+      height: $--switch-small-height;
+    }
+    .el-switch__label--right {
+      left: $--switch-width * 0.35;
+    }
+    @include e(core) {
+      height:$--switch-small-height;
+      width: $--switch-small-width;
+      // @include m(left) {
+      //   left: $--switch-width * 0.21;
+      // }
+      & .el-switch__button {
+        position: absolute;
+        top: 1px;
+        left: 1px;
+        border-radius: $--border-radius-circle;
+        transition: transform .3s;
+        width: $--switch-button-small-size;
+        height: $--switch-button-small-size;
+        background-color: $--color-white;
+      }
+    }
+  }
 }
+

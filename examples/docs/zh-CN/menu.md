@@ -53,6 +53,15 @@
 
 ## NavMenu 导航菜单
 
+:::tip 
+新规范调整内容：
+* ##### 调整了菜单的背景色，二级背景色，悬浮颜色，active颜色。菜单行高。
+* ##### 除了Menu原来提供的`background-color`、`text-color`和`active-text-color`，增加提供了 `hover-text-color`, `active-sub-background-color`, `sub-background-color`, `hover-background-color` 分别设置 鼠标悬浮菜单字体颜色、二级菜单激活背景色、二级菜单背景颜色、菜单悬浮背景色
+
+注意修改事项：
+* ##### 默认参数值已经覆盖了规范的颜色，目前项目不需要额外配置任何颜色。如果原来有，请移除
+:::
+
 为网站提供导航功能的菜单。
 
 ### 顶栏
@@ -77,7 +86,6 @@
     </el-submenu>
   </el-submenu>
   <el-menu-item index="3" disabled>消息中心</el-menu-item>
-  <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
 </el-menu>
 <div class="line"></div>
 <el-menu
@@ -102,7 +110,7 @@
     </el-submenu>
   </el-submenu>
   <el-menu-item index="3" disabled>消息中心</el-menu-item>
-  <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
+  <el-menu-item index="4"><a target="_blank">订单管理</a></el-menu-item>
 </el-menu>
 
 <script>
@@ -137,6 +145,19 @@
       class="el-menu-vertical-demo"
       @open="handleOpen"
       @close="handleClose">
+      <el-menu-item index="11">处理中心</el-menu-item>
+      <el-submenu index="22">
+        <template slot="title">我的工作台</template>
+        <el-menu-item index="22-1">选项1</el-menu-item>
+        <el-menu-item index="22-2">选项2</el-menu-item>
+        <el-menu-item index="22-3">选项3</el-menu-item>
+        <el-submenu index="22-4">
+          <template slot="title">选项4</template>
+          <el-menu-item index="22-4-1">选项1</el-menu-item>
+          <el-menu-item index="22-4-2">选项2</el-menu-item>
+          <el-menu-item index="22-4-3">选项3</el-menu-item>
+        </el-submenu>
+      </el-submenu>
       <el-submenu index="1">
         <template slot="title">
           <i class="el-icon-location"></i>

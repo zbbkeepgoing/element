@@ -248,7 +248,10 @@
         type: String,
         default: 'off'
       },
-      size: String,
+      size: {
+        type: String,
+        default: 'medium'
+      },
       inputClickSelected: {
         type: Boolean,
         default: true

@@ -102,9 +102,31 @@
         default: 'hover'
       },
       collapse: Boolean,
-      backgroundColor: String,
-      textColor: String,
-      activeTextColor: String
+      backgroundColor: {
+        type: String,
+        default: '#102d41'
+      },
+      subBackgroundColor: {
+        type: String,
+        default: '#0a2233'
+      },
+      activeSubBackgroundColor: {
+        type: String,
+        default: '#0e1e28'
+      },
+      hoverBackgroundColor: {
+        type: String,
+        default: '#0e1e28'
+      },
+      textColor: {
+        type: String,
+        default: '#b2b2b2'
+      },
+      activeTextColor: String,
+      hoverTextColor: {
+        type: String,
+        default: '#fff'
+      }
     },
     data() {
       return {
@@ -115,9 +137,6 @@
       };
     },
     computed: {
-      hoverBackground() {
-        return this.backgroundColor ? this.mixColor(this.backgroundColor, 0.2) : '';
-      },
       isMenuPopup() {
         return this.mode === 'horizontal' || (this.mode === 'vertical' && this.collapse);
       }

@@ -151,7 +151,10 @@ export default {
       default: 'click'
     },
     filterable: Boolean,
-    size: String,
+    size: {
+      type: String,
+      default: 'medium'
+    },
     showAllLevels: {
       type: Boolean,
       default: true

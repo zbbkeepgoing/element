@@ -3,8 +3,8 @@
 @import "common/var";
 
 @mixin menu-item {
-  height: 56px;
-  line-height: 56px;
+  height: 46px;
+  line-height: 46px;
   font-size: 14px;
   color: $--menu-item-color;
   padding: 0 20px;
@@ -76,11 +76,10 @@
           color: $--color-text-primary;
         }
       }
-
       &.is-active {
         .el-submenu__title {
           border-bottom: 2px solid $--color-primary;
-          color: $--color-text-primary;
+          // color: $--color-text-primary;
         }
       }
 
@@ -109,21 +108,21 @@
         height: 36px;
         line-height: 36px;
         padding: 0 10px;
-        color: $--color-text-secondary;
+        // color: $--color-text-secondary;
 
-        &.is-active {
-          color: $--color-text-primary;
-        }
+        // &.is-active {
+        //   color: $--color-text-primary;
+        // }
       }
     }
     & .el-menu-item:not(.is-disabled):hover,
     & .el-menu-item:not(.is-disabled):focus {
       outline: none;
-      color: $--color-text-primary;
+      // color: $--color-text-primary;
     }
     & > .el-menu-item.is-active {
       border-bottom: 2px solid $--color-primary;
-      color: $--color-text-primary;
+      // color: $--color-text-primary;
     }
   }
   @include m(collapse) {

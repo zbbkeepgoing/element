@@ -28,12 +28,13 @@ $--color-primary-light-5: mix($--color-white, $--color-primary, 50%) !default; /
 $--color-primary-light-6: mix($--color-white, $--color-primary, 60%) !default; /* #9dcff2 */
 $--color-primary-light-7: mix($--color-white, $--color-primary, 70%) !default; /* #b5dbf5 */
 $--color-primary-light-8: mix($--color-white, $--color-primary, 80%) !default; /* #cee7f8 */
-$--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default; /* #e6f3fc */
+$--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default; /* #cee7f8 */
 
 $--color-success: #4cb050 !default;
 $--color-warning: #F7BA2A !default;
-$--color-danger: #ff4159 !default;
+$--color-danger: #e73371 !default;
 $--color-info: #909399 !default;
+$--color-tip: $--color-primary !default;
 
 $--color-success-light: mix($--color-white, $--color-success, 80%) !default;
 $--color-warning-light: mix($--color-white, $--color-warning, 80%) !default;
@@ -44,12 +45,13 @@ $--color-success-lighter: mix($--color-white, $--color-success, 90%) !default;
 $--color-warning-lighter: mix($--color-white, $--color-warning, 90%) !default;
 $--color-danger-lighter: mix($--color-white, $--color-danger, 90%) !default;
 $--color-info-lighter: mix($--color-white, $--color-info, 90%) !default;
+$--color-tip-lighter: #eaffea !default;
 
-$--color-text-primary: #263238 !default;
-$--color-text-regular: #455a64 !default;
+$--color-text-primary: #191919 !default;
+$--color-text-regular: #323232 !default;
 $--color-text-secondary: #b0bec5 !default;
-$--color-text-placeholder: #B0BEC5 !default;
-$--color-text-disabled: #8E9FA8 !default;
+$--color-text-placeholder: #b2b2b2 !default;
+$--color-text-disabled: #7f7f7f !default;
 
 /* Link
 -------------------------- */
@@ -60,7 +62,7 @@ $--link-hover-color: $--color-primary !default;
 -------------------------- */
 $--background-color-base: #f1f7fa !default;
 $--background-color-light: #F9FBFC !default;
-$--background-color-regular: #E2ECF1 !default;
+$--background-color-regular: #CDE7F8 !default;
 
 /* Border
 -------------------------- */
@@ -78,7 +80,7 @@ $--border-radius-circle: 100% !default;
 
 /* Box-shadow
 -------------------------- */
-$--box-shadow-base: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04) !default;
+$--box-shadow-base: 0 2px 4px 0 #f4f4f4 !default;
 $--box-shadow-dark: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .12) !default;
 $--box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1) !default;
 
@@ -233,7 +235,7 @@ $--select-input-font-size: 14px !default;
 $--select-option-color: $--color-text-regular !default;
 $--select-option-disabled-color: $--color-text-placeholder !default;
 $--select-option-disabled-background: $--color-white !default;
-$--select-option-height: 34px !default;
+$--select-option-height: 28px !default;
 $--select-option-hover-background: $--color-primary-light-9 !default;
 $--select-option-selected: $--color-primary !default;
 $--select-option-selected-hover: $--background-color-base !default;
@@ -261,6 +263,7 @@ $--alert-close-customed-font-size: 13px !default;
 
 $--alert-success-color: $--color-success-lighter !default;
 $--alert-info-color: $--color-info-lighter !default;
+$--alert-tip-color: #e6f3fc !default;
 $--alert-warning-color: $--color-warning-lighter !default;
 $--alert-danger-color: $--color-danger-lighter !default;
 
@@ -350,13 +353,13 @@ $--input-disabled-color: $--disabled-color-base !default;
 $--input-disabled-placeholder-color: $--color-text-placeholder !default;
 
 $--input-medium-font-size: 14px !default;
-$--input-medium-height: 32px !default;
+$--input-medium-height: 30px !default;
 
 $--input-small-font-size: 13px !default;
-$--input-small-height: 28px !default;
+$--input-small-height: 24px !default;
 
 $--input-mini-font-size: 12px !default;
-$--input-mini-height: 24px !default;
+$--input-mini-height: 22px !default;
 
 /* Cascader
 -------------------------- */
@@ -409,19 +412,21 @@ $--button-border-radius: $--border-radius-base !default;
 $--button-padding-vertical: 10px !default;
 $--button-padding-horizontal: 12px !default;
 
+$--button-big-padding-vertical: 9px !default;
+
 $--button-medium-font-size: 14px !default;
 $--button-medium-border-radius: $--border-radius-base !default;
-$--button-medium-padding-vertical: 8px !default;
+$--button-medium-padding-vertical: 7px !default;
 $--button-medium-padding-horizontal: 10px !default;
 
 $--button-small-font-size: 12px !default;
 $--button-small-border-radius: #{$--border-radius-base - 1} !default;
-$--button-small-padding-vertical: 7px !default;
+$--button-small-padding-vertical: 5px !default;
 $--button-small-padding-horizontal: 8px !default;
 
 $--button-mini-font-size: 12px !default;
 $--button-mini-border-radius: #{$--border-radius-base - 1} !default;
-$--button-mini-padding-vertical: 6px !default;
+$--button-mini-padding-vertical: 4px !default;
 $--button-mini-padding-horizontal: 8px !default;
 
 $--button-default-color: $--color-text-regular !default;
@@ -467,12 +472,15 @@ $--switch-off-color: $--border-color-base !default;
 $--switch-disabled-color: $--border-color-lighter !default;
 $--switch-disabled-text-color: $--color-text-placeholder !default;
 
-$--switch-font-size: 12px !default;
+$--switch-font-size: 14px !default;
+$--switch-font-small-size: 12px !default;
 $--switch-core-border-radius: 22px !default;
-$--switch-width: 56px !default;
+$--switch-width: 54px !default;
+$--switch-small-width: 48px !default;
 $--switch-height: 22px !default;
-$--switch-button-size: 16px !default;
-
+$--switch-small-height: 18px !default;
+$--switch-button-size: 17px !default;
+$--switch-button-small-size: 14px !default;
 /* Dialog
 -------------------------- */
 $--dialog-background-color: $--color-primary-light-4 !default;
@@ -491,6 +499,7 @@ $--table-header-color: $--color-text-regular !default;
 $--table-row-hover-background: $--color-primary-light-9 !default;
 $--table-current-row-background: $--color-primary-light-9 !default;
 $--table-header-background: $--background-color-regular !default;
+$--table-header-nested-background: #f4f4f4; // temp  need verify
 $--table-footer-background: $--color-text-placeholder !default;
 $--table-fixed-box-shadow: 0 0 10px rgba(0, 0, 0, .12) !default;
 
@@ -526,7 +535,7 @@ $--tooltip-color: $--color-white !default;
 $--tooltip-font-size: 12px !default;
 $--tooltip-border-color: $--color-text-regular !default;
 $--tooltip-arrow-size: 4px !default;
-$--tooltip-padding: 10px !default;
+$--tooltip-padding: 5px 10px !default;
 
 /* Tag
 -------------------------- */

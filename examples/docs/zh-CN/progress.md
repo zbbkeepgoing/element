@@ -12,6 +12,12 @@
 
 ## Progress 进度条
 
+:::tip 
+新规范调整内容：
+* ##### 添加自定义color样式来控制进度条的背景色
+
+:::
+
 用于展示操作进度，告知用户当前状态和预期。
 
 ### 线形进度条 — 百分比外显
@@ -21,8 +27,8 @@
 ```html
 <el-progress :percentage="0"></el-progress>
 <el-progress :percentage="70"></el-progress>
-<el-progress :percentage="100" status="success"></el-progress>
-<el-progress :percentage="50" status="exception"></el-progress>
+<el-progress :percentage="20" color="#000" ></el-progress>
+<el-progress :percentage="50" status="exception" ></el-progress>
 ```
 :::
 
@@ -62,3 +68,4 @@
 | status  | 进度条当前状态 | string | success/exception | — |
 | width  | 环形进度条画布宽度（只在 type=circle 时可用） | number |  | 126 |
 | show-text  | 是否显示进度条文字内容 | boolean | — | true |
+| color  | 自定义进度条背景色 | string | — | - |

@@ -1,4 +1,9 @@
 ## 更新日志
+### 3.0.0
+*2019-03-12*
+- 新版本kyligence-ui (by 大圣)
+- table 规范调整
+
 ### 2.1.9
 *2019-03-11*
 - refine select tag transition issue (by 夏倩)

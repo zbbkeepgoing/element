@@ -32,24 +32,26 @@
 
 @color-success: #4cb050;
 @color-warning: #F7BA2A;
-@color-danger: #ff4159;
+@color-danger: #e73371;
 @color-info: #909399;
+@color-tip: @color-primary;
 
 @color-success-light: mix(@color-white, @color-success, 80%);
 @color-warning-light: mix(@color-white, @color-warning, 80%);
 @color-danger-light: mix(@color-white, @color-danger, 80%);
 @color-info-light: mix(@color-white, @color-info, 80%);
+@color-tip-lighter: #eaffea;
 
 @color-success-lighter: mix(@color-white, @color-success, 90%);
 @color-warning-lighter: mix(@color-white, @color-warning, 90%);
 @color-danger-lighter: mix(@color-white, @color-danger, 90%);
 @color-info-lighter: mix(@color-white, @color-info, 90%);
 
-@color-text-primary: #263238;
-@color-text-regular: #455a64;
+@color-text-primary: #191919;
+@color-text-regular: #323232;
 @color-text-secondary: #b0bec5;
-@color-text-placeholder: #cfd8dc;
-@color-text-disabled: #8E9FA8;
+@color-text-placeholder: #b2b2b2;
+@color-text-disabled: #7f7f7f;
 
 /* Link
 -------------------------- */
@@ -58,9 +60,9 @@
 
 /* Background
 -------------------------- */
-@background-color-base: #f5f7fa;
+@background-color-base: #f1f7fa;
 @background-color-light: #F9FBFC;
-@background-color-regular: #E2ECF1;
+@background-color-regular: #CDE7F8;
 
 /* Border
 -------------------------- */
@@ -78,7 +80,7 @@
 
 /* Box-shadow
 -------------------------- */
-@box-shadow-base: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+@box-shadow-base: 0 2px 4px 0 #f4f4f4;
 @box-shadow-dark: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .12);
 @box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
 
@@ -91,8 +93,8 @@
 @font-path: 'fonts';
 @font-size-base: 14px;
 @font-size-small: 13px;
-@font-size-extra-small: 12px !default;
-@font-size-medium: 16px !default;
+@font-size-extra-small: 12px;
+@font-size-medium: 16px;
 @font-size-large: 18px;
 @font-color-disabled-base: #bbb;
 @font-weight-primary: 500;

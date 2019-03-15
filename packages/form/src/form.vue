@@ -23,7 +23,10 @@
     props: {
       model: Object,
       rules: Object,
-      labelPosition: String,
+      labelPosition: {
+        type: String,
+        default: 'top'
+      },
       labelWidth: String,
       labelSuffix: {
         type: String,

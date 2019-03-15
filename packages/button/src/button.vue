@@ -38,7 +38,10 @@
         type: String,
         default: 'default'
       },
-      size: String,
+      size: {
+        type: String,
+        default: 'medium'
+      },
       icon: {
         type: String,
         default: ''

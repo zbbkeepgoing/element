@@ -1,7 +1,11 @@
 <template>
   <div
     class="el-switch"
-    :class="{ 'is-disabled': switchDisabled, 'is-checked': checked }"
+    :class="{ 
+      'is-disabled': switchDisabled,
+      'is-checked': checked,
+      'el-switch--small': size === 'small'
+    }"
     role="switch"
     :aria-checked="checked"
     :aria-disabled="switchDisabled"
@@ -56,6 +60,10 @@
         type: Boolean,
         default: false
       },
+      size: {
+        type: String,
+        default: ''
+      },
       width: {
         type: Number,
         default: 0
@@ -106,7 +114,7 @@
         return this.value === this.activeValue;
       },
       transform() {
-        return this.checked ? `translate3d(${ this.coreWidth - 20 }px, 0, 0)` : '';
+        return this.checked ? `translate3d(${ this.coreWidth - (this.size === 'small' ? '18' : '21') }px, 0, 0)` : '';
       },
       switchDisabled() {
         return this.disabled || (this.elForm || {}).disabled;
@@ -155,7 +163,7 @@
     },
     mounted() {
       /* istanbul ignore if */
-      this.coreWidth = this.width || 56;
+      this.coreWidth = this.width || this.size === 'small' ? 48 : 54;
       if (this.activeColor || this.inactiveColor) {
         this.setBackgroundColor();
       }

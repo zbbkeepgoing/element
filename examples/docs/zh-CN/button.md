@@ -35,6 +35,14 @@
 </style>
 
 ## Button 按钮
+:::tip 
+新规范调整内容：
+* ##### 新规范中规定设计稿中默认只能有两种尺寸的按钮（medium默认和small），medium调整为默认按钮，高度30px，small对应高度24px。如果有其他意外情况。请提出给设计师矫正。另外添加了 big 34px  mini 22px 这两种 超大和 极小的尺寸作为意外情况的备用。
+
+注意修改事项：
+  * ##### 请注意把页面原来用mini的换成small。
+  * ##### 默认尺寸不需要额外加medium了。
+:::
 常用的操作按钮。
 
 ### 基础用法
@@ -205,10 +213,14 @@ locales: {
   }
 }
 ```
-:::demo 支持的尺寸：`medium`、`small`、`mini`，通过设置`size`属性来配置它们，默认是最大号的尺寸。
+:::demo 支持的尺寸：`big`、 `medium`、`small`、`mini`，通过设置`size`属性来配置它们，默认是medium的尺寸。
 
 ```html
 <div>
+  <el-button-group>
+  <el-button size="big" round @click="changeLang('en')"  :class="{'active':lang=='en'}">EN</el-button>
+  <el-button size="big" round @click="changeLang('zh-cn')" :class="{'active':lang=='zh-cn'}">中文</el-button>
+</el-button-group>
 <el-button-group>
   <el-button round @click="changeLang('en')" :class="{'active':lang=='en'}">EN</el-button>
   <el-button round @click="changeLang('zh-cn')" :class="{'active':lang=='zh-cn'}">中文</el-button>
@@ -264,18 +276,22 @@ locales: {
 
 ### 不同尺寸
 
+* 新规范规定 项目场景中使用两种尺寸 【medium 高度为30px】 【small 高度为24px】 默认medium 
+
 Button 组件提供除了默认值以外的三种尺寸，可以在不同场景下选择合适的按钮尺寸。
 
-:::demo 额外的尺寸：`medium`、`small`、`mini`，通过设置`size`属性来配置它们。
+:::demo 额外的尺寸：`big`、`medium`、`small`、`mini`，通过设置`size`属性来配置它们。默认是medium
 
 ```html
 <div>
+  <el-button size="big">较大尺寸按钮</el-button>
   <el-button>默认按钮</el-button>
   <el-button size="medium">中等按钮</el-button>
   <el-button size="small">小型按钮</el-button>
   <el-button size="mini">超小按钮</el-button>
 </div>
 <div style="margin-top: 20px">
+  <el-button round size="big">较大尺寸按钮</el-button>
   <el-button round>默认按钮</el-button>
   <el-button size="medium" round>中等按钮</el-button>
   <el-button size="small" round>小型按钮</el-button>
@@ -287,7 +303,7 @@ Button 组件提供除了默认值以外的三种尺寸，可以在不同场景�
 ### Attributes
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
 |---------- |-------- |---------- |-------------  |-------- |
-| size     | 尺寸   | string  |   medium / small / mini            |    —     |
+| size     | 尺寸   | string  |   big/ medium / small / mini            |    medium  |
 | type     | 类型   | string    |   primary / success / warning / danger / info |     —    |
 | plain     | 是否朴素按钮   | boolean    | — | false   |
 | text     | 是否文字按钮   | boolean    | — | false   |

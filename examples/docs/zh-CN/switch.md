@@ -24,6 +24,15 @@
 
 ## Switch 开关
 
+:::tip 
+新规范调整内容
+* ##### 新规范中规定设计稿中默认只能有两种尺寸的按钮（默认和small），默认宽度54px、高度22px，small对应宽度47px、高度18px。
+注意修改事项：
+* ##### 小尺寸添加了 size="small"。
+* ##### 默认文案只支持ON和OFF
+* ##### 按照公司产品的逻辑统一：active-text="OFF" inactive-text="ON"
+:::
+
 表示两种相互对立的状态间的切换，多用于触发「开/关」。
 
 ### 基本用法
@@ -37,6 +46,12 @@
   inactive-color="#ff4949">
 </el-switch>
 
+<el-switch
+  size="small"
+  v-model="value2"
+  active-color="#13ce66"
+  inactive-color="#ff4949">
+</el-switch>
 <script>
   export default {
     data() {
@@ -57,16 +72,29 @@
 ```html
 <el-switch
   v-model="value3"
-  active-text="ON"
-  inactive-text="OFF">
+  active-text="OFF"
+  inactive-text="ON">
 </el-switch>
 <el-switch
-  style="display: block"
   v-model="value4"
   active-color="#13ce66"
   inactive-color="#ff4949"
-  active-text="ON"
-  inactive-text="OFF">
+  active-text="OFF"
+  inactive-text="ON">
+</el-switch>
+<el-switch
+  size="small"
+  v-model="value3"
+  active-text="OFF"
+  inactive-text="ON">
+</el-switch>
+<el-switch
+  size="small"
+  v-model="value4"
+  active-color="#13ce66"
+  inactive-color="#ff4949"
+  active-text="OFF"
+  inactive-text="ON">
 </el-switch>
 
 <script>
@@ -142,6 +170,7 @@
 
 | 参数      | 说明    | 类型      | 可选值       | 默认值   |
 |---------- |-------- |---------- |-------------  |-------- |
+| size  | 尺寸    | string   | -/small | -   |
 | disabled  | 是否禁用    | boolean   | — | false   |
 | width  | switch 的宽度（像素）    | number   | — | 40 |
 | active-icon-class  | switch 打开时所显示图标的类名，设置此项会忽略 `active-text`    | string   | — | — |
