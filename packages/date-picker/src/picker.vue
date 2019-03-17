@@ -319,7 +319,10 @@ export default {
 
   props: {
     isAutoComplete: Boolean,
-    size: String,
+    size: {
+      type: String,
+      default: 'medium'
+    },
     format: String,
     valueFormat: String,
     readonly: Boolean,

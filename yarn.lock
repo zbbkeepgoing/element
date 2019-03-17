@@ -8131,6 +8131,11 @@ user-home@^2.0.0:
   dependencies:
     os-homedir "^1.0.0"
 
+user@0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/user/-/user-0.0.0.tgz#f27f1b23fc511f2a8efa40db55cfba123824e02a"
+  integrity sha1-8n8bI/xRHyqO+kDbVc+6Ejgk4Co=
+
 useragent@^2.1.9:
   version "2.1.9"
   resolved "https://registry.yarnpkg.com/useragent/-/useragent-2.1.9.tgz#4dba2bc4dad1875777ab15de3ff8098b475000b7"

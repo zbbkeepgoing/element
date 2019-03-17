@@ -37,7 +37,7 @@
   }
 }
 @include b(form-item) {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   @include utils-clearfix;
 
   & .el-form-item {
@@ -50,10 +50,10 @@
 
   @include m(medium) {
     .el-form-item__label {
-      line-height: 36px;
+      // line-height: 30px;
     }
     .el-form-item__content {
-      line-height: 36px;
+      // line-height: 30px;
     }
   }
   @include m(small) {
@@ -91,12 +91,12 @@
     float: left;
     font-size: 14px;
     color: $--color-text-regular;
-    line-height: 40px;
+    // line-height: 40px;
     padding: 0 12px 0 0;
     box-sizing: border-box;
   }
   @include e(content) {
-    line-height: 40px;
+    // line-height: 40px;
     position: relative;
     font-size: 14px;
     @include utils-clearfix;
