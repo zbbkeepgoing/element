@@ -212,9 +212,11 @@
 
     @include when(active) {
       z-index: 1;
+      // background: #f4f4f4;
+      // box-shadow: inset 1px 1px 4px 0 #455A64;
     }
 
-    &.el-button--default.is-round {
+    &.el-button--default {
       border: 1px solid #CFD8DC;
       min-width: 60px;
       &.el-button--medium {
@@ -227,14 +229,29 @@
         min-width: 42px;
       }
       &:hover {
-        color: $--color-text-regular;
+        color: $--color-primary-light-2;
         background-color: $--color-white;
         // border-color: #CFD8DC;
       }
-      &.active {
-        background: #E2ECF1;
-        box-shadow: inset 1px 1px 4px 0 #455A64;
+      &:active {
+        color:$--color-primary;
       }
+      color:$--color-text-disabled;
+      &.active {
+        background: #f4f4f4;
+        color:$--color-text-disabled;
+        cursor:not-allowed;
+        // box-shadow: inset 1px 1px 4px 0 #455A64;
+        &:active {
+          color:$--color-text-regular;
+        }
+        &:hover {
+          color: $--color-text-disabled;
+          // background-color: $--color-white;
+          // border-color: #CFD8DC;
+        }
+      }
+      
     }
   }
 

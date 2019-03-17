@@ -218,24 +218,24 @@ locales: {
 ```html
 <div>
   <el-button-group>
-  <el-button size="big" round @click="changeLang('en')"  :class="{'active':lang=='en'}">EN</el-button>
-  <el-button size="big" round @click="changeLang('zh-cn')" :class="{'active':lang=='zh-cn'}">中文</el-button>
+  <el-button size="big"  @click="changeLang('en')"  :class="{'active':lang=='en'}">EN</el-button>
+  <el-button size="big"  @click="changeLang('zh-cn')" :class="{'active':lang=='zh-cn'}">中文</el-button>
 </el-button-group>
 <el-button-group>
-  <el-button round @click="changeLang('en')" :class="{'active':lang=='en'}">EN</el-button>
-  <el-button round @click="changeLang('zh-cn')" :class="{'active':lang=='zh-cn'}">中文</el-button>
+  <el-button @click="changeLang('en')" :class="{'active':lang=='en'}">EN</el-button>
+  <el-button @click="changeLang('zh-cn')" :class="{'active':lang=='zh-cn'}">中文</el-button>
 </el-button-group>
 <el-button-group>
-  <el-button size="medium" round @click="changeLang('en')" :class="{'active':lang=='en'}">EN</el-button>
-  <el-button size="medium" round @click="changeLang('zh-cn')" :class="{'active':lang=='zh-cn'}">中文</el-button>
+  <el-button size="medium" @click="changeLang('en')" :class="{'active':lang=='en'}">EN</el-button>
+  <el-button size="medium" @click="changeLang('zh-cn')" :class="{'active':lang=='zh-cn'}">中文</el-button>
 </el-button-group>
 <el-button-group>
-  <el-button size="small" round @click="changeLang('en')" :class="{'active':lang=='en'}">EN</el-button>
-  <el-button size="small" round @click="changeLang('zh-cn')" :class="{'active':lang=='zh-cn'}">中文</el-button>
+  <el-button size="small" @click="changeLang('en')" :class="{'active':lang=='en'}">EN</el-button>
+  <el-button size="small" @click="changeLang('zh-cn')" :class="{'active':lang=='zh-cn'}">中文</el-button>
 </el-button-group>
 <el-button-group>
-  <el-button size="mini" round @click="changeLang('en')" :class="{'active':lang=='en'}">EN</el-button>
-  <el-button size="mini" round @click="changeLang('zh-cn')" :class="{'active':lang=='zh-cn'}">中文</el-button>
+  <el-button size="mini" @click="changeLang('en')" :class="{'active':lang=='en'}">EN</el-button>
+  <el-button size="mini" @click="changeLang('zh-cn')" :class="{'active':lang=='zh-cn'}">中文</el-button>
 </el-button-group>
 </div>
 <script>
