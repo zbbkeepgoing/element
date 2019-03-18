@@ -241,7 +241,7 @@
         background: #f4f4f4;
         color:$--color-text-disabled;
         cursor:not-allowed;
-        // box-shadow: inset 1px 1px 4px 0 #455A64;
+        box-shadow: inset 1px 1px 2px 0 #ccc;
         &:active {
           color:$--color-text-regular;
         }

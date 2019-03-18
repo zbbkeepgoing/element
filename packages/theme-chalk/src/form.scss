@@ -37,7 +37,7 @@
   }
 }
 @include b(form-item) {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   @include utils-clearfix;
 
   & .el-form-item {
