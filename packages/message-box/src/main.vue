@@ -49,7 +49,7 @@
             :class="[ cancelButtonClasses ]"
             v-show="showCancelButton"
             :round="roundButton"
-            size="small"
+            size="medium"
             @click.native="handleAction('cancel')"
             @keydown.enter="handleAction('cancel')"
           >
@@ -62,7 +62,7 @@
             :class="[ confirmButtonClasses ]"
             v-show="showConfirmButton"
             :round="roundButton"
-            size="small"
+            size="medium"
             @click.native="handleAction('confirm')"
             @keydown.enter="handleAction('confirm')"
           >

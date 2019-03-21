@@ -71,6 +71,7 @@
   @include e(content) {
     display: table-cell;
     padding: 0 5px;
+    line-height: 20px;
   }
 
   @include e(icon) {
@@ -86,7 +87,7 @@
 
   @include e(title) {
     font-size: $--alert-title-font-size;
-    line-height: 18px;
+    line-height: 20px;
     @include when(bold) {
       font-weight: bold;
     }

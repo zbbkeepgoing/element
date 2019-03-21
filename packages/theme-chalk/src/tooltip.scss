@@ -12,6 +12,7 @@
     z-index: $--index-popper;
     font-size: $--tooltip-font-size;
     max-width: 300px;
+    word-wrap: break-word;
     line-height: 1.5;
     div {
       max-height: 300px;

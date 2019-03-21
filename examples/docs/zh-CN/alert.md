@@ -15,6 +15,9 @@
   .demo-box.demo-alert .el-alert:first-child {
     margin: 0;
   }
+  body{
+    font-size:14px!important;
+  }
 </style>
 
 ## Alert 警告

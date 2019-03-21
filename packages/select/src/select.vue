@@ -148,9 +148,9 @@
   import NavigationMixin from './navigation-mixin';
 
   const sizeMap = {
-    'medium': 32,
-    'small': 28,
-    'mini': 26
+    'medium': 30,
+    'small': 24,
+    'mini': 22
   };
 
   export default {

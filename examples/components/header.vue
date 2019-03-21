@@ -264,7 +264,7 @@
         <h1><router-link :to="`/${ lang }/component/to-developers`">
           <!-- logo -->
           <slot>
-            <img src="../assets/images/logo-text-blue.png" alt="element-logo"
+            <img src="../assets/images/big_logo.png" alt="element-logo"
               class="nav-logo" style="height:2.375rem;">
               <img src="../assets/images/kyligence.png" alt="element-logo"
               class="nav-logo-small" style="height:1.875rem;">

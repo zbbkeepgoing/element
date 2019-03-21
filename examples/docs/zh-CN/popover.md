@@ -107,7 +107,7 @@ Popover 的属性与 Tooltip 很类似，它们都是基于`Vue-popper`开发的
   title="标题"
   width="200"
   trigger="hover"
-  content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。">
+  content="a fuck you haha  sendcod  hehehe sewew wh  ehhwewewe hwe where whwewe hhhje hhwejjre hwjjrkwejrje">
 </el-popover>
 
 <el-popover
