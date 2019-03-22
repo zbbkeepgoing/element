@@ -82,8 +82,8 @@
 
 ```html
 <template>
-  <el-checkbox v-model="checked1" disabled>备选项1</el-checkbox>
-  <el-checkbox v-model="checked2" disabled>备选项</el-checkbox>
+  <el-checkbox v-model="checked1" size="medium" disabled>备选项1</el-checkbox>
+  <el-checkbox v-model="checked2" size="mini" disabled>备选项</el-checkbox>
 </template>
 <script>
   export default {

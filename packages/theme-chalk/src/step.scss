@@ -128,7 +128,7 @@
   @include e(line) {
     position: absolute;
     border-color: inherit;
-    background-color: $--color-text-placeholder;
+    background-color: $--border-color-base;
   }
 
   @include e(line-inner) {
