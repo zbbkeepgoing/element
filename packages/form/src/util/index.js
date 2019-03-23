@@ -1,3 +1,61 @@
+export const singleton = {};
+
+export function createGroupFormValidateInfo(groupName, callback) {
+  if (groupName) {
+    // 如果没有分组单例，创建分组单例
+    if (!singleton[groupName]) {
+      singleton[groupName] = { instances: [], currentScrollTo: Infinity };
+    }
+    // 添加被分组的form验证信息
+    const currentSingleton = singleton[groupName];
+    const formId = currentSingleton.instances.length;
+    callback(formId);
+    const defaultFormValidateInfo = { isValidated: false, formId, groupName };
+    currentSingleton.instances.push(defaultFormValidateInfo);
+  }
+}
+
+export function destroyGroupFormValidateInfo(groupName, formId) {
+  if (groupName) {
+    const currentSingleton = singleton[groupName];
+    currentSingleton.instances = currentSingleton.instances.filter(instance => instance.formId === formId);
+  }
+}
+
+export function cleanupGroupFormsValidateInfo(groupName, formId) {
+  if (groupName) {
+    const currentSingleton = singleton[groupName];
+    const currentInstance = currentSingleton.instances.find(item => item.formId === formId);
+    currentInstance.isValidated = true;
+    const isAllFormsValidated = currentSingleton.instances.every(item => item.isValidated);
+
+    if (isAllFormsValidated) {
+      const currentSingleton = singleton[groupName];
+
+      currentSingleton.instances.forEach(item => (item.isValidated = false));
+      currentSingleton.currentScrollTo = Infinity;
+    }
+  }
+}
+
+export function checkIsShouldScroll(errorElClientSize, userOffset, scrollTo, groupName, scrollFunc) {
+  if (groupName) {
+    const currentSingleton = singleton[groupName];
+    const shouldFormScroll = currentSingleton.currentScrollTo > scrollTo;
+
+    if (shouldFormScroll) {
+      currentSingleton.currentScrollTo = scrollTo;
+      if (!isErrorElInView(errorElClientSize, userOffset)) {
+        scrollFunc();
+      }
+    }
+  } else {
+    if (!isErrorElInView(errorElClientSize, userOffset)) {
+      scrollFunc();
+    }
+  }
+}
+
 export function getScrollableAncestor(el) {
   const currentPosition = window.getComputedStyle(el, null).position;
   const excludeStaticParent = currentPosition === 'absolute';
@@ -33,8 +91,8 @@ export function animationScroll(scrollEl, scrollTo = 0, duration = 1000, speed =
   }, speed);
 }
 
-export function isErrorElInView(errorElClientSize) {
-  const clientTop = errorElClientSize.top;
+export function isErrorElInView(errorElClientSize, userOffset) {
+  const clientTop = errorElClientSize.top + userOffset;
   const clientBottom = clientTop + errorElClientSize.height;
   return clientTop > 0 && clientBottom < window.innerHeight;
 }

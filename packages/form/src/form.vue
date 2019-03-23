@@ -7,7 +7,15 @@
   </form>
 </template>
 <script>
-  import { getScrollableAncestor, animationScroll, isErrorElInView } from './util';
+  import {
+    getScrollableAncestor,
+    animationScroll,
+    isErrorElInView,
+    createGroupFormValidateInfo,
+    destroyGroupFormValidateInfo,
+    cleanupGroupFormsValidateInfo,
+    checkIsShouldScroll
+} from './util';
 
   export default {
     name: 'ElForm',
@@ -45,6 +53,13 @@
       validateErrorFieldOnRuleChange: {
         type: Boolean,
         default: true
+      },
+      groupName: {
+        type: String
+      },
+      scrollOffset: {
+        type: Number,
+        default: 0
       }
     },
     watch: {
@@ -70,7 +85,8 @@
     },
     data() {
       return {
-        fields: []
+        fields: [],
+        formId: null
       };
     },
     created() {
@@ -85,6 +101,12 @@
           this.fields.splice(this.fields.indexOf(field), 1);
         }
       });
+
+      // 如果form被分组
+      createGroupFormValidateInfo(this.groupName, formId => (this.formId = formId));
+    },
+    beforeDestroy() {
+      destroyGroupFormValidateInfo(this.groupName, this.formId);
     },
     methods: {
       resetFields() {
@@ -141,18 +163,21 @@
           const errorEl = errorField.$el;
           const scrollableAncestor = getScrollableAncestor(this.$el);
           const errorElClientSize = errorEl.getBoundingClientRect();
+          const userOffset = this.scrollOffset;
           const scrollOffset = errorElClientSize.top;
-          const currentScrollOffset = scrollableAncestor.scrollTop;
-          const scrollTo = currentScrollOffset + scrollOffset;
+          const currentScrollOffset = scrollableAncestor.scrollTop || scrollableAncestor.scrollY || 0;
+          const scrollTo = currentScrollOffset + scrollOffset + userOffset;
 
-          if (!isErrorElInView(errorElClientSize)) {
+          checkIsShouldScroll(errorElClientSize, userOffset, scrollTo, this.groupName, () => {
             if (typeof scrollableAncestor.scrollTo === 'function') {
               scrollableAncestor.scrollTo({ top: scrollTo, behavior: 'smooth' });
             } else {
               animationScroll(scrollableAncestor, scrollTo, 150, 5);
             }
-          }
+          });
         }
+
+        cleanupGroupFormsValidateInfo(this.groupName, this.formId);
 
         if (promise) {
           return promise;
