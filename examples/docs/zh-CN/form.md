@@ -127,7 +127,19 @@
         },
         numberValidateForm: {
           age: ''
-        }
+        },
+        multipleFormOut: {
+          name: '',
+          region: '',
+        },
+        multipleFormIn1: {
+          name: '',
+          region: '',
+        },
+        multipleFormIn2: {
+          name: '',
+          region: '',
+        },
       };
     },
     methods: {
@@ -148,8 +160,27 @@
           }
         });
       },
+      submitForm2() {
+        this.$refs.multipleFormOut.validate((isFormOutValid) => {
+          this.$refs.multipleFormIn1.validate((isFormIn1Valid) => {
+            this.$refs.multipleFormIn2.validate((isFormIn1Valid) => {
+              if (isFormOutValid && isFormIn1Valid) {
+                alert('submit!');
+              } else {
+                console.log('error submit!!');
+                return false;
+              }
+            });
+          });
+        });
+      },
       resetForm(formName) {
         this.$refs[formName].resetFields();
+      },
+      resetForm2() {
+        this.$refs.multipleFormOut.resetFields();
+        this.$refs.multipleFormIn1.resetFields();
+        this.$refs.multipleFormIn2.resetFields();
       },
       removeDomain(item) {
         var index = this.dynamicValidateForm.domains.indexOf(item)
@@ -319,6 +350,13 @@
       .el-select .el-input {
         width: 360px;
       }
+      &.border-form {
+        width: initial;
+      }
+    }
+    .border-form {
+      padding: 10px;
+      border: 1px solid #ebebeb;
     }
     .demo-dynamic {
       .el-input {
@@ -535,7 +573,7 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
   <el-button size="medium" round @click="changeLang('zh-cn')" :class="{'active':lang=='zh-cn'}">中文</el-button>
 </el-button-group>
 
-<el-form :model="ruleForm" :rules="rules" ref="ruleForm" size="medium" label-width="100px" class="demo-ruleForm">
+<el-form :model="ruleForm" :rules="rules" ref="ruleForm" size="medium" label-width="100px" class="demo-ruleForm" :scroll-offset="-80">
   <el-form-item label="活动名称" prop="name">
     <el-input v-model.trim="ruleForm.name"></el-input>
   </el-form-item>
@@ -764,7 +802,7 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
   <el-button size="medium" round @click="changeLang('en')" :class="{'active':lang=='en'}">EN</el-button>
   <el-button size="medium" round @click="changeLang('zh-cn')" :class="{'active':lang=='zh-cn'}">中文</el-button>
 </el-button-group>
-<el-form :model="ruleForm2" status-icon :rules="rules2" ref="ruleForm2" label-width="100px" class="demo-ruleForm">
+<el-form :model="ruleForm2" status-icon :rules="rules2" ref="ruleForm2" label-width="100px" class="demo-ruleForm" :scroll-offset="-80">
   <el-form-item label="邮箱" prop="email">
     <el-input v-model.trim="ruleForm2.email"></el-input>
   </el-form-item>
@@ -1059,6 +1097,134 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 ```
 :::
 
+### 多表单，嵌套表单验证锁定
+
+当多个表单存在于同一个页面且同时验证，自动报错定位只会定位最后一个form中的结果。为了避免定位结果没有自上而下的情况，可以给多个表单设置同一个group-name，就可以通过group来定位一组报错。
+
+:::demo 传入group-name来设置同一组form的报错定位。scroll-offset用于定位偏移，正数向下偏移，负数向上偏移。
+```html
+<el-button-group>
+  <el-button size="medium" round @click="changeLang('en')" :class="{'active':lang=='en'}">EN</el-button>
+  <el-button size="medium" round @click="changeLang('zh-cn')" :class="{'active':lang=='zh-cn'}">中文</el-button>
+</el-button-group>
+<p class="txt-center">
+    <el-button size="medium" @click="resetForm2()">重置</el-button>
+    <el-button size="medium" type="primary" @click="submitForm2()">立即创建</el-button>
+  </p>
+<!-- 外层form -->
+<el-form :model="multipleFormOut" :rules="rules" ref="multipleFormOut" size="medium" label-width="100px" class="demo-ruleForm border-form" group-name="multipleForm" :scroll-offset="-80">
+  <div>外层form</div>
+  <!-- 嵌套form1 -->
+  <el-form :model="multipleFormIn1" :rules="rules" ref="multipleFormIn1" size="medium" label-width="100px" class="demo-ruleForm border-form" group-name="multipleForm" :scroll-offset="-80">
+    <div>嵌套form1</div>
+    <el-form-item label="活动名称" prop="name">
+      <el-input v-model.trim="multipleFormIn1.name"></el-input>
+    </el-form-item>
+    <div style="height: 100px;"></div>
+
+    <!-- 嵌套form2 -->
+    <el-form :model="multipleFormIn2" :rules="rules" ref="multipleFormIn2" size="medium" label-width="100px" class="demo-ruleForm border-form" group-name="multipleForm" :scroll-offset="-80">
+      <div>嵌套form2</div>
+      <el-form-item label="活动名称" prop="name">
+        <el-input v-model.trim="multipleFormIn2.name"></el-input>
+      </el-form-item>
+      <el-form-item label="活动区域" prop="region">
+        <el-select v-model="multipleFormIn2.region" placeholder="请选择活动区域">
+          <el-option label="区域一" value="shanghai"></el-option>
+          <el-option label="区域二" value="beijing"></el-option>
+        </el-select>
+      </el-form-item>
+    </el-form>
+
+    <el-form-item label="活动区域" prop="region">
+      <el-select v-model="multipleFormIn1.region" placeholder="请选择活动区域">
+        <el-option label="区域一" value="shanghai"></el-option>
+        <el-option label="区域二" value="beijing"></el-option>
+      </el-select>
+    </el-form-item>
+  </el-form>
+
+  <div style="height: 100px;"></div>
+  <el-form-item label="活动名称" prop="name">
+    <el-input v-model.trim="multipleFormOut.name"></el-input>
+  </el-form-item>
+  <el-form-item label="活动区域" prop="region">
+    <el-select v-model="multipleFormOut.region" placeholder="请选择活动区域">
+      <el-option label="区域一" value="shanghai"></el-option>
+      <el-option label="区域二" value="beijing"></el-option>
+    </el-select>
+  </el-form-item>
+</el-form>
+<script>
+  export default {
+    data() {
+      return {
+        lang: 'zh-cn',
+        multipleFormOut: {
+          name: '',
+          region: ''
+        },
+        multipleFormIn1: {
+          name: '',
+          region: ''
+        },
+        multipleFormIn2: {
+          name: '',
+          region: ''
+        }
+      };
+    },
+    methods: {
+      changeLang (lang) {
+        this.lang = lang;
+        Vue.config.lang = lang;
+      },
+      submitForm2() {
+        this.$refs.multipleFormOut.validate((isFormOutValid) => {
+          this.$refs.multipleFormIn1.validate((isFormIn1Valid) => {
+            this.$refs.multipleFormIn2.validate((isFormIn1Valid) => {
+              if (isFormOutValid && isFormIn1Valid) {
+                alert('submit!');
+              } else {
+                console.log('error submit!!');
+                return false;
+              }
+            });
+          });
+        });
+      },
+      resetForm2() {
+        this.$refs.multipleFormOut.resetFields();
+        this.$refs.multipleFormIn1.resetFields();
+        this.$refs.multipleFormIn2.resetFields();
+      }
+    },
+    computed: {
+      rules () {
+        return {
+          name: [
+            { required: true, message: this.$t('name'), trigger: 'blur' },
+            { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }
+          ],
+          region: [
+            { required: true, message: '请选择活动区域', trigger: 'change' }
+          ]
+        }
+      }
+    },
+    locales: {
+      'en': {
+        name: 'Please input the name of activity'
+      },
+      'zh-cn': {
+        name: '请输入活动名称'
+      }
+    }
+  }
+</script>
+```
+:::
+
 ### Form Attributes
 
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
@@ -1075,6 +1241,8 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 | validate-on-rule-change  | 是否在 `rules` 属性改变后立即触发一次验证 | boolean | — | true |
 | size  | 用于控制该表单内组件的尺寸 | string | medium / small / mini | — |
 | disabled | 是否禁用该表单内的所有组件。若设置为 true，则表单内组件上的 disabled 属性不再生效 | boolean | — | false |
+| group-name | 设置多个form为一组报错定位 | string | — | - |
+| scroll-offset | 设置form报错定位的偏移 | number | — | 0 |
 
 ### Form Methods
 
