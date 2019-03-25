@@ -50,7 +50,7 @@
 
   @include e(headerbtn) {
     position: absolute;
-    top: $--dialog-padding-primary;
+    top: 18px;
     right: $--dialog-padding-primary;
     padding: 0;
     background: transparent;
@@ -78,7 +78,7 @@
 
   @include e(body) {
     padding: 20px 20px 20px 20px;
-    color: $--color-text-regular;
+    color: $--color-text-primary;
     // line-height: $--dialog-line-height;
     font-size: $--dialog-font-size;
   }

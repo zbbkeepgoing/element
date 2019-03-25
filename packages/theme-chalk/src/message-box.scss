@@ -50,11 +50,12 @@
     font-size: $--msgbox-font-size;
     line-height: 1;
     color: $--color-text-primary;
+    font-weight: 500;
   }
 
   @include e(headerbtn) {
     position: absolute;
-    top: $--msgbox-padding-primary;
+    top: 16px;
     right: $--msgbox-padding-primary;
     padding: 0;
     border: none;

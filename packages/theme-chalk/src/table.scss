@@ -29,7 +29,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    color: $--color-text-secondary;
+    color: $--color-text-placeholder;
   }
 
   // 展开行
@@ -96,9 +96,11 @@
   }
 
   thead {
-    color: $--table-header-color;
+    color:$--color-text-regular;
     font-weight: 500;
-
+    i {
+      color: $--color-text-disabled;
+    }
     &.is-group {
       th {
         background: $--table-header-background;
@@ -467,12 +469,12 @@
     left: 7px;
 
     &.ascending {
-      border-bottom-color: $--color-text-placeholder;
+      border-bottom-color: $--color-text-disabled;
       top: -2px;
     }
 
     &.descending {
-      border-top-color: $--color-text-placeholder;
+      border-top-color: $--color-text-disabled;
       bottom: 0px;
     }
   }
@@ -536,7 +538,7 @@
     cursor: pointer;
 
     & i {
-      color: $--color-info;
+      color: $--color-text-disabled;
       font-size: 12px;
       transform: scale(.75);
     }

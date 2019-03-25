@@ -82,9 +82,8 @@
       typeClass() {
         return `el-alert--${ this.type }`;
       },
-      needBg () {
-        console.log(this.showBackground)
-        return this.showBackground ? '' : 'el-alert--nobg'
+      needBg() {
+        return this.showBackground ? '' : 'el-alert--nobg';
       },
       iconClass() {
         return this.icon || TYPE_CLASSES_MAP[this.type] || 'el-icon-info';
