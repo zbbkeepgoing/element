@@ -5,7 +5,7 @@
         restaurants: [],
         input: '',
         inputHasVal: 'kyligence',
-        input1: '',
+        input1: '测试一下',
         input2: '',
         input21: '',
         input22: '',
@@ -249,7 +249,7 @@ export default {
 export default {
   data() {
     return {
-      input1: ''
+      input1: '测试一下'
     }
   }
 }
