@@ -58,7 +58,7 @@
 
   @include e(footer) {
     border-top: 1px solid $--datepicker-inner-border-color;
-    padding: 4px;
+    padding: 4px 10px;
     height: 36px;
     line-height: 25px;
     text-align: right;

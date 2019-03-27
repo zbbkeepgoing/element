@@ -122,7 +122,7 @@
         v-show="footerVisible && currentView === 'date'">
         <el-button
           size="mini"
-          type="primary" text
+          type="info" text
           class="el-picker-panel__link-btn"
           @click="changeToNow">
           {{ t('el.datepicker.now') }}
@@ -130,9 +130,10 @@
         <el-button
           plain
           size="mini"
+          type="primary"
           class="el-picker-panel__link-btn"
           @click="confirm">
-          {{ t('el.datepicker.confirm') }}
+          {{t('el.datepicker.confirm') }}
         </el-button>
       </div>
     </div>

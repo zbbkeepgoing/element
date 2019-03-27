@@ -228,6 +228,11 @@ export default {
           this.reassignMaxValue(target.value);
         },
         handleKeyup({ keyCode, target }) {
+          if (+target.value < 0) {
+            this.$refs.input.clear();
+            this.handleChange(1);
+            return;
+          }
           if (keyCode === 13 && this.oldValue && target.value !== this.oldValue) {
             this.handleChange(target.value);
           }
