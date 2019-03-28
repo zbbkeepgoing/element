@@ -14,7 +14,7 @@
     cursor: pointer;
     border-bottom: 1px solid $--collapse-border-color;
     font-size: $--collapse-header-size;
-    font-weight: 500;
+    font-weight: bold;
     transition: border-bottom-color .3s;
     outline: none;
     @include e(arrow) {

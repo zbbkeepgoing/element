@@ -97,7 +97,7 @@ $--font-size-extra-small: 12px !default;
 $--font-size-medium: 16px !default;
 $--font-size-large: 18px !default;
 $--font-color-disabled-base: #bbb !default;
-$--font-weight-primary: 500 !default;
+$--font-weight-primary: bold !default;
 $--font-line-height-primary: 24px !default;
 
 /* Size
@@ -429,7 +429,7 @@ $--button-mini-border-radius: #{$--border-radius-base - 1} !default;
 $--button-mini-padding-vertical: 4px !default;
 $--button-mini-padding-horizontal: 8px !default;
 
-$--button-default-color: $--color-text-regular !default;
+$--button-default-color: $--color-text-disabled !default;
 $--button-default-fill: $--color-white !default;
 $--button-default-border: $--border-color-base !default;
 

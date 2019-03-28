@@ -10,7 +10,7 @@
   @include e(separator) {
     margin: 0 9px;
     font-weight: bold;
-    color: $--color-text-secondary;
+    color: $--color-text-disabled;
 
     &[class*=icon] {
       margin: 0 6px;
@@ -25,7 +25,7 @@
       &, & a {
         /* font-weight: bold; */
         transition: $--color-transition-base;
-        color: $--color-text-secondary;
+        color: $--color-text-disabled;
         &.linked {
           &:hover {
             color: $--color-primary;

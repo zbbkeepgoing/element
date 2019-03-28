@@ -97,7 +97,7 @@
 
   thead {
     color:$--color-text-regular;
-    font-weight: 500;
+    font-weight: bold;
     i {
       color: $--color-text-disabled;
     }
@@ -186,7 +186,7 @@
     user-select: none;
     text-align: left;
     background-color: $--table-header-background;
-    font-weight: 500;
+    font-weight: bold;
     div {
       display: inline-block;
       padding-left: 10px;

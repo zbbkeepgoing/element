@@ -50,7 +50,7 @@
     font-size: $--msgbox-font-size;
     line-height: 1;
     color: $--color-text-primary;
-    font-weight: 500;
+    font-weight: bold;
   }
 
   @include e(headerbtn) {

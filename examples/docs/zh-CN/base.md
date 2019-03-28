@@ -507,7 +507,7 @@ $--font-size-extra-small: 12px !default;
 $--font-size-medium: 16px !default;
 $--font-size-large: 18px !default;
 $--font-color-disabled-base: #bbb !default;
-$--font-weight-primary: 500 !default;
+$--font-weight-primary: bold !default;
 $--font-line-height-primary: 24px !default;
 
 /* Size
@@ -635,7 +635,7 @@ $--index-popper: 2000 !default;
 @font-size-medium: 16px !default;
 @font-size-large: 18px !default;
 @font-color-disabled-base: #bbb !default;
-@font-weight-primary: 500 !default;
+@font-weight-primary: bold !default;
 @font-line-height-primary: 24px !default;
 
 /* Size
