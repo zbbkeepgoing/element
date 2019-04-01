@@ -9,6 +9,10 @@ $--md-fade-transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1), opacity 3
 $--border-transition-base: border-color .2s cubic-bezier(.645,.045,.355,1) !default;
 $--color-transition-base: color .2s cubic-bezier(.645,.045,.355,1) !default;
 
+// Menu
+$--color--menu-color: #0e1e28;
+$--color--menu-color1: #102d41;
+$--color--menu-color2:#0a2233;
 /* Colors
 -------------------------- */
 $--color-white: #fff !default;
@@ -77,6 +81,7 @@ $--border-base: $--border-width-base $--border-style-base $--border-color-base !
 $--border-radius-base: 2px !default;
 $--border-radius-small: 2px !default;
 $--border-radius-circle: 100% !default;
+$--border-split-color: #e5e5e5!default;
 
 /* Box-shadow
 -------------------------- */
