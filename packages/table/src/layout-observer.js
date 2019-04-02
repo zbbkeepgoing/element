@@ -55,7 +55,9 @@ export default {
       const cols = this.$el.querySelectorAll('colgroup > col[name=gutter]');
       for (let i = 0, j = cols.length; i < j; i++) {
         const col = cols[i];
+        // chrome 浏览器错位
         col.setAttribute('width', layout.scrollY ? layout.gutterWidth : '0');
+        col.style.display = layout.scrollY ? '' : 'none';
       }
       const ths = this.$el.querySelectorAll('th.gutter');
       for (let i = 0, j = ths.length; i < j; i++) {
