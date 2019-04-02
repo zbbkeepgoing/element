@@ -418,7 +418,10 @@
 #### 具体变量
 ```scss
 /* Element Chalk Variables */
-
+// Menu
+$--color--menu-color: #0e1e28;
+$--color--menu-color1: #102d41;
+$--color--menu-color2:#0a2233;
 /* Colors
 -------------------------- */
 $--color-white: #fff !default;
@@ -487,6 +490,7 @@ $--border-base: $--border-width-base $--border-style-base $--border-color-base !
 $--border-radius-base: 2px !default;
 $--border-radius-small: 2px !default;
 $--border-radius-circle: 100% !default;
+$--border-split-color: #e5e5e5!default;
 
 /* Box-shadow
 -------------------------- */
@@ -546,7 +550,9 @@ $--index-popper: 2000 !default;
 #### 具体变量
 ```less
 /* Element Chalk Variables */
-
+@color--menu-color: #0e1e28;
+@color--menu-color1: #102d41;
+@color--menu-color2:#0a2233;
 /* Colors
 -------------------------- */
 @color-white: #fff !default;
@@ -615,7 +621,7 @@ $--index-popper: 2000 !default;
 @border-radius-base: 2px !default;
 @border-radius-small: 2px !default;
 @border-radius-circle: 100% !default;
-
+@border-split-color: #e5e5e5;
 /* Box-shadow
 -------------------------- */
 @box-shadow-base: 0 2px 4px 0 #f4f4f4 !default;
