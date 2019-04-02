@@ -7,7 +7,7 @@
 @include b(message-box) {
   display: inline-block;
   width: $--msgbox-width;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
   vertical-align: middle;
   background-color: $--color-white;
   border-radius: $--msgbox-border-radius;
@@ -144,7 +144,7 @@
   }
 
   @include e(btns) {
-    padding: 10px 20px 0px;
+    padding: 5px 20px 0px;
     text-align: right;
 
     & button:nth-child(2) {

@@ -34,7 +34,7 @@
 
   .el-select .el-input {
     width: 100px;
-    margin: 0 5px;
+    // margin: 0 5px;
 
     .el-input__inner {
       padding-right: 25px;
@@ -132,7 +132,7 @@
   }
 
   @include e(jump) {
-    margin-left: 24px;
+    margin-left: 10px;
     font-weight: normal;
     color: $--color-text-regular;
 
@@ -157,6 +157,7 @@
 
     &.el-input {
       width: 50px;
+      padding: 0 5px;
     }
 
     &.el-input .el-input__inner {

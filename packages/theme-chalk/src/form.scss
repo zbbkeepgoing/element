@@ -38,11 +38,10 @@
 }
 @include b(form-item) {
   margin-bottom: 15px;
-  @include utils-clearfix;
-
-  & .el-form-item {
+  &:last-of-type {
     margin-bottom: 0;
   }
+  @include utils-clearfix;
 
   & .el-input__validateIcon {
     display: none;

@@ -12,7 +12,7 @@
   @include e(buttons) {
     display: inline-block;
     vertical-align: middle;
-    padding: 0 30px;
+    padding: 0 10px;
   }
 
   @include e(button) {
@@ -128,6 +128,7 @@
   @include e(filter) {
     text-align: center;
     padding: 10px 15px;
+    padding-bottom: 9px;
     box-sizing: border-box;
     display: block;
     width: 100%;
@@ -147,22 +148,23 @@
       display: inline-block;
       box-sizing: border-box;
       border-radius: 2px;
-      padding-right: 10px;
+      padding-right: 14px;
       padding-left: 20px;
     }
 
     .el-input__suffix {
       top: 10px;
       right: 15px;
-      border: 1px solid $--border-color-base;
+      // border: 1px solid $--border-color-base;
       color: $--color-info;
-      background-color: $--background-color-base;
+      // background-color: $--background-color-base;
       height: 22px;
     }
 
     .el-input__icon {
       line-height: 24px;
-      margin-left: 9px;
+      margin-left: 10px;
+      font-size: 14px;
     }
 
     .el-icon-circle-close {
@@ -178,21 +180,21 @@
     padding-left: 15px;
     border-bottom: 1px solid $--transfer-border-color;
     box-sizing: border-box;
-    color: $--color-black;
+    color: $--color-text-primary;
 
     .el-checkbox {
       display: block;
-      line-height: 40px;
-
+      line-height: $--transfer-panel-header-height;
+      color: $--color-text-primary;
       .el-checkbox__label {
-        font-size: 16px;
+        font-size: 14px;
         color: $--color-text-primary;
         font-weight: normal;
 
         span {
           position: absolute;
           right: 15px;
-          color: $--color-text-secondary;
+          color: $--color-text-primary;
           font-size: 12px;
           font-weight: normal;
         }
@@ -224,7 +226,7 @@
     height: $--transfer-item-height;
     line-height: $--transfer-item-height;
     padding: 6px 15px 0;
-    color: $--color-text-secondary;
+    color: $--color-text-disabled;
     text-align: center;
   }
 

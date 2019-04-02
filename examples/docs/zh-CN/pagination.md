@@ -29,7 +29,7 @@
 ```html
 <el-pagination
   background
-  layout="prev, pager, next"
+  layout="total, sizes, prev, pager, next, jumper"
   :total="1000">
 </el-pagination>
 ```
