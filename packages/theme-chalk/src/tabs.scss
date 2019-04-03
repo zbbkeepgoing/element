@@ -104,7 +104,6 @@
     display: inline-block;
     list-style: none;
     font-size: 14px;
-    font-weight: bold;
     color: $--color-text-primary;
     position: relative;
 
@@ -136,6 +135,7 @@
 
     @include when(active) {
       color: $--color-primary;
+      font-weight: bold;
     }
 
     &:hover {
