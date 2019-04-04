@@ -7,7 +7,7 @@
   line-height: 46px;
   font-size: 14px;
   color: $--menu-item-color;
-  padding: 0 20px;
+  padding: 0 15px;
   list-style: none;
   cursor: pointer;
   position: relative;
@@ -126,7 +126,7 @@
     }
   }
   @include m(collapse) {
-    width: 64px;
+    width: 56px;
 
     > .el-menu-item,
     > .el-submenu > .el-submenu__title {
@@ -226,9 +226,9 @@
     border: none;
   }
   & .el-menu-item {
-    height: 50px;
-    line-height: 50px;
-    padding: 0 45px;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 36px;
     // min-width: 200px;
   }
   @include e(icon-arrow) {

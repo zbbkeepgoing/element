@@ -31,7 +31,7 @@
   }
 
   @include e(header) {
-    padding: $--dialog-padding-primary;
+    padding: 15px 20px;
     padding-bottom: 10px;
     border-bottom: 1px solid $--border-color-base;
     min-height: 18px;
@@ -51,7 +51,7 @@
   @include e(headerbtn) {
     position: absolute;
     top: 18px;
-    right: $--dialog-padding-primary;
+    right: 20px;
     padding: 0;
     background: transparent;
     border: none;
