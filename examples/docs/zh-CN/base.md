@@ -474,6 +474,7 @@ $--link-hover-color: $--color-primary !default;
 /* Background
 -------------------------- */
 $--background-color-base: #f1f7fa !default;
+$--background-color-base-1: #fbfbfb !default;
 $--background-color-light: #F9FBFC !default;
 $--background-color-regular: #CDE7F8 !default;
 
@@ -605,6 +606,7 @@ $--index-popper: 2000 !default;
 /* Background
 -------------------------- */
 @background-color-base: #f1f7fa !default;
+@background-color-base-1: #fbfbfb;
 @background-color-light: #F9FBFC !default;
 @background-color-regular: #CDE7F8 !default;
 

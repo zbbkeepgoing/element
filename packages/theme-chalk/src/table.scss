@@ -58,11 +58,14 @@
       top: 50%;
       margin-left: -5px;
       margin-top: -5px;
+      &:hover {
+        color:$--color-primary;
+      }
     }
   }
 
   @include e(expanded-cell) {
-    background-color: $--background-color-light;
+    background-color: $--background-color-base-1;
 
     // 纯属为了增加权重
     &[class*=cell] {

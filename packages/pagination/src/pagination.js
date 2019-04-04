@@ -273,6 +273,7 @@ export default {
               domPropsValue={ this.$parent.internalCurrentPage }
               type="number"
               ref="input"
+              size="mini"
               disabled={ this.$parent.disabled }
               nativeOnKeyup={ this.handleKeyup }
               onChange={ this.handleChange }

@@ -59,16 +59,16 @@
 
     &.disabled {
       color: $--pagination-button-disabled-color;
-      background-color: $--pagination-button-disabled-fill;
+      // background-color: $--pagination-button-disabled-fill;
       cursor: not-allowed;
     }
   }
 
   .btn-prev,
   .btn-next {
-    background: center center no-repeat;
+    // background: center center no-repeat;
     background-size: 16px;
-    background-color: $--pagination-fill;
+    // background-color: $--pagination-fill;
     cursor: pointer;
     margin: 0;
     color: $--pagination-button-color;
@@ -181,7 +181,7 @@
       border: 1px solid $--border-color-base;
       border-left-width: 0;
       color: $--color-text-regular;
-      min-width: 30px;
+      min-width: $--pagination-button-height;
       border-radius: 0;
       &.disabled {
         color: $--color-text-placeholder;
@@ -239,12 +239,12 @@
   margin: 0;
 
   .more::before {
-    line-height: 30px;
+    line-height: $--pagination-button-height;
   }
 
   li {
     padding: 0 4px;
-    background: $--pagination-fill;
+    // background: $--pagination-fill;
     vertical-align: top;
     display: inline-block;
     font-size: $--pagination-font-size;
@@ -258,7 +258,7 @@
 
     &.btn-quicknext,
     &.btn-quickprev {
-      line-height: 28px;
+      line-height: $--pagination-button-height;
       color: $--pagination-button-color;
 
       &.disabled {
@@ -279,11 +279,16 @@
     }
 
     &:hover {
+      // background: $--color-primary;
+      // border-radius: 4px;
       color: $--pagination-hover-fill;
+      // color:#fff;
     }
 
     &.active {
-      color: $--pagination-hover-fill;
+      border-radius: 4px;
+      background: $--color-primary;
+      color:#fff;
       cursor: default;
     }
   }
