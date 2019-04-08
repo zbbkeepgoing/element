@@ -64,7 +64,7 @@ $--link-hover-color: $--color-primary !default;
 
 /* Background
 -------------------------- */
-$--background-color-base: #f1f7fa !default;
+$--background-color-base: #f4f4f4 !default;
 $--background-color-base-1: #fbfbfb !default;
 $--background-color-light: #F9FBFC !default;
 $--background-color-regular: #CDE7F8 !default;
@@ -440,8 +440,8 @@ $--button-default-fill: $--color-white !default;
 $--button-default-border: $--border-color-base !default;
 
 $--button-disabled-color: $--color-text-disabled !default;
-$--button-disabled-fill: $--color-white !default;
-$--button-disabled-border: $--border-color-lighter !default;
+$--button-disabled-fill: $--background-color-base !default;
+$--button-disabled-border: $--border-color-base !default;
 
 $--button-primary-border: $--color-primary !default;
 $--button-primary-color: $--color-white !default;
