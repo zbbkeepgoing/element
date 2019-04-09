@@ -98,6 +98,9 @@
       modal: {
         default: true
       },
+      iconClass: {
+        type: String
+      },
       lockScroll: {
         default: true
       },
@@ -131,9 +134,8 @@
 
     computed: {
       typeClass() {
-        return this.type && typeMap[this.type] ? `el-icon-${ typeMap[this.type] }` : '';
+        return this.iconClass ? this.iconClass : this.type && typeMap[this.type] ? `el-icon-${ typeMap[this.type] }` : '';
       },
-
       confirmButtonClasses() {
         return `el-button--primary ${ this.confirmButtonClass }`;
       },

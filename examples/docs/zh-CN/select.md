@@ -524,6 +524,7 @@ select和radio、checkbox一样，选中值和下拉选项中的值是===比较�
       :key="item.value"
       :label="item.label"
       :value="item.value">
+      <i class="el-icon-edit" style="float: left"></i>
       <span style="float: left">{{ item.label }}</span>
       <span style="float: right; color: #8492a6; font-size: 13px">{{ item.value }}</span>
     </el-option>

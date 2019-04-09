@@ -155,7 +155,7 @@
   }
   @include m(card) {
     > .el-tabs__header {
-      border-bottom: 1px solid $--border-color-light;
+      border-bottom: 1px solid $--border-color-base;
     }
     > .el-tabs__header .el-tabs__nav-wrap::after {
       content: none;
@@ -199,7 +199,7 @@
         }
       }
       &.is-active {
-        border: 1px solid $--border-color-light;
+        border: 1px solid $--border-color-base;
         border-bottom-color: #fff;
         border-radius: 4px 4px 0 0;
         box-sizing: content-box;
@@ -225,7 +225,7 @@
     }
     >.el-tabs__header {
       background-color: $--background-color-base;
-      border-bottom: 1px solid $--border-color-light;
+      border-bottom: 1px solid $--border-color-base;
       margin: 0;
     }
     > .el-tabs__header .el-tabs__nav-wrap::after {
@@ -381,16 +381,16 @@
       }
       .el-tabs__item.is-left {
         border-left: none;
-        border-right: 1px solid $--border-color-light;
+        border-right: 1px solid $--border-color-base;
         border-bottom: none;
-        border-top: 1px solid $--border-color-light;
+        border-top: 1px solid $--border-color-base;
       }
       .el-tabs__item.is-left:first-child {
-        border-right: 1px solid $--border-color-light;
+        border-right: 1px solid $--border-color-base;
         border-top: none;
       }
       .el-tabs__item.is-left.is-active {
-        border: 1px solid $--border-color-light;
+        border: 1px solid $--border-color-base;
         border-right-color: #fff;
         border-left: none;
         border-bottom: none;
@@ -405,7 +405,7 @@
 
       .el-tabs__nav {
         border-radius: 4px 0 0 4px;
-        border-bottom: 1px solid $--border-color-light;
+        border-bottom: 1px solid $--border-color-base;
         border-right: none;
       }
 
@@ -416,7 +416,7 @@
 
     &.el-tabs--border-card {
       .el-tabs__header.is-left {
-        border-right: 1px solid #dfe4ed;
+        border-right: 1px solid $--border-color-base;
       }
       .el-tabs__item.is-left {
         border: 1px solid transparent;

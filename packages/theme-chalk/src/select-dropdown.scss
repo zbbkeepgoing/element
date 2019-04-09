@@ -11,12 +11,15 @@
   box-shadow: $--select-dropdown-shadow;
   box-sizing: border-box;
   margin: 5px 0;
-
+  & .el-select-dropdown__item.selected{
+    i[class^=el-icon-]{
+      color:$--select-option-selected;
+    }
+  }
   @include when(multiple) {
     & .el-select-dropdown__item.selected {
       color: $--select-option-selected;
       background-color: $--select-dropdown-background;
-
       &.hover {
         background-color: $--select-option-hover-background;
       }

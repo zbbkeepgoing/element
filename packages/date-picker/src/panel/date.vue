@@ -121,7 +121,7 @@
         class="el-picker-panel__footer"
         v-show="footerVisible && currentView === 'date'">
         <el-button
-          size="mini"
+          size="small"
           type="info" text
           class="el-picker-panel__link-btn"
           @click="changeToNow">
@@ -129,7 +129,7 @@
         </el-button>
         <el-button
           plain
-          size="mini"
+          size="small"
           type="primary"
           class="el-picker-panel__link-btn"
           @click="confirm">

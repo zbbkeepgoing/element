@@ -55,7 +55,7 @@
         let isActive = this.index === this.rootMenu.activeIndex;
         if (this.$el) {
           if (!isActive) {
-            this.$el.style.backgroundColor = this.rootMenu.subBackgroundColor;
+            this.$el.style.backgroundColor = this.isNested ? this.rootMenu.subBackgroundColor: this.rootMenu.backgroundColor;
             this.$el.style.color = this.rootMenu.textColor;
           }
         }
@@ -65,7 +65,7 @@
         return this.rootMenu.hoverBackgroundColor;
       },
       backgroundColor() {
-        return this.rootMenu.subBackgroundColor || '';
+        return this.isNested ? this.rootMenu.subBackgroundColor : this.rootMenu.backgroundColor;
       },
       activeTextColor() {
         return this.rootMenu.activeTextColor || '';
@@ -103,7 +103,7 @@
         if (this.mode === 'horizontal' && !this.rootMenu.backgroundColor) return;
         // this.$el.style.backgroundColor = this.backgroundColor;
         if (!this.active) {
-          this.$el.style.backgroundColor = this.rootMenu.subBackgroundColor;
+          this.$el.style.backgroundColor = this.isNested ? this.rootMenu.subBackgroundColor : this.rootMenu.backgroundColor;
           this.$el.style.color = this.rootMenu.textColor;
         }
       },

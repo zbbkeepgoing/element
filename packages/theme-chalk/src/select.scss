@@ -39,7 +39,9 @@
       @include when(reverse) {
         transform: rotateZ(0deg);
       }
-
+      &:hover {
+        color:$--color-primary;
+      }
       @include when(show-close) {
         font-size: $--select-font-size;
         text-align: center;

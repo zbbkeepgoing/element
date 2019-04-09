@@ -4,6 +4,7 @@
       open() {
         this.$alert('这是一段内容', '标题名称', {
           confirmButtonText: '确定',
+          iconClass: 'el-icon-d-caret',
           callback: action => {
             this.$message({
               type: 'info',
@@ -144,6 +145,7 @@
       open() {
         this.$alert('这是一段内容', '标题名称', {
           confirmButtonText: '确定',
+          iconClass: 'el-icon-d-caret',
           callback: action => {
             this.$message({
               type: 'info',
@@ -399,3 +401,4 @@ import { MessageBox } from 'kyligence-ui';
 | inputErrorMessage | 校验未通过时的提示文本 | string | — | 输入的数据不合法! |
 | center | 是否居中布局 | boolean | — | false |
 | roundButton | 是否使用圆角按钮 | boolean | — | false |
+| iconClass | 自定义图标类名，覆盖type对应的图标 | string | — | - |
