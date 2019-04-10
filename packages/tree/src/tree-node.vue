@@ -156,7 +156,6 @@
       },
       handleNodeMouseEnter(event, node) {
         // 判断是否text-overflow, 如果是就显示tooltip
-        debugger
         if (!this.tree.showOverflowTooltip) {
           return
         }
@@ -164,7 +163,6 @@
         let nodeContent = this.$el.querySelector('.el-tree-node__content')
         if (nodeChild && nodeContent && nodeContent.scrollWidth > nodeContent.offsetWidth && this.$refs.tooltip) {
           const tooltip = this.$refs.tooltip;
-          // TODO 会引起整个 Table 的重新渲染，需要优化
           this.tooltipContent = node.data.label || nodeChild.innerText;
           tooltip.referenceElm = nodeChild;
           tooltip.$refs.popper && (tooltip.$refs.popper.style.display = 'none');

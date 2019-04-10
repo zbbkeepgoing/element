@@ -1281,6 +1281,7 @@
 ```html
 <template>
   <el-table
+    border
     ref="multipleTable"
     :data="tableData3"
     tooltip-effect="dark"

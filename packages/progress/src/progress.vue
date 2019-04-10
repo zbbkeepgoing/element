@@ -23,7 +23,7 @@
     </div>
     <div class="el-progress-circle" :style="{height: width + 'px', width: width + 'px'}" v-else>
       <svg viewBox="0 0 100 100">
-        <path class="el-progress-circle__track" :d="trackPath" stroke="#e2ecf1" :stroke-width="relativeStrokeWidth" fill="none"></path>
+        <path class="el-progress-circle__track" :d="trackPath" stroke="#f4f4f4" :stroke-width="relativeStrokeWidth" fill="none"></path>
         <path class="el-progress-circle__path" :d="trackPath" stroke-linecap="round" :stroke="stroke" :stroke-width="relativeStrokeWidth" fill="none" :style="circlePathStyle"></path>
       </svg>
     </div>

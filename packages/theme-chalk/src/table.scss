@@ -302,7 +302,8 @@
       border-right: $--table-border;
 
       &:first-child .cell {
-        padding-left: 10px;
+        // padding-left: 10px;
+        // text-align: center;
       }
     }
 

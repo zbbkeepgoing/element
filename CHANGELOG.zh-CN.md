@@ -1,23 +1,38 @@
 ## 更新日志
+### 3.3.1
+*2019-04-10*
+- progress 背景色 (by 大圣)
+### 3.3.0
+*2019-04-10*
+- 分页select框的对齐问题 (by 大圣)
+- table第一列checkbox居中的问题 (by 大圣)
 ### 3.2.9
 *2019-04-10*
 - 分页输入框火狐下边框红色的bug修复 (by 大圣)
-- 添加tree节点在文字过长的时候的tooltip配置 (by 大圣)
+- 添加tree节点在文字过长的时候的tooltip配置
 
 ### 3.2.8
 *2019-04-9*
 - card 组件的样式重构 (by 大圣)
 ### 3.2.7
 *2019-04-9*
-- message box 自定义图标功能
+- message box 自定义图标功能(by 大圣)
 - 选项卡主题tab 边线颜色
 - select 选中项在下拉中自定义图标也能变色
 - menu菜单无子级菜单item的背景色修复
+### 3.0.0 - 3.2.6 
+- switch小尺寸添加了 size="small" (by 大圣)
+- 小尺寸分页控件
+- el-alert 添加show-background 属性来控制是否显示背景，默认为true
+- el-alert 添加tip类型，来控制更重量级的提示操作信息
+- el-alert 添加icon 属性来让用户自主配置图标
+- el-menu  除了Menu原来提供的background-color、text-color和active-text-color，增加提供了 hover-text-color, active-sub-background-color, sub-background-color, hover-background-color 分别设置 鼠标悬浮菜单字体颜色、二级菜单激活背景色、二级菜单背景颜色、菜单悬浮背景色
+- breadcrumb-item 上添加 linked属性来表示可以点击，默认最后一个为不可点击且深色效果
 
 ### 3.0.0
 *2019-03-12*
 - 新版本kyligence-ui (by 大圣)
-- table 规范调整
+- 按规范全面调整尺寸颜色，更新less和sass变量文件
 
 ### 2.1.9
 *2019-03-11*
