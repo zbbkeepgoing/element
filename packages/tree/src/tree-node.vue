@@ -17,13 +17,17 @@
     :aria-disabled="node.disabled"
     :aria-checked="node.checked"
   >
-    <div class="el-tree-node__content"
+    
+    <div class="el-tree-node__content"   
+       @mouseenter.stop="handleNodeMouseEnter($event, node)"
+       @mouseleave.stop="handleNodeMouseLeave($event)"
       :style="{ 'padding-left': (node.level - 1) * tree.indent + 'px' }">
       <span
         class="el-tree-node__expand-icon el-icon-caret-right"
         @click.stop="handleExpandIconClick"
         :class="{ 'is-leaf': node.isLeaf, expanded: !node.isLeaf && expanded }">
       </span>
+      <el-tooltip  placement="top" ref="tooltip" :content="tooltipContent"></el-tooltip>
       <el-checkbox
         v-if="showCheckbox"
         v-model="node.checked"
@@ -63,8 +67,11 @@
 <script type="text/jsx">
   import ElCollapseTransition from 'kyligence-ui/src/transitions/collapse-transition';
   import ElCheckbox from 'kyligence-ui/packages/checkbox';
+  import ElTooltip from 'kyligence-ui/packages/tooltip';
   import emitter from 'kyligence-ui/src/mixins/emitter';
   import { getNodeKey } from './model/util';
+  import { hasClass } from 'kyligence-ui/src/utils/dom';
+  import debounce from 'throttle-debounce/debounce';
 
   export default {
     name: 'ElTreeNode',
@@ -90,6 +97,7 @@
     components: {
       ElCollapseTransition,
       ElCheckbox,
+      ElTooltip,
       NodeContent: {
         props: {
           node: {
@@ -119,7 +127,9 @@
         childNodeRendered: false,
         showCheckbox: false,
         oldChecked: null,
-        oldIndeterminate: null
+        oldIndeterminate: null,
+        tooltipContent:'',
+        showOverflowTooltip: this.$parent.showOverflowTooltip
       };
     },
 
@@ -144,7 +154,35 @@
       getNodeKey(node) {
         return getNodeKey(this.tree.nodeKey, node.data);
       },
-
+      handleNodeMouseEnter(event, node) {
+        // 判断是否text-overflow, 如果是就显示tooltip
+        debugger
+        if (!this.tree.showOverflowTooltip) {
+          return
+        }
+        const nodeChild = event.target;
+        let nodeContent = this.$el.querySelector('.el-tree-node__content')
+        if (nodeChild && nodeContent && nodeContent.scrollWidth > nodeContent.offsetWidth && this.$refs.tooltip) {
+          const tooltip = this.$refs.tooltip;
+          // TODO 会引起整个 Table 的重新渲染，需要优化
+          this.tooltipContent = node.data.label || nodeChild.innerText;
+          tooltip.referenceElm = nodeChild;
+          tooltip.$refs.popper && (tooltip.$refs.popper.style.display = 'none');
+          tooltip.doDestroy();
+          tooltip.setExpectedState(true);
+          this.activateTooltip(tooltip);
+        }
+      },
+      handleNodeMouseLeave(event) {
+        if (!this.tree.showOverflowTooltip) {
+          return
+        }
+        const tooltip = this.$refs.tooltip;
+        if (tooltip) {
+          tooltip.setExpectedState(false);
+          tooltip.handleClosePopper();
+        }
+      },
       handleSelectChange(checked, indeterminate) {
         if (this.oldChecked !== checked && this.oldIndeterminate !== indeterminate) {
           this.tree.$emit('check-change', this.node.data, checked, indeterminate);
@@ -201,8 +239,8 @@
         this.tree.$emit('node-expand', nodeData, node, instance);
       }
     },
-
     created() {
+      this.activateTooltip = debounce(50, tooltip => tooltip.handleShowPopper());
       const parent = this.$parent;
 
       if (parent.isTree) {

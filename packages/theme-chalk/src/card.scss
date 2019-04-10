@@ -6,13 +6,16 @@
   border: 1px solid $--card-border-color;
   background-color: $--color-white;
   overflow: hidden;
-  box-shadow: $--box-shadow-light;
+  // box-shadow: $--box-shadow-light;
   color: $--color-text-primary;
 
   @include e(header) {
-    padding: #{$--card-padding - 2 $--card-padding};
+    padding: 12px 15px;
     border-bottom: 1px solid $--card-border-color;
     box-sizing: border-box;
+    background: $--background-color-regular;
+    font-size: 14px;
+    font-weight: 500;
   }
 
   @include e(body) {

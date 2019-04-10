@@ -217,7 +217,7 @@
     }
 
     &.el-button--default {
-      border: 1px solid #CFD8DC;
+      border: 1px solid $--border-color-base;
       min-width: 60px;
       &.el-button--medium {
         min-width: 50px;

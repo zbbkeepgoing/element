@@ -66,6 +66,10 @@
         type: Boolean,
         default: true
       },
+      showOverflowTooltip: {
+        type: Boolean,
+        default: false
+      },
       checkDescendants: {
         type: Boolean,
         default: false
