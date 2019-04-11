@@ -433,6 +433,7 @@ $--color-grey-3: #E2ECF1 !default;
 $--color-grey-4: #F1F7FA !default;
 
 $--color-primary: #0988DE !default; 
+$--color-primary-dark: #087AC8 !default;
 $--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default; /* #2294e1 */
 $--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default; /* #3aa0e5 */
 $--color-primary-light-3: mix($--color-white, $--color-primary, 30%) !default; /* #53ace8 */
@@ -473,7 +474,7 @@ $--link-hover-color: $--color-primary !default;
 
 /* Background
 -------------------------- */
-$--background-color-base: #f1f7fa !default;
+$--background-color-base: #f4f4f4 !default;
 $--background-color-base-1: #fbfbfb !default;
 $--background-color-light: #F9FBFC !default;
 $--background-color-regular: #CDE7F8 !default;
@@ -564,7 +565,8 @@ $--index-popper: 2000 !default;
 @color-grey-3: #E2ECF1 !default;
 @color-grey-4: #F1F7FA !default;
 
-@color-primary: #0988DE !default; 
+@color-primary: #0988DE; 
+@color-primary-dark: #087AC8;
 @color-primary-light-1: mix(@color-white, @color-primary, 10%) !default; /* #2294e1 */
 @color-primary-light-2: mix(@color-white, @color-primary, 20%) !default; /* #3aa0e5 */
 @color-primary-light-3: mix(@color-white, @color-primary, 30%) !default; /* #53ace8 */
@@ -573,7 +575,7 @@ $--index-popper: 2000 !default;
 @color-primary-light-6: mix(@color-white, @color-primary, 60%) !default; /* #9dcff2 */
 @color-primary-light-7: mix(@color-white, @color-primary, 70%) !default; /* #b5dbf5 */
 @color-primary-light-8: mix(@color-white, @color-primary, 80%) !default; /* #cee7f8 */
-@color-primary-light-9: mix(@color-white, @color-primary, 90%) !default; /* #cee7f8 */
+@color-primary-light-9: #e6f3fb;//mix(@color-white, @color-primary, 90%) !default; /* #cee7f8 */
 
 @color-success: #4cb050 !default;
 @color-warning: #F7BA2A !default;
@@ -605,7 +607,7 @@ $--index-popper: 2000 !default;
 
 /* Background
 -------------------------- */
-@background-color-base: #f1f7fa !default;
+@background-color-base: #f4f4f4 !default;
 @background-color-base-1: #fbfbfb;
 @background-color-light: #F9FBFC !default;
 @background-color-regular: #CDE7F8 !default;

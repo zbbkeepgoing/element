@@ -23,7 +23,8 @@ $--color-grey-2: #EEEEEE !default;
 $--color-grey-3: #E2ECF1 !default;
 $--color-grey-4: #F1F7FA !default;
 
-$--color-primary: #0988DE !default; 
+$--color-primary: #0988DE !default;
+$--color-primary-dark: #087AC8 !default;
 $--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default; /* #2294e1 */
 $--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default; /* #3aa0e5 */
 $--color-primary-light-3: mix($--color-white, $--color-primary, 30%) !default; /* #53ace8 */
@@ -32,7 +33,7 @@ $--color-primary-light-5: mix($--color-white, $--color-primary, 50%) !default; /
 $--color-primary-light-6: mix($--color-white, $--color-primary, 60%) !default; /* #9dcff2 */
 $--color-primary-light-7: mix($--color-white, $--color-primary, 70%) !default; /* #b5dbf5 */
 $--color-primary-light-8: mix($--color-white, $--color-primary, 80%) !default; /* #cee7f8 */
-$--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default; /* #cee7f8 */
+$--color-primary-light-9:#e6f3fb;// mix($--color-white, $--color-primary, 89.7%) !default;
 
 $--color-success: #4cb050 !default;
 $--color-warning: #F7BA2A !default;
@@ -269,7 +270,7 @@ $--alert-close-customed-font-size: 13px !default;
 
 $--alert-success-color: $--color-success-lighter !default;
 $--alert-info-color: $--color-info-lighter !default;
-$--alert-tip-color: #e6f3fc !default;
+$--alert-tip-color: $--color-primary-light-9 !default;
 $--alert-warning-color: $--color-warning-lighter !default;
 $--alert-danger-color: $--color-danger-lighter !default;
 
