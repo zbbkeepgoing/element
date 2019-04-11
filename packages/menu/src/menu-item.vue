@@ -55,7 +55,7 @@
         let isActive = this.index === this.rootMenu.activeIndex;
         if (this.$el) {
           if (!isActive) {
-            this.$el.style.backgroundColor = this.isNested ? this.rootMenu.subBackgroundColor: this.rootMenu.backgroundColor;
+            this.$el.style.backgroundColor = this.isNested ? this.rootMenu.subBackgroundColor : this.rootMenu.backgroundColor;
             this.$el.style.color = this.rootMenu.textColor;
           }
         }
