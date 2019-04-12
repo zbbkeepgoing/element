@@ -10,7 +10,7 @@
   color: $--color-text-primary;
 
   @include e(header) {
-    padding: 12px 15px;
+    padding: 8px 15px;
     border-bottom: 1px solid $--card-border-color;
     box-sizing: border-box;
     background: $--background-color-regular;
