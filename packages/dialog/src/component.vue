@@ -22,7 +22,7 @@
             <i class="el-dialog__close el-icon el-icon-close"></i>
           </button>
         </div>
-        <div class="el-dialog__body" v-if="rendered"><slot></slot></div>
+        <div class="el-dialog__body" v-if="rendered" :style="bodyStyle"><slot></slot></div>
         <div class="el-dialog__footer" v-if="$slots.footer">
           <slot name="footer"></slot>
         </div>
@@ -104,6 +104,10 @@
       center: {
         type: Boolean,
         default: false
+      },
+      limitedArea: {
+        type: Boolean,
+        default: false
       }
     },
 
@@ -111,7 +115,10 @@
       return {
         closed: false,
         mousePoint: { x: 0, y: 0 },
-        offset: { left: 0, top: 0 }
+        offset: { left: 0, top: 0 },
+        bodyStyle: {},
+        dialogStyle: {},
+        _scrollSizeCache: null,
       };
     },
 
@@ -127,6 +134,7 @@
           this.$nextTick(() => {
             this.$refs.dialog.scrollTop = 0;
             this.$el.focus();
+            this.resetSize();
             // console.log(this.$el);
           });
           if (this.appendToBody) {
@@ -142,6 +150,10 @@
     computed: {
       style() {
         let style = {};
+        if (this.limitedArea) {
+          let scrollBarSize = this._getScrollbarSize()
+          style['max-width'] = 'calc(100vw - ' + scrollBarSize.width + 'px)'
+        }
         if (this.width) {
           style.width = this.width;
         }
@@ -153,6 +165,48 @@
     },
 
     methods: {
+      _getScrollbarSize() {
+        if (this._scrollSizeCache) {
+          return this._scrollSizeCache
+        }
+        var oP = document.createElement('p'), styles = {
+            width: '100px',
+            height: '100px',
+            overflow: 'scroll',
+            position: 'absolute'
+        }, i, scrollbarWidth, scrollbarHeight;
+        for (i in styles){
+            oP.style[i] = styles[i];
+        }
+        document.body.appendChild(oP);
+        scrollbarWidth = oP.offsetWidth - oP.clientWidth;
+        scrollbarHeight = oP.offsetHeight - oP.clientHeight;
+        oP.remove();
+        return this._scrollSizeCache = {
+          width: scrollbarWidth, height: scrollbarHeight
+        }
+      },
+      resetSize() {
+        if (!this.limitedArea) {
+          return
+        }
+        this.$nextTick(() => {
+          let headerDom = this.$el.querySelector('.el-dialog__header');
+          let footerDom = this.$el.querySelector('.el-dialog__footer');
+          let bodyDom = this.$el.querySelector('.el-dialog__body');
+          let padding = 0
+          let computedDomStyle = window.getComputedStyle(bodyDom, null)
+          padding += +computedDomStyle.paddingTop.replace('px', '')
+          padding += +computedDomStyle.paddingBottom.replace('px', '')
+          let headerH = headerDom && headerDom.offsetHeight || 0;
+          let footerH = footerDom && footerDom.offsetHeight || 0;
+          let scrollBarSize = this._getScrollbarSize()
+          this.bodyStyle = {
+            'max-height': 'calc(100vh - ' + scrollBarSize.height + 'px - ' + this.top + ' - ' + headerH + 'px - ' + footerH + 'px - ' + padding + 'px)',
+            'overflow-y': 'auto'
+          };
+        })
+      },
       getMigratingConfig() {
         return {
           props: {
@@ -244,9 +298,13 @@
         if (this.appendToBody) {
           document.body.appendChild(this.$el);
         }
+        this.resetSize();
+        window.addEventListener('resize', this.resetSize);
       }
     },
-
+    beforeDestroy() {
+      window.removeEventListener('resize', this.resetSize);
+    },
     destroyed() {
       // if appendToBody is true, remove DOM node after destroy
       if (this.appendToBody && this.$el && this.$el.parentNode) {

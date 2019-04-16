@@ -1,4 +1,7 @@
 ## 更新日志
+### 3.3.2
+*2019-04-10*
+- checkbox和radio button checked状态下文字也变色 (by 大圣)
 ### 3.3.1
 *2019-04-10*
 - progress 背景色 (by 大圣)

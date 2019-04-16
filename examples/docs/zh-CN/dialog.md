@@ -25,6 +25,7 @@
         outerVisible: false,
         innerVisible: false,
         centerDialogVisible: false,
+        limitedDialogVisible: false,
         form: {
           name: '',
           region: '',
@@ -274,7 +275,7 @@ Dialog 组件的内容可以是任意的，甚至可以是表格或表单，下�
 ```
 :::
 
-### 居中布局
+### 居中布局 和 限制尺寸
 
 标题和底部可水平居中
 
@@ -282,7 +283,7 @@ Dialog 组件的内容可以是任意的，甚至可以是表格或表单，下�
 
 ```html
 <el-button type="primary" text @click="centerDialogVisible = true">点击打开 Dialog</el-button>
-
+<el-button type="primary" text @click="limitedDialogVisible = true">点击打开 限制展示区域Dialog</el-button>
 <el-dialog
   title="提示"
   :visible.sync="centerDialogVisible"
@@ -295,11 +296,63 @@ Dialog 组件的内容可以是任意的，甚至可以是表格或表单，下�
   </span>
 </el-dialog>
 
+<el-dialog
+  title="提示"
+  :visible.sync="limitedDialogVisible"
+  limited-area
+  width="130%"
+  center>
+  <p>需要注意的是内容是默认不居中的</p>
+  <p>需要注意的是内容是默认不居中的</p>
+  <p>需要注意的是内容是默认不居中的</p>
+  <p>需要注意的是内容是默认不居中的</p>
+  <p>需要注意的是内容是默认不居中的</p>
+  <p>需要注意的是内容是默认不居中的</p>
+  <p>需要注意的是内容是默认不居中的</p>
+  <p>需要注意的是内容是默认不居中的</p>
+  <p>需要注意的是内容是默认不居中的</p>
+  <p>需要注意的是内容是默认不居中的</p>
+  <p>需要注意的是内容是默认不居中的</p>
+  <p>需要注意的是内容是默认不居中的</p>
+  <p>需要注意的是内容是默认不居中的</p>
+  <p>需要注意的是内容是默认不居中的</p>
+  <p>需要注意的是内容是默认不居中的</p>
+  <p>需要注意的是内容是默认不居中的</p>
+  <p>需要注意的是内容是默认不居中的</p>
+  <p>需要注意的是内容是默认不居中的</p>
+
+  <p>需要注意的是内容是默认不居中的</p>
+  <p>需要注意的是内容是默认不居中的</p>
+  <p>需要注意的是内容是默认不居中的</p>
+  <p>需要注意的是内容是默认不居中的</p>
+  <p>需要注意的是内容是默认不居中的</p>
+  <p>需要注意的是内容是默认不居中的</p>
+
+  <p>需要注意的是内容是默认不居中的</p>
+  <p>需要注意的是内容是默认不居中的</p>
+  <p>需要注意的是内容是默认不居中的</p>
+  <p>需要注意的是内容是默认不居中的</p>
+
+  <p>需要注意的是内容是默认不居中的</p>
+  <p>需要注意的是内容是默认不居中的</p>
+  <p>需要注意的是内容是默认不居中的</p>
+  <p>需要注意的是内容是默认不居中的</p>
+  <p>需要注意的是内容是默认不居中的</p>
+  <p>需要注意的是内容是默认不居中的</p>
+  <p>需要注意的是内容是默认不居中的</p>
+
+  <span slot="footer" class="dialog-footer">
+    <el-button @click="limitedDialogVisible = false">取 消</el-button>
+    <el-button type="primary" plain @click="limitedDialogVisible = false">确 定</el-button>
+  </span>
+</el-dialog>
+
 <script>
   export default {
     data() {
       return {
-        centerDialogVisible: false
+        centerDialogVisible: false,
+        limitedDialogVisible: false
       };
     }
   };
@@ -314,6 +367,7 @@ Dialog 组件的内容可以是任意的，甚至可以是表格或表单，下�
 :::tip
 如果 `visible` 属性绑定的变量位于 Vuex 的 store 内，那么 `.sync` 不会正常工作。此时需要去除 `.sync` 修饰符，同时监听 Dialog 的 `open` 和 `close` 事件，在事件回调中执行 Vuex 中对应的 mutation 更新 `visible` 属性绑定的变量的值。
 :::
+
 
 ### Attributes
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
@@ -334,7 +388,7 @@ Dialog 组件的内容可以是任意的，甚至可以是表格或表单，下�
 | show-close | 是否显示关闭按钮 | boolean    | — | true |
 | before-close | 关闭前的回调，会暂停 Dialog 的关闭 | function(done)，done 用于关闭 Dialog | — | — |
 | center | 是否对头部和底部采用居中布局 | boolean | — | false |
-
+| limited-area | 是否限制弹窗展示区域不能超过容器 | boolean | — | false |
 ### Slot
 | name | 说明 |
 |------|--------|

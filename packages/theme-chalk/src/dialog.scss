@@ -11,7 +11,13 @@
   box-shadow: $--dialog-box-shadow;
   box-sizing: border-box;
   width: 50%;
-
+  
+  // &.fixed-footer {
+  //   @include e(body) {
+  //     max-height: calc(85vh - 46px - 50px - 40px);
+  //     overflow-y: auto;
+  //   }
+  // }
   @include when(fullscreen) {
     width: 100%;
     margin-top: 0;
