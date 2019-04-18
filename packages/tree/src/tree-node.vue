@@ -161,7 +161,8 @@
         }
         const nodeChild = event.target;
         let nodeContent = this.$el.querySelector('.el-tree-node__content')
-        if (nodeChild && nodeContent && nodeContent.scrollWidth > nodeContent.offsetWidth && this.$refs.tooltip) {
+        let limitNodeContent = this.$el.querySelector('.el-tree-tooltip-box') //自定义监控是否被截取
+        if (nodeChild && (nodeContent && nodeContent.scrollWidth > nodeContent.offsetWidth || limitNodeContent && limitNodeContent.scrollWidth > limitNodeContent.offsetWidth || limitNodeContent) && this.$refs.tooltip) {
           const tooltip = this.$refs.tooltip;
           this.tooltipContent = node.data.label || nodeChild.innerText;
           tooltip.referenceElm = nodeChild;

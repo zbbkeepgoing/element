@@ -1030,7 +1030,7 @@
 | children | 指定子树为节点对象的某个属性值 | string | —    | —    |
 | disabled | 指定节点选择框是否禁用为节点对象的某个属性值 | boolean, function(data, node) | —    | —    |
 | isLeaf | 指定节点是否为叶子节点，仅在指定了 lazy 属性的情况下生效 | boolean, function(data, node) | —    | —    |
-| show-overflow-tooltip     | 当节点被外围边框限制无法看到的时候出tooltip提示  | false | —    | —    |
+| show-overflow-tooltip     | 当节点被外围边框限制无法看到的时候出tooltip提示, 可以为节点内需要监控的元素添加class el-tree-tooltip-box，否则组件会只监控el-tree-node__content 内容是否超过  | false | —    | —    |
 ### 方法
 `Tree` 内部使用了 Node 类型的对象来包装用户传入的数据，用来保存目前节点的状态。
 `Tree` 拥有如下方法：

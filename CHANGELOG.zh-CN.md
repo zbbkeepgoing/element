@@ -1,4 +1,8 @@
 ## 更新日志
+### 3.3.5
+*2019-04-18*
+- 优化el-tree 超过tooltip的功能，增加自定义监控是否超过元素的类标志 el-tree-tooltip-box，原来默认监控 el-tree-node__content
+
 ### 3.3.4
 *2019-04-16*
 - checkbox和radio button checked状态下文字也变色 (by 大圣)
