@@ -10,7 +10,7 @@
   color: $--color-text-primary;
 
   @include e(header) {
-    padding: 8px 15px;
+    padding: 8px $--card-padding;
     border-bottom: 1px solid $--card-border-color;
     box-sizing: border-box;
     background: $--background-color-regular;
@@ -20,5 +20,11 @@
 
   @include e(body) {
     padding: $--card-padding;
+  }
+  @include e(footer) {
+    padding: 10px $--card-padding;
+    border-top: 1px solid $--card-border-color;
+    box-sizing: border-box;
+    font-size: 14px;
   }
 }

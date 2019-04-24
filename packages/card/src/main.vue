@@ -6,6 +6,9 @@
     <div class="el-card__body" :style="bodyStyle">
       <slot></slot>
     </div>
+    <div class="el-card__footer" v-if="$slots.footer || footer">
+      <slot name="footer">{{ footer }}</slot>
+    </div>
   </div>
 </template>
 
@@ -13,6 +16,6 @@
   export default {
     name: 'ElCard',
 
-    props: ['header', 'bodyStyle']
+    props: ['header', 'bodyStyle', 'footer']
   };
 </script>

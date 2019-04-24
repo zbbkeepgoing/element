@@ -1,4 +1,8 @@
 ## 更新日志
+### 3.3.7
+*2019-04-24*
+- el-card 添加 footer 块（by 春燕）
+
 ### 3.3.5/6
 *2019-04-18*
 - 优化el-tree 超过tooltip的功能，增加自定义监控是否超过元素的类标志 el-tree-tooltip-box，原来默认监控 el-tree-node__content

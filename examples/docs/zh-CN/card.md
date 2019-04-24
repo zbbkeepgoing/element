@@ -52,9 +52,9 @@
 ### 基础用法
 
 
-包含标题，内容和操作。
+包含标题，内容和底部。
 
-:::demo Card 组件包括`header`和`body`部分，`header`部分需要有显式具名 slot 分发，同时也是可选的。
+:::demo Card 组件包括`header`、`body`、`footer`部分，`header`和`footer`部分需要有显式具名 slot 分发，同时也是可选的。
 ```html
 <el-card class="box-card">
   <div slot="header" class="clearfix">
@@ -64,6 +64,7 @@
   <div v-for="o in 4" :key="o" class="text item">
     {{'列表内容 ' + o }}
   </div>
+  <div slot="footer">我是footer，内部内容根据实际业务填充</div>
 </el-card>
 
 <style>
@@ -189,3 +190,4 @@ export default {
 |---------- |-------- |---------- |-------------  |-------- |
 | header | 设置 header，也可以通过 `slot#header` 传入 DOM | string| — | — |
 | body-style | 设置 body 的样式| object| — | { padding: '20px' } |
+| footer | 设置 footer `slot#footer` 传入 DOM | string| — | — |
