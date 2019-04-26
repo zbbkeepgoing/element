@@ -118,7 +118,7 @@
         offset: { left: 0, top: 0 },
         bodyStyle: {},
         dialogStyle: {},
-        _scrollSizeCache: null,
+        _scrollSizeCache: null
       };
     },
 
@@ -151,8 +151,8 @@
       style() {
         let style = {};
         if (this.limitedArea) {
-          let scrollBarSize = this._getScrollbarSize()
-          style['max-width'] = 'calc(100vw - ' + scrollBarSize.width + 'px)'
+          let scrollBarSize = this._getScrollbarSize();
+          style['max-width'] = 'calc(100vw - ' + scrollBarSize.width + 'px)';
         }
         if (this.width) {
           style.width = this.width;
@@ -167,7 +167,7 @@
     methods: {
       _getScrollbarSize() {
         if (this._scrollSizeCache) {
-          return this._scrollSizeCache
+          return this._scrollSizeCache;
         }
         var oP = document.createElement('p'), styles = {
             width: '100px',
@@ -181,7 +181,13 @@
         document.body.appendChild(oP);
         scrollbarWidth = oP.offsetWidth - oP.clientWidth;
         scrollbarHeight = oP.offsetHeight - oP.clientHeight;
-        oP.remove();
+        removeElement(oP)
+        function removeElement(_element){
+            var _parentElement = _element.parentNode;
+            if(_parentElement){
+                _parentElement.removeChild(_element);
+            }
+        }
         return this._scrollSizeCache = {
           width: scrollbarWidth, height: scrollbarHeight
         }
