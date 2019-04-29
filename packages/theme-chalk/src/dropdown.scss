@@ -103,7 +103,7 @@
     @include when(disabled) {
       cursor: not-allowed;
       color: $--font-color-disabled-base;
-      // pointer-events: none;
+      pointer-events: none;
     }
   }
 
