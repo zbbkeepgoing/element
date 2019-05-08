@@ -169,49 +169,54 @@
         if (this._scrollSizeCache) {
           return this._scrollSizeCache;
         }
-        var oP = document.createElement('p'), styles = {
-            width: '100px',
-            height: '100px',
-            overflow: 'scroll',
-            position: 'absolute'
-        }, i, scrollbarWidth, scrollbarHeight;
-        for (i in styles){
-            oP.style[i] = styles[i];
+        let oP = document.createElement('p');
+        let styles = {
+          width: '100px',
+          height: '100px',
+          overflow: 'scroll',
+          position: 'absolute'
+        };
+        let i;
+        let scrollbarWidth;
+        let scrollbarHeight;
+        for (i in styles) {
+          oP.style[i] = styles[i];
         }
         document.body.appendChild(oP);
         scrollbarWidth = oP.offsetWidth - oP.clientWidth;
         scrollbarHeight = oP.offsetHeight - oP.clientHeight;
-        removeElement(oP)
-        function removeElement(_element){
-            var _parentElement = _element.parentNode;
-            if(_parentElement){
-                _parentElement.removeChild(_element);
-            }
+        removeElement(oP);
+        function removeElement(_element) {
+          let _parentElement = _element.parentNode;
+          if (_parentElement) {
+            _parentElement.removeChild(_element);
+          }
         }
-        return this._scrollSizeCache = {
+        this._scrollSizeCache = {
           width: scrollbarWidth, height: scrollbarHeight
-        }
+        };
+        return this._scrollSizeCache;
       },
       resetSize() {
         if (!this.limitedArea) {
-          return
+          return;
         }
         this.$nextTick(() => {
           let headerDom = this.$el.querySelector('.el-dialog__header');
           let footerDom = this.$el.querySelector('.el-dialog__footer');
           let bodyDom = this.$el.querySelector('.el-dialog__body');
-          let padding = 0
-          let computedDomStyle = window.getComputedStyle(bodyDom, null)
-          padding += +computedDomStyle.paddingTop.replace('px', '')
-          padding += +computedDomStyle.paddingBottom.replace('px', '')
+          let padding = 0;
+          let computedDomStyle = window.getComputedStyle(bodyDom, null);
+          padding += +computedDomStyle.paddingTop.replace('px', '');
+          padding += +computedDomStyle.paddingBottom.replace('px', '');
           let headerH = headerDom && headerDom.offsetHeight || 0;
           let footerH = footerDom && footerDom.offsetHeight || 0;
-          let scrollBarSize = this._getScrollbarSize()
+          let scrollBarSize = this._getScrollbarSize();
           this.bodyStyle = {
             'max-height': 'calc(100vh - ' + scrollBarSize.height + 'px - ' + this.top + ' - ' + headerH + 'px - ' + footerH + 'px - ' + padding + 'px)',
             'overflow-y': 'auto'
           };
-        })
+        });
       },
       getMigratingConfig() {
         return {
