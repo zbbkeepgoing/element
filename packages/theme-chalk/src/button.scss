@@ -28,8 +28,8 @@
   @include button-size($--button-padding-vertical, $--button-padding-horizontal, $--button-font-size, $--button-border-radius);
 
   &:hover {
-    color: $--color-primary;
-    border-color: $--color-primary;
+    color: $--button-hover-color;
+    border-color: $--button-hover-color;
     background-color: $--color-primary-light-9;
   }
 
@@ -52,8 +52,8 @@
   @include when(plain) {
     &:hover {
       background: $--color-white;
-      border-color: $--color-primary;
-      color: $--color-primary;
+      border-color: $--button-hover-color;
+      color: $--button-hover-color;
     }
 
     &:active {
