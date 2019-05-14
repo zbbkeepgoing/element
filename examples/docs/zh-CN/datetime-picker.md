@@ -103,6 +103,7 @@ DateTimePicker 由 DatePicker 和 TimePicker 派生，`Picker Options` 或者其
     <span class="demonstration">默认</span>
     <el-date-picker
       v-model="value1"
+      :is-auto-complete="true"
       type="datetime"
       placeholder="选择日期时间">
     </el-date-picker>
