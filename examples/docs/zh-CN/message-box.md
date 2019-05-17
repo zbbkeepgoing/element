@@ -4,7 +4,7 @@
       open() {
         this.$alert('这是一段内容', '标题名称', {
           confirmButtonText: '确定',
-          iconClass: 'el-icon-d-caret',
+          iconClass: 'el-icon-success',
           callback: action => {
             this.$message({
               type: 'info',

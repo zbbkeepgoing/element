@@ -250,12 +250,12 @@ export const parseDateInput = function(value = '') {
     seconds: value.slice(17, 19).length === 2 && +value.slice(17, 19)
   };
 };
-
 export const autoCompleteDateSplit = function(type, value = '') {
   const dateSplitIdxs = [4, 7];
   const timeSplitIdxs = [13, 16];
   const dateTimeSplitIdxs = [10];
   const splitChars = ['-', ' ', ':'];
+  value = value.replace(/^\s+|\s+$/, '');
   const autoCompleteIdxs = [
     ...(['date', 'datetime'].includes(type) ? dateSplitIdxs : []),
     ...(type === 'datetime' ? dateTimeSplitIdxs : []),
@@ -287,7 +287,7 @@ export const autoCompleteDateSplit = function(type, value = '') {
   } else if (currentIdx < 2) {
     return `${value}-`;
   } else if (currentIdx === 2) {
-    return `${value} `;
+    return `${value} 00:00:00`;
   } else if (currentIdx > 2) {
     return `${value}:`;
   }
@@ -307,3 +307,4 @@ export function getCurrntParentByClass(el, className) {
 
   return result;
 }
+

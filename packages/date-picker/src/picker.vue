@@ -89,7 +89,7 @@
 <script>
 import Vue from 'vue';
 import Clickoutside from 'kyligence-ui/src/utils/clickoutside';
-import { formatDate, parseDate, isDateObject, getWeekNumber, setDate, parseDateInput, autoCompleteDateSplit, getCurrntParentByClass } from './util';
+import { formatDate, parseDate, isDateObject, getWeekNumber, setDate, parseDateInput, autoCompleteDateSplit, getCurrntParentByClass, setSelected } from './util';
 import Popper from 'kyligence-ui/src/utils/vue-popper';
 import Emitter from 'kyligence-ui/src/mixins/emitter';
 import ElInput from 'kyligence-ui/packages/input';
@@ -582,7 +582,6 @@ export default {
       const isDateType = ['datetime', 'date'].includes(this.type);
       const isDateRangeType = ['datetimerange', 'daterange'].includes(this.type);
       const isDelete = deleteCodes.includes(event.keyCode);
-
       if (!isDelete && this.isAutoComplete) {
         // 普通时间输入框自动format
         if (isDateType) {

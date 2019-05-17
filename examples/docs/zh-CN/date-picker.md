@@ -117,6 +117,7 @@
     <span class="demonstration">默认</span>
     <el-date-picker
       v-model="value1"
+      :is-auto-complete="true"
       type="date"
       placeholder="选择日期">
     </el-date-picker>

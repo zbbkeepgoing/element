@@ -45,6 +45,16 @@
 :::
 常用的操作按钮。
 
+
+
+### 规范要求按钮用法
+<div>
+  <el-button type="primary">主要按钮</el-button>
+  <el-button>次要按钮</el-button>
+  <el-button plain>次次要按钮</el-button>
+</div>
+
+
 ### 基础用法
 
 基础的按钮用法。
@@ -52,6 +62,7 @@
 :::demo 使用`type`、`plain`和`round`属性来定义 Button 的样式。
 
 ```html
+
 <div>
   <el-button>默认按钮</el-button>
   <el-button type="primary">主要按钮</el-button>
@@ -96,7 +107,7 @@
 <el-button type="primary" round>主要按钮</el-button>
 </div>
 
-删除等操作，在实际项目中用红色版本的按钮，好像不多，但我建议，类似删除这种操作，需要用红色危险按钮。
+<br/>
 <div>
   <el-button type="danger">危险按钮</el-button>
   <el-button type="danger" plain>危险按钮</el-button>
