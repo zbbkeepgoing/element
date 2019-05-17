@@ -1,4 +1,9 @@
 ## 更新日志
+### 3.4.0
+*2019-05-17*
+- el-button 按规范调整hover颜色 (by 大圣)
+- data-time-picker 再is-auto-complete的情况下输入完年月日后自动填充 00:00:00（by 大圣）
+
 ### 3.3.9
 *2019-05-08*
 - el-dropdown disable bug fixed (by 春燕)
