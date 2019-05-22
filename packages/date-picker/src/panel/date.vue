@@ -148,6 +148,7 @@
     isDate,
     modifyDate,
     modifyTime,
+    modifyWithTimeString,
     clearMilliseconds,
     clearTime,
     prevYear,
@@ -224,7 +225,9 @@
         value(this.value);
         date(this.date);
       },
-
+      getDefaultValue() {
+        return this.defaultValue ? new Date(this.defaultValue) : new Date();
+      },
       handleClear() {
         this.date = this.defaultValue ? new Date(this.defaultValue) : new Date();
         this.$emit('pick', null);
@@ -293,7 +296,10 @@
 
       handleTimePick(value, visible, first) {
         if (isDate(value)) {
-          const newDate = modifyTime(this.date, value.getHours(), value.getMinutes(), value.getSeconds());
+          // const newDate = modifyTime(this.date, value.getHours(), value.getMinutes(), value.getSeconds());
+          const newDate = this.value
+            ? modifyTime(this.value, value.getHours(), value.getMinutes(), value.getSeconds())
+            : modifyWithTimeString(this.getDefaultValue(), this.defaultTime);
           this.date = newDate;
           this.emit(this.date, true);
         } else {
@@ -318,8 +324,12 @@
 
       handleDatePick(value) {
         if (this.selectionMode === 'day') {
-          this.date = modifyDate(this.date, value.getFullYear(), value.getMonth(), value.getDate());
-          this.emit(this.date, this.showTime);
+          // let newDate = modifyDate(this.date, value.getFullYear(), value.getMonth(), value.getDate())
+          let newDate = this.value
+            ? modifyDate(this.value, value.getFullYear(), value.getMonth(), value.getDate())
+            : modifyWithTimeString(this.getDefaultValue(), this.defaultTime);
+          this.date = newDate
+          this.emit(newDate, this.showTime);
         } else if (this.selectionMode === 'week') {
           this.emit(value.date);
         }
@@ -347,7 +357,17 @@
       },
 
       confirm() {
-        this.emit(this.date);
+        if (this.selectionMode === 'dates') {
+          this.emit(this.date);
+        } else {
+          // value were emitted in handle{Date,Time}Pick, nothing to update here
+          // deal with the scenario where: user opens the picker, then confirm without doing anything
+          const value = this.value
+            ? this.value
+            : modifyWithTimeString(this.getDefaultValue(), this.defaultTime);
+          this.date = new Date(value); // refresh date
+          this.emit(value);
+        }
       },
 
       resetView() {
@@ -458,6 +478,7 @@
         date: new Date(),
         value: '',
         defaultValue: null,
+        defaultTime: null,
         showTime: false,
         selectionMode: 'day',
         shortcuts: '',
