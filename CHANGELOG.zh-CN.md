@@ -1,4 +1,9 @@
 ## 更新日志
+### 3.4.1
+*2019-05-23*
+- data-time-picker修复自动填充key-up事件和日历框默认的上下左右移动事件的冲突 (by 大圣)
+- data-time-picker 非range模式下支持default-time = '00:00:00' 设置默认选中的时分秒 （by 大圣）
+
 ### 3.4.0
 *2019-05-17*
 - el-button 按规范调整hover颜色 (by 大圣)

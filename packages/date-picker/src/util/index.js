@@ -138,7 +138,6 @@ export const modifyDate = function(date, y, m, d) {
   return new Date(y, m, d, date.getHours(), date.getMinutes(), date.getSeconds(), date.getMilliseconds());
 };
 
-
 export const modifyTime = function(date, h, m, s) {
   return new Date(date.getFullYear(), date.getMonth(), date.getDate(), h, m, s, date.getMilliseconds());
 };
