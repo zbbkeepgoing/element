@@ -578,7 +578,7 @@ export default {
     },
 
     handleKeyup(event, valueIdx) {
-      const deleteCodes = [8, 46];
+      const deleteCodes = [8, 46, 37, 38, 39, 40];
       const isDateType = ['datetime', 'date'].includes(this.type);
       const isDateRangeType = ['datetimerange', 'daterange'].includes(this.type);
       const isDelete = deleteCodes.includes(event.keyCode);
