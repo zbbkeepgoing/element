@@ -328,7 +328,7 @@
           let newDate = this.value
             ? modifyDate(this.value, value.getFullYear(), value.getMonth(), value.getDate())
             : modifyWithTimeString(value, this.defaultTime);
-          this.date = newDate
+          this.date = newDate;
           this.emit(newDate, this.showTime);
         } else if (this.selectionMode === 'week') {
           this.emit(value.date);
