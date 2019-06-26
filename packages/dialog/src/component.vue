@@ -125,6 +125,11 @@
     watch: {
       visible(val) {
         if (val) {
+          let slotTitleClass = this.$slots.title[0].data.staticClass;
+          if (slotTitleClass.indexOf('el-dialog__title') === -1) {
+            let tempClass = slotTitleClass ? slotTitleClass + ' el-dialog__title' : 'el-dialog__title';
+            this.$slots.title[0].data.staticClass = tempClass;
+          }
           this.closed = false;
           this.$emit('open');
           this.$el.addEventListener('scroll', this.updatePopper);

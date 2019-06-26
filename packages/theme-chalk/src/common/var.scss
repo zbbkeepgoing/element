@@ -261,12 +261,12 @@ $--select-dropdown-border: solid 1px $--border-color-light !default;
 
 /* Alert
 -------------------------- */
-$--alert-padding: 8px 10px !default;
+$--alert-padding: 10px 10px !default;
 $--alert-border-radius: $--border-radius-base !default;
-$--alert-title-font-size: 13px !default;
+$--alert-title-font-size: 12px !default;
 $--alert-description-font-size: 12px !default;
 $--alert-close-font-size: 12px !default;
-$--alert-close-customed-font-size: 13px !default;
+$--alert-close-customed-font-size: 12px !default;
 
 $--alert-success-color: $--color-success-lighter !default;
 $--alert-info-color: #f4f4f4 !default;
@@ -297,7 +297,7 @@ $--msgbox-danger-color: $--color-danger !default;
 $--message-shadow: $--box-shadow-base !default;
 $--message-min-width: 380px !default;
 $--message-background-color: #edf2fc !default;
-$--message-padding: 15px 15px 15px 20px !default;
+$--message-padding: 10px 10px 10px 10px !default;
 $--message-content-color: $--color-text-regular !default;
 $--message-close-color: $--color-text-placeholder !default;
 $--message-close-size: 16px !default;

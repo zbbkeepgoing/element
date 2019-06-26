@@ -17,7 +17,7 @@
   overflow: hidden;
   padding: $--message-padding;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
 
   @include when(center) {
     justify-content: center;
@@ -69,13 +69,14 @@
   }
 
   @include e(icon) {
-    margin-right: 10px;
+    margin-right: 5px;
   }
 
   @include e(content) {
     padding: 0;
     font-size: 14px;
-    line-height: 1;
+    /* line-height: 1; */
+    line-height:16px;
     &:focus {
       outline-width: 0;
     }
@@ -83,9 +84,10 @@
 
   @include e(closeBtn) {
     position: absolute;
-    top: 50%;
-    right: 15px;
-    transform: translateY(-50%);
+    top:10px;
+    right: 10px;
+    /* top: 50%;
+    transform: translateY(-50%); */
     cursor: pointer;
     color: $--message-close-color;
     font-size: $--message-close-size;

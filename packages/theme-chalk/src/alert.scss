@@ -4,7 +4,7 @@
 @include b(alert) {
   width: 100%;
   padding: $--alert-padding;
-  padding-right:20px;
+  /* padding-right:20px; */
   margin: 0;
   box-sizing: border-box;
   border-radius: $--alert-border-radius;
@@ -68,17 +68,21 @@
   }
   @include m(nobg) {
     background:none;
+    padding-left:0;
   }
   @include e(content) {
     display: table-cell;
-    padding: 0 5px;
-    line-height: 20px;
+    line-height:16px;
+    padding-right: 12px;
+    /* padding: 0 5px;
+    line-height: 20px; */
   }
 
   @include e(icon) {
     font-size: $--alert-icon-size;
     width: $--alert-icon-size;
-    line-height: 20px;
+    /* line-height: 20px; */
+    margin-right:5px;
     @include when(big) {
       font-size: $--alert-icon-large-size;
       width: $--alert-icon-large-size;
@@ -88,7 +92,7 @@
 
   @include e(title) {
     font-size: $--alert-title-font-size;
-    line-height: 20px;
+    /* line-height: 20px; */
     @include when(bold) {
       font-weight: bold;
     }
@@ -105,13 +109,13 @@
     opacity: 1;
     position: absolute;
     top: 12px;
-    right: 15px;
+    right: 10px;
     cursor: pointer;
 
     @include when(customed) {
       font-style: normal;
       font-size: $--alert-close-customed-font-size;
-      top: 9px;
+      top: 11px;
     }
   }
 }
