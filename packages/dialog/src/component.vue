@@ -125,8 +125,9 @@
     watch: {
       visible(val) {
         if (val) {
-          let slotTitleClass = this.$slots.title[0].data.staticClass;
-          if (slotTitleClass.indexOf('el-dialog__title') === -1) {
+          let hasTitleSlot = this.$slots && this.$slots.title && this.$slots.title[0] && this.$slots.title[0].data;
+          let slotTitleClass = hasTitleSlot && this.$slots.title[0].data.staticClass ? this.$slots.title[0].data.staticClass : '';
+          if (hasTitleSlot && slotTitleClass.indexOf('el-dialog__title') === -1) {
             let tempClass = slotTitleClass ? slotTitleClass + ' el-dialog__title' : 'el-dialog__title';
             this.$slots.title[0].data.staticClass = tempClass;
           }
