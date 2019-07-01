@@ -48,7 +48,7 @@
     type="success">
   </el-alert>
   <el-alert
-    title="普通消息显示"
+    title="普通消息显示普通消息显示普通消息显示普通消息显示普通消息显示普通消息显示普通消息显示普通消息显示普通消息显示普通消息显示普通消息显示普通消息显示"
     type="info">
   </el-alert>
   <el-alert
@@ -138,7 +138,7 @@
     show-icon>
   </el-alert>
   <el-alert
-    title="消息提示的文案"
+    title="消息提示的文案消息提示的文案消息提示的文案消息提示的文案消息提示的文案消息提示的文案消息提示的文案消息提示的文案消息提示的文案消息提示的文案消息提示的文案消息提示的文案"
     type="info"
     show-icon>
   </el-alert>

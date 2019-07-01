@@ -19,6 +19,7 @@
           name: '王小虎',
           address: '上海市普陀区金沙江路 1518 弄'
         }],
+        dialogVisible0: false,
         dialogVisible: false,
         dialogTableVisible: false,
         dialogFormVisible: false,
@@ -87,13 +88,60 @@
 在保留当前页面状态的情况下，告知用户并承载相关操作。
 
 ### 基本用法
+Dialog 弹出一个对话框，适合需要定制性更大的场景。
+
+:::demo 需要设置`visible`属性，它接收`Boolean`，当为`true`时显示 Dialog。Dialog 分为两个部分：`body`和`footer`，`footer`需要具名为`footer`的`slot`。`title`属性用于定义标题，它是可选的，默认值为空。最后，本例还展示了`before-close`的用法。
+
+```html
+<el-button type="primary" text @click="dialogVisible0 = true">点击打开 Dialog</el-button>
+
+<el-dialog
+  :visible.sync="dialogVisible0"
+  width="30%"
+  :close-on-click-modal="false"
+  :before-close="handleClose">
+  <span slot="title" class="test test2">我是弹窗标题</span>
+  <el-alert
+    title="成功提示的文案成功提示的文案成功提示的文案成功提示的文案成功提成功提示的文案"
+    type="success"
+    show-icon>
+  </el-alert>
+  <span slot="footer" class="dialog-footer">
+    <el-button @click="dialogVisible0 = false">取 消</el-button>
+    <el-button type="primary" plain @click="dialogVisible0 = false">确 定</el-button>
+  </span>
+</el-dialog>
+
+<script>
+  export default {
+    data() {
+      return {
+        dialogVisible0: false
+      };
+    },
+    methods: {
+      handleClose(done) {
+        this.$confirm('确认关闭？')
+          .then(_ => {
+            done();
+          })
+          .catch(_ => {});
+      }
+    }
+  };
+</script>
+```
+:::
+
+
+### 带拖动的用法
 
 Dialog 弹出一个对话框，适合需要定制性更大的场景。
 
 :::demo 需要设置`visible`属性，它接收`Boolean`，当为`true`时显示 Dialog。Dialog 分为两个部分：`body`和`footer`，`footer`需要具名为`footer`的`slot`。`title`属性用于定义标题，它是可选的，默认值为空。最后，本例还展示了`before-close`的用法。
 
 ```html
-<el-button type="primary" text @click="dialogVisible = true">点击打开 Dialog</el-button>
+<el-button type="primary" text @click="dialogVisible = true">点击打开一个可拖动的 Dialog</el-button>
 
 <el-dialog
   title="提示"
@@ -103,6 +151,7 @@ Dialog 弹出一个对话框，适合需要定制性更大的场景。
   :is-dragable="true"
   :before-close="handleClose"
   ref="myDialog">
+  <span slot="title" class="test3 test4">我是弹窗标题</span>
   <el-alert
     title="成功提示的文案成功提示的文案成功提示的文案成功提示的文案成功提成功提示的文案"
     type="success"
@@ -110,7 +159,7 @@ Dialog 弹出一个对话框，适合需要定制性更大的场景。
   </el-alert>
   <span slot="footer" class="dialog-footer">
     <el-button @click="dialogVisible = false">取 消</el-button>
-    <el-button type="primary" plain @click="dialogVisible = false" @keyup.enter.native="enter" :autofocus="true" id="mybtn">确 定</el-button>
+    <el-button type="primary" plain @click="dialogVisible = false">确 定</el-button>
   </span>
 </el-dialog>
 

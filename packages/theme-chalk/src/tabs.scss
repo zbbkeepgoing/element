@@ -104,7 +104,7 @@
     display: inline-block;
     list-style: none;
     font-size: 14px;
-    color: $--color-text-primary;
+    color: $--color-text-regular;
     position: relative;
 
     &:focus, &:focus:active {
@@ -139,8 +139,8 @@
     }
 
     &:hover {
-      /* color: $--color-primary; */
-      color: $--color-primary-light-2;
+      color: $--color-primary;
+      /* color: $--color-primary-light-2; */
       cursor: pointer;
     }
 
