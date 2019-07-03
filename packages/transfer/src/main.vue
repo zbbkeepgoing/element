@@ -5,7 +5,9 @@
       ref="leftPanel"
       :data="sourceData"
       :title="titles[0] || t('el.transfer.titles.0')"
+      :format="formats[0] || format || {}"
       :default-checked="leftDefaultChecked"
+      :pageSize="pageSizes[0]"
       :placeholder="filterPlaceholder || t('el.transfer.filterPlaceholder')"
       :before-query="beforeQuery"
       @checked-change="onSourceCheckedChange">
@@ -36,7 +38,9 @@
       ref="rightPanel"
       :data="targetData"
       :title="titles[1] || t('el.transfer.titles.1')"
+      :format=" formats[1] || format"
       :default-checked="rightDefaultChecked"
+      :pageSize="pageSizes[1]"
       :placeholder="filterPlaceholder || t('el.transfer.filterPlaceholder')"
       :before-query="beforeQuery"
       @checked-change="onTargetCheckedChange">
@@ -111,6 +115,12 @@
           return {};
         }
       },
+      formats: {
+        type: Array,
+        default() {
+          return [];
+        }
+      },
       filterable: Boolean,
       props: {
         type: Object,
@@ -131,6 +141,16 @@
         default() {
           return () => {};
         }
+      },
+      pageSizes: {
+        type: Array,
+        default() {
+          return [];
+        }
+      },
+      loadMoreText: {
+        type: String,
+        default: 'Load More ...'
       }
     },
 
