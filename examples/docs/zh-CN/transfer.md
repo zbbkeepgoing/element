@@ -12,7 +12,7 @@
     data() {
       const generateData = _ => {
         const data = [];
-        for (let i = 1; i <= 15; i++) {
+        for (let i = 1; i <= 115; i++) {
           data.push({
             key: i,
             label: `备选项 ${ i }`,
@@ -235,10 +235,16 @@
     :render-content="renderFunc"
     :titles="['Source', 'Target']"
     :button-texts="['到左边', '到右边']"
-    :format="{
+    :page-sizes="[10,10]"
+    load-more-text="加载更多"
+    target-order="unshift"
+    :formats="[{
+      noChecked: '总数：${total}',
+      hasChecked: '${checked}/${total}'
+    }, {
       noChecked: '${total}',
       hasChecked: '${checked}/${total}'
-    }"
+    }]"
     @change="handleChange"
     :data="data">
     <el-button class="transfer-footer" slot="left-footer" size="small">操作</el-button>
@@ -258,7 +264,7 @@
     data() {
       const generateData = _ => {
         const data = [];
-        for (let i = 1; i <= 15; i++) {
+        for (let i = 1; i <= 115; i++) {
           data.push({
             key: i,
             label: `备选项 ${ i }`,
@@ -338,11 +344,12 @@
 | button-texts | 自定义按钮文案 | array | — | [ ] |
 | render-content | 自定义数据项渲染函数 | function(h, option) | — | — |
 | format | 列表顶部勾选状态文案 | object{noChecked, hasChecked} | — | { noChecked: '${checked}/${total}', hasChecked: '${checked}/${total}' } |
+| formats | 列表顶部勾选状态文案/分左右两版 | array{noChecked, hasChecked} | — | [{ noChecked: '${checked}/${total}', hasChecked: '${checked}/${total}' }, { noChecked: '${checked}/${total}', hasChecked: '${checked}/${total}' }] |
 | props | 数据源的字段别名 | object{key, label, disabled} | — | — |
 | left-default-checked | 初始状态下左侧列表的已勾选项的 key 数组 | array | — | [ ] |
 | right-default-checked | 初始状态下右侧列表的已勾选项的 key 数组 | array | — | [ ] |
 | before-query | 搜索框异步搜索前，触发的函数 | function(title, query) | — | [ ] |
-
+| page-sizes | 穿梭框分页条数 | array[number, number] | — | [ ] |
 ### Slot
 | name | 说明 |
 |------|--------|

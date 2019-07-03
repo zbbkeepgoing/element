@@ -15,6 +15,7 @@
         class="el-transfer-panel__filter"
         v-model="queryStr"
         size="mini"
+        clearable
         :placeholder="placeholder"
         prefix-icon="el-icon-search"
         @mouseenter.native="inputHover = true"
@@ -33,9 +34,10 @@
           :label="item[keyProp]"
           :disabled="item[disabledProp]"
           :key="item[keyProp]"
-          v-for="item in filteredData">
+          v-for="item in pagedData">
           <option-content :option="item"></option-content>
         </el-checkbox>
+        <div @click="loadMore" v-if="hasMore" class="load-more">{{loadMoreText}}</div>
       </el-checkbox-group>
       <p
         class="el-transfer-panel__empty"
@@ -104,6 +106,8 @@
       filterMethod: Function,
       defaultChecked: Array,
       props: Object,
+      pageSize: Number,
+      loadMoreText: String,
       beforeQuery: {
         type: Function,
         default() {
@@ -120,7 +124,8 @@
         query: '',
         queryStr: '',
         inputHover: false,
-        checkChangeByUser: true
+        checkChangeByUser: true,
+        currentPage: 1
       };
     },
 
@@ -203,11 +208,18 @@
           }
         });
       },
-
+      pagedData() {
+        if (this.pageSize) {
+          return this.filteredData.slice(0, this.currentPage * this.pageSize);
+        }
+        return this.filteredData;
+      },
       checkableData() {
         return this.filteredData.filter(item => !item[this.disabledProp]);
       },
-
+      hasMore() {
+        return this.pagedData.length !== this.filteredData.length;
+      },
       checkedSummary() {
         const checkedLength = this.checked.length;
         const dataLength = this.data.length;
@@ -254,6 +266,9 @@
     },
 
     methods: {
+      loadMore() {
+        this.currentPage++;
+      },
       updateAllChecked() {
         const checkableDataKeys = this.checkableData.map(item => item[this.keyProp]);
         this.allChecked = checkableDataKeys.length > 0 &&
