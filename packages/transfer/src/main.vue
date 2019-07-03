@@ -6,6 +6,7 @@
       :data="sourceData"
       :title="titles[0] || t('el.transfer.titles.0')"
       :format="formats[0] || format || {}"
+      :pageSize="pageSizes[0]"
       :default-checked="leftDefaultChecked"
       :placeholder="filterPlaceholder || t('el.transfer.filterPlaceholder')"
       :before-query="beforeQuery"
@@ -38,6 +39,7 @@
       :data="targetData"
       :format=" formats[1] || format"
       :title="titles[1] || t('el.transfer.titles.1')"
+      :pageSize="pageSizes[1]"
       :default-checked="rightDefaultChecked"
       :placeholder="filterPlaceholder || t('el.transfer.filterPlaceholder')"
       :before-query="beforeQuery"
@@ -139,6 +141,16 @@
         default() {
           return () => {};
         }
+      },
+      pageSizes: {
+        type: Array,
+        default() {
+          return [];
+        }
+      },
+      loadMoreText: {
+        type: String,
+        default: 'Load More ...'
       }
     },
 
