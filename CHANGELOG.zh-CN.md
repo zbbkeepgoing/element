@@ -1,4 +1,8 @@
 ## 更新日志
+### 2.2.0
+*2019-03-11*
+- 添加穿梭框顶部Summary的左右配置参数formats (by 大圣)
+
 ### 2.1.9
 *2019-03-11*
 - refine select tag transition issue (by 夏倩)

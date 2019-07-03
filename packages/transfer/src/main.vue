@@ -5,6 +5,7 @@
       ref="leftPanel"
       :data="sourceData"
       :title="titles[0] || t('el.transfer.titles.0')"
+      :format="formats[0] || format || {}"
       :default-checked="leftDefaultChecked"
       :placeholder="filterPlaceholder || t('el.transfer.filterPlaceholder')"
       :before-query="beforeQuery"
@@ -35,6 +36,7 @@
       v-bind="$props"
       ref="rightPanel"
       :data="targetData"
+      :format=" formats[1] || format"
       :title="titles[1] || t('el.transfer.titles.1')"
       :default-checked="rightDefaultChecked"
       :placeholder="filterPlaceholder || t('el.transfer.filterPlaceholder')"
@@ -109,6 +111,12 @@
         type: Object,
         default() {
           return {};
+        }
+      },
+      formats: {
+        type: Array,
+        default() {
+          return [];
         }
       },
       filterable: Boolean,

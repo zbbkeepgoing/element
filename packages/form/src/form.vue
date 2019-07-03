@@ -10,7 +10,6 @@
   import {
     getScrollableAncestor,
     animationScroll,
-    isErrorElInView,
     createGroupFormValidateInfo,
     destroyGroupFormValidateInfo,
     cleanupGroupFormsValidateInfo,
