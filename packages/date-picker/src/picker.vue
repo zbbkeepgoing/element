@@ -621,6 +621,8 @@ export default {
             this.emitInput(value);
             this.userInput = null;
           }
+        } else { // TODO 暂时先暴力清空
+          this.userInput = '';
         }
       }
       if (this.userInput === '') {
