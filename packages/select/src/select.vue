@@ -115,6 +115,13 @@
             created
             v-if="showNewOption">
           </el-option>
+          <el-option
+            v-for="item in pagedData"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value">
+          </el-option>
+          <div @click="loadMore" v-if="hasMore" class="load-more">{{loadMoreText}}</div>
           <slot></slot>
         </el-scrollbar>
         <p
@@ -177,6 +184,25 @@
     },
 
     computed: {
+      filteredData() {
+        return this.dataForPaper.filter(item => {
+          if (typeof this.filterMethod === 'function') {
+            return this.filterMethod(this.query, item);
+          } else {
+            const label = item.label || item.value.toString();
+            return label.toLowerCase().indexOf(this.query.toLowerCase()) > -1;
+          }
+        });
+      },
+      pagedData() {
+        if (this.pageSize) {
+          return this.filteredData.slice(0, this.currentPage * this.pageSize);
+        }
+        return this.filteredData;
+      },
+      hasMore() {
+        return this.pagedData.length < this.filteredData.length;
+      },
       _elFormItemSize() {
         return (this.elFormItem || {}).elFormItemSize;
       },
@@ -291,6 +317,18 @@
       popperAppendToBody: {
         type: Boolean,
         default: true
+      },
+      dataForPaper: {
+        type: Array,
+        default: () => []
+      },
+      pageSize: {
+        type: Number,
+        default: 50
+      },
+      loadMoreText: {
+        type: String,
+        default: '-'
       }
     },
 
@@ -314,7 +352,8 @@
         previousQuery: null,
         inputHovering: false,
         currentPlaceholder: '',
-        ST: null
+        ST: null,
+        currentPage: 1
       };
     },
 
@@ -376,6 +415,7 @@
                 this.selectedLabel = this.selected.currentLabel;
               }
               if (this.filterable) this.query = this.selectedLabel;
+              if (this.filterable && this.dataForPaper.length) this.query = '';
             }
           }
         } else {
@@ -383,6 +423,7 @@
           this.broadcast('ElSelectDropdown', 'updatePopper');
           if (this.filterable) {
             this.query = this.remote ? '' : this.selectedLabel;
+            if (this.dataForPaper.length) this.query = '';
             this.handleQueryChange(this.query);
             if (this.multiple) {
               this.$refs.input.focus();
@@ -420,6 +461,9 @@
     },
 
     methods: {
+      loadMore() {
+        this.currentPage++;
+      },
       handleQueryChange(val) {
         if (this.previousQuery === val) return;
         if (
@@ -430,6 +474,7 @@
           return;
         }
         this.previousQuery = val;
+        this.currentPage = 1;
         this.$nextTick(() => {
           if (this.visible) this.broadcast('ElSelectDropdown', 'updatePopper');
         });
@@ -528,6 +573,7 @@
           this.selectedLabel = option.currentLabel;
           this.selected = option;
           if (this.filterable) this.query = this.selectedLabel;
+          if (this.filterable && this.dataForPaper.length) this.query = '';
           return;
         }
         let result = [];

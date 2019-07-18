@@ -3,6 +3,7 @@
     data() {
       return {
         list: null,
+        options123: [],
         options: [{
           value: '选项1',
           label: '黄金糕'
@@ -20,79 +21,79 @@
           label: '北京烤鸭'
         }, {
           value: '选项6',
-          label: '黄金糕'
+          label: '黄金糕1'
         }, {
           value: '选项7',
-          label: '双皮奶'
+          label: '双皮奶1'
         }, {
           value: '选项8',
-          label: '蚵仔煎'
+          label: '蚵仔煎1'
         }, {
           value: '选项9',
-          label: '龙须面'
+          label: '龙须面1'
         }, {
           value: '选项10',
-          label: '北京烤鸭'
+          label: '北京烤鸭1'
         }, {
           value: '选项11',
-          label: '黄金糕'
+          label: '黄金糕2'
         }, {
           value: '选项12',
-          label: '双皮奶'
+          label: '双皮奶2'
         }, {
           value: '选项13',
-          label: '蚵仔煎'
+          label: '蚵仔煎2'
         }, {
           value: '选项14',
-          label: '龙须面'
+          label: '龙须面2'
         }, {
           value: '选项15',
-          label: '北京烤鸭'
+          label: '北京烤鸭2'
         }, {
           value: '选项16',
-          label: '黄金糕'
+          label: '黄金糕3'
         }, {
           value: '选项17',
-          label: '双皮奶'
+          label: '双皮奶3'
         }, {
           value: '选项18',
-          label: '蚵仔煎'
+          label: '蚵仔煎3'
         }, {
           value: '选项19',
-          label: '龙须面'
+          label: '龙须面3'
         }, {
           value: '选项20',
-          label: '北京烤鸭'
+          label: '北京烤鸭3'
         }, {
           value: '选项21',
-          label: '黄金糕'
+          label: '黄金糕4'
         }, {
           value: '选项22',
-          label: '双皮奶'
+          label: '双皮奶4'
         }, {
           value: '选项23',
-          label: '蚵仔煎'
+          label: '蚵仔煎4'
         }, {
           value: '选项24',
-          label: '龙须面'
+          label: '龙须面4'
         }, {
           value: '选项25',
-          label: '北京烤鸭'
+          label: '北京烤鸭4'
         }, {
           value: '选项26',
-          label: '黄金糕'
+          label: '黄金糕5'
         }, {
           value: '选项27',
-          label: '双皮奶'
+          label: '双皮奶5'
         }, {
           value: '选项28',
-          label: '蚵仔煎'
+          label: '蚵仔煎5'
         }, {
           value: '选项29',
-          label: '龙须面'
+          label: '龙须面5'
         }, {
           value: '选项30',
-          label: '北京烤鸭'
+          label: '北京烤鸭5'
         }],
         options2: [{
           value: '选项1',
@@ -191,6 +192,9 @@
       setTimeout(() => {
         this.value5 = ['选项1', '选项2', '选项3', '选项4', '选项5', '选项6', '选项7', '选项8', '选项9', '选项10', '选项11', '选项12', '选项13', '选项14', '选项15', '选项16', '选项17', '选项18', '选项19', '选项10', '选项21', '选项22', '选项23', '选项24', '选项25', '选项26', '选项27', '选项28', '选项29', '选项30']
       }, 0)
+      for (let i = 0; i <= 1000; i++) {
+        this.options123.push({value: 'aaa' + i + 1})
+      }
     },
 
     methods: {
@@ -628,13 +632,14 @@ select和radio、checkbox一样，选中值和下拉选项中的值是===比较�
 :::demo 为`el-select`添加`filterable`属性即可启用搜索功能。默认情况下，Select 会找出所有`label`属性包含输入值的选项。如果希望使用其他的搜索逻辑，可以通过传入一个`filter-method`来实现。`filter-method`为一个`Function`，它会在输入值发生变化时调用，参数为当前输入值。
 ```html
 <template>
-  <el-select v-model="value8" size="small" filterable placeholder="请选择">
-    <el-option
-      v-for="item in options"
+  <el-select v-model="value8" size="small" filterable placeholder="请选择" :data-for-paper="options123" :page-size="5" load-more-text="加载更多">
+    <!-- <i slot="prefix" class="el-input__icon el-icon-search"></i> -->
+    <!-- <el-option
+      v-for="item in options123"
       :key="item.value"
       :label="item.label"
       :value="item.value">
-    </el-option>
+    </el-option> -->
   </el-select>
 </template>
 
@@ -816,6 +821,9 @@ select和radio、checkbox一样，选中值和下拉选项中的值是===比较�
 | reserve-keyword | 多选且可搜索时，是否在选中一个选项后保留当前的搜索关键词 | boolean | — | false |
 | default-first-option | 在输入框按下回车，选择第一个匹配项。需配合 `filterable` 或 `remote` 使用 | boolean | - | false |
 | popper-append-to-body | 是否将弹出框插入至 body 元素。在弹出框的定位出现问题时，可将该属性设置为 false | boolean | - | true |
+| data-for-paper | 是否支持分页加载数据属性 | array | 可选项的数据 | [] |
+| page-size | 分页加载，每页加载option条数 | number | - | 50 |
+| load-more-text | 加载更多的提示文案 | String | 加载更多 | - |
 
 ### Select Events
 | 事件名称 | 说明 | 回调参数 |
