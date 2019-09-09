@@ -1,9 +1,12 @@
 ## 更新日志
+### 3.4.4
+*2019-09-09*
+- tree 组件空态时文字颜色修正（by 春燕）
+
 ### 3.4.3
 *2019-06-15*
 - 添加穿梭框顶部Summary的左右配置参数formats (by 大圣)
 - 添加穿梭框分页配置page-sizes和load-more-text设置解决大数据量一次加载页面崩溃问题 (by 大圣)
-*2019-07-18*
 - date-picker 输入框中输入不符合格式的日期时，清空model中的值 (by 春燕)
 - 添加select分页配置data-for-paper、page-sizes和load-more-text设置解决大数据量一次加载页面崩溃问题 (by 夏倩)
 
