@@ -107,6 +107,7 @@
       defaultChecked: Array,
       props: Object,
       pageSize: Number,
+      totalElement: Number,
       loadMoreText: String,
       beforeQuery: {
         type: Function,
@@ -222,7 +223,7 @@
       },
       checkedSummary() {
         const checkedLength = this.checked.length;
-        const dataLength = this.data.length;
+        const dataLength = this.totalElement || this.data.length;
         const { noChecked, hasChecked } = this.format;
         if (noChecked && hasChecked) {
           return checkedLength > 0
