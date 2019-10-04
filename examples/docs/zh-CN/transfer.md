@@ -127,7 +127,7 @@
     :filter-method="filterMethod"
     filter-placeholder="请输入城市拼音"
     v-model="value2"
-    :data="data2">
+    :data="data2" :total-elements="[1400, 1500]">
   </el-transfer>
 </template>
 
@@ -350,6 +350,7 @@
 | right-default-checked | 初始状态下右侧列表的已勾选项的 key 数组 | array | — | [ ] |
 | before-query | 搜索框异步搜索前，触发的函数 | function(title, query) | — | [ ] |
 | page-sizes | 穿梭框分页条数 | array[number, number] | — | [ ] |
+| total-elements | 自定义穿梭框总条数 | array[number, number] | — | [ ] |
 ### Slot
 | name | 说明 |
 |------|--------|

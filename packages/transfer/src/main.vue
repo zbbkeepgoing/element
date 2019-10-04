@@ -8,6 +8,7 @@
       :format="formats[0] || format || {}"
       :default-checked="leftDefaultChecked"
       :pageSize="pageSizes[0]"
+      :totalElement="totalElements[0]"
       :placeholder="filterPlaceholder || t('el.transfer.filterPlaceholder')"
       :before-query="beforeQuery"
       @checked-change="onSourceCheckedChange">
@@ -41,6 +42,7 @@
       :format=" formats[1] || format"
       :default-checked="rightDefaultChecked"
       :pageSize="pageSizes[1]"
+      :totalElement="totalElements[1]"
       :placeholder="filterPlaceholder || t('el.transfer.filterPlaceholder')"
       :before-query="beforeQuery"
       @checked-change="onTargetCheckedChange">
@@ -143,6 +145,12 @@
         }
       },
       pageSizes: {
+        type: Array,
+        default() {
+          return [];
+        }
+      },
+      totalElements: {
         type: Array,
         default() {
           return [];
