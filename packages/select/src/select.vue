@@ -47,7 +47,7 @@
         :autocomplete="autoComplete"
         @focus="handleFocus"
         @click.stop
-        :clearable="clearable"
+        :clearable="false"
         @keyup="managePlaceholder"
         @keydown="resetInputState"
         @keydown.down.prevent="navigateOptions('next')"
@@ -69,7 +69,7 @@
       :placeholder="currentPlaceholder"
       :name="name"
       :id="id"
-      :clearable="clearable"
+      :clearable="false"
       :auto-complete="autoComplete"
       :size="selectSize"
       :disabled="selectDisabled"
