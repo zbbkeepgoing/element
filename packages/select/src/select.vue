@@ -329,6 +329,10 @@
       loadMoreText: {
         type: String,
         default: '-'
+      },
+      duplicateRemove: {
+        type: Boolean,
+        default: false
       }
     },
 
@@ -695,7 +699,10 @@
           const value = this.value.slice();
           const optionIndex = this.getValueIndex(value, option.value);
           if (optionIndex > -1) {
-            value.splice(optionIndex, 1);
+            // 新加一个属性，如果创建标签时，带了去重标签，就不做任何处理
+            if (!this.duplicateRemove) {
+              value.splice(optionIndex, 1);
+            }
           } else if (this.multipleLimit <= 0 || value.length < this.multipleLimit) {
             value.push(option.value);
           }

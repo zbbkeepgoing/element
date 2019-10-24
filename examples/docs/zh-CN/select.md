@@ -178,6 +178,7 @@
         value8: '',
         value9: '',
         value10: [],
+        duplicateValue: [],
         value11: [],
         loading: false,
         states: ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
@@ -750,12 +751,29 @@ select和radio、checkbox一样，选中值和下拉选项中的值是===比较�
 
 ### 创建条目
 可以创建并选中选项中不存在的条目
-:::demo 使用`allow-create`属性即可通过在输入框中输入文字来创建新的条目。注意此时`filterable`必须为真。本例还使用了`default-first-option`属性，在该属性打开的情况下，按下回车就可以选中当前选项列表中的第一个选项，无需使用鼠标或键盘方向键进行定位。
+:::demo 使用`allow-create`属性即可通过在输入框中输入文字来创建新的条目。注意此时`filterable`必须为真。本例还使用了`default-first-option`属性，在该属性打开的情况下，按下回车就可以选中当前选项列表中的第一个选项，无需使用鼠标或键盘方向键进行定位。duplicate-remove 属于业务场景特殊需要属性，输入时，去重留一处理，tag中已经存在，就不再创建
 ```html
 <template>
   <el-select
     v-model="value10"
     multiple
+    filterable
+    allow-create
+    default-first-option
+    placeholder="请选择文章标签">
+    <el-option
+      v-for="item in options5"
+      :key="item.value"
+      :label="item.label"
+      :value="item.value">
+    </el-option>
+  </el-select>
+  
+  <p>去重留一</p>
+  <el-select
+    v-model="duplicateValue"
+    multiple
+    :duplicate-remove="true"
     filterable
     allow-create
     default-first-option
@@ -824,6 +842,8 @@ select和radio、checkbox一样，选中值和下拉选项中的值是===比较�
 | data-for-paper | 是否支持分页加载数据属性 | array | 可选项的数据 | [] |
 | page-size | 分页加载，每页加载option条数 | number | - | 50 |
 | load-more-text | 加载更多的提示文案 | String | 加载更多 | - |
+| duplicate-remove | 配置是否去重创建标签，默认 false，多次输入重复时，奇数次加入，偶数次取消创建 | Boolean | false | - |
+
 
 ### Select Events
 | 事件名称 | 说明 | 回调参数 |
