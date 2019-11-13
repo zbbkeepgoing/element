@@ -37,8 +37,8 @@
           v-for="item in pagedData">
           <option-content :option="item"></option-content>
         </el-checkbox>
-        <slot name="left-panel-bottom_content"></slot>
-        <slot name="right-panel-bottom_content"></slot>
+        <slot name="left-remote-load-more"></slot>
+        <slot name="right-remote-load-more"></slot>
         <div @click="loadMore" v-if="hasMore" class="load-more">{{loadMoreText}}</div>
       </el-checkbox-group>
       <p

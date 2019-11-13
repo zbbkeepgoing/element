@@ -45,14 +45,29 @@
         }
         return data;
       };
+      const generateData4 = _ => {
+        const data = [];
+        for (let i = 1; i <= 20; i++) {
+          data.push({
+            key: i,
+            label: `备选项 ${ i }`,
+            disabled: false
+          });
+        }
+        return data;
+      };
       return {
+        initRemoteTotal: 200,
+        remoteTotal: [200],
         data: generateData(),
         data2: generateData2(),
         data3: generateData3(),
+        dataRemote: generateData4(),
         value1: [1, 4],
         value2: [],
         value3: [1],
         value4: [],
+        valueRemote: [],
         filterMethod(query, item) {
           return item.pinyin.indexOf(query) > -1;
         },
@@ -60,6 +75,12 @@
           return <span>{ option.key } - { option.label }</span>;
         }
       };
+    },
+
+    computed: {
+      leftHasMore () {
+        return this.remoteTotal[0] > this.dataRemote.length
+      }
     },
 
     methods: {
@@ -77,6 +98,27 @@
         if(title === '列表 1') {
           return this.requestApi(`/api/cities?name=${query}&limit=10&offset=1`);
         }
+      },
+      loadMoreFormRemote () {
+        // 模拟数据追加
+        let arr = [];
+        for (let i = 1; i <=20; i++) {
+          let item = {
+            key: this.dataRemote.length + i,
+            label: 'xxx' + i,
+            disabled: false
+          }
+          arr.push(item);
+        }
+        this.dataRemote = this.dataRemote.concat(arr);
+      },
+      handleChangeRemote (value, direc, movedKeys) {
+        // 每次数据左右挪的时候，需要动态变化左侧的总量数字
+        this.remoteTotal = [this.initRemoteTotal - value.length];
+        // 当前总的取回来的数据个数在左侧剩的只有8个了，就自动加载下一页
+        if (this.dataRemote.length - this.valueRemote.length < 8 && this.dataRemote.length < this.initRemoteTotal) {
+          this.loadMoreFormRemote()
+        }
       }
     }
   };
@@ -88,7 +130,8 @@
 :::demo Transfer 的数据通过 `data` 属性传入。数据需要是一个对象数组，每个对象有以下属性：`key` 为数据的唯一性标识，`label` 为显示文本，`disabled` 表示该项数据是否禁止转移。目标列表中的数据项会同步到绑定至 `v-model` 的变量，值为数据项的 `key` 所组成的数组。当然，如果希望在初始状态时目标列表不为空，可以像本例一样为 `v-model` 绑定的变量赋予一个初始值。
 ```html
 <template>
-  <el-transfer v-model="value1" :data="data"></el-transfer>
+  <el-transfer v-model="value1" :data="data">
+  </el-transfer>
 </template>
 
 <script>
@@ -114,6 +157,65 @@
 </script>
 ```
 :::
+
+### 加载更多，远端分页
+:::demo Transfer 的数据通过 `data` 属性传入。接口分页数据是ajax 回来，全量的那个分页不适合，这时候可以用 `left-remote-load-more` 作为 slot 传入，自主外部控制分页逻辑
+```html
+<template>
+  <el-transfer v-model="valueRemote" :data="dataRemote" :total-elements="remoteTotal" @change="handleChangeRemote">
+    <div v-show="leftHasMore" @click="loadMoreFormRemote" class="load-more" slot="left-remote-load-more">加载更多</div>
+  </el-transfer>
+</template>
+
+<script>
+  export default {
+    data() {
+      const generateData = _ => {
+        const data = [];
+        for (let i = 1; i <= 20; i++) {
+          data.push({
+            key: i,
+            label: `备选项 ${ i }`,
+            disabled: false
+          });
+        }
+        return data;
+      };
+      return {
+        initRemoteTotal: 200,
+        remoteTotal: [200],
+        dataRemote: generateData(),
+        valueRemote: []
+      };
+    },
+    methods: {
+      loadMoreFormRemote () {
+        // 模拟数据追加
+        let arr = [];
+        for (let i = 1; i <=20; i++) {
+          let item = {
+            key: this.dataRemote.length + i,
+            label: 'xxx' + i,
+            disabled: false
+          }
+          arr.push(item);
+        }
+        this.dataRemote = this.dataRemote.concat(arr);
+      },
+      handleChangeRemote (value, direc, movedKeys) {
+        // 每次数据左右挪的时候，需要动态变化左侧的总量数字
+        this.remoteTotal = [this.initRemoteTotal - value.length];
+        // 当前总的取回来的数据个数在左侧剩的只有8个了，就自动加载下一页
+        if (this.dataRemote.length - this.valueRemote.length < 8 && this.dataRemote.length < this.initRemoteTotal) {
+          this.loadMoreFormRemote()
+        }
+      }
+    }
+  };
+</script>
+```
+:::
+
 
 ### 可搜索
 
@@ -356,8 +458,8 @@
 |------|--------|
 | left-footer | 左侧列表底部的内容 |
 | right-footer | 右侧列表底部的内容 |
-| left-panel-bottom_content | 左侧备选项底部内容 |
-| right-panel-bottom_content | 右侧备选项底部内容 |
+| left-remote-load-more | 左侧列表异步分页的按钮位置 |
+| right-remote-load-more | 右侧列表异步分页的按钮位置 |
 
 ### Methods
 | 方法名 | 说明 | 参数 |
