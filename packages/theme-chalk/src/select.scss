@@ -110,8 +110,11 @@
     line-height: normal;
     white-space: normal;
     z-index: $--index-normal;
-    top: 50%;
-    transform: translateY(-50%);
+    /* top: 50%;
+    transform: translateY(-50%); */
+    /* 缩放屏幕比例时，会出现抖动，所以这里置为0 */
+    top: 0;
+    transform: translateY(0);
     display: flex;
     align-items: center;
     flex-wrap: wrap;
