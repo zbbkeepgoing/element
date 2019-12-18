@@ -370,6 +370,7 @@
   }
 }
 
+/* 纯icon 无边框 按钮的 ui */
 .el-button-only-icon{
   color: $--button-icon-btn;
   font-size: $--font-size-medium;
@@ -387,6 +388,31 @@
     &:hover {
       color: $--button-disabled-color;
       cursor: not-allowed;
+    }
+  }
+}
+
+/* 中英文切换按钮的特殊样式 */
+.switch-button-group{
+  .el-button{
+    &.el-button--default{
+      border: 1px solid $--border-color-base;
+      min-width: 60px;
+      color: $--color-info;
+      &.el-button--mini,
+      &.el-button--small{
+        min-width: 42px;
+      }
+      &:hover{
+        color: $--color-primary-light-2;
+        background-color: $--color-white;
+      }
+      &.active{
+        background: $--background-color-base;
+        color: $--color-info;
+        cursor: not-allowed;
+        box-shadow: inset 1px 1px 2px 0 $--border-color-base;
+      }
     }
   }
 }
