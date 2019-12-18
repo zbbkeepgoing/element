@@ -266,6 +266,7 @@ export default {
           <span class="el-pagination__jump">
             { this.t('el.pagination.goto') }
             <el-input
+              clearable={ false }
               class="el-pagination__editor is-in-pagination"
               min={ 1 }
               max={ this.$parent.internalPageCount }
