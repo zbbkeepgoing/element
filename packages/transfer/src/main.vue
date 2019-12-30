@@ -11,7 +11,6 @@
       :totalElement="totalElements[0]"
       :placeholder="filterPlaceholder || t('el.transfer.filterPlaceholder')"
       :before-query="beforeQuery"
-      :show-overflow-tip="showOverflowTip"
       @checked-change="onSourceCheckedChange">
       <template slot="left-remote-load-more"><slot name="left-remote-load-more"></slot></template>
       <template slot="left-footer"><slot name="left-footer"></slot></template>
@@ -47,7 +46,6 @@
       :totalElement="totalElements[1]"
       :placeholder="filterPlaceholder || t('el.transfer.filterPlaceholder')"
       :before-query="beforeQuery"
-      :show-overflow-tip="showOverflowTip"
       @checked-change="onTargetCheckedChange">
       <template slot="right-remote-load-more"><slot name="right-remote-load-more"></slot></template>
       <template slot="right-footer"><slot name="right-footer"></slot></template>
@@ -163,10 +161,6 @@
       loadMoreText: {
         type: String,
         default: 'Load More ...'
-      },
-      showOverflowTip: {
-        type: Boolean,
-        default: false
       }
     },
 
