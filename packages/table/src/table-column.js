@@ -186,7 +186,8 @@ export default {
       default: true
     },
     index: [Number, Function],
-    filterIcon: String
+    filterIcon: String,
+    filterPanelTop: Number
   },
 
   data() {
@@ -275,7 +276,8 @@ export default {
       filterPlacement: this.filterPlacement || '',
       index: this.index,
       showMultipleFooter: this.showMultipleFooter,
-      filterIcon: this.filterIcon || ''
+      filterIcon: this.filterIcon || '',
+      filterPanelTop: this.filterPanelTop
     });
 
     objectAssign(column, forced[type] || {});
