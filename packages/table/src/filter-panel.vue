@@ -20,6 +20,7 @@
     <div class="el-table-filter" v-else v-show="showPopper">
       <ul class="el-table-filter__list">
         <li class="el-table-filter__list-item"
+            v-if="showAllSelectOption"
             :class="{ 'is-active': filterValue === undefined || filterValue === null }"
             @click="handleSelect(null)">{{ t('el.table.clearFilter') }}</li>
         <li class="el-table-filter__list-item"
@@ -101,12 +102,21 @@
       },
 
       handleSelect(filterValue) {
-        this.filterValue = filterValue;
-
-        if ((typeof filterValue !== 'undefined') && (filterValue !== null)) {
-          this.confirmFilter(this.filteredValue);
+        if (!this.showAllSelectOption && typeof this.filterChange === 'function') {
+          const isActive = this.isActive({value: filterValue});
+          if (isActive) {
+            this.filteredValue.splice(0, 1);
+          } else {
+            this.filteredValue.splice(0, 1, filterValue);
+          }
+          this.filterChange(this.filteredValue);
         } else {
-          this.confirmFilter([]);
+          this.filterValue = filterValue;
+          if ((typeof filterValue !== 'undefined') && (filterValue !== null)) {
+            this.confirmFilter(this.filteredValue);
+          } else {
+            this.confirmFilter([]);
+          }
         }
 
         this.handleOutsideClick();

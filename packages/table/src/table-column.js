@@ -186,7 +186,11 @@ export default {
       default: true
     },
     index: [Number, Function],
-    filterIcon: String
+    filterIcon: String,
+    showAllSelectOption: {
+      type: Boolean,
+      default: true
+    }
   },
 
   data() {
@@ -275,7 +279,8 @@ export default {
       filterPlacement: this.filterPlacement || '',
       index: this.index,
       showMultipleFooter: this.showMultipleFooter,
-      filterIcon: this.filterIcon || ''
+      filterIcon: this.filterIcon || '',
+      showAllSelectOption: this.showAllSelectOption
     });
 
     objectAssign(column, forced[type] || {});

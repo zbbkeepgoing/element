@@ -300,6 +300,7 @@
       },
 
       filterTag(value) {
+        console.log(value)
         this.filterTags = value
       },
 
@@ -1482,7 +1483,8 @@
       label="标签"
       width="100"
       :filters="[{ text: '家', value: '家', icon: 'el-icon-warning' }, { text: '公司', value: '公司' }]"
-      :show-multiple-footer="false"
+      :filter-multiple="false"
+      :show-all-select-option="false"
       :filter-change="filterTag"
       :filtered-value="filterTags"
       filter-placement="bottom-end">
@@ -2196,3 +2198,4 @@
 | show-multiple-footer | 是否显示复选列表底部筛选和重置按钮。 | Boolean | - | true |
 | filter-change | 复选内容更改时的返回数据, 当`show-multiple-footer`为false时可以使用。 | Function | - | - |
 | filter-icon | 筛选自定义icon。 | String | - | - |
+| show-all-select-option | 是否显示`全部`筛选项（筛选数据为单选时该字段可用），如为false可以通过`filter-change`函数获取筛选值。 ｜ Boolean | - | true |
