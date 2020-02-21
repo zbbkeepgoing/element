@@ -105,7 +105,7 @@
 
   @include e(closebtn) {
     font-size: $--alert-close-font-size;
-    color: $--color-text-placeholder;
+    color: $--color-info;
     opacity: 1;
     position: absolute;
     top: 12px;
