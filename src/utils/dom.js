@@ -172,3 +172,23 @@ export function setStyle(element, styleName, value) {
     }
   }
 };
+
+export function isFocusFromTab(event, parentNode) {
+  const hasRelatedTarget = event.relatedTarget;
+  if (hasRelatedTarget) {
+    return !getParents(event.relatedTarget).includes(parentNode);
+  }
+  return false;
+}
+
+export function getParents(el) {
+  let currentEl = el;
+  const parents = [];
+  while (currentEl.parentNode && currentEl.nodeType !== 9) {
+    currentEl = currentEl.parentNode;
+    if (currentEl.nodeType === 1) {
+      parents.push(currentEl);
+    }
+  }
+  return parents;
+}

@@ -1,6 +1,6 @@
 {
   "name": "kyligence-ui",
-  "version": "3.5.6",
+  "version": "3.5.8",
   "description": "powered by kyligence-ui",
   "main": "lib/kyligence-ui.common.js",
   "files": [
@@ -20,6 +20,7 @@
     "deploy": "npm run deploy:build && gh-pages -d examples/kyligence-ui --remote eleme && del examples/kyligence-ui",
     "deploy:build": "npm run build:file && cooking build -c build/cooking.demo.js -p && echo element.eleme.io>>examples/kyligence-ui/CNAME",
     "dev": "npm run bootstrap && npm run build:file && cooking watch -c build/cooking.demo.js -p & node build/bin/template.js",
+    "start": "npm run build:file && cooking watch -c build/cooking.demo.js -p & node build/bin/template.js",
     "dev:play": "npm run build:file && cross-env PLAY_ENV=true cooking watch -c build/cooking.demo.js -p",
     "dist": "npm run clean && npm run build:file && npm run lint && cooking build -c build/cooking.conf.js,build/cooking.common.js,build/cooking.component.js -p && npm run build:utils && npm run build:umd && npm run build:theme",
     "dist:all": "node build/bin/build-all.js && npm run build:theme",

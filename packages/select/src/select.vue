@@ -1,6 +1,7 @@
 <template>
   <div
     class="el-select"
+    ref="$root"
     :class="[selectSize ? 'el-select--' + selectSize : '']"
     @click.stop="toggleMenu"
     v-clickoutside="handleClose">
@@ -45,9 +46,8 @@
         :class="[selectSize ? `is-${ selectSize }` : '']"
         :disabled="selectDisabled"
         :autocomplete="autoComplete"
-        @focus="handleFocus"
-        @click.stop
         :clearable="false"
+        @focus="handleFocus"
         @keyup="managePlaceholder"
         @keydown="resetInputState"
         @keydown.down.prevent="navigateOptions('next')"
@@ -55,6 +55,7 @@
         @keydown.enter.prevent="selectOption"
         @keydown.esc.stop.prevent="visible = false"
         @keydown.delete="deletePrevTag"
+        @keydown.tab="visible = false"
         v-model="query"
         @input="e => handleQueryChange(e.target.value)"
         :debounce="remote ? 300 : 0"
@@ -356,6 +357,7 @@
         previousQuery: null,
         inputHovering: false,
         currentPlaceholder: '',
+        menuVisibleOnFocus: false,
         ST: null,
         currentPage: 1
       };
@@ -402,6 +404,7 @@
           this.previousQuery = null;
           this.selectedLabel = '';
           this.inputLength = 20;
+          this.menuVisibleOnFocus = false;
           this.resetHoverIndex();
           this.$nextTick(() => {
             if (this.$refs.input &&
@@ -594,6 +597,12 @@
 
       handleFocus(event) {
         if (!this.softFocus) {
+          if (this.automaticDropdown || this.filterable) {
+            this.visible = true;
+            if (this.filterable) {
+              this.menuVisibleOnFocus = true;
+            }
+          }
           this.$emit('focus', event);
         } else {
           this.softFocus = false;
@@ -751,7 +760,11 @@
 
       toggleMenu() {
         if (!this.selectDisabled) {
-          this.visible = !this.visible;
+          if (this.menuVisibleOnFocus) {
+            this.menuVisibleOnFocus = false;
+          } else {
+            this.visible = !this.visible;
+          }
           if (this.visible) {
             (this.$refs.input || this.$refs.reference).focus();
           }
