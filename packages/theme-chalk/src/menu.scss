@@ -14,6 +14,7 @@
   transition: border-color .3s, background-color .3s, color .3s;
   box-sizing: border-box;
   white-space: nowrap;
+  font-weight: 500;
 
   * {
     vertical-align: middle;
@@ -198,7 +199,7 @@
     vertical-align: middle;
   }
   @include when(active) {
-    color: $--color-primary;
+    color: $--color-white;
     i {
       color: inherit;
     }

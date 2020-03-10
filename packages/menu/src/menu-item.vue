@@ -54,6 +54,7 @@
       active() {
         let isActive = this.index === this.rootMenu.activeIndex;
         if (this.$el) {
+          // this.$el.style.backgroundColor = this.rootMenu.activeSubBackgroundColor;
           if (!isActive) {
             this.$el.style.backgroundColor = this.isNested ? this.rootMenu.subBackgroundColor : this.rootMenu.backgroundColor;
             this.$el.style.color = this.rootMenu.textColor;
@@ -65,7 +66,11 @@
         return this.rootMenu.hoverBackgroundColor;
       },
       backgroundColor() {
-        return this.isNested ? this.rootMenu.subBackgroundColor : this.rootMenu.backgroundColor;
+        if (this.active) {
+          return this.rootMenu.activeSubBackgroundColor
+        } else {
+          return this.isNested ? this.rootMenu.subBackgroundColor : this.rootMenu.backgroundColor;
+        }
       },
       activeTextColor() {
         return this.rootMenu.activeTextColor || '';
@@ -94,14 +99,14 @@
     methods: {
       onMouseEnter() {
         if (this.mode === 'horizontal' && !this.rootMenu.backgroundColor) return;
-        this.$el.style.backgroundColor = this.rootMenu.activeSubBackgroundColor;
+        this.$el.style.backgroundColor = this.rootMenu.hoverBackgroundColor;
         if (!this.active) {
           this.$el.style.color = this.rootMenu.hoverTextColor;
         }
       },
       onMouseLeave() {
         if (this.mode === 'horizontal' && !this.rootMenu.backgroundColor) return;
-        // this.$el.style.backgroundColor = this.backgroundColor;
+        this.$el.style.backgroundColor = this.rootMenu.activeSubBackgroundColor;
         if (!this.active) {
           this.$el.style.backgroundColor = this.isNested ? this.rootMenu.subBackgroundColor : this.rootMenu.backgroundColor;
           this.$el.style.color = this.rootMenu.textColor;
