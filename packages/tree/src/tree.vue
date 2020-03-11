@@ -82,7 +82,7 @@
       defaultExpandedKeys: Array,
       renderContent: Function,
       showCheckbox: {
-        type: Boolean,
+        type: [Boolean, Function],
         default: false
       },
       props: {

@@ -29,7 +29,7 @@
       </span>
       <el-tooltip  placement="top" ref="tooltip" :content="tooltipContent"></el-tooltip>
       <el-checkbox
-        v-if="showCheckbox"
+        v-if="getShowCheckbox(node)"
         v-model="node.checked"
         :indeterminate="node.indeterminate"
         :disabled="!!node.disabled"
@@ -125,7 +125,6 @@
         tree: null,
         expanded: false,
         childNodeRendered: false,
-        showCheckbox: false,
         oldChecked: null,
         oldIndeterminate: null,
         tooltipContent:'',
@@ -151,6 +150,10 @@
     },
 
     methods: {
+      getShowCheckbox(node) {
+        const showCheckbox = this.tree.showCheckbox;
+        return typeof showCheckbox === 'function' ? showCheckbox(node.data, node) : showCheckbox;
+      },
       getNodeKey(node) {
         return getNodeKey(this.tree.nodeKey, node.data);
       },
@@ -259,8 +262,6 @@
       this.$watch(`node.data.${childrenKey}`, () => {
         this.node.updateChildren();
       });
-
-      this.showCheckbox = tree.showCheckbox;
 
       if (this.node.expanded) {
         this.expanded = true;
