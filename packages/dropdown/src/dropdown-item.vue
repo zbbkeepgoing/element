@@ -28,6 +28,7 @@
 
     methods: {
       handleClick(e) {
+        this.$emit('click', this.command, e);
         this.dispatch('ElDropdown', 'menu-item-click', [this.command, this]);
       }
     }
