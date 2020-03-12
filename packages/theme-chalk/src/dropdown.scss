@@ -20,7 +20,9 @@
     padding-left: 5px;
     padding-right: 5px;
     position: relative;
-    border-left: none;
+    &:not(.is-plain) {
+      border-left: none;
+    }
 
     &::before {
       $gap: 5px;
