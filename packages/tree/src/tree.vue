@@ -177,6 +177,18 @@
         const currentNode = this.getCurrentNode();
         return currentNode ? currentNode[this.nodeKey] : null;
       },
+      getAllNodes() {
+        if (this.nodeKey) {
+          return this._getAllNodes();
+        } else {
+          const getAllNodes = (childNodes = []) => {
+            return childNodes.reduce((allNodes, childNode) => {
+              return [...allNodes, childNode, ...getAllNodes(childNode.childNodes)];
+            }, []);
+          };
+          return getAllNodes(this.root.childNodes);
+        }
+      },
       setCheckedNodes(nodes, leafOnly) {
         if (!this.nodeKey) throw new Error('[Tree] nodeKey is required in setCheckedNodes');
         this.store.setCheckedNodes(nodes, leafOnly);
