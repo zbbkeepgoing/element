@@ -179,7 +179,7 @@
       },
       getAllNodes() {
         if (this.nodeKey) {
-          return this._getAllNodes();
+          return this.store._getAllNodes();
         } else {
           const getAllNodes = (childNodes = []) => {
             return childNodes.reduce((allNodes, childNode) => {
