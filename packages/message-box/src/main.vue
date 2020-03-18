@@ -63,6 +63,7 @@
             v-show="showConfirmButton"
             :round="roundButton"
             size="medium"
+            type="primary"
             @click.native="handleAction('confirm')"
             @keydown.enter="handleAction('confirm')"
           >
