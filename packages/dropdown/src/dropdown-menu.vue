@@ -26,7 +26,7 @@
       },
       popperContainer: {
         type: String,
-        default: 'body' // 默认是 body
+        default: '' // 默认空串，如果 appendToBody 为false，那么就直接插入到目标元素之后
       }
     },
 

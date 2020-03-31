@@ -359,7 +359,7 @@ Dropdown 组件提供除了默认值以外的三种尺寸，可以在不同场�
 | 参数          | 说明            | 类型            | 可选值                 | 默认值   |
 |-------------  |---------------- |---------------- |---------------------- |-------- |
 | append-to-body  | 是否追加到body | Boolean          | — | true |
-| popper-container  | 追加容器，只接受 id | String          | — | '' |
+| popper-container  | 追加容器，只接受 id, 默认空串，如果 appendToBody 为 false，那么就直接插入到目标元素之后 | String          | — | '' |
 
 
 ### Dropdown Menu Item Attributes

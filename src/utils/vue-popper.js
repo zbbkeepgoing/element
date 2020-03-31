@@ -46,7 +46,7 @@ export default {
     },
     popperContainer: {
       type: String,
-      default: 'body'
+      default: ''
     },
     popperOptions: {
       type: Object,
