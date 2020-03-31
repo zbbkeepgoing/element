@@ -104,7 +104,7 @@ export default {
         document.body.appendChild(this.popperElm);
       } else {
         // 如果指定了父容器，就追加到父容器
-        let $el = document.getElementById(this.popperContainer)
+        let $el = document.getElementById(this.popperContainer);
         if (this.popperContainer && $el) {
           $el.appendChild(this.popperElm);
         }
