@@ -69,11 +69,11 @@
 }
 
 .txt-danger {
-  color: #ff4159
+  color: #e73371
 }
 
 .txt-info {
-  color: #909399
+  color: #989898
 }
 
 .txt-success-light {
@@ -432,7 +432,7 @@ $--color-grey-2: #EEEEEE !default;
 $--color-grey-3: #E2ECF1 !default;
 $--color-grey-4: #F1F7FA !default;
 
-$--color-primary: #0988DE !default; 
+$--color-primary: #0988DE !default;
 $--color-primary-dark: #087AC8 !default;
 $--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default; /* #2294e1 */
 $--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default; /* #3aa0e5 */
@@ -442,30 +442,31 @@ $--color-primary-light-5: mix($--color-white, $--color-primary, 50%) !default; /
 $--color-primary-light-6: mix($--color-white, $--color-primary, 60%) !default; /* #9dcff2 */
 $--color-primary-light-7: mix($--color-white, $--color-primary, 70%) !default; /* #b5dbf5 */
 $--color-primary-light-8: mix($--color-white, $--color-primary, 80%) !default; /* #cee7f8 */
-$--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default; /* #cee7f8 */
+// $--color-primary-light-9:#e6f3fb;// mix($--color-white, $--color-primary, 89.7%) !default;
+$--color-primary-light-9: mix($--color-white, $--color-primary, 89.7%) !default; /* #e6f3fc */
 
 $--color-success: #4cb050 !default;
 $--color-warning: #F7BA2A !default;
 $--color-danger: #e73371 !default;
-$--color-info: #909399 !default;
+$--color-info: #989898 !default;
 $--color-tip: $--color-primary !default;
 
 $--color-success-light: mix($--color-white, $--color-success, 80%) !default;
 $--color-warning-light: mix($--color-white, $--color-warning, 80%) !default;
 $--color-danger-light: mix($--color-white, $--color-danger, 80%) !default;
-$--color-info-light: mix($--color-white, $--color-info, 80%) !default;
+$--color-info-light: #e6f3fc !default;
 
 $--color-success-lighter: mix($--color-white, $--color-success, 90%) !default;
 $--color-warning-lighter: mix($--color-white, $--color-warning, 90%) !default;
 $--color-danger-lighter: mix($--color-white, $--color-danger, 90%) !default;
-$--color-info-lighter: mix($--color-white, $--color-info, 90%) !default;
+$--color-info-lighter: #e6f3fc !default;
 $--color-tip-lighter: #eaffea !default;
 
-$--color-text-primary: #191919 !default;
-$--color-text-regular: #323232 !default;
+$--color-text-primary: #252525 !default;
+$--color-text-regular: #5c5c5c !default;
 $--color-text-secondary: #b0bec5 !default;
-$--color-text-placeholder: #b2b2b2 !default;
-$--color-text-disabled: #7f7f7f !default;
+$--color-text-placeholder: #b6b6b6 !default;
+$--color-text-disabled: #989898 !default;
 
 /* Link
 -------------------------- */
@@ -474,8 +475,8 @@ $--link-hover-color: $--color-primary !default;
 
 /* Background
 -------------------------- */
-$--background-color-base: #f4f4f4 !default;
-$--background-color-base-1: #fbfbfb !default;
+$--background-color-base: #f5f5f5 !default;
+$--background-color-base-1: #fafafa !default;
 $--background-color-light: #F9FBFC !default;
 $--background-color-regular: #CDE7F8 !default;
 
@@ -483,7 +484,7 @@ $--background-color-regular: #CDE7F8 !default;
 -------------------------- */
 $--border-width-base: 1px !default;
 $--border-style-base: solid !default;
-$--border-color-base: #ccc !default;
+$--border-color-base: #ddd !default;
 $--border-color-light: #e4e7ed !default;
 $--border-color-lighter: #ebeef5 !default;
 $--border-color-extra-light: #f2f6fc !default;
@@ -492,7 +493,7 @@ $--border-base: $--border-width-base $--border-style-base $--border-color-base !
 $--border-radius-base: 2px !default;
 $--border-radius-small: 2px !default;
 $--border-radius-circle: 100% !default;
-$--border-split-color: #e5e5e5!default;
+$--border-split-color: #ddd!default;
 
 /* Box-shadow
 -------------------------- */
@@ -552,111 +553,114 @@ $--index-popper: 2000 !default;
 #### 具体变量
 ```less
 /* Element Chalk Variables */
+// Menu
 @color--menu-color: #0e1e28;
 @color--menu-color1: #102d41;
 @color--menu-color2:#0a2233;
 /* Colors
 -------------------------- */
-@color-white: #fff !default;
-@color-black: #000 !default;
+@color-white: #fff;
+@color-black: #000;
 
-@color-grey-1: #BDBDBD !default;
-@color-grey-2: #EEEEEE !default;
-@color-grey-3: #E2ECF1 !default;
-@color-grey-4: #F1F7FA !default;
+@color-grey-1: #BDBDBD;
+@color-grey-2: #EEEEEE;
+@color-grey-3: #E2ECF1;
+@color-grey-4: #F1F7FA;
 
 @color-primary: #0988DE; 
 @color-primary-dark: #087AC8;
-@color-primary-light-1: mix(@color-white, @color-primary, 10%) !default; /* #2294e1 */
-@color-primary-light-2: mix(@color-white, @color-primary, 20%) !default; /* #3aa0e5 */
-@color-primary-light-3: mix(@color-white, @color-primary, 30%) !default; /* #53ace8 */
-@color-primary-light-4: mix(@color-white, @color-primary, 40%) !default; /* #6bb8eb */
-@color-primary-light-5: mix(@color-white, @color-primary, 50%) !default; /* #84c4ef */
-@color-primary-light-6: mix(@color-white, @color-primary, 60%) !default; /* #9dcff2 */
-@color-primary-light-7: mix(@color-white, @color-primary, 70%) !default; /* #b5dbf5 */
-@color-primary-light-8: mix(@color-white, @color-primary, 80%) !default; /* #cee7f8 */
-@color-primary-light-9: #e6f3fb;//mix(@color-white, @color-primary, 90%) !default; /* #cee7f8 */
+@color-primary-light-1: mix(@color-white, @color-primary, 10%); /* #2294e1 */
+@color-primary-light-2: mix(@color-white, @color-primary, 20%); /* #3aa0e5 */
+@color-primary-light-3: mix(@color-white, @color-primary, 30%); /* #53ace8 */
+@color-primary-light-4: mix(@color-white, @color-primary, 40%); /* #6bb8eb */
+@color-primary-light-5: mix(@color-white, @color-primary, 50%); /* #84c4ef */
+@color-primary-light-6: mix(@color-white, @color-primary, 60%); /* #9dcff2 */
+@color-primary-light-7: mix(@color-white, @color-primary, 70%); /* #b5dbf5 */
+@color-primary-light-8: mix(@color-white, @color-primary, 80%); /* #cee7f8 */
+// @color-primary-light-9: #e6f3fb; //mix(@color-white, @color-primary, 90%);
+@color-primary-light-9: mix(@color-white, @color-primary, 89.7%); /* #e6f3fc */
 
-@color-success: #4cb050 !default;
-@color-warning: #F7BA2A !default;
-@color-danger: #e73371 !default;
-@color-info: #909399 !default;
-@color-tip: @color-primary !default;
+@color-success: #4cb050;
+@color-warning: #F7BA2A;
+@color-danger: #e73371;
+@color-info: #989898;
+@color-tip: @color-primary;
 
-@color-success-light: mix(@color-white, @color-success, 80%) !default;
-@color-warning-light: mix(@color-white, @color-warning, 80%) !default;
-@color-danger-light: mix(@color-white, @color-danger, 80%) !default;
-@color-info-light: mix(@color-white, @color-info, 80%) !default;
+@color-success-light: mix(@color-white, @color-success, 80%);
+@color-warning-light: mix(@color-white, @color-warning, 80%);
+@color-danger-light: mix(@color-white, @color-danger, 80%);
+@color-info-light: mix(@color-white, @color-info, 80%);
 
-@color-success-lighter: mix(@color-white, @color-success, 90%) !default;
-@color-warning-lighter: mix(@color-white, @color-warning, 90%) !default;
-@color-danger-lighter: mix(@color-white, @color-danger, 90%) !default;
-@color-info-lighter: mix(@color-white, @color-info, 90%) !default;
-@color-tip-lighter: #eaffea !default;
+@color-success-lighter: mix(@color-white, @color-success, 90%);
+@color-warning-lighter: mix(@color-white, @color-warning, 90%);
+@color-danger-lighter: mix(@color-white, @color-danger, 90%);
+@color-info-lighter: mix(@color-white, @color-info, 90%);
+@color-tip-lighter: #eaffea;
 
-@color-text-primary: #191919 !default;
-@color-text-regular: #323232 !default;
-@color-text-secondary: #b0bec5 !default;
-@color-text-placeholder: #b2b2b2 !default;
-@color-text-disabled: #7f7f7f !default;
+@color-text-primary: #252525;
+@color-text-regular: #5c5c5c;
+@color-text-secondary: #b0bec5;
+@color-text-placeholder: #b6b6b6;
+@color-text-disabled: #989898;
 
 /* Link
 -------------------------- */
-@link-color: @color-primary-light-2 !default;
-@link-hover-color: @color-primary !default;
+@link-color: @color-primary-light-2;
+@link-hover-color: @color-primary;
 
 /* Background
 -------------------------- */
-@background-color-base: #f4f4f4 !default;
-@background-color-base-1: #fbfbfb;
-@background-color-light: #F9FBFC !default;
-@background-color-regular: #CDE7F8 !default;
+@background-color-base: #f5f5f5;
+@background-color-base-1: #fafafa;
+@background-color-light: #F9FBFC;
+@background-color-regular: #CDE7F8;
 
 /* Border
 -------------------------- */
-@border-width-base: 1px !default;
-@border-style-base: solid !default;
-@border-color-base: #ccc !default;
-@border-color-light: #e4e7ed !default;
-@border-color-lighter: #ebeef5 !default;
-@border-color-extra-light: #f2f6fc !default;
-@border-color-hover: @color-text-placeholder !default;
-@border-base: @border-width-base @border-style-base @border-color-base !default;
-@border-radius-base: 2px !default;
-@border-radius-small: 2px !default;
-@border-radius-circle: 100% !default;
-@border-split-color: #e5e5e5;
+@border-width-base: 1px;
+@border-style-base: solid;
+@border-color-base: #ddd;
+@border-color-light: #e4e7ed;
+@border-color-lighter: #ebeef5;
+@border-color-extra-light: #f2f6fc;
+@border-color-hover: @color-text-placeholder;
+@border-base: @border-width-base @border-style-base @border-color-base;
+@border-radius-base: 2px;
+@border-radius-small: 2px;
+@border-radius-circle: 100%;
+@border-split-color: #ddd;
+
 /* Box-shadow
 -------------------------- */
-@box-shadow-base: 0 2px 4px 0 #f4f4f4 !default;
-@box-shadow-dark: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .12) !default;
-@box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1) !default;
+@box-shadow-base: 0 2px 4px 0 #f4f4f4;
+@box-shadow-dark: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .12);
+@box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
 
 /* Fill
 -------------------------- */
-@fill-base: @color-white !default;
+@fill-base: @color-white;
 
 /* Font
 -------------------------- */
-@font-path: 'fonts' !default;
-@font-size-base: 14px !default;
-@font-size-small: 13px !default;
-@font-size-extra-small: 12px !default;
-@font-size-medium: 16px !default;
-@font-size-large: 18px !default;
-@font-color-disabled-base: #bbb !default;
-@font-weight-primary: bold !default;
-@font-line-height-primary: 24px !default;
+@font-path: 'fonts';
+@font-size-base: 14px;
+@font-size-small: 13px;
+@font-size-extra-small: 12px;
+@font-size-medium: 16px;
+@font-size-large: 18px;
+@font-color-disabled-base: #bbb;
+@font-weight-primary: bold;
+@font-line-height-primary: 24px;
 
 /* Size
 -------------------------- */
-@size-base: 14px !default;
+@size-base: 14px;
 
 /* z-index
 -------------------------- */
-@index-normal: 1 !default;
-@index-top: 1000 !default;
-@index-popper: 2000 !default;
+@index-normal: 1;
+@index-top: 1000;
+@index-popper: 2000;
 ```
 与scss版本中变量的区别就是，scss中是以@为开头，less中是以@开头。
 
