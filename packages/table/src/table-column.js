@@ -413,6 +413,18 @@ export default {
       if (this.columnConfig) {
         this.columnConfig.index = newVal;
       }
+    },
+
+    infoIcon(newVal) {
+      if (this.columnConfig) {
+        this.columnConfig.infoIcon = newVal;
+      }
+    },
+
+    infoTooltip(newVal) {
+      if (this.columnConfig) {
+        this.columnConfig.infoTooltip = newVal;
+      }
     }
   },
 
