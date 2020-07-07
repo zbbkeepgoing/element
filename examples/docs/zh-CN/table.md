@@ -1488,6 +1488,8 @@
       prop="date"
       label="日期"
       sortable
+      :info-icon="'el-icon-info'"
+      :info-tooltip="'测试tooltip'"
       width="180"
       :filters="[{text: '2016-05-01', value: '2016-05-01'}, {text: '2016-05-02', value: '2016-05-02'}, {text: '2016-05-03', value: '2016-05-03'}, {text: '2016-05-04', value: '2016-05-04'}]"
       :filter-method="filterHandler"

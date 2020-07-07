@@ -190,6 +190,14 @@ export default {
     showAllSelectOption: {
       type: Boolean,
       default: true
+    },
+    infoIcon: {
+      type: String,
+      default: ''
+    },
+    infoTooltip: {
+      type: String,
+      default: ''
     }
   },
 
@@ -280,7 +288,9 @@ export default {
       index: this.index,
       showMultipleFooter: this.showMultipleFooter,
       filterIcon: this.filterIcon || '',
-      showAllSelectOption: this.showAllSelectOption
+      showAllSelectOption: this.showAllSelectOption,
+      infoIcon: this.infoIcon, // 表头对表头标题的解释 icon
+      infoTooltip: this.infoTooltip
     });
 
     objectAssign(column, forced[type] || {});

@@ -242,6 +242,9 @@
           color: $--color-primary;
         }
       }
+      .infoIcon{
+        margin-left: 5px;
+      }
     }
 
     &.required > div::before {
