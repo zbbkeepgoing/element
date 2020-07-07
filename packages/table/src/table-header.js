@@ -114,6 +114,11 @@ export default {
                             : column.label
                         }
                         {
+                          column.infoIcon
+                            ? <el-tooltip effect="dark" placement="top" content={column.infoTooltip} disabled={!column.infoTooltip}><i class={column.infoIcon + ' infoIcon'}></i></el-tooltip>
+                            : ''
+                        }
+                        {
                           column.sortable
                             ? <span class="caret-wrapper" on-click={ ($event) => this.handleSortClick($event, column) }>
                               <i class="sort-caret ascending" on-click={ ($event) => this.handleSortClick($event, column, 'ascending') }>
