@@ -215,6 +215,7 @@
 
 <script type="text/babel">
   import ElCheckbox from 'kyligence-ui/packages/checkbox';
+  import ElRadio from 'kyligence-ui/packages/radio';
   import debounce from 'throttle-debounce/debounce';
   import { addResizeListener, removeResizeListener } from 'kyligence-ui/src/utils/resize-event';
   import Mousewheel from 'kyligence-ui/src/directives/mousewheel';
@@ -314,7 +315,8 @@
       TableHeader,
       TableFooter,
       TableBody,
-      ElCheckbox
+      ElCheckbox,
+      ElRadio
     },
 
     methods: {
@@ -464,6 +466,10 @@
 
       selection() {
         return this.store.states.selection;
+      },
+
+      radioSelection() {
+        return this.store.state.radioSelection;
       },
 
       columns() {

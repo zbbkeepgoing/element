@@ -1,6 +1,7 @@
-import { getCell, getColumnByCell, getRowIdentity } from './util';
+import { getCell, getColumnByCell, getRowIdentity, getColumnById } from './util';
 import { hasClass, addClass, removeClass } from 'kyligence-ui/src/utils/dom';
 import ElCheckbox from 'kyligence-ui/packages/checkbox';
+import ElRadio from 'kyligence-ui/packages/radio';
 import ElTooltip from 'kyligence-ui/packages/tooltip';
 import debounce from 'throttle-debounce/debounce';
 import LayoutObserver from './layout-observer';
@@ -12,7 +13,8 @@ export default {
 
   components: {
     ElCheckbox,
-    ElTooltip
+    ElTooltip,
+    ElRadio
   },
 
   props: {
@@ -47,7 +49,7 @@ export default {
                 style={ this.rowStyle ? this.getRowStyle(row, $index) : null }
                 key={ this.table.rowKey ? this.getKeyOfRow(row, $index) : $index }
                 on-dblclick={ ($event) => this.handleDoubleClick($event, row) }
-                on-click={ ($event) => this.handleClick($event, row) }
+                on-click={ ($event) => this.handleClick($event, row, $index) }
                 on-contextmenu={ ($event) => this.handleContextMenu($event, row) }
                 on-mouseenter={ _ => this.handleMouseEnter($index) }
                 on-mouseleave={ _ => this.handleMouseLeave() }
@@ -378,8 +380,19 @@ export default {
       this.handleEvent(event, row, 'dblclick');
     },
 
-    handleClick(event, row) {
+    handleClick(event, row, index) {
       this.store.commit('setCurrentRow', row);
+      try {
+        const radioColumnId = this.table && this.table.columns && this.table.columns[0] ? this.table.columns[0].id : '';
+        const radioColumn = radioColumnId ? getColumnById(this.table, radioColumnId) : null;
+        if (radioColumn) {
+          let selectable = radioColumn.selectable ? !radioColumn.selectable.call(null, row, index) : false;
+          if (!selectable) {
+            this.store.commit('rowRadioChanged', radioColumn, row);
+          }
+        }
+      } catch (e) {
+      }
       this.handleEvent(event, row, 'click');
     },
 
