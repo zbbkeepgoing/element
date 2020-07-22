@@ -69,6 +69,22 @@
         });
         this.editableTabsValue2 = newTabName;
       },
+      beforeLeave(newVal, oldVal) {
+        var p = new Promise((resolve, reject) => {
+          this.$confirm('离开将不保存本页修改', '提示', {
+            confirmButtonText: '确定',
+            cancelButtonText: '取消',
+            type: 'warning'
+          }).then(() => {
+            // 你可以在这儿做些操作
+            resolve()
+          }).catch(err => {
+            // 你可以在这儿做些操作
+            reject(err)
+          })
+        })
+        return p
+      },
       removeTab(targetName) {
         let tabs = this.editableTabs2;
         let activeName = this.editableTabsValue2;
@@ -111,7 +127,7 @@
 
 ```html
 <template>
-  <el-tabs v-model="activeName" @tab-click="handleClick">
+  <el-tabs v-model="activeName" @tab-click="handleClick" :before-leave="beforeLeave">
     <el-tab-pane label="用户管理" name="first">用户管理</el-tab-pane>
     <el-tab-pane label="配置管理" name="second">配置管理</el-tab-pane>
     <el-tab-pane label="角色管理" name="third">角色管理</el-tab-pane>
@@ -128,6 +144,22 @@
     methods: {
       handleClick(tab, event) {
         console.log(tab, event);
+      },
+      beforeLeave(newVal, oldVal) {
+        var p = new Promise((resolve, reject) => {
+          this.$confirm('离开将不保存本页修改', '提示', {
+            confirmButtonText: '确定',
+            cancelButtonText: '取消',
+            type: 'warning'
+          }).then(() => {
+            // 你可以在这儿做些操作
+            resolve()
+          }).catch(err => {
+            // 你可以在这儿做些操作
+            reject(err)
+          })
+        })
+        return p
       }
     }
   };
@@ -388,6 +420,7 @@ vue版本升级后，要求v-for使用时要规定key属性，不然会报警告
 | editable  | 标签是否同时可增加和关闭   | boolean   | — |  false  |
 | value  | 绑定值，选中选项卡的 name  | string   |  —  |  第一个选项卡的 name |
 | tab-position  | 选项卡所在位置 | string   |  top/right/bottom/left  |  top |
+| before-leave | 切换标签之前的钩子，若返回 false 或者返回 Promise 且被 reject，则阻止切换。| Function(activeName, oldActiveName) | - | - |
 
 ### Tabs Events
 | 事件名称 | 说明 | 回调参数 |
