@@ -210,6 +210,10 @@
         height: layout.headerHeight + 'px'
       }"></div>
     <div class="el-table__column-resize-proxy" ref="resizeProxy" v-show="resizeProxyVisible"></div>
+    <template v-if="border || isGroup">
+      <div class="border-top"></div>
+      <div class="border-left"></div>
+    </template>
   </div>
 </template>
 

@@ -288,8 +288,22 @@
 
   // 拥有多级表头
   @include m((group, border)) {
-    border: $--table-border;
-
+    .border-top {
+      top: 0;
+      left: 0;
+      width: 100%;
+      position: absolute;
+      border-bottom: $--table-border;
+      z-index: 4;
+    }
+    .border-left {
+      top: 0;
+      left: 0;
+      height: 100%;
+      position: absolute;
+      border-right: $--table-border;
+      z-index: 4;
+    }
     @include share-rule(border-pseudo) {
       content: '';
       position: absolute;
