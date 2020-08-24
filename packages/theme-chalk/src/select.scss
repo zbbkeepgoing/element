@@ -131,6 +131,10 @@
     background-color: $--tag-fill;
     color: $--tag-color;
 
+    .el-select__tags-icon {
+      cursor: pointer;
+    }
+
     &__close.el-icon-close {
       right: -7px;
       top: 0;

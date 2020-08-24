@@ -34,6 +34,7 @@
       },
       label: [String, Number],
       created: Boolean,
+      prefixIcon: String,
       disabled: {
         type: Boolean,
         default: false
@@ -135,6 +136,12 @@
         if (!this.visible) {
           this.select.filteredOptionsCount--;
         }
+      },
+
+      onPrefixIconClick (event) {
+        event.preventDefault()
+        event.stopPropagation()
+        this.$emit('prefix-icon-click', this.value)
       }
     },
 

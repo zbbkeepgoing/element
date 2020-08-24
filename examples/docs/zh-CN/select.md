@@ -21,7 +21,8 @@
           label: '北京烤鸭'
         }, {
           value: '选项6',
-          label: '黄金糕1'
+          label: '黄金糕999',
+          icon: 'el-icon-edit'
         }, {
           value: '选项7',
           label: '双皮奶1'
@@ -212,6 +213,9 @@
       },
       checkAll () {
         this.value5 = ['选项1', '选项2', '选项3', '选项4', '选项5', '选项6', '选项7', '选项8', '选项9', '选项10', '选项11', '选项12', '选项13', '选项14', '选项15', '选项16', '选项17', '选项18', '选项19', '选项20', '选项21', '选项22', '选项23', '选项24', '选项25', '选项26', '选项27', '选项28', '选项29', '选项30']
+      },
+      handlePrefixIconClick (optionValue) {
+        console.log(optionValue)
       }
     }
   };
@@ -468,7 +472,9 @@ select和radio、checkbox一样，选中值和下拉选项中的值是===比较�
       v-for="item in options"
       :key="item.value"
       :label="item.label"
-      :value="item.value">
+      :value="item.value"
+      :prefix-icon="item.icon"
+      @prefix-icon-click="handlePrefixIconClick">
     </el-option>
   </el-select>
 
@@ -873,6 +879,12 @@ select和radio、checkbox一样，选中值和下拉选项中的值是===比较�
 | value | 选项的值 | string/number/object | — | — |
 | label | 选项的标签，若不设置则默认与 `value` 相同 | string/number | — | — |
 | disabled | 是否禁用该选项 | boolean | — | false |
+| prefix-icon | 选项的选中标签前缀icon | string | — | - |
+
+### Option Attributes
+| 事件名称 | 说明 | 回调参数 |
+|---------|---------|---------|
+| prefix-icon-click | 选项的选中标签前缀icon的点击事件 | - |
 
 ### Methods
 | 方法名 | 说明 | 参数 |
