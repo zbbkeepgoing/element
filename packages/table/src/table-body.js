@@ -1,6 +1,7 @@
-import { getCell, getColumnByCell, getRowIdentity } from './util';
+import { getCell, getColumnByCell, getRowIdentity, getColumnById } from './util';
 import { hasClass, addClass, removeClass } from 'kyligence-ui/src/utils/dom';
 import ElCheckbox from 'kyligence-ui/packages/checkbox';
+import ElRadio from 'kyligence-ui/packages/radio';
 import ElTooltip from 'kyligence-ui/packages/tooltip';
 import debounce from 'throttle-debounce/debounce';
 import LayoutObserver from './layout-observer';
@@ -12,7 +13,8 @@ export default {
 
   components: {
     ElCheckbox,
-    ElTooltip
+    ElTooltip,
+    ElRadio
   },
 
   props: {
@@ -380,6 +382,14 @@ export default {
 
     handleClick(event, row) {
       this.store.commit('setCurrentRow', row);
+      try {
+        const radioColumnId = this.table && this.table.columns && this.table.columns[0] ? this.table.columns[0].id : '';
+        const radioColumn = radioColumnId ? getColumnById(this.table, radioColumnId) : null;
+        if (radioColumn) {
+          this.store.commit('rowRadioChanged', radioColumn, row);
+        }
+      } catch (e) {
+      }
       this.handleEvent(event, row, 'click');
     },
 

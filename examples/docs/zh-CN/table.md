@@ -356,6 +356,11 @@
 
       indexMethod(index) {
         return index * 2;
+      },
+
+      radioChange(radio, row) {
+        console.log(radio);
+        console.log(row);
       }
     },
 
@@ -419,7 +424,12 @@
     <div id="testDiv">
     <el-table
       :data="tableData"
+      @radio-change="radioChange"
       style="width: 100%">
+      <el-table-column
+        type="radio"
+        prop="date">
+      </el-table-column>
       <el-table-column
         prop="date"
         label="日期"

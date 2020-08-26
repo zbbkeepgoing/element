@@ -1,4 +1,5 @@
 import ElCheckbox from 'kyligence-ui/packages/checkbox';
+import ElRadio from 'kyligence-ui/packages/radio';
 import ElTag from 'kyligence-ui/packages/tag';
 import objectAssign from 'kyligence-ui/src/utils/merge';
 import { getPropByPath } from 'kyligence-ui/src/utils/util';
@@ -10,6 +11,13 @@ const defaults = {
     order: ''
   },
   selection: {
+    width: 48,
+    minWidth: 48,
+    realWidth: 48,
+    order: '',
+    className: 'el-table-column--selection'
+  },
+  radio: {
     width: 48,
     minWidth: 48,
     realWidth: 48,
@@ -45,6 +53,21 @@ const forced = {
         value={ store.isSelected(row) }
         disabled={ column.selectable ? !column.selectable.call(null, row, $index) : false }
         on-input={ () => { store.commit('rowSelectedChanged', row); } } />;
+    },
+    sortable: false,
+    resizable: false
+  },
+  radio: {
+    renderHeader: function(h, { column }) {
+      return column.label || '';
+    },
+    renderCell: function(h, { row, column, store, $index }) {
+      let radioSelection = store.states.radioSelection || '';
+      let columnLabel = column.property || '';
+      return <el-radio
+        label={ row[columnLabel] }
+        value={ radioSelection }
+        on-input={ () => { store.commit('rowRadioChanged', column, row); } }><span></span></el-radio>;
     },
     sortable: false,
     resizable: false
@@ -216,7 +239,8 @@ export default {
 
   components: {
     ElCheckbox,
-    ElTag
+    ElTag,
+    ElRadio
   },
 
   computed: {

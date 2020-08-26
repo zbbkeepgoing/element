@@ -107,7 +107,8 @@ const TableStore = function(table, initialState = {}) {
     hoverRow: null,
     filters: {},
     expandRows: [],
-    defaultExpandAll: false
+    defaultExpandAll: false,
+    radioSelection: null // 单选时存的值
   };
 
   for (let prop in initialState) {
@@ -242,6 +243,10 @@ TableStore.prototype.mutations = {
       states.reserveSelection = column.reserveSelection;
     }
 
+    if (column.type === 'radio') {
+      states.selectable = column.selectable;
+    }
+
     if (this.table.$ready) {
       this.updateColumns(); // hack for dynamics insert column
       this.scheduleLayout();
@@ -275,6 +280,12 @@ TableStore.prototype.mutations = {
     if (oldCurrentRow !== row) {
       this.table.$emit('current-change', row, oldCurrentRow);
     }
+  },
+
+  rowRadioChanged(states, column, row) {
+    states.radioSelection = column && column.property ? row[column.property] : '';
+    const table = this.table;
+    table.$emit('radio-change', states.radioSelection, row);
   },
 
   rowSelectedChanged(states, row) {
@@ -336,7 +347,7 @@ TableStore.prototype.updateColumns = function() {
   states.fixedColumns = _columns.filter((column) => column.fixed === true || column.fixed === 'left');
   states.rightFixedColumns = _columns.filter((column) => column.fixed === 'right');
 
-  if (states.fixedColumns.length > 0 && _columns[0] && _columns[0].type === 'selection' && !_columns[0].fixed) {
+  if (states.fixedColumns.length > 0 && _columns[0] && _columns[0].type === 'selection' && _columns[0].type === 'radio' && !_columns[0].fixed) {
     _columns[0].fixed = true;
     states.fixedColumns.unshift(_columns[0]);
   }
