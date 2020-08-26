@@ -2171,6 +2171,7 @@
 | select | 当用户手动勾选数据行的 Checkbox 时触发的事件 | selection, row |
 | select-all | 当用户手动勾选全选 Checkbox 时触发的事件 | selection |
 | selection-change | 当选择项发生变化时会触发该事件 | selection |
+| radio-change | 当单选选项发生变化时会触发该事件 | selection, row |
 | cell-mouse-enter | 当单元格 hover 进入时会触发该事件 | row, column, cell, event |
 | cell-mouse-leave | 当单元格 hover 退出时会触发该事件 | row, column, cell, event |
 | cell-click | 当某个单元格被点击时会触发该事件 | row, column, cell, event |
@@ -2205,7 +2206,7 @@
 ### Table-column Attributes
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
 |---------- |-------------- |---------- |--------------------------------  |-------- |
-| type | 对应列的类型。如果设置了 `selection` 则显示多选框；如果设置了 `index` 则显示该行的索引（从 1 开始计算）；如果设置了 `expand` 则显示为一个可展开的按钮 | string | selection/index/expand | — |
+| type | 对应列的类型。如果设置了 `selection` 则显示多选框；设置为 radio 则显示单选按钮； 如果设置了 `index` 则显示该行的索引（从 1 开始计算）；如果设置了 `expand` 则显示为一个可展开的按钮 | string | selection/index/expand | — |
 | index | 如果设置了 `type=index`，可以通过传递 `index` 属性来自定义索引 | string, Function(index) | - | - |
 | column-key | column 的 key，如果需要使用 filter-change 事件，则需要此属性标识是哪个 column 的筛选条件 | string | — | — |
 | label | 显示的标题 | string | — | — |
