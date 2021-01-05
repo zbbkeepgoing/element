@@ -1,6 +1,15 @@
 <template>
-  <transition name="el-zoom-in-top">
+  <transition name="el-zoom-in-top">{{showMultipleFooter}}
     <div class="el-table-filter" v-if="multiple" v-show="showPopper">
+      <div class="el-table-filter__search-input" v-if="showSearchInput">
+        <el-input
+          size="small"
+          :placeholder="placeholder"
+          @change="filterFilters"
+          v-model.trim="searchValue">
+          <i slot="prefix" class="el-input__icon el-icon-search"></i>
+        </el-input>
+      </div>
       <div class="el-table-filter__content">
         <div>{{filterPanelTop}}</div>
         <el-checkbox-group class="el-table-filter__checkbox-group" v-model="filteredValue" @change="filterMultipleValue">
@@ -8,6 +17,13 @@
             v-for="filter in filters"
             :key="filter.value"
             :label="filter.value"><i :class="['filter-icon', filter.icon]" v-if="filter.icon"></i>{{ filter.text }}</el-checkbox>
+          <template v-if="filters2 && filters2.length">
+            <div class="el-table-filter__bottom-line"></div>
+            <el-checkbox
+              v-for="filter in filters2"
+              :key="filter.value"
+              :label="filter.value"><i :class="['filter-icon', filter.icon]" v-if="filter.icon"></i>{{ filter.text }}</el-checkbox>
+          </template>
         </el-checkbox-group>
       </div>
       <div class="el-table-filter__bottom" v-show="showMultipleFooter">
@@ -18,6 +34,15 @@
       </div>
     </div>
     <div class="el-table-filter" v-else v-show="showPopper">
+      <div class="el-table-filter__search-input" v-if="showSearchInput">
+        <el-input
+          size="small"
+          :placeholder="placeholder"
+          @change="filterFilters"
+          v-model.trim="searchValue">
+          <i slot="prefix" class="el-input__icon el-icon-search"></i>
+        </el-input>
+      </div>
       <ul class="el-table-filter__list">
         <li class="el-table-filter__list-item"
             v-if="showAllSelectOption"
@@ -29,6 +54,15 @@
             :key="filter.value"
             :class="{ 'is-active': isActive(filter) }"
             @click="handleSelect(filter.value)" >{{ filter.text }}</li>
+        <template v-if="filters2 && filters2.length">
+          <div class="el-table-filter__bottom-line"></div>
+          <li class="el-table-filter__list-item"
+            v-for="filter in filters2"
+            :label="filter.value"
+            :key="filter.value"
+            :class="{ 'is-active': isActive(filter) }"
+            @click="handleSelect(filter.value)" >{{ filter.text }}</li>
+        </template>
       </ul>
     </div>
   </transition>
@@ -66,6 +100,15 @@
         type: Boolean,
         default: true
       },
+      showSearchInput: {
+        type: Boolean,
+        default: false
+      },
+      placeholder: {
+        type: String,
+        default: ''
+      },
+      filterFiltersChange: Function,
       filterChange: Function,
       filterPanelTop: Number
     },
@@ -135,6 +178,12 @@
         if (typeof this.filterChange === 'function') {
           this.filterChange(val);
         }
+      },
+      filterFilters(val) {
+        if (!this.showSearchInput) return;
+        if (typeof this.filterFiltersChange === 'function') {
+          this.filterFiltersChange(val);
+        }
       }
     },
 
@@ -142,13 +191,18 @@
       return {
         table: null,
         cell: null,
-        column: null
+        column: null,
+        searchValue: ''
       };
     },
 
     computed: {
       filters() {
         return this.column && this.column.filters;
+      },
+
+      filters2() {
+        return this.column && this.column.filters2;
       },
 
       filterValue: {
