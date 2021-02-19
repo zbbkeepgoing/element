@@ -294,6 +294,10 @@
       filterNode(value, data) {
         if (!value) return true;
         return data.label.indexOf(value) !== -1;
+      },
+
+      shouldNodeRender(node, data, index) {
+        return data.label !== '三级 3-2-1'
       }
     },
 
@@ -304,6 +308,7 @@
         data3,
         data4: JSON.parse(JSON.stringify(data2)),
         data5: JSON.parse(JSON.stringify(data2)),
+        data6: JSON.parse(JSON.stringify(data3)),
         regions,
         defaultProps,
         props,
@@ -1005,6 +1010,73 @@
 ```
 :::
 
+### 判断节点是否展示
+
+判断节点是否展示
+
+:::demo
+```html
+<div>
+  <el-tree
+    :data="data6"
+    show-overflow-tooltip
+    :props="defaultProps"
+    :should-node-render="shouldNodeRender"
+    @node-click="handleNodeClick">
+  </el-tree>
+</div>
+
+<script>
+  export default {
+    data() {
+      return {
+        data: [{
+          id: 1,
+          label: '一级 2',
+          children: [{
+            id: 3,
+            label: '二级 2-1',
+            children: [{
+              id: 4,
+              label: '三级 3-1-1'
+            }, {
+              id: 5,
+              label: '三级 3-1-2',
+              disabled: true
+            }]
+          }, {
+            id: 2,
+            label: '二级 2-2',
+            disabled: true,
+            children: [{
+              id: 6,
+              label: '三级 3-2-1'
+            }, {
+              id: 7,
+              label: '三级 3-2-2',
+              disabled: true
+            }]
+          }]
+        }],
+        defaultProps: {
+          children: 'children',
+          label: 'label'
+        }
+      };
+    },
+    methods: {
+      handleNodeClick(data) {
+        console.log(data);
+      },
+      shouldNodeRender(node, data, index) {
+        return data.label !== '三级 3-2-1'
+      }
+    }
+  };
+</script>
+```
+:::
+
 ### Attributes
 | 参数                  | 说明                                               | 类型                        | 可选值  | 默认值   |
 | --------------------- | ---------------------------------------- | --------------------------- | ---- | ----- |
@@ -1024,6 +1096,7 @@
 | check-strictly        | 在显示复选框的情况下，是否严格的遵循父子不互相关联的做法，默认为 false   | boolean                     | —    | false |
 | default-checked-keys  | 默认勾选的节点的 key 的数组                        | array                       | —    | —     |
 | filter-node-method    | 对树节点进行筛选时执行的方法，返回 true 表示这个节点可以显示，返回 false 则表示这个节点会被隐藏 | Function(value, data, node) | —    | —     |
+| should-node-render    | 对树节点进行渲染时执行的方法，返回 true 表示这个节点可以显示，返回 false 则表示这个节点会被隐藏 | Function(node, data, index) | —    | —     |
 | accordion             | 是否每次只打开一个同级树节点展开                   | boolean                     | —    | false |
 | indent                | 相邻级节点间的水平缩进，单位为像素                 | number                     | —    | 16 |
 | lazy                  | 是否懒加载子节点，需与 load 方法结合使用           | boolean                     | —    | false |
