@@ -34,7 +34,8 @@
       class="el-table__body-wrapper"
       ref="bodyWrapper"
       :class="[layout.scrollX ? `is-scrolling-${scrollPosition}` : 'is-scrolling-none']"
-      :style="[bodyHeight]">
+      :style="[bodyHeight]"
+      @scroll="e => $emit('tbody-scroll', e)">
       <table-body
         :context="context"
         :store="store"

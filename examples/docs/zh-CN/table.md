@@ -365,6 +365,10 @@
 
       filterFiltersChange(value) {
         console.log(value);
+      },
+
+      handleTbodyScroll(event) {
+        console.log(event.target.scrollTop)
       }
     },
 
@@ -1026,7 +1030,8 @@
   <el-table
     :data="tableData4"
     style="width: 100%"
-    max-height="250">
+    max-height="250"
+    @tbody-scroll="handleTbodyScroll">
     <el-table-column
       fixed
       prop="date"
@@ -1133,6 +1138,11 @@
           address: '上海市普陀区金沙江路 1518 弄',
           zip: 200333
         }]
+      }
+    },
+    methods: {
+      handleTbodyScroll(event) {
+        console.dir(event.target.scrollTop)
       }
     }
   }
