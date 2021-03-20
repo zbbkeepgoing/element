@@ -268,7 +268,7 @@
     transition: $--all-transition;
     @include utils-user-select(none);
 
-    @include button-size($--button-padding-vertical, $--button-padding-horizontal, $--button-font-size, 0);
+    @include button-size($--button-padding-vertical, $--button-padding-horizontal, $--button-font-size, 0, $--button-medium-line-height);
 
     &:hover {
       color: $--color-primary;
@@ -332,17 +332,17 @@
   }
   @include m(medium) {
     .el-checkbox-button__inner {
-      @include button-size($--button-medium-padding-vertical, $--button-medium-padding-horizontal, $--button-medium-font-size, 0);
+      @include button-size($--button-medium-padding-vertical, $--button-medium-padding-horizontal, $--button-medium-font-size, 0, $--button-medium-line-height);
     }
   }
   @include m(small) {
     .el-checkbox-button__inner {
-      @include button-size($--button-small-padding-vertical, $--button-small-padding-horizontal, $--button-small-font-size, 0);
+      @include button-size($--button-small-padding-vertical, $--button-small-padding-horizontal, $--button-small-font-size, 0, $--button-small-line-height);
     }
   }
   @include m(mini) {
     .el-checkbox-button__inner {
-      @include button-size($--button-mini-padding-vertical, $--button-mini-padding-horizontal, $--button-mini-font-size, 0);
+      @include button-size($--button-mini-padding-vertical, $--button-mini-padding-horizontal, $--button-mini-font-size, 0, $--button-mini-line-height);
     }
   }
 }

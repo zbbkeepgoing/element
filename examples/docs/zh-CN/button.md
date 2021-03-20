@@ -196,8 +196,8 @@ dialog、messagebox 上的取消按钮用的是 次次要按钮 ，确认或者�
 ```html
 <div>
   <el-button type="danger">高高危操作</el-button>
-  <el-button type="danger" plain>高危操作</el-button>
-  <el-button type="danger" text>删除</el-button>
+  <!-- <el-button type="danger" plain>高危操作</el-button>
+  <el-button type="danger" text>删除</el-button> -->
 </div>
 ```
 :::
@@ -479,51 +479,51 @@ dialog、messagebox 上的取消按钮用的是 次次要按钮 ，确认或者�
 
 <div style="margin:20px 0">
   <el-button-group align="vertical" style="margin-right:60px">
-    <el-button type="primary" plain icon="el-icon-edit"></el-button>
-    <el-button type="primary" plain icon="el-icon-share"></el-button>
-    <el-button type="primary" plain icon="el-icon-delete"></el-button>
+    <el-button icon="el-icon-edit"></el-button>
+    <el-button icon="el-icon-share"></el-button>
+    <el-button icon="el-icon-delete"></el-button>
   </el-button-group>
 
   <el-button-group align="vertical">
-    <el-button type="primary" plain icon="el-icon-edit" disabled></el-button>
-    <el-button type="primary" plain icon="el-icon-share" disabled></el-button>
-    <el-button type="primary" plain icon="el-icon-delete" disabled></el-button>
+    <el-button icon="el-icon-edit" disabled></el-button>
+    <el-button icon="el-icon-share" disabled></el-button>
+    <el-button icon="el-icon-delete" disabled></el-button>
   </el-button-group>
 
   <el-button-group align="vertical">
-    <el-button type="primary" plain icon="el-icon-edit" disabled></el-button>
-    <el-button type="primary" plain icon="el-icon-share"></el-button>
-    <el-button type="primary" plain icon="el-icon-delete"></el-button>
+    <el-button icon="el-icon-edit" disabled></el-button>
+    <el-button icon="el-icon-share"></el-button>
+    <el-button icon="el-icon-delete"></el-button>
   </el-button-group>
 
   <el-button-group align="vertical">
-    <el-button type="primary" plain icon="el-icon-edit"></el-button>
-    <el-button type="primary" plain icon="el-icon-share" disabled></el-button>
-    <el-button type="primary" plain icon="el-icon-delete"></el-button>
+    <el-button icon="el-icon-edit"></el-button>
+    <el-button icon="el-icon-share" disabled></el-button>
+    <el-button icon="el-icon-delete"></el-button>
   </el-button-group>
 
   <el-button-group align="vertical">
-    <el-button type="primary" plain icon="el-icon-edit"></el-button>
-    <el-button type="primary" plain icon="el-icon-share"></el-button>
-    <el-button type="primary" plain icon="el-icon-delete" disabled></el-button>
+    <el-button icon="el-icon-edit"></el-button>
+    <el-button icon="el-icon-share"></el-button>
+    <el-button icon="el-icon-delete" disabled></el-button>
   </el-button-group>
 
   <el-button-group align="vertical">
-    <el-button type="primary" plain icon="el-icon-edit" disabled></el-button>
-    <el-button type="primary" plain icon="el-icon-share" disabled></el-button>
-    <el-button type="primary" plain icon="el-icon-delete"></el-button>
+    <el-button icon="el-icon-edit" disabled></el-button>
+    <el-button icon="el-icon-share" disabled></el-button>
+    <el-button icon="el-icon-delete"></el-button>
   </el-button-group>
 
   <el-button-group align="vertical">
-    <el-button type="primary" plain icon="el-icon-edit"></el-button>
-    <el-button type="primary" plain icon="el-icon-share" disabled></el-button>
-    <el-button type="primary" plain icon="el-icon-delete" disabled></el-button>
+    <el-button icon="el-icon-edit"></el-button>
+    <el-button icon="el-icon-share" disabled></el-button>
+    <el-button icon="el-icon-delete" disabled></el-button>
   </el-button-group>
 
   <el-button-group align="vertical">
-    <el-button type="primary" plain icon="el-icon-edit" disabled></el-button>
-    <el-button type="primary" plain icon="el-icon-share"></el-button>
-    <el-button type="primary" plain icon="el-icon-delete" disabled></el-button>
+    <el-button icon="el-icon-edit" disabled></el-button>
+    <el-button icon="el-icon-share"></el-button>
+    <el-button icon="el-icon-delete" disabled></el-button>
   </el-button-group>
 </div>
 
