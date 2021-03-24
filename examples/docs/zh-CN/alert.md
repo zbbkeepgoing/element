@@ -77,13 +77,13 @@
   <el-alert
     title="无背景"
     :show-background="false"
-    type="success">
+    type="info">
   </el-alert>
   <el-alert
     title="无背景"
     icon="el-icon-time"
     :show-background="false"
-    type="success">
+    type="info">
   </el-alert>
 </template>
 ```

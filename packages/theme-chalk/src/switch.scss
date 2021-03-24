@@ -6,6 +6,7 @@
   align-items: center;
   position: relative;
   font-size: $--switch-font-size;
+  font-weight: $--font-weight-medium;
   line-height: $--switch-height;
   height: $--switch-height;
   vertical-align: middle;
@@ -35,14 +36,14 @@
       position: absolute;
       z-index: 1;
       top: 1px;
-      left: $--switch-width * 0.18;
+      left: $--switch-width * 0.1;
     }
     @include m(right) {
       // margin-left: 10px;
       position: absolute;
       z-index: 1;
       top: 1px;
-      left: $--switch-width * 0.4;
+      left: $--switch-width * 0.45;
     }
     & * {
       line-height: 1;
@@ -66,7 +67,7 @@
     margin: 0;
     display: inline-block;
     position: relative;
-    width: $--switch-width;
+    width: $--switch-width !important;
     height: $--switch-height;
     border: 1px solid $--switch-off-color;
     outline: none;
@@ -79,9 +80,9 @@
 
     & .el-switch__button {
       position: absolute;
-      top: 2px;
-      left: 1px;
-      border-radius: $--border-radius-circle;
+      top: 2.5px;
+      left: 2px;
+      border-radius: $--border-radius-base;
       transition: transform .3s;
       width: $--switch-button-size;
       height: $--switch-button-size;
@@ -131,7 +132,8 @@
     }
     @include e(core) {
       height:$--switch-small-height;
-      width: $--switch-small-width;
+      width: $--switch-small-width !important;
+      border-radius: $--border-radius-small;
       // @include m(left) {
       //   left: $--switch-width * 0.21;
       // }
@@ -139,7 +141,7 @@
         position: absolute;
         top: 1px;
         left: 1px;
-        border-radius: $--border-radius-circle;
+        border-radius: $--border-radius-small;
         transition: transform .3s;
         width: $--switch-button-small-size;
         height: $--switch-button-small-size;

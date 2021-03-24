@@ -11,7 +11,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 3px;
+    height: 2px;
     background-color: $--color-primary;
     z-index: 1;
     transition: transform .3s cubic-bezier(.645,.045,.355,1);
@@ -36,7 +36,7 @@
     }
 
     &:hover {
-      color: $--color-primary;
+      color: $--color-text-primary;
     }
   }
   @include e(nav-wrap) {
@@ -51,7 +51,7 @@
       bottom: 0;
       width: 100%;
       height: 1px;
-      background-color: $--border-color-base;
+      background-color: $--border-divider-color;
       z-index: $--index-normal;
     }
 
@@ -134,12 +134,12 @@
     }
 
     @include when(active) {
-      color: $--color-primary;
-      font-weight: bold;
+      color: $--color-text-primary;
+      font-weight: $--font-weight-medium;
     }
 
     &:hover {
-      color: $--color-primary;
+      color: $--color-text-primary;
       /* color: $--color-primary-light-2; */
       cursor: pointer;
     }

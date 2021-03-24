@@ -25,45 +25,61 @@
   }
 
   @include m(success) {
-    background-color: $--alert-success-color;
-    // color: $--color-success;
+    background-color: $--color-success-bg;
+    color: $--color-success-active;
 
     .el-alert__icon {
-      color: $--color-success;
+      color: $--color-success-hover;
+    }
+
+    .el-alert__closebtn {
+      color: $--color-success-active;
     }
   }
   @include m(tip) {
-    background-color: $--alert-tip-color;
-    // color: $--color-success;
+    background-color: $--color-info-bg;
+    color: $--color-nav;
 
     .el-alert__icon {
-      color: $--color-tip;
+      color: $--color-primary;
+    }
+    .el-alert__closebtn {
+      color: $--color-nav;
     }
   }
   @include m(info) {
-    background-color: $--alert-info-color;
-    // color: $--color-info;
+    background-color: $--color-info-secondary-bg;
+    color: $--color-info-secondary-active;
 
     .el-alert__icon {
-      color: $--color-info;
+      color: $--color-info-secondary-hover;
+    }
+    .el-alert__closebtn {
+      color: $--color-info-secondary-active;
     }
   }
 
   @include m(warning) {
-    background-color: $--alert-warning-color;
-    // color: $--color-warning;
+    background-color: $--color-warning-bg;
+    color: $--color-warning-active;
 
     .el-alert__icon {
-      color: $--color-warning;
+      color: $--color-warning-hover;
+    }
+    .el-alert__closebtn {
+      color: $--color-warning-active;
     }
   }
   
   @include m(error) {
-    background-color: $--alert-danger-color;
-    // color: $--color-danger;
+    background-color: $--color-danger-bg;
+    color: $--color-danger-active;
 
     .el-alert__icon {
-      color: $--color-danger;
+      color: $--color-danger-hover;
+    }
+    .el-alert__closebtn {
+      color: $--color-danger-active;
     }
   }
   @include m(nobg) {
@@ -72,7 +88,7 @@
   }
   @include e(content) {
     display: table-cell;
-    line-height:16px;
+    line-height:15px;
     padding-right: 12px;
     /* padding: 0 5px;
     line-height: 20px; */
@@ -105,7 +121,7 @@
 
   @include e(closebtn) {
     font-size: $--alert-close-font-size;
-    color: $--color-info;
+    // color: $--color-info;
     opacity: 1;
     position: absolute;
     top: 12px;

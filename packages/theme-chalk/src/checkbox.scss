@@ -109,7 +109,7 @@
 
         &::after {
           cursor: not-allowed;
-          border-color: $--checkbox-disabled-icon-color;
+          border-color: $--color-white;
         }
 
         & + .el-checkbox__label {
@@ -123,7 +123,7 @@
           border-color: $--checkbox-disabled-checked-input-border-color;
 
           &::after {
-            border-color: $--checkbox-disabled-checked-icon-color;
+            border-color: $--color-white;
           }
         }
       }
@@ -134,8 +134,8 @@
           border-color: $--checkbox-disabled-checked-input-border-color;
 
           &::before {
-            background-color: $--checkbox-disabled-checked-icon-color;
-            border-color: $--checkbox-disabled-checked-icon-color;
+            background-color: $--color-white;
+            border-color: $--color-white;
           }
         }
       }
@@ -151,8 +151,19 @@
         background-color: $--checkbox-checked-input-fill;
         border-color: $--checkbox-checked-input-border-color;
 
+        &:hover {
+          background-color: $--color-primary-hover;
+          border-color: $--color-primary-hover;
+        }
         &::after {
           transform: rotate(45deg) scaleY(1);
+        }
+        &:active {
+          background-color: $--color-primary-active;
+          border-color: $--color-primary-active;
+          &::after {
+            border-color: $--checkbox-input-fill-active;
+          }
         }
       }
 
@@ -203,6 +214,11 @@
 
     &:hover {
       border-color: $--checkbox-input-border-color-hover;
+    }
+
+    &:active {
+      border-color: $--checkbox-input-border-color-active;
+      background-color: $--checkbox-input-fill-active;
     }
 
     &::after {

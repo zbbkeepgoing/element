@@ -191,10 +191,10 @@ Popover 的属性与 Tooltip 很类似，它们都是基于`Vue-popper`开发的
   placement="top"
   width="160"
   v-model="visible2">
-  <p>这是一段内容这是一段内容确定删除吗？</p>
-  <div style="text-align: right; margin: 0">
-    <el-button size="mini" type="info" text @click="visible2 = false">取消</el-button>
-    <el-button type="primary" size="mini" @click="visible2 = false">确定</el-button>
+  <p style="margin-top: 0">这是一段内容这是一段内容确定删除吗？</p>
+  <div style="text-align: center; margin: 0">
+    <el-button style="width: 45%" size="medium" @click="visible2 = false">取消</el-button>
+    <el-button type="primary" style="width: 45%" size="medium" @click="visible2 = false">确定</el-button>
   </div>
 </el-popover>
 

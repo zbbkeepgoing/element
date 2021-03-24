@@ -157,12 +157,14 @@ Tooltip 组件提供了两个不同的主题：`dark`和`light`。
 
 :::demo 通过设置`effect`属性来改变主题，默认为`dark`。
 ```html
-<el-tooltip content="Top center" placement="top">
-  <el-button>Dark</el-button>
-</el-tooltip>
-<el-tooltip content="Bottom center" placement="bottom" effect="light">
-  <el-button>Light</el-button>
-</el-tooltip>
+<div style="height: 100%; background-color: #ddd; padding: 60px;">
+  <el-tooltip content="Top center" placement="top">
+    <el-button>Dark</el-button>
+  </el-tooltip>
+  <el-tooltip content="Bottom center" placement="bottom" effect="light">
+    <el-button>Light</el-button>
+  </el-tooltip>
+</div>
 ```
 :::
 

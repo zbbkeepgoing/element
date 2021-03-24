@@ -118,7 +118,7 @@
         }
       }
       & + span.el-radio__label {
-        color: $--color-text-placeholder;
+        color: $--radio-color;
         cursor: not-allowed;
       }
     }
@@ -130,6 +130,17 @@
 
         &::after {
           transform: translate(-50%, -50%) scale(1);
+        }
+
+        &:hover {
+          background: $--color-primary-hover;
+        }
+
+        &:active {
+          background: $--color-primary-active;
+          &::after {
+            background-color: $--radio-input-fill-active;
+          }
         }
       }
 
@@ -157,6 +168,11 @@
 
     &:hover {
       border-color: $--radio-input-border-color-hover;
+    }
+
+    &:active {
+      border-color: $--radio-input-border-color-active;
+      background-color: $--radio-input-fill-active;
     }
 
     &::after {

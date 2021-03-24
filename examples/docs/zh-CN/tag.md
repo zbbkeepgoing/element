@@ -124,7 +124,7 @@
   v-if="inputVisible"
   v-model="inputValue"
   ref="saveTagInput"
-  size="small"
+  size="mini"
   @keyup.enter.native="handleInputConfirm"
   @blur="handleInputConfirm"
 >
@@ -192,9 +192,8 @@ Tag 组件提供除了默认值以外的三种尺寸，可以在不同场景下�
 
 ```html
 <el-tag closable>默认标签</el-tag>
-<el-tag size="medium" closable>中等标签</el-tag>
+<el-tag closable><i class="el-icon-circle-plus-outline"> 带icon标签</i></el-tag>
 <el-tag size="small" closable>小型标签</el-tag>
-<el-tag size="mini" closable>超小标签</el-tag>
 ```
 :::
 

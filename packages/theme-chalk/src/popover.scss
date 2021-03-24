@@ -6,7 +6,7 @@
   position: absolute;
   background: $--popover-fill;
   min-width: 160px;
-  border-radius: 2px;
+  border-radius: $--border-radius-big;
   border: 1px solid $--popover-border-color;
   padding: $--popover-padding;
   z-index: $--index-popper;
