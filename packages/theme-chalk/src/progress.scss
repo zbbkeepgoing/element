@@ -60,21 +60,21 @@
 
   @include when(success) {
     .el-progress-bar__inner {
-      background-color: $--color-success;
+      background-color: $--color-success-hover;
     }
 
     .el-progress__text {
-      color: $--color-success;
+      color: $--color-success-hover;
     }
   }
 
   @include when(exception) {
     .el-progress-bar__inner {
-      background-color: $--color-danger;
+      background-color: $--color-danger-hover;
     }
 
     .el-progress__text {
-      color: $--color-danger;
+      color: $--color-danger-hover;
     }
   }
 }
@@ -90,7 +90,7 @@
   @include e(outer) {
     height: 6px;
     border-radius: 100px;
-    background-color: $--border-split-color;
+    background-color: $--background-color-hover;
     overflow: hidden;
     position: relative;
     vertical-align: middle;

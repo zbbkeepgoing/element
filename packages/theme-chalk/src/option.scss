@@ -30,7 +30,7 @@
 
     &.selected {
       color: $--select-option-selected;
-      // font-weight: bold;
+      background-color: $--select-option-selected-background;
     }
 
     & span {

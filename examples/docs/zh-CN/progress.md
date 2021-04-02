@@ -27,7 +27,7 @@
 ```html
 <el-progress :percentage="0"></el-progress>
 <el-progress :percentage="70"></el-progress>
-<el-progress :percentage="20" color="#000" ></el-progress>
+<el-progress :percentage="20" color="#A5B2C5" ></el-progress>
 <el-progress :percentage="50" status="exception" ></el-progress>
 <el-progress :percentage="50" color="#000" icon-class="el-icon-edit"></el-progress>
 ```
@@ -56,7 +56,7 @@
 <el-progress type="circle" :percentage="25"></el-progress>
 <el-progress type="circle" :percentage="100" status="success"></el-progress>
 <el-progress type="circle" :percentage="50" status="exception"></el-progress>
-<el-progress type="circle" :percentage="50" color="#000" icon-class="el-icon-edit"></el-progress>
+<el-progress type="circle" :percentage="50" color="#A5B2C5" icon-class="el-icon-edit"></el-progress>
 ```
 :::
 

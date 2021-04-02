@@ -1536,6 +1536,7 @@
     >
     </el-table-column>
     <el-table-column
+      info-tooltip="测试无icon的tooltip"
       prop="name"
       label="姓名"
       width="180">
@@ -2277,5 +2278,5 @@
 | filters2 | 特殊组的数据过滤的选项，数组格式，数组中的元素需要有 text 、 value 和 icon 属性。下划线分割 | Array[{ text, value, icon }] | — | — |
 | empty-filter-text | 数据过滤，无数据时的空态 | String | - | No Data |
 | custom-filter-class | 自定义 filter 样式 | String | - | - |
-| info-icon | info icon，用于提示列的解释 | String | - | - |
-| info-tooltip | 用于提示列的解释详细 | String | - | - |
+| info-icon | info icon，用于提示列的解释, 没有info-icon时，hover在label上出tooltips | String | - | - |
+| info-tooltip | 用于提示列的解释详细, 没有info-icon时，hover在label上出tooltips | String | - | - |

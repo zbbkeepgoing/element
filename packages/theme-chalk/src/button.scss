@@ -431,20 +431,20 @@
       /* 次要按钮的时候，样式不同 */
       &.is-plain{
         &:first-child {
-          border-right-color: $--button-hover-color;
+          border-right-color: $--color-secondary-hover;
           &.is-disabled{
             border-right-color: $--button-disabled-border;
           }
         }
         &:last-child {
-          border-left-color: $--button-hover-color;
+          border-left-color: $--color-secondary-hover;
           &.is-disabled{
             border-left-color: $--button-disabled-border;
           }
         }
         &:not(:first-child):not(:last-child) {
-          border-left-color: $--button-hover-color;
-          border-right-color: $--button-hover-color;
+          border-left-color: $--color-secondary-hover;
+          border-right-color: $--color-secondary-hover;
           &.is-disabled{
             border-left-color: $--button-disabled-border;
             border-right-color: $--button-disabled-border;

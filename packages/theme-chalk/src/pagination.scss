@@ -7,7 +7,7 @@
   white-space: nowrap;
   padding: 0px 5px;
   color: $--pagination-color;
-  font-weight: bold;
+  font-weight: normal;
   @include utils-clearfix;
 
   span:not([class*=suffix]),
@@ -209,7 +209,8 @@
 
     .el-pager li:not(.disabled) {
       &:hover {
-        color: $--pagination-hover-fill;
+        // color: $--pagination-hover-fill;
+        background-color: $--color-info-secondary-bg;
       }
 
       &.active {
@@ -282,7 +283,8 @@
     &:hover {
       // background: $--color-primary;
       // border-radius: 4px;
-      color: $--pagination-hover-fill;
+      // color: $--pagination-hover-fill;
+      background-color: $--color-info-secondary-bg;
       // color:#fff;
     }
 

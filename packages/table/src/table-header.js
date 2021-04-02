@@ -111,11 +111,13 @@ export default {
                         {
                           column.renderHeader
                             ? column.renderHeader.call(this._renderProxy, h, { column, $index: cellIndex, store: this.store, _self: this.$parent.$vnode.context })
-                            : column.label
+                            : (column.infoTooltip && !column.infoIcon
+                            ? <el-tooltip effect="dark" placement="bottom" content={column.infoTooltip} disabled={!column.infoTooltip}><span>{column.label}</span></el-tooltip>
+                            : column.label)
                         }
                         {
                           column.infoIcon
-                            ? <el-tooltip effect="dark" placement="top" content={column.infoTooltip} disabled={!column.infoTooltip}><i class={column.infoIcon + ' infoIcon'}></i></el-tooltip>
+                            ? <el-tooltip effect="dark" placement="bottom" content={column.infoTooltip} disabled={!column.infoTooltip}><i class={column.infoIcon + ' infoIcon'}></i></el-tooltip>
                             : ''
                         }
                         {

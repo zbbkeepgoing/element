@@ -98,14 +98,17 @@
   }
   @include e(item) {
     padding: 0 16px;
-    height: 30px;
+    height: 22px;
     box-sizing: border-box;
-    line-height: 30px;
+    line-height: 22px;
     display: inline-block;
     list-style: none;
     font-size: 14px;
     color: $--color-text-regular;
     position: relative;
+    &:first-child {
+      left: 0 !important;
+    }
 
     &:focus, &:focus:active {
       outline: none;
@@ -121,21 +124,24 @@
       text-align: center;
       transition: all .3s cubic-bezier(.645,.045,.355,1);
       margin-left: 5px;
-      color: $--color-info;
+      color: $--color-text-primary;
       &:before {
         transform: scale(.9);
         display: inline-block;
       }
 
-      &:hover {
-        background-color: $--color-primary;
-        color: $--color-white;
-      }
+      // &:hover {
+      //   background-color: $--color-primary;
+      //   color: $--color-white;
+      // }
     }
 
     @include when(active) {
       color: $--color-text-primary;
       font-weight: $--font-weight-medium;
+      height: 38px;
+      line-height: 38px;
+      left: -1px;
     }
 
     &:hover {
@@ -155,7 +161,8 @@
   }
   @include m(card) {
     > .el-tabs__header {
-      border-bottom: 1px solid $--border-color-base;
+      border-bottom: 1px solid $--border-divider-color;
+      background-color: $--background-color-secondary;
     }
     > .el-tabs__header .el-tabs__nav-wrap::after {
       content: none;
@@ -171,7 +178,7 @@
     > .el-tabs__header .el-tabs__item .el-icon-close {
       position: relative;
       font-size: 12px;
-      width: 0;
+      width: 14px;
       height: 14px;
       line-height: 14px;
       vertical-align: middle;
@@ -183,23 +190,24 @@
     }
     > .el-tabs__header .el-tabs__item {
       border-bottom: 1px solid transparent;
+      border-right: 1px solid $--border-secondary;
       /* border-left: 1px solid $--border-color-light; */
       transition: color .3s cubic-bezier(.645,.045,.355,1), padding .3s cubic-bezier(.645,.045,.355,1);
       &:first-child {
         /* border-left: none; */
       }
-      &.is-closable {
-        &:hover {
-          padding-left: 13px;
-          padding-right: 13px;
+      // &.is-closable {
+      //   &:hover {
+      //     padding-left: 13px;
+      //     padding-right: 13px;
 
-          & .el-icon-close {
-            width: 14px;
-          }
-        }
-      }
+      //     & .el-icon-close {
+      //       width: 14px;
+      //     }
+      //   }
+      // }
       &.is-active {
-        border: 1px solid $--border-color-base;
+        border: 1px solid $--border-divider-color;
         border-bottom-color: #fff;
         border-radius: 4px 4px 0 0;
         box-sizing: content-box;
@@ -215,11 +223,33 @@
       }
     }
   }
+  @include m(button) {
+    .el-tabs__nav-wrap::after {
+      height: 0px;
+    }
+    >.el-tabs__header {
+      border: none;
+      background-color: $--background-color-hover;
+      border-radius: $--border-radius-base;
+      height: 28px;
+      line-height: 30px;
+      font-size: 12px;
+    }
+    >.el-tabs__header .el-tabs__item {
+      margin: 0 3px;
+      &.is-active {
+        height: 22px;
+        line-height: 22px;
+        background-color: $--color-white;
+        box-shadow: 0px 1px 4px rgba(63, 89, 128, 0.16);
+        border-radius: $--border-radius-base;
+      }
+    }
+  }
   @include m(border-card) {
     background: $--color-white;
     border: 1px solid $--border-color-base;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.12), 0 0 6px 0 rgba(0,0,0,0.04);
-
     >.el-tabs__content {
       padding: 15px;
     }
@@ -299,13 +329,14 @@
     .el-tabs__nav-wrap.is-right,
     .el-tabs__nav-scroll {
       height: 100%;
+      background-color: $--background-color-secondary;
     }
 
     .el-tabs__active-bar.is-left,
     .el-tabs__active-bar.is-right {
       top: 0;
       bottom: auto;
-      width: 2px;
+      width: 0;
       height: auto;
     }
 
@@ -319,7 +350,7 @@
 
       &::after {
         height: 100%;
-        width: 2px;
+        width: 0;
         bottom: auto;
         top: 0;
       }
@@ -331,6 +362,11 @@
     .el-tabs__item.is-left,
     .el-tabs__item.is-right {
       display: block;
+      height: 48px;
+      line-height: 48px;
+      &.is-active {
+        background-color: $--background-color-active;
+      }
     }
 
     .el-tabs__nav-prev,
