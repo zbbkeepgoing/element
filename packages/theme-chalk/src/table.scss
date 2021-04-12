@@ -583,7 +583,12 @@
   @include e(body) {
     tr.hover-row {
       &, &.el-table__row--striped {
-        &, &.current-row {
+        & {
+          > td {
+            background-color: $--table-row-hover-background;
+          }
+        }
+        &.current-row {
           > td {
             background-color: $--table-current-row-background;
           }

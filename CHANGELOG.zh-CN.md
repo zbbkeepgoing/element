@@ -1,5 +1,12 @@
 ## 更新日志
-### 4.0.0
+### 4.0.2
+*2021-04-02*
+- 剩余部分组件换肤（dialog messagebox form menu)
+- radio checkbox 小号
+- tooltips 小号
+- table drag 实时更新
+- select 选择器下拉框去掉了箭头
+### 4.0.1
 *2021-04-02*
 - 大部分组件换肤
 - table tooltips 支持 hover 在 label 上

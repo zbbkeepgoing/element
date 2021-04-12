@@ -27,24 +27,26 @@
 
   @include button-size($--button-padding-vertical, $--button-padding-horizontal, $--button-font-size, $--button-border-radius, $--button-medium-line-height);
 
-  &:hover {
+  &:hover,
+  &:not(.is-disabled):focus {
     color: $--button-default-hover-color;
     border-color: $--button-default-hover-fill;
     background-color: $--button-default-hover-fill;
   }
 
-  &:active {
+  // &:not(.is-disabled):focus {
+  //   color: $--button-default-color;
+  //   border-color: $--button-default-border;
+  //   background-color: $--button-default-fill;
+  //   box-shadow: 0px 0px 0px 1px #FFFFFF, 0px 0px 0px 3px rgba(8, 121, 253, 0.64);
+  // }
+
+  &:not(.is-disabled):active {
     color: $--button-default-active-color;
     border-color: $--button-default-active-border;
     background-color: $--button-default-active-fill;
     outline: none;
-  }
-
-  &:not(.is-disabled):focus {
-    color: $--button-default-color;
-    border-color: $--button-default-border;
-    background-color: $--button-default-fill;
-    box-shadow: 0px 0px 0px 1px #FFFFFF, 0px 0px 0px 3px rgba(8, 121, 253, 0.64);
+    box-shadow: none;
   }
 
   &.is-disabled {
@@ -55,6 +57,7 @@
       background: $--button-default-fill;
       border: $--border-base;
       border-color: $--button-default-border;
+      box-shadow: none;
     }
   }
 
@@ -71,29 +74,33 @@
   @include when(active) {
     color: $--color-primary-active;
     border-color: $--color-primary-active;
+    box-shadow: none;
   }
   // 基于次要按钮的样式上进行覆写，生成次次要按钮
   @include when(plain) {
     background-color: $--button-default-plain-fill;
     border-color: $--button-default-plain-border;
     color: $--button-default-plain-color;
-    &:not(.is-disabled):hover {
+    &:not(.is-disabled):hover,
+    &:not(.is-disabled):focus {
       background: $--button-default-plain-fill;
       border-color: $--color-secondary-active;
       color: $--button-default-plain-color;
     }
+
+    // &:not(.is-disabled):focus {
+    //   color: $--button-default-color;
+    //   border-color: $--button-default-active-border;
+    //   background-color: $--button-default-fill;
+    //   box-shadow: 0px 0px 0px 1px #FFFFFF, 0px 0px 0px 3px rgba(8, 121, 253, 0.64);
+    // }
 
     &:not(.is-disabled):active {
       background: $--button-default-plain-fill;
       border-color: $--button-default-plain-active-border;
       color: $--button-default-plain-color;
       outline: none;
-    }
-    &:not(.is-disabled):focus {
-      color: $--button-default-color;
-      border-color: $--button-default-active-border;
-      background-color: $--button-default-fill;
-      box-shadow: 0px 0px 0px 1px #FFFFFF, 0px 0px 0px 3px rgba(8, 121, 253, 0.64);
+      box-shadow: none;
     }
     &.is-disabled {
       &,
@@ -103,6 +110,7 @@
         background-color: $--button-default-plain-fill;
         border-color: $--button-default-plain-border;
         color: $--button-default-plain-color;
+        box-shadow: none;
       }
     }
   }
@@ -144,23 +152,26 @@
     color: $--button-primary-color;
     background-color: $--button-primary-fill;
     border-color: $--button-primary-border;
-    &:not(.is-disabled):hover {
+    &:not(.is-disabled):hover,
+    &:not(.is-disabled):focus {
       background: $--color-primary-hover;
       border-color: $--color-primary-hover;
       color: $--button-primary-color;
     }
-    
+
+    // &:not(.is-disabled):focus {
+    //   background-color: $--button-primary-fill;
+    //   border-color: $--button-primary-border;
+    //   color: $--button-primary-color;
+    //   box-shadow: 0px 0px 0px 1px #FFFFFF, 0px 0px 0px 3px rgba(8, 121, 253, 0.64);
+    // }
+
     &:not(.is-disabled):active {
       background: $--color-primary-active;
       border-color: $--color-primary-active;
       color: $--button-primary-color;
       outline: none;
-    }
-    &:not(.is-disabled):focus {
-      background-color: $--button-primary-fill;
-      border-color: $--button-primary-border;
-      color: $--button-primary-color;
-      box-shadow: 0px 0px 0px 1px #FFFFFF, 0px 0px 0px 3px rgba(8, 121, 253, 0.64);
+      box-shadow: none;
     }
   
     &.is-active {
@@ -177,6 +188,7 @@
         color: $--button-primary-color;
         background-color: $--button-primary-fill;
         border-color: $--button-primary-border;
+        box-shadow: none;
       }
     }
 
@@ -191,13 +203,14 @@
         border-color: $--background-color-secondary;
         background-color: $--background-color-secondary;
       }
-      &:focus {
-        box-shadow: 0px 0px 0px 1px #FFFFFF, 0px 0px 0px 3px rgba(8, 121, 253, 0.64);
-      }
+      // &:focus {
+      //   box-shadow: 0px 0px 0px 1px #FFFFFF, 0px 0px 0px 3px rgba(8, 121, 253, 0.64);
+      // }
       &:active {
         color: $--color-text-primary;
         border-color: $--button-default-hover-fill;
         background-color: $--button-default-hover-fill;
+        box-shadow: none;
       }
 
       &.is-disabled,
@@ -219,29 +232,33 @@
     color: $--button-primary-color;
     background-color: $--button-danger-fill;
     border-color: $--button-danger-border;
-    &:not(.is-disabled):hover {
+    &:not(.is-disabled):hover,
+    &:not(.is-disabled):focus {
       background: $--button-danger-hover-fill;
       border-color: $--button-danger-hover-border;
       color: $--button-primary-color;
     }
     
+    // &:not(.is-disabled):focus {
+    //   color: $--button-primary-color;
+    //   background-color: $--button-danger-fill;
+    //   border-color: $--button-danger-border;
+    //   box-shadow: 0px 0px 0px 1px #FFFFFF, 0px 0px 0px 3px rgba(8, 121, 253, 0.64);
+    // }
+
     &:not(.is-disabled):active {
       background: $--button-danger-active-fill;
       border-color: $--button-danger-active-border;
       color: $--button-primary-color;
       outline: none;
-    }
-    &:not(.is-disabled):focus {
-      color: $--button-primary-color;
-      background-color: $--button-danger-fill;
-      border-color: $--button-danger-border;
-      box-shadow: 0px 0px 0px 1px #FFFFFF, 0px 0px 0px 3px rgba(8, 121, 253, 0.64);
+      box-shadow: none;
     }
   
     &.is-active {
       background: $--button-danger-active-fill;
       border-color: $--button-danger-active-border;
       color: $--button-primary-color;
+      box-shadow: none;
     }
 
     &.is-disabled {
@@ -252,6 +269,7 @@
         background: $--button-danger-active-fill;
         border-color: $--button-danger-active-border;
         color: $--button-primary-color;
+        box-shadow: none;
       }
     }
 
@@ -266,13 +284,14 @@
         border-color: $--background-color-secondary;
         background-color: $--background-color-secondary;
       }
-      &:focus {
-        box-shadow: 0px 0px 0px 1px #FFFFFF, 0px 0px 0px 3px rgba(8, 121, 253, 0.64);
-      }
+      // &:focus {
+      //   box-shadow: 0px 0px 0px 1px #FFFFFF, 0px 0px 0px 3px rgba(8, 121, 253, 0.64);
+      // }
       &:active {
         color: $--color-text-primary;
         border-color: $--button-default-hover-fill;
         background-color: $--button-default-hover-fill;
+        box-shadow: none;
       }
 
       &.is-disabled,
@@ -310,14 +329,14 @@
       border-color: $--background-color-secondary;
       background-color: $--background-color-secondary;
     }
-    &:focus {
-      
-      box-shadow: 0px 0px 0px 1px #FFFFFF, 0px 0px 0px 3px rgba(8, 121, 253, 0.64);
-    }
+    // &:focus {
+    //   box-shadow: 0px 0px 0px 1px #FFFFFF, 0px 0px 0px 3px rgba(8, 121, 253, 0.64);
+    // }
     &:active {
       color: $--color-text-primary;
       border-color: $--button-default-hover-fill;
       background-color: $--button-default-hover-fill;
+      box-shadow: none;
     }
 
     &.is-disabled,
@@ -376,10 +395,14 @@
       &:active {
         z-index: 2;
       }
+      &:active {
+        box-shadow: none;
+      }
     }
 
     @include when(active) {
       z-index: 1;
+      box-shadow: none;
     }
 
     @include when(plain) {
@@ -592,6 +615,7 @@
 
   &:active {
     color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+    box-shadow: none;
   }
   &.is-disabled{
     color: $--button-disabled-color;

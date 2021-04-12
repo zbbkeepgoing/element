@@ -49,6 +49,9 @@
 <template>
   <el-radio v-model="radio" label="1">备选项</el-radio>
   <el-radio v-model="radio" label="2">备选项</el-radio>
+
+  <el-radio v-model="radio" size="small" label="1">小号备选项</el-radio>
+  <el-radio v-model="radio" size="small" label="2">小号备选项</el-radio>
 </template>
 
 <script>
@@ -278,7 +281,7 @@
 | label     | Radio 的 value   | string / number / boolean    |       —        |      —   |
 | disabled  | 是否禁用    | boolean   | — | false   |
 | border  | 是否显示边框  | boolean   | — | false   |
-| size  | Radio 的尺寸，仅在 border 为真时有效  | string  | medium / small / mini | — |
+| size  | Radio 的尺寸  | string  | medium / small / mini | — |
 | name | 原生 name 属性 | string    |      —         |     —    |
 
 ### Radio Events

@@ -12,19 +12,19 @@
     }
     .avatar-uploader {
       .el-upload {
-        border: 1px dashed #d9d9d9;
+        border: 1px dashed #E6EBF4;
         border-radius: 6px;
         cursor: pointer;
         position: relative;
         overflow: hidden;
 
         &:hover, &:focus {
-          border-color: #409EFF;
+          border-color: #A5B2C5;
         }
       }
       .avatar-uploader-icon {
         font-size: 28px;
-        color: #8c939d;
+        color: #A5B2C5;
         width: 178px;
         height: @width;
         line-height: @height;

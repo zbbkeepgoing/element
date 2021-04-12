@@ -22,6 +22,10 @@
     box-sizing: border-box;
     height: $--radio-bordered-height;
 
+    .el-radio__label {
+      line-height: 1;
+    }
+
     &.is-checked {
       border-color: $--color-primary;
     }
@@ -51,12 +55,21 @@
     }
   }
   @include m(small) {
+    .el-radio__inner {
+      height: $--radio-bordered-small-input-height;
+      width: $--radio-bordered-small-input-width;
+    }
+    .el-radio__label {
+      font-size: $--button-small-font-size;
+      line-height: 16px;
+    }
     &.is-bordered {
       padding: $--radio-bordered-small-padding;
       border-radius: $--button-small-border-radius;
       height: $--radio-bordered-small-height;
       .el-radio__label {
         font-size: $--button-small-font-size;
+        line-height: 1;
       }
       .el-radio__inner {
         height: $--radio-bordered-small-input-height;
@@ -111,6 +124,11 @@
         .el-radio__inner {
           background-color: $--radio-disabled-checked-input-fill;
           border-color: $--radio-disabled-checked-input-border-color;
+
+          &:hover {
+            background-color: $--radio-disabled-input-fill;
+            border-color: $--radio-disabled-input-border-color;
+          }
 
           &::after {
             background-color: $--radio-disabled-checked-icon-color;
@@ -210,5 +228,6 @@
   @include e(label) {
     font-size: $--radio-font-size;
     padding-left: 5px;
+    line-height: 22px;
   }
 }

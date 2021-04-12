@@ -28,8 +28,8 @@
 
   /* 照片墙模式 */
   @include m(picture-card) {
-    background-color: #fbfdff;
-    border: 1px dashed #c0ccda;
+    background-color: $--background-color-secondary;
+    border: 1px dashed $--border-secondary;
     border-radius: 6px;
     box-sizing: border-box;
     width: 148px;
@@ -40,27 +40,27 @@
 
     i {
       font-size: 28px;
-      color: #8c939d;
+      color: $--color-text-placeholder;
     }
 
     &:hover {
-      border-color: $--color-primary;
-      color: $--color-primary;
+      border-color: $--border-secondary-active;
+      color: $--border-secondary-active;
     }
   }
   &:focus {
-    border-color: $--color-primary;
-    color: $--color-primary;
+    border-color: $--border-secondary-active;
+    color: $--border-secondary-active;
 
     .el-upload-dragger {
-      border-color: $--color-primary;
+      border-color: $--border-secondary-active;
     }
   }
 }
 
 @include b(upload-dragger) {
   background-color: #fff;
-  border: 1px dashed #d9d9d9;
+  border: 1px dashed $--border-secondary;
   border-radius: 6px;
   box-sizing: border-box;
   width: 360px;
@@ -271,7 +271,7 @@
     .el-upload-list__item {
       overflow: hidden;
       background-color: #fff;
-      border: 1px solid #c0ccda;
+      border: 1px solid $--border-secondary;
       border-radius: 6px;
       box-sizing: border-box;
       width: 148px;
@@ -313,7 +313,7 @@
       top: -6px;
       width: 40px;
       height: 24px;
-      background: #13ce66;
+      background: $--background-color-secondary;
       text-align: center;
       transform: rotate(45deg);
       box-shadow: 0 0 1pc 1px rgba(0,0,0,0.2);
@@ -386,7 +386,7 @@
       overflow: hidden;
       z-index: 0;
       background-color: #fff;
-      border: 1px solid #c0ccda;
+      border: 1px solid $--border-secondary;
       border-radius: 6px;
       box-sizing: border-box;
       margin-top: 10px;
@@ -452,7 +452,7 @@
       top: -7px;
       width: 46px;
       height: 26px;
-      background: #13ce66;
+      background: $--background-color-secondary;
       text-align: center;
       transform: rotate(45deg);
       box-shadow: 0 1px 1px #ccc;
@@ -494,7 +494,7 @@
     top: -6px;
     width: 40px;
     height: 24px;
-    background: #13ce66;
+    background: $--background-color-secondary;
     text-align: center;
     transform: rotate(45deg);
     box-shadow: 0 0 1pc 1px rgba(0,0,0,0.2);

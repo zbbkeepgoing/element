@@ -7,7 +7,7 @@
   position: relative;
   margin: 0 auto;
   background: $--color-white;
-  border-radius: $--border-radius-small;
+  border-radius: $--border-radius-big;
   box-shadow: $--dialog-box-shadow;
   box-sizing: border-box;
   width: 50%;
@@ -37,9 +37,9 @@
   }
 
   @include e(header) {
-    padding: 13px 20px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid $--border-color-base;
+    padding: $--dialog-padding-primary;
+    padding-bottom: 0px;
+    // border-bottom: 1px solid $--border-color-base;
     min-height: 18px;
     font-weight: bold;
     &.dragable {
@@ -67,7 +67,7 @@
     font-size: $--message-close-size;
 
     .el-dialog__close {
-      color: $--color-info;
+      color: $--color-text-primary;
     }
 
     &:focus, &:hover {
@@ -84,17 +84,18 @@
   }
 
   @include e(body) {
-    padding: 20px 20px 20px 20px;
+    padding: $--dialog-padding-primary;
     color: $--color-text-primary;
     // line-height: $--dialog-line-height;
     font-size: $--dialog-font-size;
   }
 
   @include e(footer) {
-    padding: 10px 20px 9px;
+    padding: $--dialog-padding-primary;
+    padding-top: 0px;
     text-align: right;
     box-sizing: border-box;
-    border-top: 1px solid $--border-color-base;
+    // border-top: 1px solid $--border-color-base;
   }
 
   // 内容居中布局

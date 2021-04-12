@@ -61,6 +61,7 @@
 <template>
   <!-- `checked` 为 true 或 false -->
   <el-checkbox v-model="checked">备选项</el-checkbox>
+  <el-checkbox v-model="checked" size="small">小号备选项</el-checkbox>
 </template>
 <script>
   export default {
@@ -299,7 +300,7 @@
 | false-label | 没有选中时的值   | string / number    |      —         |     —    |
 | disabled  | 是否禁用    | boolean   |  — | false   |
 | border  | 是否显示边框  | boolean   | — | false   |
-| size  | Checkbox 的尺寸，仅在 border 为真时有效  | string  | medium / small / mini | — |
+| size  | Checkbox 的尺寸  | string  | medium / small / mini | — |
 | name | 原生 name 属性 | string    |      —         |     —    |
 | checked  | 当前是否勾选    | boolean   |  — | false   |
 | indeterminate  | 设置 indeterminate 状态，只负责样式控制    | boolean   |  — | false   |

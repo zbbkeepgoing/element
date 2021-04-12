@@ -13,7 +13,13 @@
     font-size: $--tooltip-font-size;
     max-width: 300px;
     word-wrap: break-word;
-    line-height: 1.5;
+    line-height: 22px;
+    &.popper--small {
+      padding: $--tooltip-small-padding;
+      font-size: $--tooltip-small-font-size;
+      line-height: 16px;
+      border-radius: $--border-radius-mini;
+    }
     div {
       max-height: 300px;
       overflow-y: hidden;

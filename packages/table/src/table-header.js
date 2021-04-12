@@ -416,9 +416,7 @@ export default {
           const proxyLeft = this.dragState.startLeft + deltaLeft;
 
           resizeProxy.style.left = Math.max(minLeft, proxyLeft) + 'px';
-        };
-
-        const handleMouseUp = () => {
+          // 实时拖拽
           if (this.dragging) {
             const {
               startColumnLeft,
@@ -430,6 +428,21 @@ export default {
             table.$emit('header-dragend', column.width, startLeft - startColumnLeft, column, event);
 
             this.store.scheduleLayout();
+          }
+        };
+
+        const handleMouseUp = () => {
+          if (this.dragging) {
+            // const {
+            //   startColumnLeft,
+            //   startLeft
+            // } = this.dragState;
+            // const finalLeft = parseInt(resizeProxy.style.left, 10);
+            // const columnWidth = finalLeft - startColumnLeft;
+            // column.width = column.realWidth = columnWidth;
+            // table.$emit('header-dragend', column.width, startLeft - startColumnLeft, column, event);
+
+            // this.store.scheduleLayout();
 
             document.body.style.cursor = '';
             this.dragging = false;

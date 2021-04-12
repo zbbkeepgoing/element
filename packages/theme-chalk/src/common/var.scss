@@ -335,12 +335,12 @@ $--alert-icon-large-size: 28px !default;
 /* Message Box
 -------------------------- */
 $--msgbox-width: 420px !default;
-$--msgbox-border-radius: 4px !default;
+$--msgbox-border-radius: $--border-radius-big !default;
 $--msgbox-font-size: $--font-size-medium !default;
 $--msgbox-content-font-size: $--font-size-base !default;
 $--msgbox-content-color: $--color-text-primary !default;
 $--msgbox-error-font-size: 12px !default;
-$--msgbox-padding-primary: 20px !default;
+$--msgbox-padding-primary: 24px !default;
 
 $--msgbox-success-color: $--color-success !default;
 $--msgbox-info-color: $--color-info !default;
@@ -358,10 +358,10 @@ $--message-close-color: $--color-text-placeholder !default;
 $--message-close-size: 16px !default;
 $--message-close-hover-color: $--color-text-secondary !default;
 
-$--message-success-color: $--color-success !default;
-$--message-info-color: $--color-primary !default;
-$--message-warning-color: $--color-warning !default;
-$--message-danger-color: $--color-danger !default;
+$--message-success-color: $--color-success-active !default;
+$--message-info-color: $--color-nav !default;
+$--message-warning-color: $--color-warning-active !default;
+$--message-danger-color: $--color-danger-active !default;
 
 /* Notification
 -------------------------- */
@@ -474,7 +474,7 @@ $--button-font-size: 14px !default;
 $--button-font-weight: $--font-weight-primary !default;
 $--button-border-radius: $--border-radius-base !default;
 $--button-padding-vertical: 6px !default;
-$--button-padding-horizontal: 12px !default;
+$--button-padding-horizontal: 10px !default;
 
 $--button-big-padding-vertical: 8px !default;
 
@@ -575,7 +575,7 @@ $--dialog-close-hover-color: $--color-primary !default;
 $--dialog-title-font-size: 16px !default;
 $--dialog-font-size: 14px !default;
 $--dialog-line-height: $--font-line-height-primary !default;
-$--dialog-padding-primary: 15px!default;
+$--dialog-padding-primary: 24px!default;
 
 /* Table
 -------------------------- */
@@ -583,7 +583,7 @@ $--table-border:  1px solid $--border-divider-color !default;
 $--table-text-color: $--color-text-primary !default;
 $--table-header-color: $--color-text-regular !default;
 $--table-row-hover-background: $--background-color-secondary !default;
-$--table-current-row-background: $--background-color-secondary !default;
+$--table-current-row-background: $--color-info-bg !default;
 // $--table-header-background: $--background-color-regular !default;
 $--table-header-background: $--color-white !default;
 $--table-header-nested-background: $--color-white; // temp  need verify
@@ -610,7 +610,7 @@ $--popover-fill: $--color-white !default;
 $--popover-font-size: 14px !default;
 $--popover-border-color: $--border-color-lighter !default;
 $--popover-arrow-size: 6px !default;
-$--popover-padding: 24px !default;
+$--popover-padding: 16px !default;
 $--popover-padding-large: 18px 20px !default;
 $--popover-title-font-size: 13px !default;
 $--popover-title-color: $--color-text-primary !default;
@@ -620,9 +620,11 @@ $--popover-title-color: $--color-text-primary !default;
 $--tooltip-fill: $--color-black !default;
 $--tooltip-color: $--color-white !default;
 $--tooltip-font-size: 14px !default;
+$--tooltip-small-font-size: 12px !default;
 $--tooltip-border-color: $--color-black !default;
 $--tooltip-arrow-size: 4px !default;
 $--tooltip-padding: 8px 10px !default;
+$--tooltip-small-padding: 4px 6px !default;
 
 /* Tag
 -------------------------- */
@@ -674,8 +676,8 @@ $--badge-size: 18px !default;
 /* Card
 --------------------------*/
 $--card-border-color: $--border-color-base !default;
-$--card-border-radius: 1px !default;
-$--card-padding: 15px !default;
+$--card-border-radius: 6px !default;
+$--card-padding: 16px !default;
 
 /* Slider
 --------------------------*/

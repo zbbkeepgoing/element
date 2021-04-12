@@ -7,7 +7,7 @@
 @include b(message-box) {
   display: inline-block;
   width: $--msgbox-width;
-  padding-bottom: 15px;
+  padding-bottom: $--msgbox-padding-primary;
   vertical-align: middle;
   background-color: $--color-white;
   border-radius: $--msgbox-border-radius;
@@ -37,9 +37,9 @@
 
   @include e(header) {
     position: relative;
-    padding: 16px $--msgbox-padding-primary;
-    padding-bottom:15px;
-    border-bottom: 1px solid $--border-color-lighter;
+    padding: $--msgbox-padding-primary;
+    padding-bottom: 0px;
+    // border-bottom: 1px solid $--border-color-lighter;
     min-height: 18px;
     box-sizing: content-box;
   }
@@ -65,7 +65,7 @@
     cursor: pointer;
 
     .el-message-box__close {
-      color: $--color-info;
+      color: $--color-text-primary;
     }
 
     &:focus, &:hover {
@@ -144,7 +144,7 @@
   }
 
   @include e(btns) {
-    padding: 5px 20px 0px;
+    padding: 0px $--msgbox-padding-primary 0px;
     text-align: right;
 
     & button:nth-child(2) {
