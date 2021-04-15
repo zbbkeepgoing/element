@@ -1,5 +1,8 @@
 <template>
-  <i :class="'el-icon-' + name"></i>
+  <i :class="'el-icon-' + name" v-if="type === 'single' || !type"></i>
+  <svg class="mutiple-color-icon" aria-hidden="true" v-else>
+    <use :xlink:href="`#${name}`"></use>
+  </svg>
 </template>
 
 <script>
@@ -7,7 +10,11 @@
     name: 'ElIcon',
 
     props: {
-      name: String
+      name: String,
+      type: {
+        type: String,
+        default: 'single'
+      }
     }
   };
 </script>
