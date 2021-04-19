@@ -55,22 +55,27 @@ $--color-success: #66C942 !default;
 $--color-success-hover: #49A82B !default;
 $--color-success-active: #32671E !default;
 $--color-success-bg: #EFF9EB !default;
+$--color-success-tag-bg: #D9F1CF !default;
 $--color-danger: #E03B3B !default;
 $--color-danger-hover: #CA1616 !default;
 $--color-danger-active: #7F2727 !default;
 $--color-danger-bg: #FCE9E9 !default;
+$--color-danger-tag-bg: #F7CACA !default;
 $--color-warning: #F29D41 !default;
 $--color-warning-hover: #EC8600 !default;
 $--color-warning-active: #844001 !default;
 $--color-warning-bg: #FFF2E5 !default;
+$--color-warning-tag-bg: #FFDFC2 !default;
 $--color-info: $--color-primary !default;
 $--color-info-hover: #0659A7 !default;
 $--color-info-active: $--color-nav !default;
 $--color-info-bg: #F0F8FE !default;
+$--color-info-tag-bg: #CEE6FD !default;
 $--color-info-secondary: #A5B2C5 !default;
 $--color-info-secondary-hover: #546174 !default;
 $--color-info-secondary-active: #3B4759 !default;
 $--color-info-secondary-bg: #F8F9FB !default;
+$--color-info-secondary-tag-bg: #ECF0F8 !default;
 
 $--color-success-light: mix($--color-white, $--color-success, 80%) !default;
 $--color-warning-light: mix($--color-white, $--color-warning, 80%) !default;
@@ -487,13 +492,13 @@ $--button-medium-padding-horizontal: 12px !default;
 $--button-small-font-size: 12px !default;
 $--button-small-line-height: 16px !default;
 $--button-small-border-radius: #{$--border-radius-base} !default;
-$--button-small-padding-vertical: 2px !default;
+$--button-small-padding-vertical: 5px !default;
 $--button-small-padding-horizontal: 10px !default;
 
 $--button-mini-font-size: 12px !default;
 $--button-mini-line-height: 16px !default;
 $--button-mini-border-radius: #{$--border-radius-base} !default;
-$--button-mini-padding-vertical: 1px !default;
+$--button-mini-padding-vertical: 2px !default;
 $--button-mini-padding-horizontal: 8px !default;
 
 $--button-default-color: $--color-text-primary !default;
@@ -630,27 +635,27 @@ $--tooltip-small-padding: 4px 6px !default;
 -------------------------- */
 $--tag-padding: 2px 6px !default;
 $--tag-padding-small: 2px 4px !default;
-$--tag-fill: $--color-info-bg !default;
+$--tag-fill: $--color-info-tag-bg !default;
 $--tag-color: $--color-nav !default;
-$--tag-border: $--color-info-bg !default;
+$--tag-border: $--color-info-tag-bg !default;
 $--tag-font-size: 14px !default;
 $--tag-line-height: 20px !default;
 $--tag-border-radius: 4px !default;
 
-$--tag-info-fill: $--color-info-secondary-bg !default;
-$--tag-info-border: $--color-info-secondary-bg !default;
+$--tag-info-fill: $--color-info-secondary-tag-bg !default;
+$--tag-info-border: $--color-info-secondary-tag-bg !default;
 $--tag-info-color: $--color-info-secondary-active !default;
 
-$--tag-success-fill: $--color-success-bg !default;
-$--tag-success-border: $--color-success-bg !default;
+$--tag-success-fill: $--color-success-tag-bg !default;
+$--tag-success-border: $--color-success-tag-bg !default;
 $--tag-success-color: $--color-success-active !default;
 
-$--tag-warning-fill: $--color-warning-bg !default;
-$--tag-warning-border: $--color-warning-bg !default;
+$--tag-warning-fill: $--color-warning-tag-bg !default;
+$--tag-warning-border: $--color-warning-tag-bg !default;
 $--tag-warning-color: $--color-warning-active !default;
 
-$--tag-danger-fill: $--color-danger-bg !default;
-$--tag-danger-border: $--color-danger-bg !default;
+$--tag-danger-fill: $--color-danger-tag-bg !default;
+$--tag-danger-border: $--color-danger-tag-bg !default;
 $--tag-danger-color: $--color-danger-active !default;
 
 /* Tree

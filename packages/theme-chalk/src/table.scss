@@ -97,15 +97,15 @@
   }
 
   @include e(expanded-cell) {
-    background-color: $--background-color-base-1;
+    background-color: $--background-color-secondary;
 
     // 纯属为了增加权重
     &[class*=cell] {
-      padding: 15px 15px;
+      padding: 24px;
     }
 
     &:hover {
-      background-color: $--background-color-light !important;
+      background-color: $--background-color-secondary !important;
     }
   }
 

@@ -27,6 +27,7 @@
 ```html
 <el-progress :percentage="0"></el-progress>
 <el-progress :percentage="70"></el-progress>
+<el-progress :percentage="100"></el-progress>
 <el-progress :percentage="20" color="#A5B2C5" ></el-progress>
 <el-progress :percentage="50" status="exception" ></el-progress>
 <el-progress :percentage="50" color="#000" icon-class="el-icon-edit"></el-progress>
