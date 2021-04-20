@@ -3,7 +3,7 @@ import { hasClass, addClass, removeClass } from 'kyligence-ui/src/utils/dom';
 import ElCheckbox from 'kyligence-ui/packages/checkbox';
 import ElRadio from 'kyligence-ui/packages/radio';
 import ElTooltip from 'kyligence-ui/packages/tooltip';
-import debounce from 'throttle-debounce/debounce';
+import debounce from 'kyligence-ui/node_modules/throttle-debounce/debounce';
 import LayoutObserver from './layout-observer';
 
 export default {

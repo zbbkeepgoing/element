@@ -30,7 +30,7 @@
   </div>
 </template>
 <script>
-  import AsyncValidator from 'async-validator';
+  import AsyncValidator from 'kyligence-ui/node_modules/async-validator';
   import emitter from 'kyligence-ui/src/mixins/emitter';
   import objectAssign from 'kyligence-ui/src/utils/merge';
   import { noop, getPropByPath } from 'kyligence-ui/src/utils/util';

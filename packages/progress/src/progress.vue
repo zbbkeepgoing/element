@@ -110,13 +110,13 @@
         let ret;
         switch (this.status) {
           case 'success':
-            ret = '#13ce66';
+            ret = '#49A82B';
             break;
           case 'exception':
-            ret = '#ff4949';
+            ret = '#CA1616';
             break;
           default:
-            ret = '#20a0ff';
+            ret = '#0875DA';
         }
         return ret;
       },

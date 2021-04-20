@@ -188,7 +188,7 @@
 <script>
   import bus from '../../bus';
   import navsData from '../../nav.config.json';
-  import throttle from 'throttle-debounce/throttle';
+  import throttle from 'kyligence-ui/node_modules/throttle-debounce/throttle';
 
   export default {
     data() {

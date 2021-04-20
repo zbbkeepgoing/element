@@ -59,7 +59,7 @@
   </div>
 </template>
 <script>
-  import debounce from 'throttle-debounce/debounce';
+  import debounce from 'kyligence-ui/node_modules/throttle-debounce/debounce';
   import ElInput from 'kyligence-ui/packages/input';
   import Clickoutside from 'kyligence-ui/src/utils/clickoutside';
   import ElAutocompleteSuggestions from './autocomplete-suggestions.vue';

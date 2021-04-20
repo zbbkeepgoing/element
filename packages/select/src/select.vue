@@ -148,7 +148,7 @@
   import ElOption from './option.vue';
   import ElTag from 'kyligence-ui/packages/tag';
   import ElScrollbar from 'kyligence-ui/packages/scrollbar';
-  import debounce from 'throttle-debounce/debounce';
+  import debounce from 'kyligence-ui/node_modules/throttle-debounce/debounce';
   import Clickoutside from 'kyligence-ui/src/utils/clickoutside';
   import { addClass, removeClass, hasClass } from 'kyligence-ui/src/utils/dom';
   import { addResizeListener, removeResizeListener } from 'kyligence-ui/src/utils/resize-event';

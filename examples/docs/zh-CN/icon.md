@@ -7,7 +7,7 @@
       return {
         icons: iconList,
         multIcons: [...multIconList.glyphs],
-        otherIcons: ["arrow_right_1_12","arrow_right_1_16","arrow_up_1_16","arrow_left_1_16","arrow_down_1_16","arrow_left_1_22","arrow_left_2_22","arrow_up_1_22","arrow_right_1_22","arrow_down_1_22","arrow_right_1_24","arrow_up_1_24","arrow_down 1_24","arrow_left_1_24","add_24","0_placeholder_24","nav_action_24","loading_24","close_22","download_22","add_22","company_22","0_placeholder_22","code_22","auto_wizard_22","controller_22","document_22","discard_22","build_index_22","info_22","int&bigint_22","dup_22","export_2_22","folder_22","hierachy_22","insigh_22","help_22","keychain_22","edit_22","minus_22","pause_22","merge_22","meausre_22","more_22","language_22","notbook_22","move_22","loading_22","nav_action_22","play_22","right_02_22","pause_outline_22","play_outline_22","redo_22","play_fill_22","sample_22","resure_22","repair_22","more_with_circle_22","stop_fill_22","table_down_22","stop_outline_22","table_delete_22","search_22","save_22","table_er_diagram_22","system_config_22","timestamp_22","table_right_22","table_refresh_22","time_22","table_rank_22","table_filter_22","undo_22","view_range_22","view_22","ts_22","0_placeholder_16","company_16","document_16","add_16","folder_16","close_16","loading_16","minus_16","dup_16","hierarchy_16","keychain_16","edit_16","play_16","move_16","more_with_circle_16","time_16","int&bigint_16","meausre_16","table_right_16","info_16","save_16","view_16","notbook_16","table_rank_16","data_base_16","search_16","help_16","table_delete_16","table_down_16","more_16","build_index_16","view_range_16","check_12","half_selected_12","table_dwon_12","folder_12","0_placeholder_12","loading_12","table_right_12","info_12"]
+        otherIcons: ["arrow_right_24","arrow_up_24","arrow_down_24","loading_24","arrow_left_24","add_22","arrow_down_22","add_with_border_22","arrow_left_22","arrow_table_down_22","arrow_left_L_22","arrow_table_right_22","arrow_up_22","close_22","bell_22","confirm_22","build_index_22","controller_22","document_22","export_22","code_22","arrow_right_22","edit_22","company_22","download_22","folder_22","language_22","filter_22","datatype_int&bigint_22","merge_22","license_22","minus_with_border_22","minus_22","more_22","nav_action_22","more_with_border_22","keychain_22","pause_22","datatype_meausre_22","loading_22","play_outline_22","play_fill_22","insigh_22","play_with_border_22","resure_22","pause_outline_22","refresh_22","help_22","hierachy_22","stop_fill_22","search_22","notbook_22","sample_22","repair_22","move_22","save_22","dup_22","redo_22","time_22","table_delete_22","stop_with_border_22","timestamp_22","table_rank_22","view_range_22","undo_22","view_22","system_config_22","wizard_22","0_placeholder_22","0_placeholder_16","arrow_table_right_16","arrow_down_16","close_16","arrow_up_16","build_index_16","company_16","datatype_meausre_16","datatype_nt&bigint_16","dup_16","edit_16","data_base_16","folder_16","document_16","help_with_border_16","loading_16","minus_16","more_with_border_16","keychain_16","more_16","notbook_16","move_16","hierarchy_16","play_outline_16","save_16","search_16","view_16","table_rank_16","view_range_16","time_16","table_delete_16","arrow_table_down_16","arrow_right_16","add_16","arrow_left_16"]
       };
     }
   }
@@ -145,12 +145,6 @@
     <span>
       <i :class="'el-ksd-icon-' + item"></i>
       <span class="icon-name">{{`el-ksd-icon-${item}`}}</span>
-    </span>
-  </li>
-  <li>
-    <span>
-      <i class="el-ksd-icon-arrow_right_1_12"></i>
-      <span class="icon-name">el-ksd-icon-arrow_right_1_12</span>
     </span>
   </li>
 </ul>
