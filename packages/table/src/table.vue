@@ -221,7 +221,7 @@
 <script type="text/babel">
   import ElCheckbox from 'kyligence-ui/packages/checkbox';
   import ElRadio from 'kyligence-ui/packages/radio';
-  import debounce from 'kyligence-ui/node_modules/throttle-debounce/debounce';
+  import debounce from 'throttle-debounce/debounce';
   import { addResizeListener, removeResizeListener } from 'kyligence-ui/src/utils/resize-event';
   import Mousewheel from 'kyligence-ui/src/directives/mousewheel';
   import Locale from 'kyligence-ui/src/mixins/locale';

@@ -1,4 +1,4 @@
-import normalizeWheel from 'kyligence-ui/node_modules/normalize-wheel';
+import normalizeWheel from 'normalize-wheel';
 
 const isFirefox = typeof navigator !== 'undefined' && navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 

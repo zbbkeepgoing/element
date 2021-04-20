@@ -50,7 +50,7 @@
 </template>
 
 <script>
-import throttle from 'kyligence-ui/node_modules/throttle-debounce/throttle';
+import throttle from 'throttle-debounce/throttle';
 import { addResizeListener, removeResizeListener } from 'kyligence-ui/src/utils/resize-event';
 
 export default {

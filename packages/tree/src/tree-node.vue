@@ -72,7 +72,7 @@
   import emitter from 'kyligence-ui/src/mixins/emitter';
   import { getNodeKey } from './model/util';
   import { hasClass } from 'kyligence-ui/src/utils/dom';
-  import debounce from 'kyligence-ui/node_modules/throttle-debounce/debounce';
+  import debounce from 'throttle-debounce/debounce';
 
   export default {
     name: 'ElTreeNode',

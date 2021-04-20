@@ -67,7 +67,7 @@ import Clickoutside from 'kyligence-ui/src/utils/clickoutside';
 import emitter from 'kyligence-ui/src/mixins/emitter';
 import Locale from 'kyligence-ui/src/mixins/locale';
 import { t } from 'kyligence-ui/src/locale';
-import debounce from 'kyligence-ui/node_modules/throttle-debounce/debounce';
+import debounce from 'throttle-debounce/debounce';
 import { generateId } from 'kyligence-ui/src/utils/util';
 
 const popperMixin = {

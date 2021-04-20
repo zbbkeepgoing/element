@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import debounce from 'kyligence-ui/node_modules/throttle-debounce/debounce';
+import debounce from 'throttle-debounce/debounce';
 import merge from 'kyligence-ui/src/utils/merge';
 import { orderBy, getColumnById, getRowIdentity } from './util';
 
