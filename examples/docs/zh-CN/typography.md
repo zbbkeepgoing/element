@@ -158,7 +158,7 @@ font-family:PingFangSC-light;
 ### Font-family 代码
 
 ```css
-font-family: "Helvetica Neue","PingFang SC","Microsoft YaHei",Arial,sans-serif;
+font-family: 'Helvetica Neue',Helvetica,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',SimSun,sans-serif;
 ```
 
 ### 字体使用规范

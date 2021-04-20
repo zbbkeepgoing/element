@@ -121,6 +121,7 @@
       background: $--tooltip-color;
       border: 1px solid $--tooltip-color;
       color: $--color-text-primary;
+      box-shadow: 0px 4px 12px rgba(48, 70, 103, 0.32);
 
       &[x-placement^="top"] .popper__arrow {
         border-top-color: $--tooltip-color;
