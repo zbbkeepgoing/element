@@ -2,12 +2,29 @@
   var iconList = require('examples/icon.json');
   let multIconList = require('../../../src/iconfont/iconfont.json')
 
+  const customIcons = (function () {
+    const icons = ["workspace_22","edit_22","cluster_22","project_22","project_16","edit_r16","cluster_16","workspace_16","arrow_right_24","arrow_up_24","arrow_down_24","loading_24","arrow_left_24","add_22","arrow_down_22","add_with_border_22","arrow_left_22","arrow_table_down_22","arrow_left_L_22","arrow_table_right_22","arrow_up_22","close_22","bell_22","confirm_22","build_index_22","controller_22","document_22","export_22","code_22","arrow_right_22","edit_221","company_22","download_22","folder_22","language_22","filter_22","datatype_int&bigint_22","merge_22","license_22","minus_with_border_22","minus_22","more_22","nav_action_22","more_with_border_22","keychain_22","pause_22","datatype_meausre_22","loading_22","play_outline_22","play_fill_22","insigh_22","play_with_border_22","resure_22","pause_outline_22","refresh_22","help_22","hierachy_22","stop_fill_22","search_22","notbook_22","sample_22","repair_22","move_22","save_22","dup_22","redo_22","time_22","table_delete_22","stop_with_border_22","timestamp_22","table_rank_22","view_range_22","undo_22","view_22","system_config_22","wizard_22","0_placeholder_22","0_placeholder_16","arrow_table_right_16","arrow_down_16","close_16","arrow_up_16","build_index_16","company_16","datatype_meausre_16","datatype_nt&bigint_16","dup_16","edit_16","data_base_16","folder_16","document_16","help_with_border_16","loading_16","minus_16","more_with_border_16","keychain_16","more_16","notbook_16","move_16","hierarchy_16","play_outline_16","save_16","search_16","view_16","table_rank_16","view_range_16","time_16","table_delete_16","arrow_table_down_16","arrow_right_16","add_16","arrow_left_16"]
+    let customIcons = []
+    const temp = []
+
+    icons.map(it => it.replace(/_\d+$/, '')).forEach(item => {
+      !temp.includes(item) && temp.push(item)
+    })
+
+    const list = temp.sort((a, b) => a.charAt().charCodeAt() - b.charAt().charCodeAt())
+    list.forEach(item => {
+      const items = icons.filter(it => it.replace(/_\d+$/, '') === item)
+      customIcons = [...customIcons, ...items]
+    })
+    return customIcons
+  })()
+
   export default {
     data() {
       return {
         icons: iconList,
         multIcons: [...multIconList.glyphs],
-        otherIcons: ["arrow_right_24","arrow_up_24","arrow_down_24","loading_24","arrow_left_24","add_22","arrow_down_22","add_with_border_22","arrow_left_22","arrow_table_down_22","arrow_left_L_22","arrow_table_right_22","arrow_up_22","close_22","bell_22","confirm_22","build_index_22","controller_22","document_22","export_22","code_22","arrow_right_22","edit_22","company_22","download_22","folder_22","language_22","filter_22","datatype_int&bigint_22","merge_22","license_22","minus_with_border_22","minus_22","more_22","nav_action_22","more_with_border_22","keychain_22","pause_22","datatype_meausre_22","loading_22","play_outline_22","play_fill_22","insigh_22","play_with_border_22","resure_22","pause_outline_22","refresh_22","help_22","hierachy_22","stop_fill_22","search_22","notbook_22","sample_22","repair_22","move_22","save_22","dup_22","redo_22","time_22","table_delete_22","stop_with_border_22","timestamp_22","table_rank_22","view_range_22","undo_22","view_22","system_config_22","wizard_22","0_placeholder_22","0_placeholder_16","arrow_table_right_16","arrow_down_16","close_16","arrow_up_16","build_index_16","company_16","datatype_meausre_16","datatype_nt&bigint_16","dup_16","edit_16","data_base_16","folder_16","document_16","help_with_border_16","loading_16","minus_16","more_with_border_16","keychain_16","more_16","notbook_16","move_16","hierarchy_16","play_outline_16","save_16","search_16","view_16","table_rank_16","view_range_16","time_16","table_delete_16","arrow_table_down_16","arrow_right_16","add_16","arrow_left_16"]
+        customIcons: customIcons
       };
     }
   }
@@ -141,7 +158,7 @@
       <span class="icon-name">{{'el-icon-' + name}}</span>
     </span>
   </li>
-  <li v-for="item in otherIcons" :key="item">
+  <li v-for="item in customIcons" :key="item">
     <span>
       <i :class="'el-ksd-icon-' + item"></i>
       <span class="icon-name">{{`el-ksd-icon-${item}`}}</span>
