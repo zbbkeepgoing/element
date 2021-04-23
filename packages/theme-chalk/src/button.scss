@@ -7,7 +7,6 @@
 // 次要按钮 - 默认按钮
 @include b(button) {
   display: inline-block;
-  line-height: 1;
   white-space: nowrap;
   cursor: pointer;
   background: $--button-default-fill;
@@ -20,6 +19,13 @@
   outline: none;
   margin: 0;
   transition: .1s;
+  i {
+    font-size: $--button-medium-line-height; // 自定义的icon大小得跟行高一致
+  }
+  span {
+    vertical-align: middle;
+    line-height: $--button-medium-line-height;
+  }
   @include utils-user-select(none);
   & + .el-button {
     margin-left: 10px;
@@ -305,16 +311,43 @@
     @include button-variant($--button-info-color, $--button-info-fill, $--button-info-border);
   }
   @include m(big) {
-    @include button-size($--button-big-padding-vertical, $--button-medium-padding-horizontal, $--button-medium-font-size, $--button-medium-border-radius, $--button-medium-line-height);
+    @include button-size($--button-big-padding-vertical, $--button-big-padding-horizontal, $--button-medium-font-size, $--button-medium-border-radius, $--button-medium-line-height);
   }
   @include m(medium) {
     @include button-size($--button-medium-padding-vertical, $--button-medium-padding-horizontal, $--button-medium-font-size, $--button-medium-border-radius, $--button-medium-line-height);
+    & [class*="el-icon-"], & [class*="el-ksd-icon"] {
+      & + span {
+        margin-left: 2px;
+      }
+    }
   }
   @include m(small) {
     @include button-size($--button-small-padding-vertical, $--button-small-padding-horizontal, $--button-small-font-size, $--button-small-border-radius, $--button-small-line-height);
+    i {
+      font-size: $--button-small-line-height; // 自定义的icon大小得跟行高一致
+    }
+    span {
+      line-height: $--button-mini-line-height;
+    }
+    & [class*="el-icon-"], & [class*="el-ksd-icon"] {
+      & + span {
+        margin-left: 2px;
+      }
+    }
   }
   @include m(mini) {
     @include button-size($--button-mini-padding-vertical, $--button-mini-padding-horizontal, $--button-mini-font-size, $--button-mini-border-radius, $--button-mini-line-height);
+    i {
+      font-size: $--button-mini-line-height; // 自定义的icon大小得跟行高一致
+    }
+    span {
+      line-height: $--button-small-line-height;
+    }
+    & [class*="el-icon-"], & [class*="el-ksd-icon"] {
+      & + span {
+        margin-left: 1px;
+      }
+    }
   }
   @include m(text) {
     border-color: transparent;

@@ -9,10 +9,11 @@
       aria-modal="true"
       :aria-label="title || 'dialog'"
     >
-      <div class="el-message-box" :class="[customClass, center && 'el-message-box--center']">
+      <div class="el-message-box" :style="style" :class="[customClass, center && 'el-message-box--center']">
         <div class="el-message-box__header" v-if="title !== null">
           <div class="el-message-box__title">
-            <div class="el-message-box__status" :class="[ typeClass ]" v-if="typeClass && center"></div>
+            <div class="el-message-box__status" :class="[ typeClass ]" v-if="iconClass"></div>
+            <el-icon class="el-message-box__status" v-if="typeClass" :name="typeClass" type="mult"></el-icon>
             <span>{{ title }}</span>
           </div>
           <button type="button"
@@ -26,7 +27,7 @@
           </button>
         </div>
         <div class="el-message-box__content" v-if="message !== ''">
-          <div class="el-message-box__status" :class="[ typeClass ]" v-if="typeClass && !center"></div>
+          <!-- <div class="el-message-box__status" :class="[ typeClass ]" v-if="typeClass && !center"></div> -->
           <div class="el-message-box__message">
             <slot>
               <p v-if="!dangerouslyUseHTMLString">{{ message }}</p>
@@ -43,9 +44,8 @@
             <div class="el-message-box__errormsg" :style="{ visibility: !!editorErrorMessage ? 'visible' : 'hidden' }">{{ editorErrorMessage }}</div>
           </div>
         </div>
-        <div class="el-message-box__btns">
+        <div class="el-message-box__btns" :class="{'el-message-box__btns_center': centerButton}">
           <el-button
-            plain
             :loading="cancelButtonLoading"
             :class="[ cancelButtonClasses ]"
             v-show="showCancelButton"
@@ -125,6 +125,14 @@
       roundButton: {
         default: false,
         type: Boolean
+      },
+      centerButton: {
+        default: false,
+        type: Boolean
+      },
+      width: {
+        default: '400px',
+        type: String
       }
     },
 
@@ -135,13 +143,16 @@
 
     computed: {
       typeClass() {
-        return this.iconClass ? this.iconClass : this.type && typeMap[this.type] ? `el-icon-${ typeMap[this.type] }` : '';
+        return this.iconClass ? this.iconClass : this.type && typeMap[this.type] ? `el-ksd-icon-${ typeMap[this.type] }_24` : '';
       },
       confirmButtonClasses() {
         return `${ this.confirmButtonClass }`;
       },
       cancelButtonClasses() {
         return `${ this.cancelButtonClass }`;
+      },
+      style() {
+        return {width: this.width};
       }
     },
 

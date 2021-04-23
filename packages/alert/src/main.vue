@@ -6,7 +6,8 @@
       v-show="visible"
       role="alert"
     >
-      <i class="el-alert__icon" :class="[ iconClass ]" v-if="showIcon || icon"></i>
+      <el-icon class="el-alert__icon" :name="iconClass" type="mult" v-if="showIcon && !icon"></el-icon>
+      <i class="el-alert__icon" :class="[ icon ]" v-if="icon"></i>
       <div class="el-alert__content">
         <span class="el-alert__title" :class="[ isBoldTitle ]" v-if="title">{{ title }}</span>
         <span v-else class="el-alert__title">
@@ -23,10 +24,10 @@
 
 <script type="text/babel">
   const TYPE_CLASSES_MAP = {
-    'success': 'el-icon-success',
-    'warning': 'el-icon-warning',
-    'error': 'el-icon-error',
-    'tip': 'el-icon-info'
+    'success': 'el-ksd-icon-finished_16',
+    'warning': 'el-ksd-icon-warning_16',
+    'error': 'el-ksd-icon-error_16',
+    'tip': 'el-ksd-icon-info_16'
   };
   export default {
     name: 'ElAlert',
@@ -86,7 +87,7 @@
         return this.showBackground ? '' : 'el-alert--nobg';
       },
       iconClass() {
-        return this.icon || TYPE_CLASSES_MAP[this.type] || 'el-icon-info';
+        return this.icon || TYPE_CLASSES_MAP[this.type] || 'el-ksd-icon-info_16';
       },
 
       isBigIcon() {

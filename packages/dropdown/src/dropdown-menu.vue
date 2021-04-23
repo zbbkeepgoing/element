@@ -18,7 +18,7 @@
     props: {
       visibleArrow: {
         type: Boolean,
-        default: true
+        default: false
       },
       appendToBody: {
         type: Boolean,

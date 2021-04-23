@@ -17,6 +17,11 @@
   line-height: 44px;
   margin: 6px 8px;
   border-radius: $--border-radius-base;
+  .mutiple-color-icon {
+    font-size: 24px;
+    margin-right: 10px;
+    margin-bottom: 4px;
+  }
 
   * {
     vertical-align: middle;
@@ -283,10 +288,15 @@
   }
   [class^="el-icon-"] {
     vertical-align: middle;
-    margin-right: 5px;
+    margin-right: 10px;
     width: 24px;
     text-align: center;
     font-size: 18px;
+  }
+  .mutiple-color-icon {
+    font-size: 24px;
+    margin-right: 10px;
+    margin-bottom: 4px;
   }
 }
 

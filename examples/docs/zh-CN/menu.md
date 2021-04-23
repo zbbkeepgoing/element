@@ -147,30 +147,30 @@
       :default-openeds="['d1']">
       <el-submenu index="d1">
         <template slot="title">
-          <i class="el-icon-location"></i>
+          <el-icon name="el-ksd-icon-nav_homepage_24" type="mult"></el-icon>
           <span>默认</span>
         </template>
         <el-menu-item index="d1-1">二级展开</el-menu-item>
         <el-menu-item index="d1-2">二级展开</el-menu-item>
       </el-submenu>
       <el-menu-item index="d2">
-        <i class="el-icon-menu"></i>
+        <el-icon name="el-ksd-icon-nav_query_24" type="mult"></el-icon>
         <span slot="title">鼠标经过</span>
       </el-menu-item>
       <el-menu-item index="d3">
-        <i class="el-icon-document"></i>
+        <el-icon name="el-ksd-icon-nav_model_24" type="mult"></el-icon>
         <span slot="title">连接 BI</span>
       </el-menu-item>
       <el-menu-item index="d4">
-        <i class="el-icon-setting"></i>
+        <el-icon name="el-ksd-icon-nav_setting_24" type="mult"></el-icon>
         <span slot="title">查询</span>
       </el-menu-item>
       <el-menu-item index="d5">
-        <i class="el-icon-setting"></i>
+        <el-icon name="el-ksd-icon-nav_monitor_24" type="mult"></el-icon>
         <span slot="title">选中</span>
       </el-menu-item>
       <el-menu-item index="d6">
-        <i class="el-icon-setting"></i>
+        <el-icon name="el-ksd-icon-nav_data_storge_24" type="mult"></el-icon>
         <span slot="title">连接 BI</span>
       </el-menu-item>
     </el-menu>

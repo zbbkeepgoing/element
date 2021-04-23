@@ -42,6 +42,10 @@
     // border-bottom: 1px solid $--border-color-lighter;
     min-height: 18px;
     box-sizing: content-box;
+    span {
+      line-height: 24px;
+      vertical-align: middle;
+    }
   }
 
   @include e(title) {
@@ -50,12 +54,12 @@
     font-size: $--msgbox-font-size;
     line-height: 1;
     color: $--color-text-primary;
-    font-weight: bold;
+    font-weight: 600;
   }
 
   @include e(headerbtn) {
     position: absolute;
-    top: 16px;
+    top: 28px;
     right: $--msgbox-padding-primary;
     padding: 0;
     border: none;
@@ -95,11 +99,12 @@
   }
 
   @include e(status) {
-    position: absolute;
+    // position: absolute;
     // top: 20px;
     // transform: translateY(-50%);
-    font-size: 16px !important;
+    font-size: 24px;
     line-height: 24px;
+    margin-right: 6px;
     &::before {
       // 防止图标切割
       padding-left: 1px;
@@ -132,7 +137,8 @@
 
     & p {
       margin: 0;
-      line-height: 24px;
+      line-height: 22px;
+      font-size: 14px;
     }
   }
 
@@ -146,9 +152,16 @@
   @include e(btns) {
     padding: 0px $--msgbox-padding-primary 0px;
     text-align: right;
+    &.el-message-box__btns_center {
+      text-align: center;
+      & button {
+        width: calc(50% - 6px);
+      }
+    }
+
 
     & button:nth-child(2) {
-      margin-left: 10px;
+      margin-left: 12px;
     }
   }
 

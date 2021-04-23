@@ -72,6 +72,7 @@ import Footer from '../packages/footer/index.js';
 import locale from 'kyligence-ui/src/locale';
 import CollapseTransition from 'kyligence-ui/src/transitions/collapse-transition';
 import { getKyligenceConfiguration } from './utils/global-configuration';
+import './iconfont/iconfont.js';
 
 const components = [
   Pagination,
@@ -173,7 +174,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 module.exports = {
-  version: '4.0.0',
+  version: '4.0.6',
   locale: locale.use,
   i18n: locale.i18n,
   install,

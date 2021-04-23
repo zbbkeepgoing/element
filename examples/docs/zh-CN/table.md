@@ -1520,13 +1520,14 @@
       prop="date"
       label="日期"
       sortable
-      :info-icon="'el-icon-info'"
+      :info-icon="'el-ksd-icon-help_22'"
       :info-tooltip="'测试tooltip'"
       :show-search-input="true"
       :show-multiple-footer="false"
       :filter-multiple="true"
       placeholder="请搜索"
       width="180"
+      filter-icon="el-ksd-icon-filter_22"
       :filters2="[{text: 'all models', value: ''}]"
       :filters="[{text: '2016-05-02', value: '2016-05-02'}]"
       :filter-method="filterHandler"
@@ -1553,6 +1554,7 @@
       :filters="[{ text: '家', value: '家', icon: 'el-icon-warning' }, { text: '公司', value: '公司' }]"
       :filter-multiple="false"
       :show-multiple-footer="false"
+      filter-icon="el-ksd-icon-filter_22"
       :filter-change="filterTag"
       :filtered-value="filterTags"
       filter-placement="bottom-end">

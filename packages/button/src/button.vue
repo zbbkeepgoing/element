@@ -14,11 +14,12 @@
         'is-plain': plain,
         'is-round': round,
         'is-text': text,
-        'is-circle': circle
+        'is-circle': circle,
+        'is-icon-button': iconButton
       }
     ]"
   >
-    <i class="el-icon-loading" v-if="loading"></i>
+    <i class="el-ksd-icon-loading_22" v-if="loading"></i>
     <i :class="icon" v-if="icon && !loading"></i>
     <span v-if="$slots.default"><slot></slot></span>
   </button>
@@ -56,7 +57,8 @@
       autofocus: Boolean,
       round: Boolean,
       text: Boolean,
-      circle: Boolean
+      circle: Boolean,
+      iconButton: Boolean
     },
 
     computed: {

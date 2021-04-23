@@ -303,12 +303,12 @@ export default {
   属性方式：
   <el-input
     placeholder="请选择日期"
-    suffix-icon="el-icon-date"
+    suffix-icon="el-ksd-icon-timestamp_22"
     v-model.trim="input2">
   </el-input>
   <el-input
     placeholder="请输入内容"
-    prefix-icon="el-icon-search"
+    prefix-icon="el-ksd-icon-search_22"
     v-model.trim="input21">
   </el-input>
 </div>
@@ -317,12 +317,12 @@ export default {
   <el-input
     placeholder="请选择日期"
     v-model.trim="input22">
-    <i slot="suffix" class="el-input__icon el-icon-date"></i>
+    <i slot="suffix" class="el-input__icon el-ksd-icon-timestamp_22"></i>
   </el-input>
   <el-input
     placeholder="请输入内容"
     v-model.trim="input23">
-    <i slot="prefix" class="el-input__icon el-icon-search"></i>
+    <i slot="prefix" class="el-input__icon el-ksd-icon-search_22"></i>
   </el-input>
 </div>
 
@@ -399,7 +399,7 @@ export default {
 ```
 :::
 
-### 复合型输入框
+<!-- ### 复合型输入框
 
 可前置或后置元素，一般为标签或按钮
 
@@ -451,7 +451,7 @@ export default {
 }
 </script>
 ```
-:::
+::: -->
 
 ### 尺寸
 
@@ -461,25 +461,25 @@ export default {
   <el-input
     size="large"
     placeholder="请输入内容"
-    suffix-icon="el-icon-date"
+    suffix-icon="el-ksd-icon-timestamp_22"
     v-model.trim="input6">
   </el-input>
   <el-input
     size="medium"
     placeholder="请输入内容"
-    suffix-icon="el-icon-date"
+    suffix-icon="el-ksd-icon-timestamp_22"
     v-model.trim="input7">
   </el-input>
   <el-input
     size="small"
     placeholder="请输入内容"
-    suffix-icon="el-icon-date"
+    suffix-icon="el-ksd-icon-timestamp_22"
     v-model.trim="input8">
   </el-input>
   <el-input
     size="mini"
     placeholder="请输入内容"
-    suffix-icon="el-icon-date"
+    suffix-icon="el-ksd-icon-timestamp_22"
     v-model.trim="input9">
   </el-input>
 </div>
@@ -626,7 +626,7 @@ export default {
   placeholder="请输入内容"
   @select="handleSelect">
   <i
-    class="el-icon-edit el-input__icon"
+    class="el-ksd-icon-edit_22 el-input__icon"
     slot="suffix"
     @click="handleIconClick">
   </i>

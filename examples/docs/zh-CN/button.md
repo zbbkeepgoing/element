@@ -131,25 +131,25 @@ dialog、messagebox 上的取消按钮用的是 次次要按钮 ，确认或者�
 ```html
 <div>
   <el-tooltip content="新建模型" placement="top">
-    <el-button type="primary" icon="el-icon-plus" size="small"></el-button>
+    <el-button type="primary" icon-button icon="el-ksd-icon-add_22" size="small"></el-button>
   </el-tooltip>
   <el-tooltip content="新建模型" placement="top">
-    <el-button icon="el-icon-plus" size="small"></el-button>
+    <el-button icon-button icon="el-ksd-icon-add_22" size="small"></el-button>
   </el-tooltip>
   <el-tooltip content="新建模型" placement="top">
-    <el-button plain icon="el-icon-plus" size="small"></el-button>
+    <el-button plain icon-button icon="el-ksd-icon-add_22" size="small"></el-button>
   </el-tooltip>
 </div>
 
 <div style="margin: 40px 0 20px 0">
   <el-tooltip content="新增配置" placement="top">
-    <el-button type="primary" icon="el-icon-plus" circle size="small"></el-button>
+    <el-button type="primary" icon="el-ksd-icon-add_22" circle size="small"></el-button>
   </el-tooltip>
   <el-tooltip content="新增配置" placement="top">
-    <el-button icon="el-icon-plus" circle size="small"></el-button>
+    <el-button icon="el-ksd-icon-add_22" circle size="small"></el-button>
   </el-tooltip>
   <el-tooltip content="新增配置" placement="top">
-    <el-button plain icon="el-icon-plus" circle size="small"></el-button>
+    <el-button plain icon="el-ksd-icon-add_22" circle size="small"></el-button>
   </el-tooltip>
 </div>
 
@@ -176,9 +176,14 @@ dialog、messagebox 上的取消按钮用的是 次次要按钮 ，确认或者�
 :::demo 
 ```html
 <div>
-  <el-button type="primary" icon="el-icon-plus">主要按钮</el-button>
-  <el-button icon="el-icon-plus">次要按钮</el-button>
-  <el-button plain icon="el-icon-plus">次次要按钮</el-button>
+  <el-button type="primary" icon="el-ksd-icon-add_22">主要按钮</el-button>
+  <el-button icon="el-ksd-icon-add_22">次要按钮</el-button>
+  <el-button plain icon="el-ksd-icon-add_22">次次要按钮</el-button>
+</div>
+
+<div style="margin: 20px 0 20px 0">
+  <el-button type="primary" icon="el-ksd-icon-add_22">中号按钮22</el-button>
+  <el-button type="primary" size="small" icon="el-ksd-icon-add_16">小号按钮16</el-button>
 </div>
 
 <div style="margin: 20px 0 20px 0">
@@ -214,56 +219,56 @@ dialog、messagebox 上的取消按钮用的是 次次要按钮 ，确认或者�
 <h4>主要按钮(左：正常，右：带 disabled)</h4>
 <div>
   <el-button-group>
-    <el-button type="primary" icon="el-icon-edit">编辑</el-button>
-    <el-button type="primary" icon="el-icon-share">分享</el-button>
-    <el-button type="primary" icon="el-icon-delete">删除</el-button>
+    <el-button type="primary" icon="el-ksd-icon-edit_22">编辑</el-button>
+    <el-button type="primary" icon="el-ksd-icon-export_22">分享</el-button>
+    <el-button type="primary" icon="el-ksd-icon-table_delete_22">删除</el-button>
   </el-button-group>
 
   <p>全部 disabled</p>
 
   <el-button-group>
-    <el-button type="primary" icon="el-icon-edit" disabled>编辑</el-button>
-    <el-button type="primary" icon="el-icon-share" disabled>分享</el-button>
-    <el-button type="primary" icon="el-icon-delete" disabled>删除</el-button>
+    <el-button type="primary" icon="el-ksd-icon-edit_22" disabled>编辑</el-button>
+    <el-button type="primary" icon="el-ksd-icon-export_22" disabled>分享</el-button>
+    <el-button type="primary" icon="el-ksd-icon-table_delete_22" disabled>删除</el-button>
   </el-button-group>
 
   <p>不同位置 disabled</p>
 
   <el-button-group>
-    <el-button type="primary" icon="el-icon-edit" disabled>编辑</el-button>
-    <el-button type="primary" icon="el-icon-share" >分享</el-button>
-    <el-button type="primary" icon="el-icon-delete">删除</el-button>
+    <el-button type="primary" icon="el-ksd-icon-edit_22" disabled>编辑</el-button>
+    <el-button type="primary" icon="el-ksd-icon-export_22" >分享</el-button>
+    <el-button type="primary" icon="el-ksd-icon-table_delete_22">删除</el-button>
   </el-button-group>
 
   <el-button-group>
-    <el-button type="primary" icon="el-icon-edit">编辑</el-button>
-    <el-button type="primary" icon="el-icon-share" disabled>分享</el-button>
-    <el-button type="primary" icon="el-icon-delete">删除</el-button>
+    <el-button type="primary" icon="el-ksd-icon-edit_22">编辑</el-button>
+    <el-button type="primary" icon="el-ksd-icon-export_22" disabled>分享</el-button>
+    <el-button type="primary" icon="el-ksd-icon-table_delete_22">删除</el-button>
   </el-button-group>
 
   <el-button-group>
-    <el-button type="primary" icon="el-icon-edit">编辑</el-button>
-    <el-button type="primary" icon="el-icon-share">分享</el-button>
-    <el-button type="primary" icon="el-icon-delete" disabled>删除</el-button>
+    <el-button type="primary" icon="el-ksd-icon-edit_22">编辑</el-button>
+    <el-button type="primary" icon="el-ksd-icon-export_22">分享</el-button>
+    <el-button type="primary" icon="el-ksd-icon-table_delete_22" disabled>删除</el-button>
   </el-button-group>
 
   <p>有多个 disabled</p>
   <el-button-group>
-    <el-button type="primary" icon="el-icon-edit" disabled>编辑</el-button>
-    <el-button type="primary" icon="el-icon-share" disabled>分享</el-button>
-    <el-button type="primary" icon="el-icon-delete">删除</el-button>
+    <el-button type="primary" icon="el-ksd-icon-edit_22" disabled>编辑</el-button>
+    <el-button type="primary" icon="el-ksd-icon-export_22" disabled>分享</el-button>
+    <el-button type="primary" icon="el-ksd-icon-table_delete_22">删除</el-button>
   </el-button-group>
 
   <el-button-group>
-    <el-button type="primary" icon="el-icon-edit">编辑</el-button>
-    <el-button type="primary" icon="el-icon-share" disabled>分享</el-button>
-    <el-button type="primary" icon="el-icon-delete" disabled>删除</el-button>
+    <el-button type="primary" icon="el-ksd-icon-edit_22">编辑</el-button>
+    <el-button type="primary" icon="el-ksd-icon-export_22" disabled>分享</el-button>
+    <el-button type="primary" icon="el-ksd-icon-table_delete_22" disabled>删除</el-button>
   </el-button-group>
 
   <el-button-group>
-    <el-button type="primary" icon="el-icon-edit" disabled>编辑</el-button>
-    <el-button type="primary" icon="el-icon-share">分享</el-button>
-    <el-button type="primary" icon="el-icon-delete" disabled>删除</el-button>
+    <el-button type="primary" icon="el-ksd-icon-edit_22" disabled>编辑</el-button>
+    <el-button type="primary" icon="el-ksd-icon-export_22">分享</el-button>
+    <el-button type="primary" icon="el-ksd-icon-table_delete_22" disabled>删除</el-button>
   </el-button-group>
 
 </div>
@@ -271,151 +276,151 @@ dialog、messagebox 上的取消按钮用的是 次次要按钮 ，确认或者�
 <div>
   <p>纯 icon 版</p>
   <el-button-group>
-    <el-button type="primary" icon="el-icon-edit"></el-button>
-    <el-button type="primary" icon="el-icon-share"></el-button>
-    <el-button type="primary" icon="el-icon-delete"></el-button>
+    <el-button type="primary" icon="el-ksd-icon-edit_22"></el-button>
+    <el-button type="primary" icon="el-ksd-icon-export_22"></el-button>
+    <el-button type="primary" icon="el-ksd-icon-table_delete_22"></el-button>
   </el-button-group>
 
   <el-button-group>
-    <el-button type="primary" icon="el-icon-edit" ></el-button>
-    <el-button type="primary" icon="el-icon-share" disabled></el-button>
-    <el-button type="primary" icon="el-icon-delete"></el-button>
+    <el-button type="primary" icon="el-ksd-icon-edit_22" ></el-button>
+    <el-button type="primary" icon="el-ksd-icon-export_22" disabled></el-button>
+    <el-button type="primary" icon="el-ksd-icon-table_delete_22"></el-button>
   </el-button-group>
 </div>
 
 <h4 style="margin:20px 0">次要按钮(左：正常，右：带 disabled)</h4>
 <div>
   <el-button-group>
-    <el-button icon="el-icon-edit">编辑</el-button>
-    <el-button icon="el-icon-share">分享</el-button>
-    <el-button icon="el-icon-delete">删除</el-button>
+    <el-button icon="el-ksd-icon-edit_22">编辑</el-button>
+    <el-button icon="el-ksd-icon-export_22">分享</el-button>
+    <el-button icon="el-ksd-icon-table_delete_22">删除</el-button>
   </el-button-group>
 
   <p>全部 disabled</p>
 
   <el-button-group>
-    <el-button icon="el-icon-edit" disabled>编辑</el-button>
-    <el-button icon="el-icon-share" disabled>分享</el-button>
-    <el-button icon="el-icon-delete" disabled>删除</el-button>
+    <el-button icon="el-ksd-icon-edit_22" disabled>编辑</el-button>
+    <el-button icon="el-ksd-icon-export_22" disabled>分享</el-button>
+    <el-button icon="el-ksd-icon-table_delete_22" disabled>删除</el-button>
   </el-button-group>
 
   <p>不同位置 disabled</p>
   <el-button-group>
-    <el-button icon="el-icon-edit" disabled>编辑</el-button>
-    <el-button icon="el-icon-share">分享</el-button>
-    <el-button icon="el-icon-delete">删除</el-button>
+    <el-button icon="el-ksd-icon-edit_22" disabled>编辑</el-button>
+    <el-button icon="el-ksd-icon-export_22">分享</el-button>
+    <el-button icon="el-ksd-icon-table_delete_22">删除</el-button>
   </el-button-group>
   <el-button-group>
-    <el-button icon="el-icon-edit">编辑</el-button>
-    <el-button icon="el-icon-share" disabled>分享</el-button>
-    <el-button icon="el-icon-delete">删除</el-button>
+    <el-button icon="el-ksd-icon-edit_22">编辑</el-button>
+    <el-button icon="el-ksd-icon-export_22" disabled>分享</el-button>
+    <el-button icon="el-ksd-icon-table_delete_22">删除</el-button>
   </el-button-group>
   <el-button-group>
-    <el-button icon="el-icon-edit">编辑</el-button>
-    <el-button icon="el-icon-share">分享</el-button>
-    <el-button icon="el-icon-delete" disabled>删除</el-button>
+    <el-button icon="el-ksd-icon-edit_22">编辑</el-button>
+    <el-button icon="el-ksd-icon-export_22">分享</el-button>
+    <el-button icon="el-ksd-icon-table_delete_22" disabled>删除</el-button>
   </el-button-group>
 
   <p>有多个 disabled</p>
   <el-button-group>
-    <el-button icon="el-icon-edit" disabled>编辑</el-button>
-    <el-button icon="el-icon-share" disabled>分享</el-button>
-    <el-button icon="el-icon-delete">删除</el-button>
+    <el-button icon="el-ksd-icon-edit_22" disabled>编辑</el-button>
+    <el-button icon="el-ksd-icon-export_22" disabled>分享</el-button>
+    <el-button icon="el-ksd-icon-table_delete_22">删除</el-button>
   </el-button-group>
   <el-button-group>
-    <el-button icon="el-icon-edit">编辑</el-button>
-    <el-button icon="el-icon-share" disabled>分享</el-button>
-    <el-button icon="el-icon-delete" disabled>删除</el-button>
+    <el-button icon="el-ksd-icon-edit_22">编辑</el-button>
+    <el-button icon="el-ksd-icon-export_22" disabled>分享</el-button>
+    <el-button icon="el-ksd-icon-table_delete_22" disabled>删除</el-button>
   </el-button-group>
   <el-button-group>
-    <el-button icon="el-icon-edit" disabled>编辑</el-button>
-    <el-button icon="el-icon-share">分享</el-button>
-    <el-button icon="el-icon-delete" disabled>删除</el-button>
+    <el-button icon="el-ksd-icon-edit_22" disabled>编辑</el-button>
+    <el-button icon="el-ksd-icon-export_22">分享</el-button>
+    <el-button icon="el-ksd-icon-table_delete_22" disabled>删除</el-button>
   </el-button-group>
 </div>
 
 <div>
   <p>纯 icon 版</p>
   <el-button-group>
-    <el-button icon="el-icon-edit"></el-button>
-    <el-button icon="el-icon-share"></el-button>
-    <el-button icon="el-icon-delete"></el-button>
+    <el-button icon="el-ksd-icon-edit_22"></el-button>
+    <el-button icon="el-ksd-icon-export_22"></el-button>
+    <el-button icon="el-ksd-icon-table_delete_22"></el-button>
   </el-button-group>
 
   <el-button-group>
-    <el-button icon="el-icon-edit" disabled></el-button>
-    <el-button icon="el-icon-share" disabled></el-button>
-    <el-button icon="el-icon-delete"></el-button>
+    <el-button icon="el-ksd-icon-edit_22" disabled></el-button>
+    <el-button icon="el-ksd-icon-export_22" disabled></el-button>
+    <el-button icon="el-ksd-icon-table_delete_22"></el-button>
   </el-button-group>
 </div>
 
 <h4 style="margin:20px 0">次次要按钮(左：正常，右：带 disabled)</h4>
 <div>
   <el-button-group>
-    <el-button plain icon="el-icon-edit">编辑</el-button>
-    <el-button plain icon="el-icon-share">分享</el-button>
-    <el-button plain icon="el-icon-delete">删除</el-button>
+    <el-button plain icon="el-ksd-icon-edit_22">编辑</el-button>
+    <el-button plain icon="el-ksd-icon-export_22">分享</el-button>
+    <el-button plain icon="el-ksd-icon-table_delete_22">删除</el-button>
   </el-button-group>
 
   <p>全部 disabled</p>
 
   <el-button-group>
-    <el-button plain icon="el-icon-edit" disabled>编辑</el-button>
-    <el-button plain icon="el-icon-share" disabled>分享</el-button>
-    <el-button plain icon="el-icon-delete" disabled>删除</el-button>
+    <el-button plain icon="el-ksd-icon-edit_22" disabled>编辑</el-button>
+    <el-button plain icon="el-ksd-icon-export_22" disabled>分享</el-button>
+    <el-button plain icon="el-ksd-icon-table_delete_22" disabled>删除</el-button>
   </el-button-group>
 
   <p>不同位置 disabled</p>
   <el-button-group>
-    <el-button plain icon="el-icon-edit" disabled>编辑</el-button>
-    <el-button plain icon="el-icon-share">分享</el-button>
-    <el-button plain icon="el-icon-delete">删除</el-button>
+    <el-button plain icon="el-ksd-icon-edit_22" disabled>编辑</el-button>
+    <el-button plain icon="el-ksd-icon-export_22">分享</el-button>
+    <el-button plain icon="el-ksd-icon-table_delete_22">删除</el-button>
   </el-button-group>
 
   <el-button-group>
-    <el-button plain icon="el-icon-edit">编辑</el-button>
-    <el-button plain icon="el-icon-share" disabled>分享</el-button>
-    <el-button plain icon="el-icon-delete">删除</el-button>
+    <el-button plain icon="el-ksd-icon-edit_22">编辑</el-button>
+    <el-button plain icon="el-ksd-icon-export_22" disabled>分享</el-button>
+    <el-button plain icon="el-ksd-icon-table_delete_22">删除</el-button>
   </el-button-group>
 
   <el-button-group>
-    <el-button plain icon="el-icon-edit">编辑</el-button>
-    <el-button plain icon="el-icon-share">分享</el-button>
-    <el-button plain icon="el-icon-delete" disabled>删除</el-button>
+    <el-button plain icon="el-ksd-icon-edit_22">编辑</el-button>
+    <el-button plain icon="el-ksd-icon-export_22">分享</el-button>
+    <el-button plain icon="el-ksd-icon-table_delete_22" disabled>删除</el-button>
   </el-button-group>
 
   <p>有多个 disabled</p>
   <el-button-group>
-    <el-button plain icon="el-icon-edit" disabled>编辑</el-button>
-    <el-button plain icon="el-icon-share" disabled>分享</el-button>
-    <el-button plain icon="el-icon-delete">删除</el-button>
+    <el-button plain icon="el-ksd-icon-edit_22" disabled>编辑</el-button>
+    <el-button plain icon="el-ksd-icon-export_22" disabled>分享</el-button>
+    <el-button plain icon="el-ksd-icon-table_delete_22">删除</el-button>
   </el-button-group>
 
   <el-button-group>
-    <el-button plain icon="el-icon-edit">编辑</el-button>
-    <el-button plain icon="el-icon-share" disabled>分享</el-button>
-    <el-button plain icon="el-icon-delete" disabled>删除</el-button>
+    <el-button plain icon="el-ksd-icon-edit_22">编辑</el-button>
+    <el-button plain icon="el-ksd-icon-export_22" disabled>分享</el-button>
+    <el-button plain icon="el-ksd-icon-table_delete_22" disabled>删除</el-button>
   </el-button-group>
 
   <el-button-group>
-    <el-button plain icon="el-icon-edit" disabled>编辑</el-button>
-    <el-button plain icon="el-icon-share">分享</el-button>
-    <el-button plain icon="el-icon-delete" disabled>删除</el-button>
+    <el-button plain icon="el-ksd-icon-edit_22" disabled>编辑</el-button>
+    <el-button plain icon="el-ksd-icon-export_22">分享</el-button>
+    <el-button plain icon="el-ksd-icon-table_delete_22" disabled>删除</el-button>
   </el-button-group>
 </div>
 
 <div>
   <p>纯 icon 版</p>
   <el-button-group>
-    <el-button plain icon="el-icon-edit"></el-button>
-    <el-button plain icon="el-icon-share"></el-button>
-    <el-button plain icon="el-icon-delete"></el-button>
+    <el-button plain icon="el-ksd-icon-edit_22"></el-button>
+    <el-button plain icon="el-ksd-icon-export_22"></el-button>
+    <el-button plain icon="el-ksd-icon-table_delete_22"></el-button>
   </el-button-group>
 
   <el-button-group>
-    <el-button plain icon="el-icon-edit" disabled></el-button>
-    <el-button plain icon="el-icon-share"></el-button>
-    <el-button plain icon="el-icon-delete" disabled></el-button>
+    <el-button plain icon="el-ksd-icon-edit_22" disabled></el-button>
+    <el-button plain icon="el-ksd-icon-export_22"></el-button>
+    <el-button plain icon="el-ksd-icon-table_delete_22" disabled></el-button>
   </el-button-group>
 </div>
 
@@ -427,51 +432,51 @@ dialog、messagebox 上的取消按钮用的是 次次要按钮 ，确认或者�
 
 <div style="margin:20px 0">
   <el-button-group align="vertical" style="margin-right:60px">
-    <el-button type="primary" icon="el-icon-edit"></el-button>
-    <el-button type="primary" icon="el-icon-share"></el-button>
-    <el-button type="primary" icon="el-icon-delete"></el-button>
+    <el-button type="primary" icon="el-ksd-icon-edit_22"></el-button>
+    <el-button type="primary" icon="el-ksd-icon-export_22"></el-button>
+    <el-button type="primary" icon="el-ksd-icon-table_delete_22"></el-button>
   </el-button-group>
 
   <el-button-group align="vertical">
-    <el-button type="primary" icon="el-icon-edit" disabled></el-button>
-    <el-button type="primary" icon="el-icon-share" disabled></el-button>
-    <el-button type="primary" icon="el-icon-delete" disabled></el-button>
+    <el-button type="primary" icon="el-ksd-icon-edit_22" disabled></el-button>
+    <el-button type="primary" icon="el-ksd-icon-export_22" disabled></el-button>
+    <el-button type="primary" icon="el-ksd-icon-table_delete_22" disabled></el-button>
   </el-button-group>
 
   <el-button-group align="vertical">
-    <el-button type="primary" icon="el-icon-edit" disabled></el-button>
-    <el-button type="primary" icon="el-icon-share"></el-button>
-    <el-button type="primary" icon="el-icon-delete"></el-button>
+    <el-button type="primary" icon="el-ksd-icon-edit_22" disabled></el-button>
+    <el-button type="primary" icon="el-ksd-icon-export_22"></el-button>
+    <el-button type="primary" icon="el-ksd-icon-table_delete_22"></el-button>
   </el-button-group>
 
   <el-button-group align="vertical">
-    <el-button type="primary" icon="el-icon-edit"></el-button>
-    <el-button type="primary" icon="el-icon-share" disabled></el-button>
-    <el-button type="primary" icon="el-icon-delete"></el-button>
+    <el-button type="primary" icon="el-ksd-icon-edit_22"></el-button>
+    <el-button type="primary" icon="el-ksd-icon-export_22" disabled></el-button>
+    <el-button type="primary" icon="el-ksd-icon-table_delete_22"></el-button>
   </el-button-group>
 
   <el-button-group align="vertical">
-    <el-button type="primary" icon="el-icon-edit"></el-button>
-    <el-button type="primary" icon="el-icon-share"></el-button>
-    <el-button type="primary" icon="el-icon-delete" disabled></el-button>
+    <el-button type="primary" icon="el-ksd-icon-edit_22"></el-button>
+    <el-button type="primary" icon="el-ksd-icon-export_22"></el-button>
+    <el-button type="primary" icon="el-ksd-icon-table_delete_22" disabled></el-button>
   </el-button-group>
 
   <el-button-group align="vertical">
-    <el-button type="primary" icon="el-icon-edit" disabled></el-button>
-    <el-button type="primary" icon="el-icon-share" disabled></el-button>
-    <el-button type="primary" icon="el-icon-delete"></el-button>
+    <el-button type="primary" icon="el-ksd-icon-edit_22" disabled></el-button>
+    <el-button type="primary" icon="el-ksd-icon-export_22" disabled></el-button>
+    <el-button type="primary" icon="el-ksd-icon-table_delete_22"></el-button>
   </el-button-group>
 
   <el-button-group align="vertical">
-    <el-button type="primary" icon="el-icon-edit"></el-button>
-    <el-button type="primary" icon="el-icon-share" disabled></el-button>
-    <el-button type="primary" icon="el-icon-delete" disabled></el-button>
+    <el-button type="primary" icon="el-ksd-icon-edit_22"></el-button>
+    <el-button type="primary" icon="el-ksd-icon-export_22" disabled></el-button>
+    <el-button type="primary" icon="el-ksd-icon-table_delete_22" disabled></el-button>
   </el-button-group>
 
   <el-button-group align="vertical">
-    <el-button type="primary" icon="el-icon-edit" disabled></el-button>
-    <el-button type="primary" icon="el-icon-share"></el-button>
-    <el-button type="primary" icon="el-icon-delete" disabled></el-button>
+    <el-button type="primary" icon="el-ksd-icon-edit_22" disabled></el-button>
+    <el-button type="primary" icon="el-ksd-icon-export_22"></el-button>
+    <el-button type="primary" icon="el-ksd-icon-table_delete_22" disabled></el-button>
   </el-button-group>
 </div>
 
@@ -479,51 +484,51 @@ dialog、messagebox 上的取消按钮用的是 次次要按钮 ，确认或者�
 
 <div style="margin:20px 0">
   <el-button-group align="vertical" style="margin-right:60px">
-    <el-button icon="el-icon-edit"></el-button>
-    <el-button icon="el-icon-share"></el-button>
-    <el-button icon="el-icon-delete"></el-button>
+    <el-button icon="el-ksd-icon-edit_22"></el-button>
+    <el-button icon="el-ksd-icon-export_22"></el-button>
+    <el-button icon="el-ksd-icon-table_delete_22"></el-button>
   </el-button-group>
 
   <el-button-group align="vertical">
-    <el-button icon="el-icon-edit" disabled></el-button>
-    <el-button icon="el-icon-share" disabled></el-button>
-    <el-button icon="el-icon-delete" disabled></el-button>
+    <el-button icon="el-ksd-icon-edit_22" disabled></el-button>
+    <el-button icon="el-ksd-icon-export_22" disabled></el-button>
+    <el-button icon="el-ksd-icon-table_delete_22" disabled></el-button>
   </el-button-group>
 
   <el-button-group align="vertical">
-    <el-button icon="el-icon-edit" disabled></el-button>
-    <el-button icon="el-icon-share"></el-button>
-    <el-button icon="el-icon-delete"></el-button>
+    <el-button icon="el-ksd-icon-edit_22" disabled></el-button>
+    <el-button icon="el-ksd-icon-export_22"></el-button>
+    <el-button icon="el-ksd-icon-table_delete_22"></el-button>
   </el-button-group>
 
   <el-button-group align="vertical">
-    <el-button icon="el-icon-edit"></el-button>
-    <el-button icon="el-icon-share" disabled></el-button>
-    <el-button icon="el-icon-delete"></el-button>
+    <el-button icon="el-ksd-icon-edit_22"></el-button>
+    <el-button icon="el-ksd-icon-export_22" disabled></el-button>
+    <el-button icon="el-ksd-icon-table_delete_22"></el-button>
   </el-button-group>
 
   <el-button-group align="vertical">
-    <el-button icon="el-icon-edit"></el-button>
-    <el-button icon="el-icon-share"></el-button>
-    <el-button icon="el-icon-delete" disabled></el-button>
+    <el-button icon="el-ksd-icon-edit_22"></el-button>
+    <el-button icon="el-ksd-icon-export_22"></el-button>
+    <el-button icon="el-ksd-icon-table_delete_22" disabled></el-button>
   </el-button-group>
 
   <el-button-group align="vertical">
-    <el-button icon="el-icon-edit" disabled></el-button>
-    <el-button icon="el-icon-share" disabled></el-button>
-    <el-button icon="el-icon-delete"></el-button>
+    <el-button icon="el-ksd-icon-edit_22" disabled></el-button>
+    <el-button icon="el-ksd-icon-export_22" disabled></el-button>
+    <el-button icon="el-ksd-icon-table_delete_22"></el-button>
   </el-button-group>
 
   <el-button-group align="vertical">
-    <el-button icon="el-icon-edit"></el-button>
-    <el-button icon="el-icon-share" disabled></el-button>
-    <el-button icon="el-icon-delete" disabled></el-button>
+    <el-button icon="el-ksd-icon-edit_22"></el-button>
+    <el-button icon="el-ksd-icon-export_22" disabled></el-button>
+    <el-button icon="el-ksd-icon-table_delete_22" disabled></el-button>
   </el-button-group>
 
   <el-button-group align="vertical">
-    <el-button icon="el-icon-edit" disabled></el-button>
-    <el-button icon="el-icon-share"></el-button>
-    <el-button icon="el-icon-delete" disabled></el-button>
+    <el-button icon="el-ksd-icon-edit_22" disabled></el-button>
+    <el-button icon="el-ksd-icon-export_22"></el-button>
+    <el-button icon="el-ksd-icon-table_delete_22" disabled></el-button>
   </el-button-group>
 </div>
 
@@ -531,51 +536,51 @@ dialog、messagebox 上的取消按钮用的是 次次要按钮 ，确认或者�
 
 <div style="margin:20px 0">
   <el-button-group align="vertical" style="margin-right:60px">
-    <el-button plain icon="el-icon-edit"></el-button>
-    <el-button plain icon="el-icon-share"></el-button>
-    <el-button plain icon="el-icon-delete"></el-button>
+    <el-button plain icon="el-ksd-icon-edit_22"></el-button>
+    <el-button plain icon="el-ksd-icon-export_22"></el-button>
+    <el-button plain icon="el-ksd-icon-table_delete_22"></el-button>
   </el-button-group>
 
   <el-button-group align="vertical">
-    <el-button plain icon="el-icon-edit" disabled></el-button>
-    <el-button plain icon="el-icon-share" disabled></el-button>
-    <el-button plain icon="el-icon-delete" disabled></el-button>
+    <el-button plain icon="el-ksd-icon-edit_22" disabled></el-button>
+    <el-button plain icon="el-ksd-icon-export_22" disabled></el-button>
+    <el-button plain icon="el-ksd-icon-table_delete_22" disabled></el-button>
   </el-button-group>
 
   <el-button-group align="vertical">
-    <el-button plain icon="el-icon-edit" disabled></el-button>
-    <el-button plain icon="el-icon-share"></el-button>
-    <el-button plain icon="el-icon-delete"></el-button>
+    <el-button plain icon="el-ksd-icon-edit_22" disabled></el-button>
+    <el-button plain icon="el-ksd-icon-export_22"></el-button>
+    <el-button plain icon="el-ksd-icon-table_delete_22"></el-button>
   </el-button-group>
 
   <el-button-group align="vertical">
-    <el-button plain icon="el-icon-edit"></el-button>
-    <el-button plain icon="el-icon-share" disabled></el-button>
-    <el-button plain icon="el-icon-delete"></el-button>
+    <el-button plain icon="el-ksd-icon-edit_22"></el-button>
+    <el-button plain icon="el-ksd-icon-export_22" disabled></el-button>
+    <el-button plain icon="el-ksd-icon-table_delete_22"></el-button>
   </el-button-group>
 
   <el-button-group align="vertical">
-    <el-button plain icon="el-icon-edit"></el-button>
-    <el-button plain icon="el-icon-share"></el-button>
-    <el-button plain icon="el-icon-delete" disabled></el-button>
+    <el-button plain icon="el-ksd-icon-edit_22"></el-button>
+    <el-button plain icon="el-ksd-icon-export_22"></el-button>
+    <el-button plain icon="el-ksd-icon-table_delete_22" disabled></el-button>
   </el-button-group>
 
   <el-button-group align="vertical">
-    <el-button plain icon="el-icon-edit" disabled></el-button>
-    <el-button plain icon="el-icon-share" disabled></el-button>
-    <el-button plain icon="el-icon-delete"></el-button>
+    <el-button plain icon="el-ksd-icon-edit_22" disabled></el-button>
+    <el-button plain icon="el-ksd-icon-export_22" disabled></el-button>
+    <el-button plain icon="el-ksd-icon-table_delete_22"></el-button>
   </el-button-group>
 
   <el-button-group align="vertical">
-    <el-button plain icon="el-icon-edit"></el-button>
-    <el-button plain icon="el-icon-share" disabled></el-button>
-    <el-button plain icon="el-icon-delete" disabled></el-button>
+    <el-button plain icon="el-ksd-icon-edit_22"></el-button>
+    <el-button plain icon="el-ksd-icon-export_22" disabled></el-button>
+    <el-button plain icon="el-ksd-icon-table_delete_22" disabled></el-button>
   </el-button-group>
 
   <el-button-group align="vertical">
-    <el-button plain icon="el-icon-edit" disabled></el-button>
-    <el-button plain icon="el-icon-share"></el-button>
-    <el-button plain icon="el-icon-delete" disabled></el-button>
+    <el-button plain icon="el-ksd-icon-edit_22" disabled></el-button>
+    <el-button plain icon="el-ksd-icon-export_22"></el-button>
+    <el-button plain icon="el-ksd-icon-table_delete_22" disabled></el-button>
   </el-button-group>
 </div>
 ```
@@ -645,7 +650,8 @@ locales: {
 | type     | 类型   | string    |   primary / success / warning / danger / info |     —    |
 | plain     | 是否朴素按钮   | boolean    | — | false   |
 | text     | 是否文字按钮   | boolean    | — | false   |
-| round     | 是否圆形按钮   | boolean    | — | false   |
+| circle     | 是否圆形按钮   | boolean    | — | false   |
+| icon-button     | 是否纯icon按钮   | boolean    | — | false   |
 | loading     | 是否加载中状态   | boolean    | — | false   |
 | disabled  | 是否禁用状态    | boolean   | —   | false   |
 | icon  | 图标类名 | string   |  —  |  —  |

@@ -4,7 +4,8 @@
       open() {
         this.$alert('这是一段内容', '标题名称', {
           confirmButtonText: '确定',
-          iconClass: 'el-icon-success',
+          centerButton: false,
+          width: '400px',
           callback: action => {
             this.$message({
               type: 'info',
@@ -18,7 +19,9 @@
         this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
           confirmButtonText: '确定',
           cancelButtonText: '取消',
-          type: 'warning'
+          type: 'warning',
+          width: '400px',
+          centerButton: true
         }).then(() => {
           setTimeout(() => {
             this.$message({
@@ -41,7 +44,9 @@
           confirmButtonText: '确定',
           cancelButtonText: '取消',
           inputPattern: /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/,
-          inputErrorMessage: '邮箱格式不正确'
+          inputErrorMessage: '邮箱格式不正确',
+          centerButton: false,
+          width: '600px'
         }).then(({ value }) => {
           setTimeout(() => {
             this.$message({
@@ -71,6 +76,8 @@
           showCancelButton: true,
           confirmButtonText: '确定',
           cancelButtonText: '取消',
+          centerButton: false,
+          width: '400px',
           beforeClose: (action, instance, done) => {
             if (action === 'confirm') {
               instance.confirmButtonLoading = true;
@@ -97,7 +104,9 @@
 
       open5() {
         this.$alert('<strong>这是 <i>HTML</i> 片段</strong>', 'HTML 片段', {
-          dangerouslyUseHTMLString: true
+          dangerouslyUseHTMLString: true,
+          width: '400px',
+          centerButton: false
         });
       },
 
@@ -106,7 +115,8 @@
           confirmButtonText: '确定',
           cancelButtonText: '取消',
           type: 'warning',
-          center: true
+          width: '400px',
+          centerButton: true
         }).then(() => {
           this.$message({
             type: 'success',
@@ -145,7 +155,6 @@
       open() {
         this.$alert('这是一段内容', '标题名称', {
           confirmButtonText: '确定',
-          iconClass: 'el-icon-d-caret',
           callback: action => {
             this.$message({
               type: 'info',
@@ -178,7 +187,8 @@
         this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
           confirmButtonText: '确定',
           cancelButtonText: '取消',
-          type: 'warning'
+          type: 'warning',
+          centerButton: true
         }).then(() => {
           this.$message({
             type: 'success',
@@ -216,7 +226,8 @@
           confirmButtonText: '确定',
           cancelButtonText: '取消',
           inputPattern: /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/,
-          inputErrorMessage: '邮箱格式不正确'
+          inputErrorMessage: '邮箱格式不正确',
+          width: '600px'
         }).then(({ value }) => {
           this.$message({
             type: 'success',
@@ -333,7 +344,7 @@
           confirmButtonText: '确定',
           cancelButtonText: '取消',
           type: 'warning',
-          center: true
+          centerButton: true
         }).then(() => {
           this.$message({
             type: 'success',
@@ -402,3 +413,4 @@ import { MessageBox } from 'kyligence-ui';
 | center | 是否居中布局 | boolean | — | false |
 | roundButton | 是否使用圆角按钮 | boolean | — | false |
 | iconClass | 自定义图标类名，覆盖type对应的图标 | string | — | - |
+| width | 自定义 messagebox 宽度 | string | — | 400px |

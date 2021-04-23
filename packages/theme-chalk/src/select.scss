@@ -136,13 +136,13 @@
     }
 
     &__close.el-icon-close {
-      right: -7px;
+      right: 0px;
       top: 0;
       color: $--tag-color;
       background-color: transparent;
 
       &:hover {
-        background-color: $--tag-color;
+        // background-color: $--tag-color;
       }
 
       &::before {

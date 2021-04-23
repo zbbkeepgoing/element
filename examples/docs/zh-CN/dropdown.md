@@ -95,7 +95,7 @@
 
 ```html
 <el-dropdown>
-  <el-button type="primary" plain icon="el-icon-plus">
+  <el-button icon="el-ksd-icon-add_22">
     更多菜单<i class="el-icon-arrow-down el-icon--right"></i>
   </el-button>
   <el-dropdown-menu slot="dropdown">
@@ -106,7 +106,7 @@
     <el-dropdown-item divided>蚵仔煎</el-dropdown-item>
   </el-dropdown-menu>
 </el-dropdown>
-<el-dropdown split-button type="primary" plain @click="handleClick" btn-icon="el-icon-plus" size="medium">
+<el-dropdown split-button @click="handleClick" btn-icon="el-ksd-icon-add_22" size="medium">
   更多菜单
   <el-dropdown-menu slot="dropdown">
     <el-dropdown-item>黄金糕</el-dropdown-item>
@@ -118,6 +118,17 @@
 </el-dropdown>
 
 <el-dropdown split-button type="primary" @click="handleClick">
+  更多菜单
+  <el-dropdown-menu slot="dropdown">
+    <el-dropdown-item>黄金糕</el-dropdown-item>
+    <el-dropdown-item>狮子头</el-dropdown-item>
+    <el-dropdown-item>螺蛳粉</el-dropdown-item>
+    <el-dropdown-item disabled>双皮奶</el-dropdown-item>
+    <el-dropdown-item divided>蚵仔煎</el-dropdown-item>
+  </el-dropdown-menu>
+</el-dropdown>
+
+<el-dropdown split-button type="primary" text @click="handleClick">
   更多菜单
   <el-dropdown-menu slot="dropdown">
     <el-dropdown-item>黄金糕</el-dropdown-item>

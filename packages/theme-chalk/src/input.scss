@@ -136,6 +136,7 @@
     text-align: center;
     transition: all .3s;
     line-height: $--input-height;
+    font-size: 22px;
 
     &:after {
       content: '';
@@ -209,6 +210,7 @@
 
     .el-input__icon {
       line-height: $--input-small-height;
+      font-size: 16px;
     }
   }
   @include m(mini) {
@@ -221,6 +223,7 @@
 
     .el-input__icon {
       line-height: $--input-mini-height;
+      font-size: 16px;
     }
   }
 }

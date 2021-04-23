@@ -157,6 +157,12 @@
     type="error"
     show-icon>
   </el-alert>
+  <el-alert
+    show-icon
+    title="错误提示的文案-无背景"
+    :show-background="false"
+    type="error">
+  </el-alert>
 </template>
 ```
 :::
