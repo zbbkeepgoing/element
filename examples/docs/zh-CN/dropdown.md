@@ -12,7 +12,7 @@
       color: #0988DE;
     }
     .el-icon-arrow-down {
-      font-size: 12px;
+      /* font-size: 12px; */
     }
   }
 
@@ -96,7 +96,7 @@
 ```html
 <el-dropdown>
   <el-button icon="el-ksd-icon-add_22">
-    更多菜单<i class="el-icon-arrow-down el-icon--right"></i>
+    更多菜单<i class="el-ksd-icon-arrow_down_22"></i>
   </el-button>
   <el-dropdown-menu slot="dropdown">
     <el-dropdown-item>黄金糕</el-dropdown-item>

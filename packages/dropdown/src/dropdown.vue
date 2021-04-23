@@ -255,6 +255,12 @@
     render(h) {
       let { hide, splitButton, type, text, dropdownSize, plain, btnIcon } = this;
 
+      let arrow_down_icon = {
+        medium: 'el-ksd-icon-arrow_down_22',
+        small: 'el-ksd-icon-arrow_down_16',
+        mini: 'el-ksd-icon-arrow_down_16'
+      }
+
       const handleMainButtonClick = (event) => {
         this.$emit('click', event);
         hide();
@@ -267,7 +273,7 @@
             {this.$slots.default}
           </el-button>
           <el-button ref="trigger" plain={plain} type={type} text={text} size={dropdownSize} class="el-dropdown__caret-button">
-            <i class="el-dropdown__icon el-icon-arrow-down"></i>
+            <i class="el-dropdown__icon" class={dropdownSize ? arrow_down_icon[dropdownSize] : 'el-ksd-icon-arrow_down_22'}></i>
           </el-button>
         </el-button-group>);
 

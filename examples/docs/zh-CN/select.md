@@ -191,9 +191,9 @@
     },
 
     created () {
-      setTimeout(() => {
-        this.value5 = ['选项1', '选项2', '选项3', '选项4', '选项5', '选项6', '选项7', '选项8', '选项9', '选项10', '选项11', '选项12', '选项13', '选项14', '选项15', '选项16', '选项17', '选项18', '选项19', '选项20', '选项21', '选项22', '选项23', '选项24', '选项25', '选项26', '选项27', '选项28', '选项29', '选项30']
-      }, 0)
+      // setTimeout(() => {
+      //   this.value5 = ['选项1', '选项2', '选项3', '选项4', '选项5', '选项6', '选项7', '选项8', '选项9', '选项10', '选项11', '选项12', '选项13', '选项14', '选项15', '选项16', '选项17', '选项18', '选项19', '选项20', '选项21', '选项22', '选项23', '选项24', '选项25', '选项26', '选项27', '选项28', '选项29', '选项30']
+      // }, 0)
       for (let i = 0; i <= 1000; i++) {
         this.options123.push({value: 'aaa' + i + 1})
       }
@@ -242,7 +242,7 @@ select和radio、checkbox一样，选中值和下拉选项中的值是===比较�
 ```html
 <template>
   <el-select v-model="value" placeholder="请选择">
-    <span slot="prefix" class="el-input__icon el-icon-loading"></span>
+    <span slot="prefix" class="el-input__icon el-ksd-icon-loading_22"></span>
     <el-option
       v-for="item in options"
       :key="item.value"
@@ -535,8 +535,8 @@ select和radio、checkbox一样，选中值和下拉选项中的值是===比较�
       :key="item.value"
       :label="item.label"
       :value="item.value">
-      <i class="el-icon-edit" style="float: left"></i>
-      <span style="float: left">{{ item.label }}</span>
+      <i class="el-ksd-icon-edit_22" style="font-size:22px; margin-right:5px;"></i>
+      <span>{{ item.label }}</span>
       <span style="float: right; color: #8492a6; font-size: 13px">{{ item.value }}</span>
     </el-option>
   </el-select>

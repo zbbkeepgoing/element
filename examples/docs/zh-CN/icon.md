@@ -141,10 +141,10 @@
 
 :::demo
 ```html
-<i class="el-icon-edit"></i>
+<!-- <i class="el-icon-edit"></i>
 <i class="el-icon-share"></i>
-<i class="el-icon-delete"></i>
-<el-button type="primary" icon="el-icon-search">搜索</el-button>
+<i class="el-icon-delete"></i> -->
+<el-button type="primary" icon="el-ksd-icon-search_22">搜索</el-button>
 
 ```
 :::

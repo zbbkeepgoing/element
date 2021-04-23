@@ -147,7 +147,7 @@
       :default-openeds="['d1']">
       <el-submenu index="d1">
         <template slot="title">
-          <el-icon name="el-ksd-icon-nav_homepage_24" type="mult"></el-icon>
+          <!-- <el-icon name="el-ksd-icon-nav_homepage_24" type="mult"></el-icon> -->
           <span>默认</span>
         </template>
         <el-menu-item index="d1-1">二级展开</el-menu-item>

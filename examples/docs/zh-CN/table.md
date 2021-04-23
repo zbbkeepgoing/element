@@ -1640,7 +1640,7 @@
           <p>姓名: {{ scope.row.name }}</p>
           <p>住址: {{ scope.row.address }}</p>
           <div slot="reference" class="name-wrapper">
-            <el-tag size="medium">{{ scope.row.name }}</el-tag>
+            <el-tag size="small">{{ scope.row.name }}</el-tag>
           </div>
         </el-popover>
       </template>

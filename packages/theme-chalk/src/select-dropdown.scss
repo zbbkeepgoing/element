@@ -23,7 +23,7 @@
   @include when(multiple) {
     & .el-select-dropdown__item.selected {
       color: $--select-option-selected;
-      background-color: $--select-dropdown-background;
+      // background-color: $--select-dropdown-background;
       &.hover {
         background-color: $--select-option-hover-background;
       }

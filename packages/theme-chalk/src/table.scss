@@ -548,12 +548,12 @@
 
     &.ascending {
       border-bottom-color: $--color-text-disabled;
-      top: 0px;
+      top: -2px;
     }
 
     &.descending {
       border-top-color: $--color-text-disabled;
-      bottom: -2px;
+      bottom: 0px;
     }
   }
 
@@ -622,8 +622,8 @@
     & i {
       color: $--color-text-disabled;
       font-size: 22px;
-      position: relative;
-      top: 1px;
+      // position: relative;
+      // top: 1px;
       // transform: scale(.75);
     }
   }

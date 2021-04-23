@@ -16,6 +16,14 @@
     }
   }
 
+  &:not(.el-dropdown__caret-button) {
+    .el-ksd-icon-arrow_down_22 {
+      font-size: 14px;
+      transform: scale(1.57);
+      margin-left: 5px;
+    }
+  }
+
   & .el-dropdown__caret-button {
     padding-left: 5px;
     padding-right: 5px;

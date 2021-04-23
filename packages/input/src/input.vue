@@ -182,7 +182,7 @@
       },
       validateIcon() {
         return {
-          validating: 'el-icon-loading',
+          validating: 'el-ksd-icon-loading_22',
           success: 'el-icon-circle-check',
           error: 'el-icon-circle-close'
         }[this.validateState];

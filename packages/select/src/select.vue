@@ -159,9 +159,9 @@
   import NavigationMixin from './navigation-mixin';
 
   const sizeMap = {
-    'medium': 30,
-    'small': 24,
-    'mini': 22
+    'medium': 34,
+    'small': 28,
+    'mini': 24
   };
 
   export default {
@@ -673,7 +673,7 @@
           let inputChildNodes = this.$refs.reference.$el.childNodes;
           let input = [].filter.call(inputChildNodes, item => item.tagName === 'INPUT')[0];
           const tags = this.$refs.tags;
-          const sizeInMap = sizeMap[this.selectSize] || 36;
+          const sizeInMap = sizeMap[this.selectSize] || 38;
           if (this.selected.length === 0) {
             this.ST = setTimeout(() => {
               if (this.selected.length === 0) {
