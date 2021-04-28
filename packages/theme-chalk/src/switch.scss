@@ -26,6 +26,8 @@
     cursor: pointer;
     vertical-align: middle;
     color: $--color-white;
+    width: 22px;
+    text-align: center;
 
     @include when(active) {
       color: transparent;

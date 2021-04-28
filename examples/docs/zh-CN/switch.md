@@ -70,8 +70,8 @@
 ```html
 <el-switch
   v-model="value3"
-  active-text="OFF"
-  inactive-text="ON">
+  active-text="关"
+  inactive-text="开">
 </el-switch>
 <el-switch
   v-model="value4"
