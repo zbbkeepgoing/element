@@ -6,6 +6,27 @@
   "description": "专门的多色 icon 维护",
   "glyphs": [
     {
+      "icon_id": "21281186",
+      "name": "tieredstorage_22",
+      "font_class": "tieredstorage_22",
+      "unicode": "e671",
+      "unicode_decimal": 58993
+    },
+    {
+      "icon_id": "21281187",
+      "name": "tieredstorage_16",
+      "font_class": "tieredstorage_16",
+      "unicode": "e672",
+      "unicode_decimal": 58994
+    },
+    {
+      "icon_id": "21209977",
+      "name": "finished_24",
+      "font_class": "finished_24",
+      "unicode": "e66e",
+      "unicode_decimal": 58990
+    },
+    {
       "icon_id": "21088489",
       "name": "info_24",
       "font_class": "info_24",
@@ -83,13 +104,6 @@
       "unicode_decimal": 58989
     },
     {
-      "icon_id": "21088500",
-      "name": "success_24",
-      "font_class": "success_24",
-      "unicode": "e66e",
-      "unicode_decimal": 58990
-    },
-    {
       "icon_id": "21088501",
       "name": "warning_24",
       "font_class": "warning_24",
@@ -130,13 +144,6 @@
       "font_class": "error_22",
       "unicode": "e65f",
       "unicode_decimal": 58975
-    },
-    {
-      "icon_id": "21088387",
-      "name": "ts_22",
-      "font_class": "ts_22",
-      "unicode": "e660",
-      "unicode_decimal": 58976
     },
     {
       "icon_id": "21088388",

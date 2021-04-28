@@ -259,7 +259,7 @@
         medium: 'el-ksd-icon-arrow_down_22',
         small: 'el-ksd-icon-arrow_down_16',
         mini: 'el-ksd-icon-arrow_down_16'
-      }
+      };
 
       const handleMainButtonClick = (event) => {
         this.$emit('click', event);
