@@ -257,6 +257,7 @@
     box-sizing: border-box;
     text-align: center;
     margin: 0;
+    border-radius: 4px;
 
     &.btn-quicknext,
     &.btn-quickprev {
@@ -289,7 +290,6 @@
     }
 
     &.active {
-      border-radius: 4px;
       background: $--color-primary;
       color:#fff;
       cursor: default;

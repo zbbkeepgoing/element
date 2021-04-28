@@ -66,7 +66,7 @@
       },
       width: {
         type: Number,
-        default: 0
+        default: 48
       },
       activeIconClass: {
         type: String,
@@ -114,7 +114,7 @@
         return this.value === this.activeValue;
       },
       transform() {
-        return this.checked ? `translate3d(${ this.coreWidth - (this.size === 'small' ? '18' : '21') }px, 0, 0)` : '';
+        return this.checked ? `translate3d(${ this.coreWidth - (this.size === 'small' ? '36' : '24') }px, 0, 0)` : '';
       },
       switchDisabled() {
         return this.disabled || (this.elForm || {}).disabled;
@@ -163,7 +163,7 @@
     },
     mounted() {
       /* istanbul ignore if */
-      this.coreWidth = this.width || this.size === 'small' ? 48 : 54;
+      this.coreWidth = this.width || this.size === 'small' ? 48 : 28;
       if (this.activeColor || this.inactiveColor) {
         this.setBackgroundColor();
       }

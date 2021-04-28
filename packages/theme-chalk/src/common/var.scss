@@ -162,6 +162,12 @@ $--font-weight-primary: bold !default;
 $--font-weight-medium: 500 !default;
 $--font-line-height-primary: 24px !default;
 
+$--font-size-page: 26px !default;
+$--font-size-module: 20px !default;
+$--font-size-paragraph: 16px !default;
+$--font-size-primary: 14px !default;
+$--font-size-small: 12px !default;
+
 /* Size
 -------------------------- */
 $--size-base: 14px !default;
@@ -266,10 +272,10 @@ $--radio-input-border-color-active: $--color-primary !default;
 $--radio-input-fill-active: $--color-info-bg !default;
 
 $--radio-bordered-height: 40px !default;
-$--radio-bordered-padding: 12px 20px 0 10px !default;
-$--radio-bordered-medium-padding: 10px 20px 0 10px !default;
-$--radio-bordered-small-padding: 8px 15px 0 10px !default;
-$--radio-bordered-mini-padding: 6px 15px 0 10px !default;
+$--radio-bordered-padding: 9px 10px 9px 10px !default;
+$--radio-bordered-medium-padding: 5px 10px 5px 10px !default;
+$--radio-bordered-small-padding: 4px 8px 4px 8px !default;
+$--radio-bordered-mini-padding: 3px 6px 3px 6px !default;
 $--radio-bordered-medium-input-height: 14px !default;
 $--radio-bordered-medium-input-width: 14px !default;
 $--radio-bordered-medium-height: 36px !default;
@@ -321,11 +327,11 @@ $--select-dropdown-border: solid 1px $--border-color-light !default;
 
 /* Alert
 -------------------------- */
-$--alert-padding: 10px 10px !default;
+$--alert-padding: 10px 16px !default;
 $--alert-border-radius: $--border-radius-mini !default;
 $--alert-title-font-size: 12px !default;
 $--alert-description-font-size: 12px !default;
-$--alert-close-font-size: 12px !default;
+$--alert-close-font-size: 16px !default;
 $--alert-close-customed-font-size: 12px !default;
 
 $--alert-success-color: $--color-success-active !default;
@@ -414,6 +420,8 @@ $--input-clear-hover-color: $--color-text-secondary !default;
 $--input-focus-border: $--color-primary !default;
 $--input-focus-fill: $--color-white !default;
 
+$--input-focus-error-box-shadow: 0px 0px 0px 2px rgba(218, 8, 8, 0.1) !default;
+
 $--input-disabled-fill: $--background-color-secondary !default;
 $--input-disabled-border: $--border-secondary !default;
 $--input-disabled-color: $--border-secondary-active !default;
@@ -478,29 +486,33 @@ $--button-hover-color: $--color-primary-hover!default;
 $--button-font-size: 14px !default;
 $--button-font-weight: $--font-weight-primary !default;
 $--button-border-radius: $--border-radius-base !default;
-$--button-padding-vertical: 6px !default;
-$--button-padding-horizontal: 10px !default;
+$--button-padding-vertical: 5px !default;
+$--button-padding-horizontal: 9px !default;
 
-$--button-big-padding-vertical: 8px !default;
-$--button-big-padding-horizontal: 12px !default;
+$--button-big-padding-vertical: 7px !default;
+$--button-big-padding-horizontal: 11px !default;
+$--button-big-icon-padding: 7px 8px !default;
 
 $--button-medium-font-size: 14px !default;
 $--button-medium-line-height: 22px !default;
 $--button-medium-border-radius: $--border-radius-base !default;
 $--button-medium-padding-vertical: 5px !default;
-$--button-medium-padding-horizontal: 10px !default;
+$--button-medium-padding-horizontal: 9px !default;
+$--button-medium-icon-padding: 5px 6px !default;
 
 $--button-small-font-size: 12px !default;
 $--button-small-line-height: 16px !default;
 $--button-small-border-radius: #{$--border-radius-base} !default;
 $--button-small-padding-vertical: 5px !default;
-$--button-small-padding-horizontal: 8px !default;
+$--button-small-padding-horizontal: 7px !default;
+$--button-small-icon-padding: 5px 6px !default;
 
 $--button-mini-font-size: 12px !default;
 $--button-mini-line-height: 16px !default;
 $--button-mini-border-radius: #{$--border-radius-base} !default;
 $--button-mini-padding-vertical: 2px !default;
 $--button-mini-padding-horizontal: 6px !default;
+$--button-mini-icon-padding: 2px 3px !default;
 
 $--button-default-color: $--color-text-primary !default;
 $--button-default-fill: $--color-secondary !default;
@@ -567,12 +579,12 @@ $--switch-disabled-text-color: $--color-text-placeholder !default;
 $--switch-font-size: 12px !default;
 $--switch-font-small-size: 12px !default;
 $--switch-core-border-radius: 8px !default;
-$--switch-width: 60px !default;
-$--switch-small-width: 48px !default;
-$--switch-height: 28px !default;
-$--switch-small-height: 18px !default;
-$--switch-button-size: 20px !default;
-$--switch-button-small-size: 14px !default;
+$--switch-width: 48px !default;
+$--switch-small-width: 28px !default;
+$--switch-height: 22px !default;
+$--switch-small-height: 16px !default;
+$--switch-button-size: 16px !default;
+$--switch-button-small-size: 12px !default;
 /* Dialog
 -------------------------- */
 $--dialog-background-color: $--color-primary-light-4 !default;
@@ -636,6 +648,7 @@ $--tooltip-small-padding: 4px 6px !default;
 -------------------------- */
 $--tag-padding: 2px 6px !default;
 $--tag-padding-small: 2px 4px !default;
+$--tag-padding-mini: 0px 2px !default;
 $--tag-fill: $--color-info-tag-bg !default;
 $--tag-color: $--color-nav !default;
 $--tag-border: $--color-info-tag-bg !default;

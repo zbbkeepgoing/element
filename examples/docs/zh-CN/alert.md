@@ -47,10 +47,10 @@
     title="成功提示的文案"
     type="success">
   </el-alert>
-  <el-alert
+  <!-- <el-alert
     title="普通消息显示普通消息显示普通消息显示普通消息显示普通消息显示普通消息显示普通消息显示普通消息显示普通消息显示普通消息显示普通消息显示普通消息显示"
     type="info">
-  </el-alert>
+  </el-alert> -->
   <el-alert
     title="提示操作信息显示"
     type="tip">
@@ -103,7 +103,7 @@
   </el-alert>
   <el-alert
     title="自定义 close-text"
-    type="info"
+    type="tip"
     close-text="知道了">
   </el-alert>
   <el-alert
@@ -137,11 +137,11 @@
     type="success"
     show-icon>
   </el-alert>
-  <el-alert
+  <!-- <el-alert
     title="消息提示的文案消息提示的文案消息提示的文案消息提示的文案消息提示的文案消息提示的文案消息提示的文案消息提示的文案消息提示的文案消息提示的文案消息提示的文案消息提示的文案"
     type="info"
     show-icon>
-  </el-alert>
+  </el-alert> -->
   <el-alert
     title="操作提示的文案"
     type="tip"
@@ -182,7 +182,7 @@
   </el-alert>
   <el-alert
     title="消息提示的文案"
-    type="info"
+    type="tip"
     center
     show-icon>
   </el-alert>
@@ -231,7 +231,7 @@
   </el-alert>
   <el-alert
     title="消息提示的文案"
-    type="info"
+    type="tip"
     description="文字说明文字说明文字说明文字说明文字说明文字说明"
     show-icon>
   </el-alert>

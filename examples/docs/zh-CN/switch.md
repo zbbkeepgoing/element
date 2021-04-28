@@ -42,15 +42,13 @@
 ```html
 <el-switch
   v-model="value2"
-  active-color="#13ce66"
-  inactive-color="#ff4949">
+  active-text="OFF"
+  inactive-text="ON">
 </el-switch>
 
 <el-switch
   size="small"
-  v-model="value2"
-  active-color="#13ce66"
-  inactive-color="#ff4949">
+  v-model="value2">
 </el-switch>
 <script>
   export default {
@@ -84,17 +82,13 @@
 </el-switch>
 <el-switch
   size="small"
-  v-model="value3"
-  active-text="OFF"
-  inactive-text="ON">
+  v-model="value3">
 </el-switch>
 <el-switch
   size="small"
   v-model="value4"
   active-color="#13ce66"
-  inactive-color="#ff4949"
-  active-text="OFF"
-  inactive-text="ON">
+  inactive-color="#ff4949">
 </el-switch>
 
 <script>

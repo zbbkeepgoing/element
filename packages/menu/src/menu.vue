@@ -116,7 +116,7 @@
       },
       hoverBackgroundColor: {
         type: String,
-        default: '#0867BF'
+        default: 'rgb(8, 103, 191, 0.2)'
       },
       textColor: {
         type: String,

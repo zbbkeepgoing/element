@@ -10,7 +10,8 @@
       ]"
       :style="{backgroundColor: color}">
       <slot></slot>
-      <i class="el-tag__close el-icon-close"
+      <i class="el-tag__close"
+        :class="`el-ksd-icon-close_${(tagSize === 'small' || tagSize === 'mini') ? '16' : '22'}`"
         v-if="closable"
         @click="handleClose"></i>
     </span>

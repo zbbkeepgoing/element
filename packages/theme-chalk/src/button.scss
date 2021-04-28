@@ -31,7 +31,7 @@
     margin-left: 8px;
   }
 
-  @include button-size($--button-padding-vertical, $--button-padding-horizontal, $--button-font-size, $--button-border-radius, $--button-medium-line-height);
+  @include button-size($--button-padding-vertical, $--button-padding-horizontal, $--button-font-size, $--button-border-radius, $--button-medium-line-height, $--button-medium-icon-padding);
 
   &:hover,
   &:not(.is-disabled):focus {
@@ -314,10 +314,10 @@
     @include button-variant($--button-info-color, $--button-info-fill, $--button-info-border);
   }
   @include m(big) {
-    @include button-size($--button-big-padding-vertical, $--button-big-padding-horizontal, $--button-medium-font-size, $--button-medium-border-radius, $--button-medium-line-height);
+    @include button-size($--button-big-padding-vertical, $--button-big-padding-horizontal, $--button-medium-font-size, $--button-medium-border-radius, $--button-medium-line-height, $--button-big-icon-padding);
   }
   @include m(medium) {
-    @include button-size($--button-medium-padding-vertical, $--button-medium-padding-horizontal, $--button-medium-font-size, $--button-medium-border-radius, $--button-medium-line-height);
+    @include button-size($--button-medium-padding-vertical, $--button-medium-padding-horizontal, $--button-medium-font-size, $--button-medium-border-radius, $--button-medium-line-height, $--button-medium-icon-padding);
     & [class*="el-icon-"], & [class*="el-ksd-icon"] {
       & + span {
         margin-left: 2px;
@@ -325,7 +325,7 @@
     }
   }
   @include m(small) {
-    @include button-size($--button-small-padding-vertical, $--button-small-padding-horizontal, $--button-small-font-size, $--button-small-border-radius, $--button-small-line-height);
+    @include button-size($--button-small-padding-vertical, $--button-small-padding-horizontal, $--button-small-font-size, $--button-small-border-radius, $--button-small-line-height, $--button-small-icon-padding);
     i {
       font-size: $--button-small-line-height; // 自定义的icon大小得跟行高一致
     }
@@ -339,7 +339,7 @@
     }
   }
   @include m(mini) {
-    @include button-size($--button-mini-padding-vertical, $--button-mini-padding-horizontal, $--button-mini-font-size, $--button-mini-border-radius, $--button-mini-line-height);
+    @include button-size($--button-mini-padding-vertical, $--button-mini-padding-horizontal, $--button-mini-font-size, $--button-mini-border-radius, $--button-mini-line-height, $--button-mini-icon-padding);
     i {
       font-size: $--button-mini-line-height; // 自定义的icon大小得跟行高一致
     }

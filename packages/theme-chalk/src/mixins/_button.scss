@@ -123,15 +123,17 @@
   }
 }
 
-@mixin button-size($padding-vertical, $padding-horizontal, $font-size, $border-radius, $line-height) {
+@mixin button-size($padding-vertical, $padding-horizontal, $font-size, $border-radius, $line-height, $--button-icon-padding) {
   padding: $padding-vertical $padding-horizontal;
   font-size: $font-size;
   border-radius: $border-radius;
   &.is-round {
     padding: $padding-vertical $padding-horizontal;
   }
-  &.is-circle,
-  &.is-icon-button {
+  &.is-circle {
     padding: $padding-vertical;
+  }
+  &.is-icon-button {
+    padding: $--button-icon-padding;
   }
 }

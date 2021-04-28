@@ -18,6 +18,18 @@
   //   border-color: $--tag-color;
   // }
 
+  .el-ksd-icon-close_22 {
+    font-size: 22px;
+    position: relative;
+    top: -1px;
+  }
+
+  .el-ksd-icon-close_16 {
+    font-size: 16px;
+    position: relative;
+    top: -1px;
+  }
+
   .el-icon-close {
     border-radius: 50%;
     text-align: center;
@@ -147,7 +159,7 @@
     font-size: 12px;
     height: 20px;
     padding: $--tag-padding-small;
-    line-height: 16px !important;
+    line-height: 14px !important;
 
     .el-icon-close {
       transform: scale(.8);
@@ -156,9 +168,9 @@
 
   @include m(mini) {
     font-size: 12px;
-    height: 20px;
-    padding: $--tag-padding-small;
-    line-height: 16px;
+    height: 16px;
+    padding: $--tag-padding-mini;
+    line-height: 14px !important;
 
     .el-icon-close {
       transform: scale(.8);

@@ -10,6 +10,7 @@
         ref="dialog"
         :style="style">
         <div class="el-dialog__header" :class="{'dragable': isDragable}">
+          <el-icon :name="statusIcon" v-if="statusIcon" type="mult"></el-icon>
           <slot name="title">
             <span class="el-dialog__title">{{ title }}</span>
           </slot>
@@ -108,7 +109,8 @@
       limitedArea: {
         type: Boolean,
         default: false
-      }
+      },
+      statusIcon: String
     },
 
     data() {

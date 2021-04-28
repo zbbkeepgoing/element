@@ -131,25 +131,61 @@ dialog、messagebox 上的取消按钮用的是 次次要按钮 ，确认或者�
 ```html
 <div>
   <el-tooltip content="新建模型" placement="top">
-    <el-button type="primary" icon-button icon="el-ksd-icon-add_22" size="small"></el-button>
+    <el-button type="primary" icon-button icon="el-ksd-icon-add_22" size="big"></el-button>
   </el-tooltip>
   <el-tooltip content="新建模型" placement="top">
-    <el-button icon-button icon="el-ksd-icon-add_22" size="small"></el-button>
+    <el-button icon-button icon="el-ksd-icon-add_22" size="big"></el-button>
   </el-tooltip>
   <el-tooltip content="新建模型" placement="top">
-    <el-button plain icon-button icon="el-ksd-icon-add_22" size="small"></el-button>
+    <el-button plain icon-button icon="el-ksd-icon-add_22" size="big"></el-button>
+  </el-tooltip>
+</div>
+
+<div style="margin: 40px 0 20px 0">
+  <el-tooltip content="新建模型" placement="top">
+    <el-button type="primary" icon-button icon="el-ksd-icon-add_22"></el-button>
+  </el-tooltip>
+  <el-tooltip content="新建模型" placement="top">
+    <el-button icon-button icon="el-ksd-icon-add_22"></el-button>
+  </el-tooltip>
+  <el-tooltip content="新建模型" placement="top">
+    <el-button plain icon-button icon="el-ksd-icon-add_22"></el-button>
+  </el-tooltip>
+</div>
+
+<div style="margin: 40px 0 20px 0">
+  <el-tooltip content="新建模型" placement="top">
+    <el-button type="primary" icon-button icon="el-ksd-icon-add_16" size="small"></el-button>
+  </el-tooltip>
+  <el-tooltip content="新建模型" placement="top">
+    <el-button icon-button icon="el-ksd-icon-add_16" size="small"></el-button>
+  </el-tooltip>
+  <el-tooltip content="新建模型" placement="top">
+    <el-button plain icon-button icon="el-ksd-icon-add_16" size="small"></el-button>
+  </el-tooltip>
+</div>
+
+<div style="margin: 40px 0 20px 0">
+  <el-tooltip content="新建模型" placement="top">
+    <el-button type="primary" icon-button icon="el-ksd-icon-add_16" size="mini"></el-button>
+  </el-tooltip>
+  <el-tooltip content="新建模型" placement="top">
+    <el-button icon-button icon="el-ksd-icon-add_16" size="mini"></el-button>
+  </el-tooltip>
+  <el-tooltip content="新建模型" placement="top">
+    <el-button plain icon-button icon="el-ksd-icon-add_16" size="mini"></el-button>
   </el-tooltip>
 </div>
 
 <div style="margin: 40px 0 20px 0">
   <el-tooltip content="新增配置" placement="top">
-    <el-button type="primary" icon="el-ksd-icon-add_22" circle size="small"></el-button>
+    <el-button type="primary" icon="el-ksd-icon-add_16" circle size="small"></el-button>
   </el-tooltip>
   <el-tooltip content="新增配置" placement="top">
-    <el-button icon="el-ksd-icon-add_22" circle size="small"></el-button>
+    <el-button icon="el-ksd-icon-add_16" circle size="small"></el-button>
   </el-tooltip>
   <el-tooltip content="新增配置" placement="top">
-    <el-button plain icon="el-ksd-icon-add_22" circle size="small"></el-button>
+    <el-button plain icon="el-ksd-icon-add_16" circle size="small"></el-button>
   </el-tooltip>
 </div>
 

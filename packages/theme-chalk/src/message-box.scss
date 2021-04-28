@@ -94,6 +94,7 @@
       border-color: $--color-danger;
       &:focus {
         border-color: $--color-danger;
+        box-shadow: $--input-focus-error-box-shadow;
       }
     }
   }

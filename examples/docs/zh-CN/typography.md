@@ -30,22 +30,24 @@
   }
   .demo-typo-size {
     .h1 {
-      font-size: 18px;
+      font-size: 26px;
+      line-height: 38px;
     }
     .h2 {
-      font-size: 16px;
+      font-size: 20px;
+      line-height: 26px;
     }
     .h3 {
-      font-size: 14px;
+      font-size: 16px;
+      line-height: 24px;
     }
     .text-regular {
       font-size: 14px;
+      line-height: 22px;
     }
     .text-small {
-      font-size: 13px;
-    }
-    .text-smaller {
       font-size: 12px;
+      line-height: 16px;
     }
     .color-dark-light {
       color: #99a9bf;
@@ -56,20 +58,20 @@
       font-size: 18px;
     }
     .color-263{
-      color: #263238;
+      color: #2F374C;
     }
     .color-455{
-      color: #455a64;
+      color: #546174;
     }
     .color-b0b{
-      color:#b0bec5;
+      color:#A5B2C5;
     }
     .color-098{
-      color:#0988DE;
+      color:#0875DA;
     }
     .dark-bg{
       padding:5px;
-      background-color: #455a64;
+      background-color: #546174;
     }
     .color-fff{
       color:#fff;
@@ -171,34 +173,29 @@ font-family: 'Helvetica Neue',Helvetica,'PingFang SC','Hiragino Sans GB','Micros
       <td>字号值</td>
     </tr>
     <tr>
-      <td class="h1">主标题</td>
-      <td class="h1">$--font-size-large</td>
-      <td class="color-dark-light">18px  Extra large</td>
+      <td class="h1">页面标题</td>
+      <td class="h1">$--font-size-page</td>
+      <td class="color-dark-light">26px line-height 38px</td>
     </tr>
     <tr>
-      <td class="h2">标题</td>
-      <td class="h2">$--font-size-medium</td>
-      <td class="color-dark-light">16px Medium</td>
+      <td class="h2">模块级标题</td>
+      <td class="h2">$--font-size-module</td>
+      <td class="color-dark-light">20px line-height 26px</td>
     </tr>
     <tr>
-      <td class="h3">小标题</td>
-      <td class="h3">$--font-size-base</td>
-      <td class="color-dark-light">14px base</td>
+      <td class="h3">段落标题</td>
+      <td class="h3">$--font-size-paragraph</td>
+      <td class="color-dark-light">16px line-height 24px</td>
     </tr>
     <tr>
       <td class="text-regular">正文</td>
-      <td class="text-regular">$--font-size-base</td>
-      <td class="color-dark-light">14px base</td>
+      <td class="text-regular">$--font-size-primary</td>
+      <td class="color-dark-light">14px line-height 22px</td>
     </tr>
     <tr>
       <td class="text-small">正文（小）</td>
       <td class="text-small">$--font-size-small</td>
-      <td class="color-dark-light">13px Small</td>
-    </tr>
-    <tr>
-      <td class="text-smaller">辅助文字</td>
-      <td class="text-smaller">$--font-size-extra-small</td>
-      <td class="color-dark-light">12px Extra Small</td>
+      <td class="color-dark-light">12px line-height 16px</td>
     </tr>
   </tbody>
 </table>
@@ -217,25 +214,25 @@ less 中的字号变量，只要将scss变量的$--替换成@即可。
     <tr>
       <td class="text color-263">Font Color</td>
       <td class="key">$--color-text-primary</td>
-      <td class="value">#263238</td>
+      <td class="value">#2F374C</td>
       <td class="note">适用于标题文字</td>
     </tr>
     <tr>
       <td class="text color-455">Font Color</td>
       <td class="key">$--color-text-regular</td>
-      <td class="value">#455a64</td>
+      <td class="value">#546174</td>
       <td class="note">适用于一般文字</td>
     </tr>
     <tr>
       <td class="text color-b0b">Font Color</td>
-      <td class="key">$--color-text-secondary</td>
-      <td class="value">#b0bcd6</td>
+      <td class="key">$--color-text-placeholder</td>
+      <td class="value">#A5B2C5</td>
       <td class="note">适用于注释、未选状态文字</td>
     </tr>
     <tr>
       <td class="text color-098">Font Color</td>
       <td class="key">$--color-primary</td>
-      <td class="value">#0988DE</td>
+      <td class="value">#0875DA</td>
       <td class="note">适用于链接</td>
     </tr>
     <tr>

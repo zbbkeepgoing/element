@@ -6,30 +6,17 @@
 @include b(checkbox) {
   color: $--checkbox-color;
   font-weight: $--checkbox-font-weight;
-  font-size: $--font-size-base;
+  // font-size: $--font-size-base;
   position: relative;
   cursor: pointer;
-  display: inline-block;
+  display: inline-flex;
   white-space: nowrap;
   user-select: none;
+  align-items: center;
   &.el-checkbox--small {
-    padding: $--checkbox-bordered-small-padding;
-    border-radius: $--button-small-border-radius;
-    height: $--checkbox-bordered-small-height;
-
     .el-checkbox__label {
       line-height: 16px;
       font-size: $--button-small-font-size;
-    }
-
-    .el-checkbox__inner {
-      height: $--checkbox-bordered-small-input-height;
-      width: $--checkbox-bordered-small-input-width;
-
-      &::after {
-        height: 6px;
-        width: 2px;
-      }
     }
   }
 
@@ -38,7 +25,6 @@
     border-radius: $--border-radius-base;
     border: $--border-base;
     box-sizing: border-box;
-    line-height: 19px;
     height: $--checkbox-bordered-height;
 
     &.is-checked {
@@ -51,7 +37,7 @@
     }
 
     & + .el-checkbox.is-bordered {
-      margin-left: 10px;
+      margin-left: 8px;
     }
 
     &.el-checkbox--medium {
@@ -76,8 +62,12 @@
       height: $--checkbox-bordered-small-height;
 
       .el-checkbox__label {
-        line-height: 15px;
+        line-height: 16px;
         font-size: $--button-small-font-size;
+      }
+
+      .el-checkbox__input {
+        height: $--checkbox-bordered-small-input-height;
       }
 
       .el-checkbox__inner {
@@ -101,6 +91,10 @@
         font-size: $--button-mini-font-size;
       }
 
+      .el-checkbox__input {
+        height: $--checkbox-bordered-small-input-height;
+      }
+
       .el-checkbox__inner {
         height: $--checkbox-bordered-mini-input-height;
         width: $--checkbox-bordered-mini-input-width;
@@ -117,9 +111,8 @@
     cursor: pointer;
     outline: none;
     display: inline-block;
-    line-height: 1;
     position: relative;
-    vertical-align: middle;
+    height: 14px;
 
     @include when(disabled) {
       .el-checkbox__inner {
@@ -206,8 +199,8 @@
           position: absolute;
           display: block;
           background-color: $--checkbox-checked-icon-color;
-          height: 2px;
-          transform: scale(0.5);
+          height: 3px;
+          transform: scale(0.67);
           left: 0;
           right: 0;
           top: 5px;
@@ -244,7 +237,7 @@
     &::after {
       box-sizing: content-box;
       content: "";
-      border: 1px solid $--checkbox-checked-icon-color;
+      border: 2px solid $--checkbox-checked-icon-color;
       border-left: 0;
       border-top: 0;
       height: 7px;
@@ -255,6 +248,7 @@
       width: 3px;
       transition: transform .15s cubic-bezier(.71,-.46,.88,.6) .05s;
       transform-origin: center;
+      border-bottom-right-radius: 2px;
     }
   }
 
@@ -273,10 +267,11 @@
     padding-left: 5px;
     line-height: 22px;
     font-size: $--checkbox-font-size;
+    vertical-align: middle;
   }
 
   & + .el-checkbox {
-    margin-left: 10px;
+    margin-left: 8px;
   }
 }
 
@@ -304,7 +299,7 @@
     transition: $--all-transition;
     @include utils-user-select(none);
 
-    @include button-size($--button-padding-vertical, $--button-padding-horizontal, $--button-font-size, 0, $--button-medium-line-height);
+    @include button-size($--button-padding-vertical, $--button-padding-horizontal, $--button-font-size, 0, $--button-medium-line-height, $--button-medium-icon-padding);
 
     &:hover {
       color: $--color-primary;
@@ -353,6 +348,16 @@
       border-radius: $--border-radius-base 0 0 $--border-radius-base;
       box-shadow: none !important;
     }
+    &.is-checked {
+      .el-checkbox-button__inner {
+        border-color: $--checkbox-button-checked-border-color;
+      }
+    }
+    &.is-disabled {
+      & .el-checkbox-button__inner {
+        border-color: $--button-disabled-border;
+      }
+    }
   }
 
   &.is-focus {
@@ -368,17 +373,17 @@
   }
   @include m(medium) {
     .el-checkbox-button__inner {
-      @include button-size($--button-medium-padding-vertical, $--button-medium-padding-horizontal, $--button-medium-font-size, 0, $--button-medium-line-height);
+      @include button-size($--button-medium-padding-vertical, $--button-medium-padding-horizontal, $--button-medium-font-size, 0, $--button-medium-line-height, $--button-medium-icon-padding);
     }
   }
   @include m(small) {
     .el-checkbox-button__inner {
-      @include button-size($--button-small-padding-vertical, $--button-small-padding-horizontal, $--button-small-font-size, 0, $--button-small-line-height);
+      @include button-size($--button-small-padding-vertical, $--button-small-padding-horizontal, $--button-small-font-size, 0, $--button-small-line-height, $--button-small-icon-padding);
     }
   }
   @include m(mini) {
     .el-checkbox-button__inner {
-      @include button-size($--button-mini-padding-vertical, $--button-mini-padding-horizontal, $--button-mini-font-size, 0, $--button-mini-line-height);
+      @include button-size($--button-mini-padding-vertical, $--button-mini-padding-horizontal, $--button-mini-font-size, 0, $--button-mini-line-height, $--button-mini-icon-padding);
     }
   }
 }

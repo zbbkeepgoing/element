@@ -98,6 +98,7 @@ Dialog 弹出一个对话框，适合需要定制性更大的场景。
 <el-dialog
   :visible.sync="dialogVisible0"
   width="30%"
+  status-icon="el-ksd-icon-error_24"
   :close-on-click-modal="false"
   :before-close="handleClose">
   <span slot="title" class="test test2">我是弹窗标题</span>
@@ -438,6 +439,7 @@ Dialog 组件的内容可以是任意的，甚至可以是表格或表单，下�
 | before-close | 关闭前的回调，会暂停 Dialog 的关闭 | function(done)，done 用于关闭 Dialog | — | — |
 | center | 是否对头部和底部采用居中布局 | boolean | — | false |
 | limited-area | 是否限制弹窗展示区域不能超过容器 | boolean | — | false |
+| status-icon | title 前加多色icon svg | String | - | - |
 ### Slot
 | name | 说明 |
 |------|--------|
