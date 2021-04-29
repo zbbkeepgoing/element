@@ -6,6 +6,55 @@
   "description": "专门的多色 icon 维护",
   "glyphs": [
     {
+      "icon_id": "21320057",
+      "name": "nav_log_24",
+      "font_class": "nav_log_24",
+      "unicode": "e675",
+      "unicode_decimal": 58997
+    },
+    {
+      "icon_id": "21320058",
+      "name": "nav_connect_BI_24",
+      "font_class": "nav_connect_BI_24",
+      "unicode": "e676",
+      "unicode_decimal": 58998
+    },
+    {
+      "icon_id": "21320059",
+      "name": "nav_configuration_24",
+      "font_class": "nav_configuration_24",
+      "unicode": "e677",
+      "unicode_decimal": 58999
+    },
+    {
+      "icon_id": "21320060",
+      "name": "nav_workspace_24",
+      "font_class": "nav_workspace_24",
+      "unicode": "e678",
+      "unicode_decimal": 59000
+    },
+    {
+      "icon_id": "21320061",
+      "name": "nav_quota_management_24",
+      "font_class": "nav_quota_management_24",
+      "unicode": "e679",
+      "unicode_decimal": 59001
+    },
+    {
+      "icon_id": "21320062",
+      "name": "nav_query_history_24",
+      "font_class": "nav_query_history_24",
+      "unicode": "e67a",
+      "unicode_decimal": 59002
+    },
+    {
+      "icon_id": "21320063",
+      "name": "nav_query_24",
+      "font_class": "nav_query_241",
+      "unicode": "e67b",
+      "unicode_decimal": 59003
+    },
+    {
       "icon_id": "21281186",
       "name": "tieredstorage_22",
       "font_class": "tieredstorage_22",
