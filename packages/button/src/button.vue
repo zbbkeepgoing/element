@@ -22,6 +22,7 @@
     <i class="el-ksd-icon-loading_22" v-if="loading"></i>
     <i :class="icon" v-if="icon && !loading"></i>
     <span v-if="$slots.default"><slot></slot></span>
+    <i :class="iconr" v-if="iconr && !loading"></i>
   </button>
 </template>
 <script>
@@ -44,6 +45,10 @@
         default: 'medium'
       },
       icon: {
+        type: String,
+        default: ''
+      },
+      iconr: {
         type: String,
         default: ''
       },

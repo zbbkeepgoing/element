@@ -116,9 +116,23 @@ dialog、messagebox 上的取消按钮用的是 次次要按钮 ，确认或者�
 
 :::demo 
 ```html
+
+<h4 style="margin: 20px 0">纯文字按钮（默认大小）</h4>
 <div style="margin: 20px 0">
   <el-button type="primary" text>Kyligence</el-button>
   <el-button type="info" text disabled>Kyligence</el-button>
+</div>
+
+<h4 style="margin: 20px 0">带右侧 icon 的文字按钮（默认大小）</h4>
+<div style="margin: 20px 0">
+  <el-button text type="primary" iconr="el-ksd-icon-arrow_down_22">展开</el-button>
+  <el-button type="info" text disabled iconr="el-ksd-icon-arrow_up_22">收起</el-button>
+</div>
+
+<h4 style="margin: 20px 0">带右侧 icon 的文字按钮（small）</h4>
+<div style="margin: 20px 0">
+  <el-button text type="primary" size="small" iconr="el-ksd-icon-arrow_down_16">展开</el-button>
+  <el-button type="info" text disabled size="small" iconr="el-ksd-icon-arrow_up_16">收起</el-button>
 </div>
 ```
 :::
@@ -227,6 +241,7 @@ dialog、messagebox 上的取消按钮用的是 次次要按钮 ，确认或者�
   <el-button :loading="true">次要按钮</el-button>
   <el-button plain :loading="true">次次要按钮</el-button>
 </div>
+
 ```
 :::
 
@@ -693,3 +708,4 @@ locales: {
 | icon  | 图标类名 | string   |  —  |  —  |
 | autofocus  | 是否默认聚焦 | boolean   |  —  |  false  |
 | native-type | 原生 type 属性 | string | button / submit / reset | button |
+| iconr  | 文字右侧图标类名，一般文字按钮时比较常用 | string   |  —  |  —  |
