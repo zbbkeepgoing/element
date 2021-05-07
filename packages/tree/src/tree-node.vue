@@ -16,6 +16,12 @@
     :aria-expanded="expanded"
     :aria-disabled="node.disabled"
     :aria-checked="node.checked"
+    :draggable="tree.draggable"
+    @dragstart.stop="handleDragStart"
+    @dragover.stop="handleDragOver"
+    @dragend.stop="handleDragEnd"
+    @drop.stop="handleDrop"
+    ref="node"
   >
     
     <div class="el-tree-node__content"   
@@ -250,6 +256,25 @@
       handleChildNodeExpand(nodeData, node, instance) {
         this.broadcast('ElTreeNode', 'tree-node-expand', node);
         this.tree.$emit('node-expand', nodeData, node, instance);
+      },
+      handleDragStart(event) {
+        if (!this.tree.draggable) return;
+        this.tree.$emit('tree-node-drag-start', event, this);
+      },
+
+      handleDragOver(event) {
+        if (!this.tree.draggable) return;
+        this.tree.$emit('tree-node-drag-over', event, this);
+        event.preventDefault();
+      },
+
+      handleDrop(event) {
+        event.preventDefault();
+      },
+
+      handleDragEnd(event) {
+        if (!this.tree.draggable) return;
+        this.tree.$emit('tree-node-drag-end', event, this);
       }
     },
     created() {
