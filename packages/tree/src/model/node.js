@@ -168,6 +168,52 @@ export default class Node {
     return getPropertyFromData(this, 'disabled');
   }
 
+  get nextSibling() {
+    const parent = this.parent;
+    if (parent) {
+      const index = parent.childNodes.indexOf(this);
+      if (index > -1) {
+        return parent.childNodes[index + 1];
+      }
+    }
+    return null;
+  }
+
+  get previousSibling() {
+    const parent = this.parent;
+    if (parent) {
+      const index = parent.childNodes.indexOf(this);
+      if (index > -1) {
+        return index > 0 ? parent.childNodes[index - 1] : null;
+      }
+    }
+    return null;
+  }
+
+  contains(target, deep = true) {
+    const walk = function(parent) {
+      const children = parent.childNodes || [];
+      let result = false;
+      for (let i = 0, j = children.length; i < j; i++) {
+        const child = children[i];
+        if (child === target || (deep && walk(child))) {
+          result = true;
+          break;
+        }
+      }
+      return result;
+    };
+
+    return walk(this);
+  }
+
+  remove() {
+    const parent = this.parent;
+    if (parent) {
+      parent.removeChild(this);
+    }
+  }
+
   insertChild(child, index, batch) {
     if (!child) throw new Error('insertChild error: child is required.');
 
