@@ -114,7 +114,7 @@
         return this.value === this.activeValue;
       },
       transform() {
-        return this.checked ? `translate3d(${ this.coreWidth - (this.size === 'small' ? '36' : '24') }px, 0, 0)` : '';
+        return this.checked ? `translate3d(${ this.coreWidth - (this.size === 'small' ? '36' : '22') }px, 0, 0)` : '';
       },
       switchDisabled() {
         return this.disabled || (this.elForm || {}).disabled;

@@ -99,7 +99,7 @@
     methods: {
       onMouseEnter() {
         if (this.mode === 'horizontal' && !this.rootMenu.backgroundColor) return;
-        this.$el.style.backgroundColor = this.rootMenu.hoverBackgroundColor;
+        this.$el.style.backgroundColor = this.active ? this.rootMenu.activeSubBackgroundColor : this.rootMenu.hoverBackgroundColor;
         if (!this.active) {
           this.$el.style.color = this.rootMenu.hoverTextColor;
         }

@@ -169,7 +169,7 @@
           border-color: $--color-primary-hover;
         }
         &::after {
-          transform: rotate(45deg) scaleY(1);
+          transform: rotate(45deg) scaleY(1) translate(-0.5px, 0);
         }
         &:active {
           background-color: $--color-primary-active;
@@ -200,7 +200,7 @@
           display: block;
           background-color: $--checkbox-checked-icon-color;
           height: 3px;
-          transform: scale(0.67);
+          transform: scale(0.67) translate(0, -0.5px);
           left: 0;
           right: 0;
           top: 5px;
