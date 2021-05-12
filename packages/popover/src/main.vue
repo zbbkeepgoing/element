@@ -40,7 +40,7 @@ export default {
     },
     openDelay: {
       type: Number,
-      default: 0
+      default: 300
     },
     title: String,
     disabled: Boolean,

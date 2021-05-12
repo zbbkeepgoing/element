@@ -161,6 +161,7 @@
       padding: 8px;
       box-sizing: border-box;
       @utils-vertical-center;
+      position: relative;
 
       svg {
         font-size: 45px;
@@ -175,6 +176,14 @@
         word-break: break-all;
         margin-top: 15px;
         vertical-align: top;
+      }
+
+      &:hover {
+        .copy-layout {
+          background-color: rgba(255, 255, 255, .9);
+          color: #232323;
+          display: block;
+        }
       }
     }
   }
@@ -271,6 +280,7 @@
       <li v-for="item in multIconListNav" :key="item.icon_id">
         <el-icon :name="`el-ksd-icon-${item.font_class}`" type="mult"></el-icon>
         <span>{{'el-ksd-icon-' + item.font_class}}</span>
+        <div class="copy-layout" @click="handleCopy(`el-ksd-icon-${item.font_class}`)">复制</div>
       </li>
     </template>
   </ul>
@@ -280,6 +290,7 @@
       <li v-for="item in multIconListOther" :key="item.icon_id">
         <el-icon :name="`el-ksd-icon-${item.font_class}`" type="mult"></el-icon>
         <span>{{'el-ksd-icon-' + item.font_class}}</span>
+        <div class="copy-layout" @click="handleCopy(`el-ksd-icon-${item.font_class}`)">复制</div>
       </li>
     </template>
   </ul>

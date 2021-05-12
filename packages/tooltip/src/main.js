@@ -13,7 +13,7 @@ export default {
   props: {
     openDelay: {
       type: Number,
-      default: 0
+      default: 300
     },
     disabled: Boolean,
     manual: Boolean,
