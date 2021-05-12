@@ -3,16 +3,19 @@
 
 @include b(tag) {
   background-color: $--tag-fill;
-  display: inline-block;
+  display: inline-flex;
   padding: $--tag-padding;
-  height: 26px;
-  font-size: $--tag-font-size;
-  line-height: $--tag-line-height;
+  // height: 26px;
   color: $--tag-color;
   border-radius: $--tag-border-radius;
   box-sizing: border-box;
   border: 1px solid $--tag-border;
   white-space: nowrap;
+
+  .el-tag__text {
+    font-size: $--tag-font-size;
+    line-height: $--tag-line-height;
+  }
 
   // &.closeable:hover {
   //   border-color: $--tag-color;
@@ -20,14 +23,10 @@
 
   .el-ksd-icon-close_22 {
     font-size: 22px;
-    position: relative;
-    top: -1px;
   }
 
   .el-ksd-icon-close_16 {
     font-size: 16px;
-    position: relative;
-    top: -1px;
   }
 
   .el-icon-close {
@@ -147,8 +146,8 @@
   }
 
   @include m(medium) {
-    height: 26px;
-    line-height: $--tag-line-height;
+    // height: 26px;
+    // line-height: $--tag-line-height;
 
     // .el-icon-close {
     //   transform: scale(.8);
@@ -156,24 +155,20 @@
   }
 
   @include m(small) {
-    font-size: 12px;
-    height: 20px;
+    // height: 20px;
     padding: $--tag-padding-small;
-    line-height: 14px !important;
 
-    .el-icon-close {
-      transform: scale(.8);
+    .el-tag__text {
+      font-size: 12px;
+      line-height: 16px !important;
     }
   }
 
   @include m(mini) {
-    font-size: 12px;
-    height: 16px;
     padding: $--tag-padding-mini;
-    line-height: 14px !important;
-
-    .el-icon-close {
-      transform: scale(.8);
+    .el-tag__text {
+      font-size: 12px;
+      line-height: 16px !important;
     }
   }
 }

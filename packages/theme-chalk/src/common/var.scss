@@ -646,14 +646,14 @@ $--tooltip-small-padding: 4px 6px !default;
 
 /* Tag
 -------------------------- */
-$--tag-padding: 2px 6px !default;
-$--tag-padding-small: 2px 4px !default;
-$--tag-padding-mini: 0px 2px !default;
+$--tag-padding: 1px 5px !default;
+$--tag-padding-small: 1px 3px !default;
+$--tag-padding-mini: 0px 1px !default;
 $--tag-fill: $--color-info-tag-bg !default;
 $--tag-color: $--color-nav !default;
 $--tag-border: $--color-info-tag-bg !default;
 $--tag-font-size: 14px !default;
-$--tag-line-height: 20px !default;
+$--tag-line-height: 22px !default;
 $--tag-border-radius: 4px !default;
 
 $--tag-info-fill: $--color-info-secondary-tag-bg !default;

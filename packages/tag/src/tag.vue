@@ -9,7 +9,7 @@
         {'closeable': closable}
       ]"
       :style="{backgroundColor: color}">
-      <slot></slot>
+      <span class="el-tag__text"><slot></slot></span>
       <i class="el-tag__close"
         :class="`el-ksd-icon-close_${(tagSize === 'small' || tagSize === 'mini') ? '16' : '22'}`"
         v-if="closable"

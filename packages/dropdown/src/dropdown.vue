@@ -269,11 +269,9 @@
       let triggerElm = !splitButton
         ? this.$slots.default
         : (<el-button-group>
-          <el-button plain={plain} type={type} icon={btnIcon} text={text} size={dropdownSize} nativeOn-click={handleMainButtonClick}>
-            {this.$slots.default}
+          <el-button plain={plain} type={type} icon={btnIcon} text={text} size={dropdownSize} nativeOn-click={handleMainButtonClick}>{this.$slots.default}
           </el-button>
-          <el-button ref="trigger" plain={plain} type={type} text={text} size={dropdownSize} class="el-dropdown__caret-button">
-            <i class="el-dropdown__icon" class={dropdownSize ? arrow_down_icon[dropdownSize] : 'el-ksd-icon-arrow_down_22'}></i>
+          <el-button ref="trigger" plain={plain} type={type} text={text} size={dropdownSize} class="el-dropdown__caret-button" icon={dropdownSize ? arrow_down_icon[dropdownSize] : 'el-ksd-icon-arrow_down_22'}>
           </el-button>
         </el-button-group>);
 

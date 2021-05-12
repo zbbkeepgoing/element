@@ -125,6 +125,9 @@ dialog、messagebox 上的取消按钮用的是 次次要按钮 ，确认或者�
 
 <h4 style="margin: 20px 0">带右侧 icon 的文字按钮（默认大小）</h4>
 <div style="margin: 20px 0">
+  <el-button type="primary" icon="el-ksd-icon-add_22" iconr="el-ksd-icon-arrow_down_22">展开</el-button>
+  <el-button type="primary" iconr="el-ksd-icon-arrow_down_22">展开</el-button>
+  <el-button type="primary" size="small" iconr="el-ksd-icon-arrow_down_22">展开</el-button>
   <el-button text type="primary" iconr="el-ksd-icon-arrow_down_22">展开</el-button>
   <el-button type="info" text disabled iconr="el-ksd-icon-arrow_up_22">收起</el-button>
 </div>

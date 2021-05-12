@@ -95,9 +95,7 @@
 
 ```html
 <el-dropdown>
-  <el-button icon="el-ksd-icon-add_22">
-    更多菜单<i class="el-ksd-icon-arrow_down_22"></i>
-  </el-button>
+  <el-button icon="el-ksd-icon-add_22" iconr="el-ksd-icon-arrow_down_22">更多菜单</el-button>
   <el-dropdown-menu slot="dropdown">
     <el-dropdown-item>黄金糕</el-dropdown-item>
     <el-dropdown-item>狮子头</el-dropdown-item>
@@ -106,8 +104,17 @@
     <el-dropdown-item divided>蚵仔煎</el-dropdown-item>
   </el-dropdown-menu>
 </el-dropdown>
-<el-dropdown split-button @click="handleClick" btn-icon="el-ksd-icon-add_22" size="medium">
-  更多菜单
+<el-dropdown>
+  <el-button type="primary" text iconr="el-ksd-icon-arrow_down_22">更多菜单</el-button>
+  <el-dropdown-menu slot="dropdown">
+    <el-dropdown-item>黄金糕</el-dropdown-item>
+    <el-dropdown-item>狮子头</el-dropdown-item>
+    <el-dropdown-item>螺蛳粉</el-dropdown-item>
+    <el-dropdown-item disabled>双皮奶</el-dropdown-item>
+    <el-dropdown-item divided>蚵仔煎</el-dropdown-item>
+  </el-dropdown-menu>
+</el-dropdown>
+<el-dropdown split-button @click="handleClick" btn-icon="el-ksd-icon-add_22" size="medium">模型
   <el-dropdown-menu slot="dropdown">
     <el-dropdown-item>黄金糕</el-dropdown-item>
     <el-dropdown-item>狮子头</el-dropdown-item>
@@ -117,8 +124,16 @@
   </el-dropdown-menu>
 </el-dropdown>
 
-<el-dropdown split-button type="primary" @click="handleClick">
-  更多菜单
+<el-dropdown split-button type="primary" @click="handleClick">更多菜单
+  <el-dropdown-menu slot="dropdown">
+    <el-dropdown-item>黄金糕</el-dropdown-item>
+    <el-dropdown-item>狮子头</el-dropdown-item>
+    <el-dropdown-item>螺蛳粉</el-dropdown-item>
+    <el-dropdown-item disabled>双皮奶</el-dropdown-item>
+    <el-dropdown-item divided>蚵仔煎</el-dropdown-item>
+  </el-dropdown-menu>
+</el-dropdown>
+<el-dropdown split-button type="primary" size="small" @click="handleClick">更多菜单
   <el-dropdown-menu slot="dropdown">
     <el-dropdown-item>黄金糕</el-dropdown-item>
     <el-dropdown-item>狮子头</el-dropdown-item>
@@ -128,8 +143,7 @@
   </el-dropdown-menu>
 </el-dropdown>
 
-<el-dropdown split-button type="primary" text @click="handleClick">
-  更多菜单
+<el-dropdown split-button type="primary" text @click="handleClick">更多菜单
   <el-dropdown-menu slot="dropdown">
     <el-dropdown-item>黄金糕</el-dropdown-item>
     <el-dropdown-item>狮子头</el-dropdown-item>

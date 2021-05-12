@@ -1520,7 +1520,7 @@
       prop="date"
       label="日期"
       sortable
-      :info-icon="'el-ksd-icon-help_22'"
+      :info-icon="'el-ksd-icon-more_info_22'"
       :info-tooltip="'测试tooltip'"
       :show-search-input="true"
       :show-multiple-footer="false"
