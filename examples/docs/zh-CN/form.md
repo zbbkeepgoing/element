@@ -399,7 +399,8 @@
 :::demo 在 Form 组件中，每一个表单域由一个 Form-Item 组件构成，表单域中可以放置各种类型的表单控件，包括 Input、Select、Checkbox、Radio、Switch、DatePicker、TimePicker
 ```html
 <el-form ref="form" :model="form" size="medium" label-width="80px">
-  <el-form-item label="活动名称">
+  <el-form-item>
+    <span slot="label" class="withIconLabel"><span>活动名称</span><i class="el-ksd-icon-help_with_border_16"></i></span>
     <el-input v-model.trim="form.name"></el-input>
   </el-form-item>
   <el-form-item label="活动区域">
@@ -539,7 +540,8 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 </el-radio-group>
 <div style="margin: 20px;"></div>
 <el-form :label-position="labelPosition" size="medium" label-width="80px" :model="formLabelAlign">
-  <el-form-item label="名称">
+  <el-form-item>
+    <span slot="label" class="withIconLabel"><span>名称</span><i class="el-ksd-icon-help_with_border_16"></i></span>
     <el-input v-model.trim="formLabelAlign.name"></el-input>
   </el-form-item>
   <el-form-item label="活动区域">
@@ -1042,7 +1044,8 @@ W3C 标准中有如下[规定](https://www.w3.org/MarkUp/html-spec/html-spec_8.h
 </el-radio-group>
 
 <el-form ref="form" :model="sizeForm" label-width="80px" :size="formSize" style="margin-top:15px">
-  <el-form-item label="活动名称">
+  <el-form-item>
+    <span slot="label" class="withIconLabel"><span>活动名称</span><i class="el-ksd-icon-help_with_border_16"></i></span>
     <el-input v-model.trim="sizeForm.name"></el-input>
   </el-form-item>
   <el-form-item label="活动区域">

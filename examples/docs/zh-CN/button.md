@@ -272,10 +272,21 @@ dialog、messagebox 上的取消按钮用的是 次次要按钮 ，确认或者�
 <h3 style="margin:20px 0">水平组织</h3>
 <h4>主要按钮(左：正常，右：带 disabled)</h4>
 <div>
+  <p>示例一</p>
   <el-button-group>
     <el-button type="primary" icon="el-ksd-icon-edit_22">编辑</el-button>
     <el-button type="primary" icon="el-ksd-icon-export_22">分享</el-button>
     <el-button type="primary" icon="el-ksd-icon-table_delete_22">删除</el-button>
+  </el-button-group>
+  
+  <p>示例二（当前选中的 disabled）</p>
+  <el-button-group>
+    <el-button type="primary" disabled>最近 5 分钟</el-button>
+    <el-button type="primary">最近 15 分钟</el-button>
+    <el-button type="primary">最近 30 分钟</el-button>
+    <el-button type="primary">最近 1 小时</el-button>
+    <el-button type="primary">最近 1 天</el-button>
+    <el-button type="primary">最近 3 天</el-button>
   </el-button-group>
 
   <p>全部 disabled</p>
@@ -344,10 +355,21 @@ dialog、messagebox 上的取消按钮用的是 次次要按钮 ，确认或者�
 
 <h4 style="margin:20px 0">次要按钮(左：正常，右：带 disabled)</h4>
 <div>
+  <p>示例一</p>
   <el-button-group>
     <el-button icon="el-ksd-icon-edit_22">编辑</el-button>
     <el-button icon="el-ksd-icon-export_22">分享</el-button>
     <el-button icon="el-ksd-icon-table_delete_22">删除</el-button>
+  </el-button-group>
+
+  <p>示例二（当前选中的 disabled）</p>
+  <el-button-group>
+    <el-button disabled>最近 5 分钟</el-button>
+    <el-button>最近 15 分钟</el-button>
+    <el-button>最近 30 分钟</el-button>
+    <el-button>最近 1 小时</el-button>
+    <el-button>最近 1 天</el-button>
+    <el-button>最近 3 天</el-button>
   </el-button-group>
 
   <p>全部 disabled</p>
@@ -410,10 +432,21 @@ dialog、messagebox 上的取消按钮用的是 次次要按钮 ，确认或者�
 
 <h4 style="margin:20px 0">次次要按钮(左：正常，右：带 disabled)</h4>
 <div>
+  <p>示例一</p>
   <el-button-group>
     <el-button plain icon="el-ksd-icon-edit_22">编辑</el-button>
     <el-button plain icon="el-ksd-icon-export_22">分享</el-button>
     <el-button plain icon="el-ksd-icon-table_delete_22">删除</el-button>
+  </el-button-group>
+
+  <p>示例二（当前选中的 disabled）</p>
+  <el-button-group>
+    <el-button plain disabled>最近 5 分钟</el-button>
+    <el-button plain>最近 15 分钟</el-button>
+    <el-button plain>最近 30 分钟</el-button>
+    <el-button plain>最近 1 小时</el-button>
+    <el-button plain>最近 1 天</el-button>
+    <el-button plain>最近 3 天</el-button>
   </el-button-group>
 
   <p>全部 disabled</p>
