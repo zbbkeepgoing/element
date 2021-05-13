@@ -123,6 +123,20 @@ dialog、messagebox 上的取消按钮用的是 次次要按钮 ，确认或者�
   <el-button type="info" text disabled>Kyligence</el-button>
 </div>
 
+<h4 style="margin: 20px 0">纯文字无背景按钮（默认大小）</h4>
+<div style="margin: 20px 0">
+  <el-button nobg-text>Kyligence</el-button>
+  <el-button nobg-text icon="el-ksd-icon-0_placeholder_22">Kyligence</el-button>
+  <el-button nobg-text icon="el-ksd-icon-0_placeholder_22"></el-button>
+  <el-button nobg-text disabled>Kyligence</el-button>
+</div>
+<div style="margin: 20px 0">
+  <el-button size="small" nobg-text>Kyligence</el-button>
+  <el-button size="small" nobg-text icon="el-ksd-icon-0_placeholder_22">Kyligence</el-button>
+  <el-button size="small" nobg-text icon="el-ksd-icon-0_placeholder_22"></el-button>
+  <el-button size="small" nobg-text disabled>Kyligence</el-button>
+</div>
+
 <h4 style="margin: 20px 0">带右侧 icon 的文字按钮（默认大小）</h4>
 <div style="margin: 20px 0">
   <el-button type="primary" icon="el-ksd-icon-add_22" iconr="el-ksd-icon-arrow_down_22">展开</el-button>
@@ -142,7 +156,7 @@ dialog、messagebox 上的取消按钮用的是 次次要按钮 ，确认或者�
 
 ### 纯图标按钮
 
-图标按钮 hover 需要加上 tooltips 来表示这按钮是用来干嘛的，尺寸一般用 small 类型，表中表时，需要用 mini 尺寸
+两个版本，跟按钮齐高的icon-button 和 padding 更小的icon-button-mini
 
 :::demo 
 ```html
@@ -156,6 +170,16 @@ dialog、messagebox 上的取消按钮用的是 次次要按钮 ，确认或者�
   <el-tooltip content="新建模型" placement="top">
     <el-button plain icon-button icon="el-ksd-icon-add_22" size="big"></el-button>
   </el-tooltip>
+
+  <el-tooltip content="新建模型" placement="top">
+    <el-button type="primary" icon-button-mini icon="el-ksd-icon-add_22" size="big"></el-button>
+  </el-tooltip>
+  <el-tooltip content="新建模型" placement="top">
+    <el-button icon-button-mini icon="el-ksd-icon-add_22" size="big"></el-button>
+  </el-tooltip>
+  <el-tooltip content="新建模型" placement="top">
+    <el-button plain icon-button-mini icon="el-ksd-icon-add_22" size="big"></el-button>
+  </el-tooltip>
 </div>
 
 <div style="margin: 40px 0 20px 0">
@@ -167,6 +191,16 @@ dialog、messagebox 上的取消按钮用的是 次次要按钮 ，确认或者�
   </el-tooltip>
   <el-tooltip content="新建模型" placement="top">
     <el-button plain icon-button icon="el-ksd-icon-add_22"></el-button>
+  </el-tooltip>
+
+  <el-tooltip content="新建模型" placement="top">
+    <el-button type="primary" icon-button-mini icon="el-ksd-icon-add_22"></el-button>
+  </el-tooltip>
+  <el-tooltip content="新建模型" placement="top">
+    <el-button icon-button-mini icon="el-ksd-icon-add_22"></el-button>
+  </el-tooltip>
+  <el-tooltip content="新建模型" placement="top">
+    <el-button plain icon-button-mini icon="el-ksd-icon-add_22"></el-button>
   </el-tooltip>
 </div>
 
@@ -180,6 +214,16 @@ dialog、messagebox 上的取消按钮用的是 次次要按钮 ，确认或者�
   <el-tooltip content="新建模型" placement="top">
     <el-button plain icon-button icon="el-ksd-icon-add_16" size="small"></el-button>
   </el-tooltip>
+
+  <el-tooltip content="新建模型" placement="top">
+    <el-button type="primary" icon-button-mini icon="el-ksd-icon-add_16" size="small"></el-button>
+  </el-tooltip>
+  <el-tooltip content="新建模型" placement="top">
+    <el-button icon-button-mini icon="el-ksd-icon-add_16" size="small"></el-button>
+  </el-tooltip>
+  <el-tooltip content="新建模型" placement="top">
+    <el-button plain icon-button-mini icon="el-ksd-icon-add_16" size="small"></el-button>
+  </el-tooltip>
 </div>
 
 <div style="margin: 40px 0 20px 0">
@@ -191,6 +235,16 @@ dialog、messagebox 上的取消按钮用的是 次次要按钮 ，确认或者�
   </el-tooltip>
   <el-tooltip content="新建模型" placement="top">
     <el-button plain icon-button icon="el-ksd-icon-add_16" size="mini"></el-button>
+  </el-tooltip>
+
+  <el-tooltip content="新建模型" placement="top">
+    <el-button type="primary" icon-button-mini icon="el-ksd-icon-add_16" size="mini"></el-button>
+  </el-tooltip>
+  <el-tooltip content="新建模型" placement="top">
+    <el-button icon-button-mini icon="el-ksd-icon-add_16" size="mini"></el-button>
+  </el-tooltip>
+  <el-tooltip content="新建模型" placement="top">
+    <el-button plain icon-button-mini icon="el-ksd-icon-add_16" size="mini"></el-button>
   </el-tooltip>
 </div>
 
@@ -737,6 +791,7 @@ locales: {
 | type     | 类型   | string    |   primary / success / warning / danger / info |     —    |
 | plain     | 是否朴素按钮   | boolean    | — | false   |
 | text     | 是否文字按钮   | boolean    | — | false   |
+| nobg-text     | 是否无背景文字按钮   | boolean    | — | false   |
 | circle     | 是否圆形按钮   | boolean    | — | false   |
 | icon-button     | 是否纯icon按钮   | boolean    | — | false   |
 | loading     | 是否加载中状态   | boolean    | — | false   |

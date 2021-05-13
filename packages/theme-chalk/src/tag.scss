@@ -47,10 +47,18 @@
       display: block;
     }
 
-    // &:hover {
-    //   background-color: $--tag-color;
-    //   color: $--color-white;
-    // }
+    &:hover {
+      // background-color: $--tag-color;
+      color: $--color-info-hover;
+    }
+  }
+
+  .el-ksd-icon-close_22 {
+    cursor: pointer;
+    &:hover {
+      // background-color: $--tag-color;
+      color: $--color-info-hover;
+    }
   }
 
   @include m(info) {
@@ -70,10 +78,10 @@
       color: $--tag-info-color;
     }
 
-    // .el-tag__close:hover {
-    //   background-color: $--tag-info-color;
-    //   color: $--color-white;
-    // }
+    .el-tag__close:hover {
+      // background-color: $--tag-info-color;
+      color: $--color-info-secondary-hover;
+    }
   }
 
   @include m(success) {
@@ -93,10 +101,10 @@
       color: $--tag-success-color;
     }
 
-    // .el-tag__close:hover {
-    //   background-color: $--tag-success-color;
-    //   color: $--color-white;
-    // }
+    .el-tag__close:hover {
+      // background-color: $--tag-success-color;
+      color: $--color-success-hover;
+    }
   }
 
   @include m(warning) {
@@ -116,10 +124,10 @@
       color: $--tag-warning-color;
     }
 
-    // .el-tag__close:hover {
-    //   background-color: $--tag-warning-color;
-    //   color: $--color-white;
-    // }
+    .el-tag__close:hover {
+      // background-color: $--tag-warning-color;
+      color: $--color-warning-hover;
+    }
   }
 
   @include m(danger) {
@@ -139,10 +147,10 @@
       color: $--tag-danger-color;
     }
 
-    // .el-tag__close:hover {
-    //   background-color: $--tag-danger-color;
-    //   color: $--color-white;
-    // }
+    .el-tag__close:hover {
+      // background-color: $--tag-danger-color;
+      color: $--color-danger-hover;
+    }
   }
 
   @include m(medium) {

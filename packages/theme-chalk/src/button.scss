@@ -33,12 +33,28 @@
     vertical-align: middle;
     line-height: $--button-medium-line-height;
   }
+  &.is-text-nobg {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0px;
+    &:not(.is-disabled):hover,
+    &:not(.is-disabled):focus {
+      color: $--color-primary-hover;
+    }
+    &:not(.is-disabled):active {
+      color: $--color-primary-active;
+    }
+    &.is-disabled {
+      background-color: transparent;
+      border: none;
+    }
+  }
   @include utils-user-select(none);
   & + .el-button {
     margin-left: 8px;
   }
 
-  @include button-size($--button-padding-vertical, $--button-padding-horizontal, $--button-font-size, $--button-border-radius, $--button-medium-line-height, $--button-medium-icon-padding);
+  @include button-size($--button-padding-vertical, $--button-padding-horizontal, $--button-font-size, $--button-border-radius, $--button-medium-line-height, $--button-medium-icon-padding, $--button-medium-icon-mini-padding);
 
   &:hover,
   &:not(.is-disabled):focus {
@@ -216,16 +232,16 @@
       &:hover,
       &:focus {
         color: $--color-text-primary;
-        border-color: $--background-color-secondary;
-        background-color: $--background-color-secondary;
+        border-color: $--background-color-hover;
+        background-color: $--background-color-hover;
       }
       // &:focus {
       //   box-shadow: 0px 0px 0px 1px #FFFFFF, 0px 0px 0px 3px rgba(8, 121, 253, 0.64);
       // }
       &:active {
         color: $--color-text-primary;
-        border-color: $--button-default-hover-fill;
-        background-color: $--button-default-hover-fill;
+        border-color: $--color-secondary-active;
+        background-color: $--color-secondary-active;
         box-shadow: none;
       }
 
@@ -297,16 +313,16 @@
       &:hover,
       &:focus {
         color: $--button-danger-fill;
-        border-color: $--background-color-secondary;
-        background-color: $--background-color-secondary;
+        border-color: $--background-color-hover;
+        background-color: $--background-color-hover;
       }
       // &:focus {
       //   box-shadow: 0px 0px 0px 1px #FFFFFF, 0px 0px 0px 3px rgba(8, 121, 253, 0.64);
       // }
       &:active {
         color: $--color-text-primary;
-        border-color: $--button-default-hover-fill;
-        background-color: $--button-default-hover-fill;
+        border-color: $--color-secondary-active;
+        background-color: $--color-secondary-active;
         box-shadow: none;
       }
 
@@ -321,7 +337,7 @@
     @include button-variant($--button-info-color, $--button-info-fill, $--button-info-border);
   }
   @include m(big) {
-    @include button-size($--button-big-padding-vertical, $--button-big-padding-horizontal, $--button-medium-font-size, $--button-medium-border-radius, $--button-medium-line-height, $--button-big-icon-padding);
+    @include button-size($--button-big-padding-vertical, $--button-big-padding-horizontal, $--button-medium-font-size, $--button-medium-border-radius, $--button-medium-line-height, $--button-big-icon-padding, $--button-big-icon-mini-padding);
     i {
       &:last-child.el-ksd-icon-arrow_down_22 {
         position: relative;
@@ -331,7 +347,7 @@
     }
   }
   @include m(medium) {
-    @include button-size($--button-medium-padding-vertical, $--button-medium-padding-horizontal, $--button-medium-font-size, $--button-medium-border-radius, $--button-medium-line-height, $--button-medium-icon-padding);
+    @include button-size($--button-medium-padding-vertical, $--button-medium-padding-horizontal, $--button-medium-font-size, $--button-medium-border-radius, $--button-medium-line-height, $--button-medium-icon-padding, $--button-medium-icon-mini-padding);
     & [class*="el-icon-"], & [class*="el-ksd-icon"] {
       & + span {
         margin-left: 2px;
@@ -346,7 +362,7 @@
     }
   }
   @include m(small) {
-    @include button-size($--button-small-padding-vertical, $--button-small-padding-horizontal, $--button-small-font-size, $--button-small-border-radius, $--button-small-line-height, $--button-small-icon-padding);
+    @include button-size($--button-small-padding-vertical, $--button-small-padding-horizontal, $--button-small-font-size, $--button-small-border-radius, $--button-small-line-height, $--button-small-icon-padding, $--button-small-icon-mini-padding);
     i {
       font-size: $--button-small-line-height; // 自定义的icon大小得跟行高一致
     }
@@ -367,7 +383,7 @@
     }
   }
   @include m(mini) {
-    @include button-size($--button-mini-padding-vertical, $--button-mini-padding-horizontal, $--button-mini-font-size, $--button-mini-border-radius, $--button-mini-line-height, $--button-mini-icon-padding);
+    @include button-size($--button-mini-padding-vertical, $--button-mini-padding-horizontal, $--button-mini-font-size, $--button-mini-border-radius, $--button-mini-line-height, $--button-mini-icon-padding, $--button-mini-icon-mini-padding);
     i {
       font-size: $--button-mini-line-height; // 自定义的icon大小得跟行高一致
     }
@@ -397,16 +413,16 @@
     &:hover,
     &:focus {
       color: $--color-text-primary;
-      border-color: $--background-color-secondary;
-      background-color: $--background-color-secondary;
+      border-color: $--background-color-hover;
+      background-color: $--background-color-hover;
     }
     // &:focus {
     //   box-shadow: 0px 0px 0px 1px #FFFFFF, 0px 0px 0px 3px rgba(8, 121, 253, 0.64);
     // }
     &:active {
       color: $--color-text-primary;
-      border-color: $--button-default-hover-fill;
-      background-color: $--button-default-hover-fill;
+      border-color: $--color-secondary-active;
+      background-color: $--color-secondary-active;
       box-shadow: none;
     }
 

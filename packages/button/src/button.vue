@@ -14,8 +14,10 @@
         'is-plain': plain,
         'is-round': round,
         'is-text': text,
+        'is-text-nobg': nobgText,
         'is-circle': circle,
-        'is-icon-button': iconButton
+        'is-icon-button': iconButton,
+        'is-icon-button-mini': iconButtonMini
       }
     ]"
   >
@@ -62,8 +64,10 @@
       autofocus: Boolean,
       round: Boolean,
       text: Boolean,
+      nobgText: Boolean,
       circle: Boolean,
-      iconButton: Boolean
+      iconButton: Boolean,
+      iconButtonMini: Boolean
     },
 
     computed: {
