@@ -6,6 +6,69 @@
   "description": "放纯色的 icon",
   "glyphs": [
     {
+      "icon_id": "21563496",
+      "name": "refresh_16",
+      "font_class": "refresh_16",
+      "unicode": "e76c",
+      "unicode_decimal": 59244
+    },
+    {
+      "icon_id": "21555293",
+      "name": "table_sycned_old",
+      "font_class": "table_sycned_old",
+      "unicode": "e76b",
+      "unicode_decimal": 59243
+    },
+    {
+      "icon_id": "21554664",
+      "name": "confirm_16",
+      "font_class": "confirm_16",
+      "unicode": "e76a",
+      "unicode_decimal": 59242
+    },
+    {
+      "icon_id": "21554514",
+      "name": "spark_link_22",
+      "font_class": "spark_link_22",
+      "unicode": "e767",
+      "unicode_decimal": 59239
+    },
+    {
+      "icon_id": "21554545",
+      "name": "acl_data_22",
+      "font_class": "acl_data_22",
+      "unicode": "e768",
+      "unicode_decimal": 59240
+    },
+    {
+      "icon_id": "21554546",
+      "name": "acl_user_22",
+      "font_class": "acl_user_22",
+      "unicode": "e769",
+      "unicode_decimal": 59241
+    },
+    {
+      "icon_id": "21554493",
+      "name": "spark_link_16",
+      "font_class": "spark_link_16",
+      "unicode": "e766",
+      "unicode_decimal": 59238
+    },
+    {
+      "icon_id": "21416177",
+      "name": "setting_16",
+      "font_class": "setting_16",
+      "unicode": "e703",
+      "unicode_decimal": 59139
+    },
+    {
+      "icon_id": "21416178",
+      "name": "setting_22",
+      "font_class": "setting_22",
+      "unicode": "e726",
+      "unicode_decimal": 59174
+    },
+    {
       "icon_id": "21308318",
       "name": "kyligence_16",
       "font_class": "kyligence_16",
@@ -309,7 +372,7 @@
     {
       "icon_id": "21210174",
       "name": "folder_22",
-      "font_class": "folder_221",
+      "font_class": "folder_22",
       "unicode": "e744",
       "unicode_decimal": 59204
     },
