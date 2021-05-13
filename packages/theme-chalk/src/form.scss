@@ -94,6 +94,15 @@
     // line-height: 40px;
     padding: 0 12px 0 0;
     box-sizing: border-box;
+    .withIconLabel{
+      display: inline-flex;
+      align-items: center;
+      > i{
+        margin-left: 5px;
+        vertical-align: baseline;
+        font-size: 16px;
+      }
+    }
   }
   @include e(content) {
     // line-height: 40px;

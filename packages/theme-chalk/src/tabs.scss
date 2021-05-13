@@ -113,6 +113,12 @@
     &:focus, &:focus:active {
       outline: none;
     }
+    .prefixIcon22{
+      font-size: 22px;
+    }
+    .prefixIcon16{
+      font-size: 16px;
+    }
 
     /* &:focus.is-active.is-focus:not(:active) {
       box-shadow: 0 0 2px 2px #409eff inset;
