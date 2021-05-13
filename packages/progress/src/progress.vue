@@ -58,7 +58,7 @@
       iconClass: String,
       strokeWidth: {
         type: Number,
-        default: 6
+        default: 4
       },
       textInside: {
         type: Boolean,

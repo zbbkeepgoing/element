@@ -30,6 +30,7 @@
     > .el-tree-node__content {
       background-color: $--tree-node-hover-color;
       color: $--color-text-primary;
+      border-radius: $--border-radius-small;
       .el-tree-node__expand-icon {
         color: $--color-text-disabled;
         &.is-leaf {

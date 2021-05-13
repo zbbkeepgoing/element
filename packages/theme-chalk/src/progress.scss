@@ -11,7 +11,7 @@
     color: $--color-text-regular;
     display: inline-block;
     vertical-align: middle;
-    margin-left: 10px;
+    margin-left: 8px;
     line-height: 1;
 
     i {
@@ -88,7 +88,7 @@
   box-sizing: border-box;
 
   @include e(outer) {
-    height: 6px;
+    height: 4px;
     border-radius: 100px;
     background-color: $--background-color-hover;
     overflow: hidden;
