@@ -5,49 +5,96 @@
     :class="[
       !isSimple && `is-${$parent.direction}`,
       isSimple && 'is-simple',
+      !isTitleVertical && 'is-title-horizontal',
       isLast && !space && !isCenter && 'is-flex',
       isCenter && !isVertical && !isSimple && 'is-center'
      ]">
-    <!-- icon & line -->
-    <div
-      class="el-step__head"
-      :class="`is-${currentStatus}`">
+     <template v-if="isTitleVertical">
+      <!-- icon & line -->
       <div
-        class="el-step__line"
-        :style="isLast ? '' : { marginRight: $parent.stepOffset + 'px' }"
-      >
-        <i class="el-step__line-inner" :style="lineStyle"></i>
-      </div>
-
-      <div class="el-step__icon" :class="`is-${icon ? 'icon' : 'text'}`">
-        <slot
-          v-if="currentStatus !== 'success' && currentStatus !== 'error'"
-          name="icon">
-          <i v-if="icon" class="el-step__icon-inner" :class="[icon]"></i>
-          <div class="el-step__icon-inner" v-if="!icon && !isSimple">{{ index + 1 }}</div>
-        </slot>
-        <i
-          v-else
-          :class="['el-icon-' + (currentStatus === 'success' ? 'check' : 'close')]"
-          class="el-step__icon-inner is-status"
+        class="el-step__head"
+        :class="`is-${currentStatus}`">
+        <div
+          class="el-step__line"
+          :style="isLast ? '' : { marginRight: $parent.stepOffset + 'px' }"
         >
-        </i>
+          <i class="el-step__line-inner" :style="lineStyle"></i>
+        </div>
+
+        <div class="el-step__icon" :class="`is-${icon ? 'icon' : 'text'}`">
+          <slot
+            v-if="currentStatus !== 'success' && currentStatus !== 'error'"
+            name="icon">
+            <i v-if="icon" class="el-step__icon-inner" :class="[icon]"></i>
+            <div class="el-step__icon-inner" v-if="!icon && !isSimple">{{ index + 1 }}</div>
+          </slot>
+          <i
+            v-else
+            :class="['el-icon-' + (currentStatus === 'success' ? 'check' : 'close')]"
+            class="el-step__icon-inner is-status"
+          >
+          </i>
+        </div>
       </div>
-    </div>
-    <!-- title & description -->
-    <div class="el-step__main">
-      <div
-        class="el-step__title"
-        ref="title"
-        :class="['is-' + currentStatus]">
-        <slot name="title">{{ title }}</slot>
+      <!-- title & description -->
+      <div class="el-step__main">
+        <div
+          class="el-step__title"
+          ref="title"
+          :class="['is-' + currentStatus]">
+          <slot name="title">{{ title }}</slot>
+        </div>
+        <div v-if="isSimple" class="el-step__arrow"></div>
+        <div
+          v-else
+          class="el-step__description"
+          :class="['is-' + currentStatus]">
+          <slot name="description">{{ description }}</slot>
+        </div>
       </div>
-      <div v-if="isSimple" class="el-step__arrow"></div>
+    </template>
+    <div v-else>
+      <!-- icon & line -->
       <div
-        v-else
-        class="el-step__description"
-        :class="['is-' + currentStatus]">
-        <slot name="description">{{ description }}</slot>
+        class="el-step__head"
+        :class="`is-${currentStatus}`">
+        <div
+          class="el-step__line"
+          :style="isLast ? '' : { marginRight: $parent.stepOffset + 'px' }"
+        >
+          <i class="el-step__line-inner" :style="lineStyle"></i>
+        </div>
+
+        <div
+          class="el-step__icon"
+          :class="[`is-${icon ? 'title-icon' : 'title-text'}`, 'is-' + currentStatus]">
+          <slot
+            v-if="currentStatus !== 'success' && currentStatus !== 'error'"
+            name="icon">
+            <i v-if="icon" class="el-step__icon-inner" :class="[icon]"></i>
+            <div class="el-step__icon-inner" v-if="!icon && !isSimple">{{ index + 1 }}</div>
+          </slot>
+          <i
+            v-else
+            :class="['el-icon-' + (currentStatus === 'success' ? 'check' : 'close')]"
+            class="el-step__icon-inner is-status">
+          </i>
+          <div
+            ref="title"
+            :class="['is-' + currentStatus]">
+            <slot name="title">{{ title }}</slot>
+          </div>
+        </div>
+      </div>
+      <!-- title & description -->
+      <div class="el-step__main">
+        <div v-if="isSimple" class="el-step__arrow"></div>
+        <div
+          v-else
+          class="el-step__description"
+          :class="['is-' + currentStatus]">
+          <slot name="description">{{ description }}</slot>
+        </div>
       </div>
     </div>
   </div>
@@ -97,6 +144,9 @@ export default {
     },
     isVertical() {
       return this.$parent.direction === 'vertical';
+    },
+    isTitleVertical() {
+      return this.$parent.titleDirection === 'vertical'
     },
     isSimple() {
       return this.$parent.simple;
