@@ -128,7 +128,7 @@
   @include e(line) {
     position: absolute;
     border-color: inherit;
-    background-color: $--border-color-base;
+    background-color: $--border-secondary-active;
   }
 
   @include e(line-inner) {
@@ -343,6 +343,130 @@
       @include e(arrow) {
         display: none;
       }
+    }
+  }
+
+  // 新加横向icon 和title 在一起的情况
+  @include when(title-horizontal) {
+    @include e(head) {
+      @include e(line) {
+        top:15px;
+        height: 1px;
+        border-width: 0!important;
+      }
+      @include e(line-inner) {
+        border-width: 0!important;
+      }
+      @include e(icon) {
+        width: auto;
+        padding:0 10px;
+        font-weight: 600;
+        @include when(title-text) {
+          @include e(icon-inner) {
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            line-height: 16px;
+            border-style: solid;
+            border-width: 2px;
+            margin-right:5px;
+            font-weight: 500;
+            text-align: center;
+          }
+        }
+        @include when(title-icon) {
+          @include e(icon-inner) {
+            margin-right:5px;
+            font-size: 20px;
+          }
+        }
+      }
+      @include when(process) {
+        color: $--color-text-primary;
+        @include e(icon) {
+          @include when(title-text) {
+            @include e(icon-inner) {
+              border-color: $--color-primary;
+              background-color: $--color-primary;
+              color: $--color-white;
+            }
+          }
+          @include when(title-icon) {
+            @include e(icon-inner) {
+              color: $--color-primary;
+            }
+          }
+        }
+      }
+  
+      @include when(wait) {
+        color: $--color-text-disabled;
+        @include e(icon) {
+          @include when(title-text) {
+            @include e(icon-inner) {
+              border-color: $--color-info-secondary-bg;
+              background-color: $--color-info-secondary-bg;
+              color: $--color-text-disabled;
+            }
+          }
+          @include when(title-icon) {
+            @include e(icon-inner) {
+              color: $--color-info-secondary-bg;
+            }
+          }
+        }
+      }
+  
+      @include when(success) {
+        color: $--color-text-secondary;
+        border-color: $--color-primary;
+        @include e(icon) {
+          @include when(title-text) {
+            @include e(icon-inner) {
+              border-color: $--color-info-tag-bg;
+              background-color: $--color-info-tag-bg;
+              color: $--color-primary-dark;
+            }
+          }
+          @include when(title-icon) {
+            @include e(icon-inner) {
+              color: $--color-info-tag-bg;
+            }
+          }
+        }
+        @include e(line) {
+          background-color: $--color-primary;
+        }
+        @include e(line-inner) {
+          background-color: $--color-primary;
+        }
+      }
+  
+      @include when(error) {
+        @include e(icon) {
+          @include when(title-text) {
+            @include e(icon-inner) {
+              border-color: $--color-danger-hover;
+              background-color: $--color-danger-hover;
+              color: $--color-white;
+            }
+          }
+          @include when(title-icon) {
+            @include e(icon-inner) {
+              color: $--color-danger-hover;
+            }
+          }
+        }
+      }
+  
+      @include when(finish) {
+        font-weight: bold;
+        color: $--color-text-primary;
+      }
+    }
+    @include e(description) {
+      padding-left:35px;
+      color:$--color-text-disabled;
     }
   }
 }

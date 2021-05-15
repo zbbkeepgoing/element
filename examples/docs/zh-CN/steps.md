@@ -9,7 +9,10 @@
         active4: 0,
         active5: 0,
         active6: 0,
-        active7: 0
+        active7: 0,
+        finishStatusActive: 1,
+        horizontalStatusActive: 0,
+        lotStepActive: 0
       };
     },
 
@@ -37,6 +40,12 @@
       },
       next7() {
         if (this.active7++ > 2) this.active7 = 0;
+      },
+      nextTitleHorizontal() {
+        if (this.horizontalStatusActive++ > 3) this.horizontalStatusActive = 0;
+      },
+      nextLotStepActive() {
+        if (this.lotStepActive++ > 6) this.lotStepActive = 0;
       }
     }
   }
@@ -44,6 +53,99 @@
 
 ## Steps 步骤条
 引导用户按照流程完成任务的分步导航条，可根据实际应用场景设定步骤，步骤不得少于 2 步。
+
+### 带图标的横向的，并且带状态的步骤条(默认都是使用这个)
+步骤条内可以启用序号和文字或者 icon 和文字在同一行的样式风格，该条件下 align-center / description / direction / space 都将失效。
+
+:::demo 通过`title-direction`属性来设置 icon 和文字横向分布，默认是 vertical，为了不影响原本的使用，需要采用新版步骤条时，需要手动设置属性 `title-direction` 的值为 `horizontal`
+```html
+<h3>无描述</h3>
+<el-steps :active="horizontalStatusActive" title-direction="horizontal" finish-status="success">
+  <el-step title="步骤 1"></el-step>
+  <el-step title="步骤 2"></el-step>
+  <el-step title="步骤 3"></el-step>
+  <el-step title="步骤 4"></el-step>
+</el-steps>
+<h3>有描述</h3>
+<el-steps :active="horizontalStatusActive" title-direction="horizontal" finish-status="success">
+  <el-step title="步骤 1" description="这是一段很长很长很长的描述性文字"></el-step>
+  <el-step title="步骤 2" description="这是一段很长很长很长的描述性文字"></el-step>
+  <el-step title="步骤 3" description="这是一段很长很长很长的描述性文字"></el-step>
+  <el-step title="步骤 4" description="这是一段很长很长很长的描述性文字"></el-step>
+</el-steps>
+<br>
+<br>
+<h3>这里只是演示当设置 finish status 和 progress status 时的实际效果</h3>
+<h3>完成的各类状态效果（wait / process / finish / error）</h3>
+<el-steps :active="horizontalStatusActive" title-direction="horizontal" finish-status="wait">
+  <el-step title="步骤 1(wait)" description="这是一段很长很长很长的描述性文字"></el-step>
+  <el-step title="步骤 2" description="这是一段很长很长很长的描述性文字"></el-step>
+  <el-step title="步骤 3" description="这是一段很长很长很长的描述性文字"></el-step>
+  <el-step title="步骤 4" description="这是一段很长很长很长的描述性文字"></el-step>
+</el-steps>
+<el-steps :active="horizontalStatusActive" title-direction="horizontal" finish-status="process">
+  <el-step title="步骤 1(process)" description="这是一段很长很长很长的描述性文字"></el-step>
+  <el-step title="步骤 2" description="这是一段很长很长很长的描述性文字"></el-step>
+  <el-step title="步骤 3" description="这是一段很长很长很长的描述性文字"></el-step>
+  <el-step title="步骤 4" description="这是一段很长很长很长的描述性文字"></el-step>
+</el-steps>
+<el-steps :active="horizontalStatusActive" title-direction="horizontal" finish-status="finish">
+  <el-step title="步骤 1(finish)" description="这是一段很长很长很长的描述性文字"></el-step>
+  <el-step title="步骤 2" description="这是一段很长很长很长的描述性文字"></el-step>
+  <el-step title="步骤 3" description="这是一段很长很长很长的描述性文字"></el-step>
+  <el-step title="步骤 4" description="这是一段很长很长很长的描述性文字"></el-step>
+</el-steps>
+<el-steps :active="horizontalStatusActive" title-direction="horizontal" finish-status="error">
+  <el-step title="步骤 1(error)" description="这是一段很长很长很长的描述性文字"></el-step>
+  <el-step title="步骤 2" description="这是一段很长很长很长的描述性文字"></el-step>
+  <el-step title="步骤 3" description="这是一段很长很长很长的描述性文字"></el-step>
+  <el-step title="步骤 4" description="这是一段很长很长很长的描述性文字"></el-step>
+</el-steps>
+<h3>进行中的各类状态效果（wait / process / finish / error）</h3>
+<el-steps :active="horizontalStatusActive" title-direction="horizontal" process-status="wait">
+  <el-step title="步骤 1(wait)" description="这是一段很长很长很长的描述性文字"></el-step>
+  <el-step title="步骤 2" description="这是一段很长很长很长的描述性文字"></el-step>
+  <el-step title="步骤 3" description="这是一段很长很长很长的描述性文字"></el-step>
+  <el-step title="步骤 4" description="这是一段很长很长很长的描述性文字"></el-step>
+</el-steps>
+<el-steps :active="horizontalStatusActive" title-direction="horizontal" process-status="process">
+  <el-step title="步骤 1(process)" description="这是一段很长很长很长的描述性文字"></el-step>
+  <el-step title="步骤 2" description="这是一段很长很长很长的描述性文字"></el-step>
+  <el-step title="步骤 3" description="这是一段很长很长很长的描述性文字"></el-step>
+  <el-step title="步骤 4" description="这是一段很长很长很长的描述性文字"></el-step>
+</el-steps>
+<el-steps :active="horizontalStatusActive" title-direction="horizontal" process-status="finish">
+  <el-step title="步骤 1(finish)" description="这是一段很长很长很长的描述性文字"></el-step>
+  <el-step title="步骤 2" description="这是一段很长很长很长的描述性文字"></el-step>
+  <el-step title="步骤 3" description="这是一段很长很长很长的描述性文字"></el-step>
+  <el-step title="步骤 4" description="这是一段很长很长很长的描述性文字"></el-step>
+</el-steps>
+<el-steps :active="horizontalStatusActive" title-direction="horizontal" process-status="error">
+  <el-step title="步骤 1(error)" description="这是一段很长很长很长的描述性文字"></el-step>
+  <el-step title="步骤 2" description="这是一段很长很长很长的描述性文字"></el-step>
+  <el-step title="步骤 3" description="这是一段很长很长很长的描述性文字"></el-step>
+  <el-step title="步骤 4" description="这是一段很长很长很长的描述性文字"></el-step>
+</el-steps>
+<el-steps :active="horizontalStatusActive" title-direction="horizontal" process-status="success">
+  <el-step title="步骤 1(success)" description="这是一段很长很长很长的描述性文字"></el-step>
+  <el-step title="步骤 2" description="这是一段很长很长很长的描述性文字"></el-step>
+  <el-step title="步骤 3" description="这是一段很长很长很长的描述性文字"></el-step>
+  <el-step title="步骤 4" description="这是一段很长很长很长的描述性文字"></el-step>
+</el-steps>
+<el-button style="margin-top: 12px;" @click="nextTitleHorizontal">下一步</el-button>
+<h3>自定义 icon</h3>
+<el-steps :active="lotStepActive" title-direction="horizontal">
+  <el-step title="cube 信息" icon="el-icon-edit" description="这是一段很长很长很长的描述性文字"></el-step>
+  <el-step title="维度" icon="el-icon-upload" description="这是一段很长很长很长的描述性文字"></el-step>
+  <el-step title="度量" icon="el-icon-picture" description="这是一段很长很长很长的描述性文字"></el-step>
+  <el-step title="更新设置" icon="el-icon-phone-outline" description="这是一段很长很长很长的描述性文字"></el-step>
+  <el-step title="表索引" icon="el-icon-sold-out" description="这是一段很长很长很长的描述性文字"></el-step>
+  <el-step title="高级设置" icon="el-icon-news" description="这是一段很长很长很长的描述性文字"></el-step>
+  <el-step title="概览" icon="el-icon-printer" description="这是一段很长很长很长的描述性文字"></el-step>
+</el-steps>
+<el-button style="margin-top: 12px;" @click="nextLotStepActive">下一步</el-button>
+```
+:::
 
 ### 基础用法
 
@@ -83,12 +185,67 @@
 
 :::demo 也可以使用`title`具名分发，可以用`slot`的方式来取代属性的设置，在本文档最后的列表中有所有的 slot name 可供参考。
 ```html
-<el-steps :space="200" :active="active1" finish-status="success" process-status="error">
+<template>
+<el-steps :space="200" :active="active1" finish-status="success" process-status="process">
   <el-step title="已完成"></el-step>
   <el-step title="进行中"></el-step>
   <el-step title="步骤 3"></el-step>
 </el-steps>
 <el-button style="margin-top: 12px;" @click="next1">下一步</el-button>
+<h3>结束状态和过程中状态每个值对应的效果</h3>
+<p>finish-status: wait / process / finish / error / success</p>
+<el-steps :space="200" :active="finishStatusActive" finish-status="wait">
+  <el-step title="已完成(wait)"></el-step>
+  <el-step title="进行中"></el-step>
+  <el-step title="步骤 3"></el-step>
+</el-steps>
+<el-steps :space="200" :active="finishStatusActive" finish-status="process">
+  <el-step title="已完成(progress)"></el-step>
+  <el-step title="进行中"></el-step>
+  <el-step title="步骤 3"></el-step>
+</el-steps>
+<el-steps :space="200" :active="finishStatusActive" finish-status="finish">
+  <el-step title="已完成(finish)"></el-step>
+  <el-step title="进行中"></el-step>
+  <el-step title="步骤 3"></el-step>
+</el-steps>
+<el-steps :space="200" :active="finishStatusActive" finish-status="error">
+  <el-step title="已完成(error)"></el-step>
+  <el-step title="进行中"></el-step>
+  <el-step title="步骤 3"></el-step>
+</el-steps>
+<el-steps :space="200" :active="finishStatusActive" finish-status="success">
+  <el-step title="已完成(success)"></el-step>
+  <el-step title="进行中"></el-step>
+  <el-step title="步骤 3"></el-step>
+</el-steps>
+<p>process-status: wait / process / finish / error / success</p>
+<el-steps :space="200" :active="finishStatusActive" process-status="wait">
+  <el-step title="已完成"></el-step>
+  <el-step title="进行中(wait)"></el-step>
+  <el-step title="步骤 3"></el-step>
+</el-steps>
+<el-steps :space="200" :active="finishStatusActive" process-status="progress">
+  <el-step title="已完成"></el-step>
+  <el-step title="进行中(progress)"></el-step>
+  <el-step title="步骤 3"></el-step>
+</el-steps>
+<el-steps :space="200" :active="finishStatusActive" process-status="finish">
+  <el-step title="已完成"></el-step>
+  <el-step title="进行中(finish)"></el-step>
+  <el-step title="步骤 3"></el-step>
+</el-steps>
+<el-steps :space="200" :active="finishStatusActive" process-status="error">
+  <el-step title="已完成"></el-step>
+  <el-step title="进行中(error)"></el-step>
+  <el-step title="步骤 3"></el-step>
+</el-steps>
+<el-steps :space="200" :active="finishStatusActive" process-status="success">
+  <el-step title="已完成"></el-step>
+  <el-step title="进行中(success)"></el-step>
+  <el-step title="步骤 3"></el-step>
+</el-steps>
+</template>
 ```
 :::
 

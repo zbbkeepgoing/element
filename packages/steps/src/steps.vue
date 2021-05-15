@@ -24,6 +24,10 @@ export default {
       type: String,
       default: 'horizontal'
     },
+    titleDirection: {
+      type: String,
+      default: 'vertical'
+    },
     alignCenter: Boolean,
     simple: Boolean,
     finishStatus: {
