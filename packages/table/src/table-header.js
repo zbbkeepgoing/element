@@ -393,6 +393,7 @@ export default {
         const tableEl = table.$el;
         const tableLeft = tableEl.getBoundingClientRect().left;
         const columnEl = this.$el.querySelector(`th.${column.id}`);
+        const bodyEl = tableEl.querySelector('.el-table__body');
         const columnRect = columnEl.getBoundingClientRect();
         const minLeft = columnRect.left - tableLeft + 30;
 
@@ -414,9 +415,29 @@ export default {
         const handleMouseMove = (event) => {
           const deltaLeft = event.clientX - this.dragState.startMouseLeft;
           const proxyLeft = this.dragState.startLeft + deltaLeft;
+          // if (hasClass(bodyEl, 'dragable-end')) {
+          //   removeClass(bodyEl, 'dragable-end');
+          // }
 
+          // addClass(bodyEl, 'dragable-x');
           resizeProxy.style.left = Math.max(minLeft, proxyLeft) + 'px';
           // 实时拖拽
+          // if (this.dragging) {
+          //   const {
+          //     startColumnLeft,
+          //     startLeft
+          //   } = this.dragState;
+          //   const finalLeft = parseInt(resizeProxy.style.left, 10);
+          //   const columnWidth = finalLeft - startColumnLeft;
+          //   column.width = column.realWidth = columnWidth;
+          //   addClass(bodyEl, 'dragable-x');
+          //   table.$emit('header-dragend', column.width, startLeft - startColumnLeft, column, event);
+
+          //   this.store.scheduleLayout();
+          // }
+        };
+
+        const handleMouseUp = () => {
           if (this.dragging) {
             const {
               startColumnLeft,
@@ -428,28 +449,20 @@ export default {
             table.$emit('header-dragend', column.width, startLeft - startColumnLeft, column, event);
 
             this.store.scheduleLayout();
-          }
-        };
-
-        const handleMouseUp = () => {
-          if (this.dragging) {
-            // const {
-            //   startColumnLeft,
-            //   startLeft
-            // } = this.dragState;
-            // const finalLeft = parseInt(resizeProxy.style.left, 10);
-            // const columnWidth = finalLeft - startColumnLeft;
-            // column.width = column.realWidth = columnWidth;
-            // table.$emit('header-dragend', column.width, startLeft - startColumnLeft, column, event);
-
-            // this.store.scheduleLayout();
 
             document.body.style.cursor = '';
             this.dragging = false;
             this.draggingColumn = null;
             this.dragState = {};
+            // addClass(bodyEl, 'dragable-end');
+            // this.$nextTick(() => {
+            //   removeClass(bodyEl, 'dragable-end');
+            // });
 
             table.resizeProxyVisible = false;
+            this.$nextTick(() => {
+              bodyEl.setAttribute('drag-count', ++this.dragCount);
+            });
           }
 
           document.removeEventListener('mousemove', handleMouseMove);
@@ -555,7 +568,8 @@ export default {
     return {
       draggingColumn: null,
       dragging: false,
-      dragState: {}
+      dragState: {},
+      dragCount: 0
     };
   }
 };
