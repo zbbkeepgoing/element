@@ -25,11 +25,11 @@ export default {
     paddingStyle() {
       if (this.rootMenu.mode !== 'vertical') return {};
 
-      let padding = 15;
+      let padding = 12;
       let parent = this.$parent;
 
       if (this.rootMenu.collapse) {
-        padding = 15;
+        padding = 12;
       } else {
         while (parent && parent.$options.componentName !== 'ElMenu') {
           if (parent.$options.componentName === 'ElSubmenu') {

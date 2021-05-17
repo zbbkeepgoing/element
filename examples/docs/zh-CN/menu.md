@@ -244,11 +244,10 @@
 <el-menu default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
   <el-submenu index="1">
     <template slot="title">
-      <i class="el-icon-location"></i>
+      <el-icon name="el-ksd-icon-nav_model_24" type="mult"></el-icon>
       <span slot="title">导航一</span>
     </template>
     <el-menu-item index="1">
-      <i class="el-icon-setting"></i>
       <span slot="title">导航一</span>
     </el-menu-item>
     <!-- <el-menu-item-group>
@@ -265,15 +264,15 @@
     </el-submenu>
   </el-submenu>
   <el-menu-item index="2">
-    <i class="el-icon-menu"></i>
+    <el-icon name="el-ksd-icon-nav_setting_24" type="mult"></el-icon>
     <span slot="title">导航二</span>
   </el-menu-item>
   <el-menu-item index="3" disabled>
-    <i class="el-icon-document"></i>
+    <el-icon name="el-ksd-icon-nav_monitor_24" type="mult"></el-icon>
     <span slot="title">导航三</span>
   </el-menu-item>
   <el-menu-item index="4">
-    <i class="el-icon-setting"></i>
+    <el-icon name="el-ksd-icon-nav_data_storge_24" type="mult"></el-icon>
     <span slot="title">导航四</span>
   </el-menu-item>
 </el-menu>
