@@ -33,7 +33,8 @@
       :style="{fontSize: progressTextSize + 'px'}"
     >
       <template v-if="!status && !iconClass">{{percentage}}%</template>
-      <i v-else :class="iconClassName"></i>
+      <i v-if="iconClass" :class="iconClass" :style="{fontSize: type === 'line' ? '18px' : '20px'}"></i>
+      <el-icon v-if="status" :name="iconClassName" :style="{fontSize: type === 'line' ? '22px' : '24px'}" type="mult"></el-icon>
     </div>
   </div>
 </template>
@@ -121,19 +122,19 @@
         return ret;
       },
       iconClassName() {
-        if (this.iconClass) {
-          return this.iconClass;
-        }
+        // if (this.iconClass) {
+        //   return this.iconClass;
+        // }
         if (this.type === 'line') {
-          return this.status === 'success' ? 'el-icon-circle-check' : 'el-icon-error';
+          return this.status === 'success' ? 'el-ksd-icon-finished_22' : 'el-ksd-icon-error_22';
         } else {
-          return this.status === 'success' ? 'el-icon-check' : 'el-icon-close';
+          return this.status === 'success' ? 'el-ksd-icon-finished_24' : 'el-ksd-icon-error_24';
         }
       },
       progressTextSize() {
         return this.type === 'line'
-          ? 12 + this.strokeWidth * 0.4
-          : this.width * 0.111111 + 2 ;
+          ? 12 + this.strokeWidth * 0.5
+          : this.width * 0.111111;
       }
     }
   };
