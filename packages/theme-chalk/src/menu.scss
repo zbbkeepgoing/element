@@ -17,6 +17,8 @@
   line-height: 44px;
   margin: 6px 8px;
   border-radius: $--border-radius-base;
+  // float: left;
+  // width: calc(100% - 16px);
   .mutiple-color-icon {
     font-size: 24px;
     margin-right: 10px;
@@ -46,6 +48,13 @@
   margin: 0;
   padding-left: 0;
   background-color: $--menu-item-fill;
+  li {
+    margin-bottom: 12px;
+    &.el-submenu,
+    &:last-child {
+      margin-bottom: 6px;
+    }
+  }
   @include utils-clearfix;
 
   @include m(horizontal) {
@@ -55,6 +64,7 @@
       float: left;
       height: 48px;
       line-height: 48px;
+      width: auto;
       margin: 0;
       border-bottom: 4px solid transparent;
       color: $--color-text-secondary;
@@ -124,6 +134,10 @@
       & .el-submenu {
         height: 48px;
         line-height: 48px;
+        .el-submenu__title {
+          height: 48px;
+        line-height: 48px;
+        }
       }
     }
     & .el-menu-item:not(.is-disabled):hover,
@@ -211,6 +225,11 @@
       margin: 0;
       border-radius: 0;
     }
+    .el-menu-item,
+    .el-submenu__title {
+      width: 100%;
+      // float: none;
+    }
     @include e(title) {
       height: 56px;
       line-height: 56px;
@@ -251,6 +270,7 @@
 
   @include e(title) {
     @include menu-item;
+    // float: none;
   }
   & .el-menu {
     border: none;

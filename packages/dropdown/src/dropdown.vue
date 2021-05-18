@@ -48,6 +48,7 @@
         type: String,
         default: ''
       },
+      disabled: Boolean,
       splitButton: Boolean,
       hideOnClick: {
         type: Boolean,
@@ -253,7 +254,7 @@
     },
 
     render(h) {
-      let { hide, splitButton, type, text, dropdownSize, plain, btnIcon } = this;
+      let { hide, splitButton, type, text, dropdownSize, plain, btnIcon, disabled } = this;
 
       let arrow_down_icon = {
         medium: 'el-ksd-icon-arrow_down_22',
@@ -269,9 +270,9 @@
       let triggerElm = !splitButton
         ? this.$slots.default
         : (<el-button-group>
-          <el-button plain={plain} type={type} icon={btnIcon} text={text} size={dropdownSize} nativeOn-click={handleMainButtonClick}>{this.$slots.default}
+          <el-button plain={plain} type={type} icon={btnIcon} text={text} size={dropdownSize} disabled={disabled} nativeOn-click={handleMainButtonClick}>{this.$slots.default}
           </el-button>
-          <el-button ref="trigger" plain={plain} type={type} text={text} size={dropdownSize} class="el-dropdown__caret-button" icon={dropdownSize ? arrow_down_icon[dropdownSize] : 'el-ksd-icon-arrow_down_22'}>
+          <el-button ref="trigger" plain={plain} type={type} text={text} size={dropdownSize} disabled={disabled} class="el-dropdown__caret-button" icon={dropdownSize ? arrow_down_icon[dropdownSize] : 'el-ksd-icon-arrow_down_22'}>
           </el-button>
         </el-button-group>);
 

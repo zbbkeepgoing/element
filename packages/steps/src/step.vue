@@ -146,7 +146,7 @@ export default {
       return this.$parent.direction === 'vertical';
     },
     isTitleVertical() {
-      return this.$parent.titleDirection === 'vertical'
+      return this.$parent.titleDirection === 'vertical';
     },
     isSimple() {
       return this.$parent.simple;

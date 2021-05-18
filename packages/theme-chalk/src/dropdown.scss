@@ -11,6 +11,9 @@
 
   .el-button-group {
     display: flex;
+    .el-button--primary:first-child.is-disabled {
+      border-right: none;
+    }
     .el-button {
       float: none;
     }
@@ -64,6 +67,11 @@
           width: 0;
         }
       }
+      &.is-disabled {
+        &::before {
+          opacity: 0.3;
+        }
+      }
     }
 
     &:hover {
@@ -110,6 +118,7 @@
     color: $--color-text-primary;
     cursor: pointer;
     outline: none;
+    min-width: 72px;
     &:not(.is-disabled):hover, &:focus {
       background-color: $--dropdown-menuItem-hover-fill;
     }

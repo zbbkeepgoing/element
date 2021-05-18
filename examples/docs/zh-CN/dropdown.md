@@ -153,6 +153,16 @@
   </el-dropdown-menu>
 </el-dropdown>
 
+<el-dropdown split-button type="primary" text disabled @click="handleClick">更多菜单
+  <el-dropdown-menu slot="dropdown">
+    <el-dropdown-item>黄金糕</el-dropdown-item>
+    <el-dropdown-item>狮子头</el-dropdown-item>
+    <el-dropdown-item>螺蛳粉</el-dropdown-item>
+    <el-dropdown-item disabled>双皮奶</el-dropdown-item>
+    <el-dropdown-item divided>蚵仔煎</el-dropdown-item>
+  </el-dropdown-menu>
+</el-dropdown>
+
 <style>
   .el-dropdown {
     vertical-align: top;
