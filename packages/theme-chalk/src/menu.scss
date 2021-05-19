@@ -50,9 +50,11 @@
   background-color: $--menu-item-fill;
   li {
     margin-bottom: 12px;
-    &.el-submenu,
     &:last-child {
       margin-bottom: 6px;
+    }
+    &.el-submenu .el-menu li:last-child {
+      margin-bottom: 0px;
     }
   }
   @include utils-clearfix;
