@@ -284,7 +284,7 @@
       const submenuTitleIcon = (
         rootMenu.mode === 'horizontal' && isFirstLevel ||
         rootMenu.mode === 'vertical' && !rootMenu.collapse
-      ) ? 'el-icon-arrow-down' : 'el-icon-arrow-right';
+      ) ? 'el-ksd-icon-arrow_down_22' : 'el-ksd-icon-arrow_right_22';
 
       return (
         <li

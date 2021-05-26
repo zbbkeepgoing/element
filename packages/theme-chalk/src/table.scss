@@ -46,6 +46,12 @@
   font-size: 14px;
   color: $--table-text-color;
 
+  .el-table-column--selection {
+    .cell {
+      font-size: 0;
+    }
+  }
+
   // 数据为空
   @include e(empty-block) {
     position: relative;

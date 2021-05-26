@@ -37,16 +37,18 @@
     background-color: transparent !important;
     border: none !important;
     padding: 0px;
+    color: $--link-color;
     &:not(.is-disabled):hover,
     &:not(.is-disabled):focus {
-      color: $--color-primary-hover;
+      color: $--link-hover-color;
     }
     &:not(.is-disabled):active {
-      color: $--color-primary-active;
+      color: $--link-active-color;
     }
     &.is-disabled {
       background-color: transparent;
       border: none;
+      color: $--link-color;
     }
   }
   @include utils-user-select(none);
@@ -249,6 +251,7 @@
       &.is-disabled:hover,
       &.is-disabled:focus {
         border-color: transparent;
+        background-color: transparent;
       }
     }
   }
