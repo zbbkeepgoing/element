@@ -1517,6 +1517,10 @@
     :data="tableData"
     style="width: 100%">
     <el-table-column
+      type="selection"
+      width="55">
+    </el-table-column>
+    <el-table-column
       prop="date"
       label="日期"
       sortable
@@ -1560,6 +1564,7 @@
       filter-placement="bottom-end">
       <template slot-scope="scope">
         <el-tag
+          size="small"
           :type="scope.row.tag === '家' ? 'primary' : 'success'"
           close-transition>{{scope.row.tag}}</el-tag>
       </template>

@@ -272,7 +272,7 @@
         : (<el-button-group>
           <el-button plain={plain} type={type} icon={btnIcon} text={text} size={dropdownSize} disabled={disabled} nativeOn-click={handleMainButtonClick}>{this.$slots.default}
           </el-button>
-          <el-button ref="trigger" plain={plain} type={type} text={text} size={dropdownSize} disabled={disabled} class="el-dropdown__caret-button" icon={dropdownSize ? arrow_down_icon[dropdownSize] : 'el-ksd-icon-arrow_down_22'}>
+          <el-button ref="trigger" plain={plain} type={type} text={text} size={dropdownSize} class="el-dropdown__caret-button" icon={dropdownSize ? arrow_down_icon[dropdownSize] : 'el-ksd-icon-arrow_down_22'}>
           </el-button>
         </el-button-group>);
 

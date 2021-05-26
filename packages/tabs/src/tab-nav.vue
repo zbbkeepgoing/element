@@ -156,7 +156,7 @@
       }
     },
 
-    updated() {
+    beforeUpdate() {
       this.update();
     },
 

@@ -112,7 +112,8 @@
     outline: none;
     display: inline-block;
     position: relative;
-    height: 14px;
+    font-size: 0;
+    // height: 14px;
 
     @include when(disabled) {
       .el-checkbox__inner {
