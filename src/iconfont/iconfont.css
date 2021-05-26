@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont-mult"; /* Project id 2457341 */
-  src: url('iconfont.woff2?t=1620715369516') format('woff2'),
-       url('iconfont.woff?t=1620715369516') format('woff'),
-       url('iconfont.ttf?t=1620715369516') format('truetype');
+  src: url('iconfont.woff2?t=1621996487938') format('woff2'),
+       url('iconfont.woff?t=1621996487938') format('woff'),
+       url('iconfont.ttf?t=1621996487938') format('truetype');
 }
 
 .iconfont-mult {
@@ -11,6 +11,10 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.el-ksd-icon-nav_data_characteristics_24:before {
+  content: "\e681";
 }
 
 .el-ksd-icon-nav_project_24:before {
