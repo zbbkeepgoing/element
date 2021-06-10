@@ -1,6 +1,6 @@
 {
   "name": "kyligence-ui",
-  "version": "4.0.17",
+  "version": "4.0.18",
   "description": "Kyligence UI for Vue",
   "main": "lib/kyligence-ui.common.js",
   "files": [
@@ -30,6 +30,9 @@
     "pub:all": "npm run dist:all && lerna publish --skip-git && git commit -am 'publish independent packages' && git push eleme dev",
     "test": "npm run lint && npm run build:theme && cross-env CI_ENV=/dev/ karma start test/unit/karma.conf.js --single-run",
     "test:watch": "npm run build:theme && karma start test/unit/karma.conf.js"
+  },
+  "resolutions": {
+    "graceful-fs": "^4.2.4"
   },
   "faas": {
     "domain": "element",
