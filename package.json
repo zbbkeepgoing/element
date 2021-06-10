@@ -52,9 +52,6 @@
   "bugs": {
     "url": "https://github.com/ElemeFE/element/issues"
   },
-  "publishConfig": {
-    "registry": "http://10.1.2.111:4873"
-  },
   "unpkg": "lib/index.js",
   "style": "lib/theme-chalk/index.css",
   "dependencies": {
